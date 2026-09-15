@@ -13,7 +13,7 @@
 
 = 你需要做什么？ =
 
-你只需要给 mailto:contribution@scssoft.com 发一封简短的邮件，说明你是谁以及你想贡献什么内容。
+你只需要给 <code>contribution[[File:Spam blocker.png|16px]]scssoft[[File:Spam blocker 2.png|8px]]com</code> 发一封简短的邮件，说明你是谁以及你想贡献什么内容。
 
 我们会回复你并提供进一步的指引。
 
