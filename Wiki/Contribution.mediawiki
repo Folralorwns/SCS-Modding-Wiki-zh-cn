@@ -1,0 +1,23 @@
+Hi there! As you have entered this page you are probably interested in helping us create articles for our modding wiki project. 
+
+To become a ''contributor'' to the '''SCS Modding Wiki''' all you need to do is write a short mail to us and we will try to reply to you as soon as possible.
+
+= Who do we need? =
+
+We need people who are willing to help with creating articles for this wiki. 
+
+Content we are looking for at the moment:
+* Any kind of tutorial related to SCS games.
+* Any kind of written user guides for SCS games.
+* Any possible improvements to existing documentation.
+
+= What do you need to do? =
+
+All you need to do is write a short e-mail to <code>contribution[[File:Spam blocker.png|16px]]scssoft[[File:Spam blocker 2.png|8px]]com</code> about who you are and what you would you like to contribute to.
+
+We will then reply to you with further instructions.
+
+= See also =
+* [[/How and where to post new tutorial|How and where to post new tutorial]]
+* [[/User tutorial template|User tutorial template]]
+* [[/User tutorial template (divided to parts)|User tutorial template (divided to parts)]]
