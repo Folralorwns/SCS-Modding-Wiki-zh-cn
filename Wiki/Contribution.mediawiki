@@ -1,23 +1,23 @@
-Hi there! As you have entered this page you are probably interested in helping us create articles for our modding wiki project. 
+嗨！既然你来到了这个页面，说明你可能有兴趣帮助我们为模组 Wiki 项目撰写文章。
 
-To become a ''contributor'' to the '''SCS Modding Wiki''' all you need to do is write a short mail to us and we will try to reply to you as soon as possible.
+要成为 ''' SCS 开发模组 Wiki '''的'' 贡献者 ''，你只需要给我们发一封简短的邮件，我们会尽快回复你。
 
-= Who do we need? =
+= 我们需要什么样的人？ =
 
-We need people who are willing to help with creating articles for this wiki. 
+我们需要愿意帮助撰写本 Wiki 文章的人。
 
-Content we are looking for at the moment:
-* Any kind of tutorial related to SCS games.
-* Any kind of written user guides for SCS games.
-* Any possible improvements to existing documentation.
+目前我们需要的内容：
+* 任何与 SCS 游戏相关的教程。
+* 任何 SCS 游戏的文字用户指南。
+* 对现有文档的任何改进建议。
 
-= What do you need to do? =
+= 你需要做什么？ =
 
-All you need to do is write a short e-mail to <code>contribution[[File:Spam blocker.png|16px]]scssoft[[File:Spam blocker 2.png|8px]]com</code> about who you are and what you would you like to contribute to.
+你只需要给 mailto:contribution@scssoft.com 发一封简短的邮件，说明你是谁以及你想贡献什么内容。
 
-We will then reply to you with further instructions.
+我们会回复你并提供进一步的指引。
 
-= See also =
-* [[/How and where to post new tutorial|How and where to post new tutorial]]
-* [[/User tutorial template|User tutorial template]]
-* [[/User tutorial template (divided to parts)|User tutorial template (divided to parts)]]
+= 参见 =
+* [[/如何及在哪里发布新教程]]
+* [[/用户教程模板]]
+* [[/用户教程模板（分段版）]]
