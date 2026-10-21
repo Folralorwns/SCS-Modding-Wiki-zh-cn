@@ -1,4 +1,4 @@
-# File:Gizmo.jpg
+# 文件:Gizmo.jpg
 
 ![Gizmo.jpg](../../../images/files/Gizmo.jpg/Gizmo.jpg)
 

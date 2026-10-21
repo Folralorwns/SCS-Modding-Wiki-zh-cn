@@ -1,0 +1,10 @@
+{
+ "id": 31,
+ "chars": 16766,
+ "files": [
+  "pages/articles/Documentation/Tools/Map Editor/Note API.md",
+  "pages/articles/Documentation/Tools/Map Editor/Sector lock API.md",
+  "pages/articles/Documentation/Tools/Map Editor/Shortcuts.md",
+  "pages/articles/Documentation/Tools/Map Editor.md"
+ ]
+}

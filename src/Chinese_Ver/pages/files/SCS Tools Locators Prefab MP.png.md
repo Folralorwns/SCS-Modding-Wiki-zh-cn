@@ -1,4 +1,4 @@
-# File:SCS Tools Locators Prefab MP.png
+# 文件:SCS Tools Locators Prefab MP.png
 
 ![SCS Tools Locators Prefab MP.png](../../../images/files/SCS%20Tools%20Locators%20Prefab%20MP.png/SCS_Tools_Locators_Prefab_MP.png)
 

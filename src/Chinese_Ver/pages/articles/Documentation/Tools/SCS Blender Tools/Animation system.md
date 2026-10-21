@@ -1,73 +1,73 @@
-# Documentation/Tools/SCS Blender Tools/Animation system
+# 文档/工具/SCS Blender Tools/动画系统
 
-Animations used in SCS games are driven by skeletons and keyframe animations (which are manipulating bones in the skeleton). There are two types of these animations:
+SCS 游戏中的动画由骨架与关键帧动画驱动（后者通过操纵骨架中的骨骼来实现）。这类动画分为两种类型：
 
-1. **Program driven animations** which mostly expects animation range from 0 to 1 if not stated differently in animation definition files. This means that first frame will be used as 0 state and last frame will be used as state 1, any state between this range is interpolated across whole keyframe range of animation. Example of these animations are truck interior animations in Euro Truck Simulator 2 which are defined inside each truck definition folder (example path: *"def/vehicle/truck/man.tgx/interior/animations.sui"*).
-2. **Static loop animations** used by so called "mover" objects. Movers can be placed all around the game world with the help of map editor. Examples for mover objects are: windmills, pedestrians, animals etc. To create your own mover you should create new *"def/world/mover.\<id_of_your_mod>.sii"* file and define mover in that file by the template from original *"def/world/mover.sii"* file. > > **Note:** Special type of movers named "walkers" can also use forward movement in their animation which can be animated as movement of skeleton object on Y axis.
+1. **程序驱动动画**，除非动画定义文件中另有说明，其动画范围大多为 0 到 1。也就是说，第一帧将用作 0 状态，最后一帧将用作状态 1，该范围内的任何状态都会在整个关键帧范围上插值。此类动画的示例是 Euro Truck Simulator 2 中的卡车内饰动画，它们在每个卡车定义文件夹内定义（示例路径：*"def/vehicle/truck/man.tgx/interior/animations.sui"*）。
+2. **静态循环动画**，由所谓的“mover”对象使用。Mover 可以借助地图编辑器放置到游戏世界各处。mover 对象的示例包括：风车、行人、动物等。要创建你自己的 mover，你应新建 *"def/world/mover.\<id_of_your_mod>.sii"* 文件，并参照原始 *"def/world/mover.sii"* 文件中的模板在该文件中定义 mover。 > > **注意：** 名为“walkers”的特殊类型 mover 也可在其动画中使用向前移动，这可以制作成骨架对象沿 Y 轴移动的动画。
 
-Regardless of the SCS Animation type, creation pipeline within Blender Tools is the same for both above types. To create SCS Animation you will have to use standard Blender procedure of [armature creation](https://docs.blender.org/manual/animation/armatures/introduction.html), [vertices skinning](https://docs.blender.org/manual/animation/armatures/skinning/parenting.html#with-empty-groups), [bones posing](https://docs.blender.org/manual/en/latest/animation/armatures/posing/introduction.html) and [setting keyframes](https://docs.blender.org/manual/en/latest/animation/keyframes/introduction.html).
+无论 SCS Animation 的类型如何，Blender Tools 中的创建流程对上述两种类型都是相同的。要创建 SCS Animation，你需要使用 Blender 的标准流程：[创建骨架](https://docs.blender.org/manual/animation/armatures/introduction.html)、[顶点蒙皮](https://docs.blender.org/manual/animation/armatures/skinning/parenting.html#with-empty-groups)、[摆放骨骼姿势](https://docs.blender.org/manual/en/latest/animation/armatures/posing/introduction.html) 和 [设置关键帧](https://docs.blender.org/manual/en/latest/animation/keyframes/introduction.html)。
 
-> > **Note:** Only location, rotation and scale manipulation of bones will be exported during SCS Animation export, anything else will be ignored even if it will be animated and played inside Blender.
+> > **注意：** 在 SCS Animation 导出期间，只会导出骨骼的位移、旋转与缩放操作，其他内容都会被忽略，即使它们在 Blender 内已制作动画并能播放。
 
-After you successfully animate bones with Blender action you will have to set up SCS Animation in #SCS Animations panel. Once setup is done you can export your SCS Game Object as you did before and animations will be exported with it.
+使用 Blender 动作成功为骨骼制作动画后，你需要在 #SCS Animations 面板中设置 SCS Animation。设置完成后，你就可以像以前一样导出 SCS Game Object，动画会随之一同导出。
 
-> > **Note:** Remember that for export of animated model you have to enable ***Animated Model*** in SCS Root Object properties, switch can be found in the locators panel [Root objects](Root%20objects.md).
+> > **注意：** 请记住，要导出动画模型，你必须在 SCS Root Object 属性中启用 ***Animated Model***，该开关位于定位器面板 [Root objects](Root%20objects.md) 中。
 
-## SCS Animations panel
+## SCS Animations 面板
 
-To export created Blender action into the game you will have to define SCS Animations with usage of SCS Animations sub-panel which you can find inside Blender properties window in *Object* tab under *SCS Object* panel. The panel will appear only if the currently selected object is armature.
+要将创建的 Blender 动作导出到游戏中，你必须借助 SCS Animations 子面板来定义 SCS Animation，该子面板位于 Blender 属性窗口的 *Object* 选项卡下的 *SCS Object* 面板中。仅当当前选中的对象是骨架时，该面板才会显示。
 
 [![SCS_Tools_Object_Specials_-_Animations.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Animation%20system/SCS_Tools_Object_Specials_-_Animations.280.png)](../../../../files/SCS%20Tools%20Object%20Specials%20-%20Animations.280.png.md)
 
-> > **Note:** When seeing "No 'SCS Root Object'!" message instead of animations list make sure to parent armature object to SCS Root Object.
+> > **注意：** 如果在动画列表处看到 "No 'SCS Root Object'!" 提示，请确保将骨架对象父级设置为 SCS Root Object。
 
-#### Custom Export Path
+#### 自定义导出路径
 
-Custom export path should be used to store your animation files somewhere else than the rest of the files when exporting SCS Game Object.
+自定义导出路径用于在导出 SCS Game Object 时，把动画文件存放在与其余文件不同的位置。
 
-This path may be useful when you are creating sequence of animations for walkers, as all of your walkers can use the same skeleton and animations and thus you may export them in different directory.
+当你为 walkers 创建一系列动画时，该路径可能会很有用，因为所有 walkers 都可以使用相同的骨架和动画，因此你可以将它们导出到不同目录中。
 
-If custom path remains disabled, all of the SCS Animations will be exported beside the rest of the files.
+如果自定义路径保持禁用，所有 SCS Animation 将与其余文件一同导出。
 
-#### SCS Animations list
+#### SCS Animations 列表
 
-SCS Animations list contains all animations used on current SCS Game Object. For creation or deletion of SCS Animations use **+** and **−** buttons on the side of the animations list. Furthermore, animations can be imported with import button ( **⤓** ), which will place you into the file browser to select SCS Animation for importing.
+SCS Animations 列表包含当前 SCS Game Object 上使用的所有动画。要创建或删除 SCS Animation，请使用动画列表侧边的 **+** 和 **−** 按钮。此外，还可以通过导入按钮（ **⤓** ）导入动画，点击后会打开文件浏览器，供你选择要导入的 SCS Animation。
 
-Each SCS Animation entry features:
+每个 SCS Animation 条目包含：
 
-- export inclusion property will exclude animation used in that line from exporting, if it's unchecked and you are exporting whole SCS Game Object,
-- name of SCS Animation which will be also used as the name of exported animation file (PIA),
-- export operator button for direct export of animation used in that line via file browser.
+- 导出包含属性，如果未勾选该项且你正在导出整个 SCS Game Object，则会将该行所用的动画排除在导出之外，
+- SCS Animation 的名称，它同时将用作导出的动画文件（PIA）的名称，
+- 导出操作符按钮，用于通过文件浏览器直接导出该行所用的动画。
 
-#### Active Animation Settings
+#### 当前动画设置
 
-This panel area is place where you link Blender action (animation) and set various properties to currently selected SCS Animation in list.
+该面板区域用于将 Blender 动作（动画）与列表中当前选中的 SCS Animation 关联，并为其设置各种属性。
 
-Properties of SCS Animation:
+SCS Animation 的属性：
 
-- **Start** - frame in action which will be used as a start of SCS Animation,
-- **End** - frame in action which will be used as an end of SCS Animation,
-- **Length** - SCS Animation duration in seconds,
-- **Increase Animation Step ( + )** - stretches action by factor 2 and increases ***Export Step*** by 1 to compensate scaling. This gives you better control on sub keyframes and distribution of transformations over time,
-- **Decrease Animation Step ( − )** - shrinks action by factor 2 and decreases ***Export Step*** by 1 to compensate scaling. This removes each second keyframe, which decreases control over the animation,
-- **Export Step** - number of frames to step in Blender action for each iteration during export.
+- **Start** - 动作中用作 SCS Animation 起始帧的帧，
+- **End** - 动作中用作 SCS Animation 结束帧的帧，
+- **Length** - SCS Animation 的时长，单位为秒，
+- **Increase Animation Step ( + )** - 将动作拉伸为原来的 2 倍，并将 ***Export Step*** 增加 1 以补偿缩放。这让你能更好地控制子关键帧以及变换随时间的分布，
+- **Decrease Animation Step ( − )** - 将动作压缩为原来的 1/2，并将 ***Export Step*** 减少 1 以补偿缩放。这会移除每隔一个的关键帧，从而降低对动画的控制，
+- **Export Step** - 导出期间每次迭代在 Blender 动作中步进的帧数。
 
-#### Animation Player
+#### 动画播放器
 
-To preview currently selected SCS Animation you can use Animation Player, which is nothing more than wrapped interface from multiple Blender editors for already existing settings.
+要预览当前选中的 SCS Animation，你可以使用动画播放器，它不过是对多个 Blender 编辑器中已有设置的封装界面。
 
-First row consist from **Start**, **End** and **Current** frame of animation playback. While second row gives you possibility to use playback controls and set FPS for animation playback.
+第一行包含动画播放的 **Start**、**End** 和 **Current** 帧。第二行则让你可以使用播放控制，并设置动画播放的 FPS。
 
-> > **Note:** Changing FPS manually will invalidate preview of currently selected SCS Animation as FPS is calculated by set ***Start***, ***End*** and ***Length*** of SCS Animation.
+> > **注意：** 手动更改 FPS 会使当前选中 SCS Animation 的预览失效，因为 FPS 是根据 SCS Animation 设置的 ***Start***、***End*** 和 ***Length*** 计算得出的。
 
-## SCS Skeleton panel
+## SCS Skeleton 面板
 
-There is also additional panel for setting custom skeleton file path inside SCS Project Base Path and name of skeleton file (PIS) which will be created in the case of exporting animated SCS Game Object.
+此外还有一个面板，用于在 SCS Project Base Path 内设置自定义骨架文件路径，以及设置骨架文件（PIS）的名称，该文件将在导出动画 SCS Game Object 时创建。
 
 [![SCS_Tools_Object_Specials_-_Skeleton.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Animation%20system/SCS_Tools_Object_Specials_-_Skeleton.280.png)](../../../../files/SCS%20Tools%20Object%20Specials%20-%20Skeleton.280.png.md)
 
-This custom path and name come handy again in the case of creating sequence of animations for walkers, as all of your walkers can use the same skeleton and thus you may export skeleton in different directory.
+在创建 walkers 的一系列动画时，这个自定义路径与名称同样很方便，因为所有 walkers 都可以使用相同的骨架，因此你可以把骨架导出到不同目录。
 
-If both paths remain empty, skeleton file (PIS) will be saved beside other exported files and will use SCS Root Object name as the name of the file.
+如果两个路径都为空，骨架文件（PIS）将与其他导出文件一起保存，并使用 SCS Root Object 的名称作为文件名。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/SCS_Blender_Tools/Animation_system | revision: 4305 | captured: 2026-10-21 23:56:14 -->

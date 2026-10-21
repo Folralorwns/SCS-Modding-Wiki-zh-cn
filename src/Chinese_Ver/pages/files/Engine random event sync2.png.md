@@ -1,4 +1,4 @@
-# File:Engine random event sync2.png
+# 文件:Engine random event sync2.png
 
 ![Engine random event sync2.png](../../../images/files/Engine%20random%20event%20sync2.png/Engine_random_event_sync2.png)
 

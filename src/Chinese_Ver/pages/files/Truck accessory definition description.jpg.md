@@ -1,4 +1,4 @@
-# File:Truck accessory definition description.jpg
+# 文件:Truck accessory definition description.jpg
 
 ![Truck accessory definition description.jpg](../../../images/files/Truck%20accessory%20definition%20description.jpg/Truck_accessory_definition_description.jpg)
 

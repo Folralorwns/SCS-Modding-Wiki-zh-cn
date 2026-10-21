@@ -1,4 +1,4 @@
-# File:Simple cube create texture.jpg
+# 文件:Simple cube create texture.jpg
 
 ![Simple cube create texture.jpg](../../../images/files/Simple%20cube%20create%20texture.jpg/Simple_cube_create_texture.jpg)
 

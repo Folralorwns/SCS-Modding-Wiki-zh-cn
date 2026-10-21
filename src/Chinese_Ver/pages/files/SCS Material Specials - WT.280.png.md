@@ -1,4 +1,4 @@
-# File:SCS Material Specials - WT.280.png
+# 文件:SCS Material Specials - WT.280.png
 
 ![SCS Material Specials - WT.280.png](../../../images/files/SCS%20Material%20Specials%20-%20WT.280.png/SCS_Material_Specials_-_WT.280.png)
 

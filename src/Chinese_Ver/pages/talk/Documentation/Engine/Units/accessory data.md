@@ -1,8 +1,8 @@
 # Talk:Documentation/Engine/Units/accessory data
 
-## TODO: Subclasses
+## TODO：子类
 
-Some articles for accessory_data's subclasses are still needed (red links):
+仍需要为 accessory_data 的子类编写一些条目（红链）：
 
 - [accessory_addon_data](../../../../articles/Documentation/Engine/Units/accessory%20addon%20data.md)
   - [accessory_addon_int_data](../../../../articles/Documentation/Engine/Units/accessory%20addon%20int%20data.md)

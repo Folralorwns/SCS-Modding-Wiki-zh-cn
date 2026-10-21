@@ -1,4 +1,4 @@
-# File:Validation result window.jpg
+# 文件:Validation result window.jpg
 
 ![Validation result window.jpg](../../../images/files/Validation%20result%20window.jpg/Validation_result_window.jpg)
 

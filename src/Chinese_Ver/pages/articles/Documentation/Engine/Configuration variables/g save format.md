@@ -1,21 +1,21 @@
-# Documentation/Engine/Configuration variables/g save format
+# 文档/引擎/配置变量/g save format
 
 |  |  |
 | --- | --- |
-| **Name:** | g_save_format |
-| **Purpose:** | Format used to store the game saves. |
-| **Config:** | global |
-| **Value:** | integer - format |
+| **名称：** | g_save_format |
+| **用途：** | 用于存储游戏存档的格式。 |
+| **配置：** | global |
+| **值：** | integer - format |
 
-## format:
+## format：
 
-| Value | Description |
+| 值 | 说明 |
 | --- | --- |
-| 0 | default mode, whatever the game considers the default might change on build or state of testing |
-| 1 | force binary only |
-| 2 | force text only **(check hint below)** |
-| 3 | simultaneous creation of binary and textual saves for debugging purposes **(check hint below)** |
+| 0 | 默认模式，游戏视为默认的方式可能随构建或测试状态而变化 |
+| 1 | 强制仅二进制 |
+| 2 | 强制仅文本 **（见下方提示）** |
+| 3 | 为调试目的同时创建二进制存档与文本存档 **（见下方提示）** |
 
-> **TIP:** Text format (2 and 3 options) takes much more time to save and may cause lag-spikes on auto save. Use with caution!
+> **提示：** 文本格式（选项 2 和 3）保存耗时明显更长，并可能在自动保存时造成卡顿尖峰。请谨慎使用！
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Configuration_variables/g_save_format | revision: 3688 | captured: 2026-10-21 23:56:14 -->

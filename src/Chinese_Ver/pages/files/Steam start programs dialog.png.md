@@ -1,4 +1,4 @@
-# File:Steam start programs dialog.png
+# 文件:Steam start programs dialog.png
 
 ![Steam start programs dialog.png](../../../images/files/Steam%20start%20programs%20dialog.png/Steam_start_programs_dialog.png)
 

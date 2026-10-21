@@ -1,4 +1,4 @@
-# File:Modding workflow custom paths.png
+# 文件:Modding workflow custom paths.png
 
 ![Modding workflow custom paths.png](../../../images/files/Modding%20workflow%20custom%20paths.png/Modding_workflow_custom_paths.png)
 

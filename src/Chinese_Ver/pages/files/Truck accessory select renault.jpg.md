@@ -1,4 +1,4 @@
-# File:Truck accessory select renault.jpg
+# 文件:Truck accessory select renault.jpg
 
 ![Truck accessory select renault.jpg](../../../images/files/Truck%20accessory%20select%20renault.jpg/Truck_accessory_select_renault.jpg)
 

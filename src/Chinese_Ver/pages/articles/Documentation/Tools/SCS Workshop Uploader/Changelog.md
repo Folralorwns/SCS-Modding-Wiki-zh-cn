@@ -1,503 +1,503 @@
 # Documentation/Tools/SCS Workshop Uploader/Changelog
 
-Changelog of the **SCS Workshop Uploader** tool.
+**SCS Workshop Uploader** 工具的更新日志。
 
-## Intro
+## 简介
 
-This page contains detailed changelogs of SCS Workshop Uploader tool. There are multiple possible versions:
+本页包含 SCS Workshop Uploader 工具的详细更新日志。可能存在多个版本：
 
-- **Current Version** - uploader version that is compatible with the currently released version of the games. Available when you have no beta selected in steam.
-- **Public Beta Version** - uploader version that is compatible with the game's version that is available in open or experimental beta. To access this version, you can find it in the public_beta branch on Steam. The way to access it is as follows: Steam client → LIBRARY → Tools section → right-click on SCS Workshop Uploader → Properties → Betas tab → public_beta. No password is required. The branch may not be available if no public beta is in progress.
-- **Historical Versions** - uploader versions for various historical versions of the game. Version compatible with game version XY is available in 1xy_compatibility_branch beta.
-- **Very old historical versions** - because of the limit on number of beta branches, versions targeting very old versions of the games were moved into legacy_compatibility_branch. In this case the branch contains multiple versions of the tool and the desired version must be selected in the launch options.
+- **当前版本** - 与游戏当前已发布版本兼容的上传器版本。未在 Steam 中选择任何 beta 时可用。
+- **公共测试版** - 与开放测试或实验性测试中提供的游戏版本兼容的上传器版本。要获取此版本，你可以在 Steam 上的 public_beta 分支中找到它。访问方式如下：Steam 客户端 → 库 → 工具部分 → 右键点击 SCS Workshop Uploader → 属性 → Betas 选项卡 → public_beta。无需密码。若当前没有进行中的公共测试，该分支可能不可用。
+- **历史版本** - 适用于游戏各个历史版本的上传器版本。与游戏版本 XY 兼容的版本可在 1xy_compatibility_branch beta 中获取。
+- **极旧历史版本** - 由于 beta 分支数量有限，针对极旧游戏版本的版本已移至 legacy_compatibility_branch。此时该分支包含工具的多个版本，必须在启动选项中选定所需版本。
 
 ## 1.62
 
-### Public Beta Version 1.62.0 (e3f33c1d8ed3) - 20.10.2026
+### 公共测试版 1.62.0 (e3f33c1d8ed3) - 20.10.2026
 
-- Initial support for 1.62
+- 初步支持 1.62
 
 ## 1.61
 
-### Current Version 1.61.2 (c1a541806cc4) - 13.10.2026
+### 当前版本 1.61.2 (c1a541806cc4) - 13.10.2026
 
-- Support for car related tags for ATS.
+- 支持 ATS 的汽车相关标签。
 
 ### 1.61.0 (83a4ab1b9bd4) - 01.09.2026
 
-- Initial support for 1.61
+- 初步支持 1.61
 
 ## 1.60
 
 ### 1.60.1 (8586ce5dcc67) - 04.06.2026
 
-- Initialization fixes
+- 初始化修复
 
 ### 1.60.0 (abb38d64ec99) - 02.06.2026
 
-- Initial support for 1.60
+- 初步支持 1.60
 
 ## 1.59
 
 ### 1.59.0 (d391e4dd1bea) - 14.04.2026
 
-- Initial support for 1.59
+- 初步支持 1.59
 
 ## 1.58
 
 ### 1.58.0 (20139f0733b8) - 27.01.2026
 
-- Initial support for 1.58
+- 初步支持 1.58
 
 ## 1.57
 
 ### 1.57.1 (090c5fd1e04c) - 06.11.2025
 
-- Initial support for 1.57
+- 初步支持 1.57
 
 ## 1.56
 
 ### 1.56.2 (ac508c163790) - 01.9.2025
 
-- Support for cargo grab definitions
+- 支持货物抓取（cargo grab）定义
 
 ### 1.56.1 (419f7150602e) - 28.8.2025
 
-- Support for 1.56
+- 支持 1.56
 
 ## 1.55
 
 ### 1.55.0 (9f8edb4308e8) - 17.6.2025
 
-- Support for 1.55
-- Switched to 64bit version.
+- 支持 1.55
+- 切换到 64 位版本。
 
 ## 1.54
 
 ### 1.54.3 (c86c11e01ffc) - 27.3.2025
 
-- Updated to changes in 1.54 release
+- 更新以适配 1.54 正式版的改动
 
 ### 1.54.2 (d4608397e651) - 10.3.2025
 
-- Updated to changes in open beta
-- Support for **sliding_axle** and **sliding_axle_end** sounds for chassis accessory.
+- 更新以适配开放测试中的改动
+- 支持底盘配件的 **sliding_axle** 与 **sliding_axle_end** 声音。
 
 ### 1.54.0 (cd8517773620) - 3.3.2025
 
-- Initial support for 1.54 open beta.
-- Changed the tool versioning to better align with the targeted version of the game. The first two components of the version should match the version of the game.
+- 初步支持 1.54 开放测试。
+- 调整工具的版本编号方式，以更好地对应目标游戏版本。版本号的前两部分应与游戏版本一致。
 
 ## 1.53
 
 ### 1.0.62 (cd53409d429f) - 25.11.2024
 
-- Support for additional attributes
+- 支持更多属性
 
 ### 1.0.61 (10157d3b3da1) - 25.10.2024
 
-- Initial support for 1.53
+- 初步支持 1.53
 
 ## 1.52
 
 ### 1.0.60 (5831e632ae08) - 16.10.2024
 
-- Initial support for 1.52 (no academy support yet)
+- 初步支持 1.52（尚不支持 academy）
 
 ## 1.51
 
 ### 1.0.54 (e7b0ddda7785) - 20.9.2024
 
-- Support for the **type** parameter of **dynamic_cargo_data** units.
-- Support for the **procedural_animation_params** parameter in **mover_action** unit
+- 支持 **dynamic_cargo_data** 单元的 **type** 参数。
+- 支持 **mover_action** 单元中的 **procedural_animation_params** 参数
 
 ### 1.0.52 (534f1153508e) - 29.8.2024
 
-- Initial support for 1.51
+- 初步支持 1.51
 
 ## 1.0.51
 
 ### 1.0.51 (c9c43f89682f) - 25.5.2024
 
-- Fixed checking of mod icon inside Hashfs v2 archives.
+- 修复了对 Hashfs v2 归档包内模组图标的检查。
 
 ## 1.50
 
 ### 1.0.50 (9ce3a01a100a) - 22.5.2024
 
-- Fixed compatibility with old material formats. Note that gaps in the texture indices are still not allowed.
+- 修复了与旧材质格式的兼容性。请注意，纹理索引中仍不允许出现空缺。
 
 ### 1.0.49 (af61694b8c38) - 21.5.2024
 
-- Re-enabled texture related checks
+- 重新启用纹理相关检查
 
 ### 1.0.47 (aabb848ab8da) - 10.5.2024
 
-- Updated to changes in 1.50. Some texture related checks are currently still inactive.
+- 更新以适配 1.50 的改动。部分纹理相关检查目前仍处于停用状态。
 
 ### 1.0.46 (f9653d7801b3) - 6.5.2024
 
-- Initial support for 1.50. Some texture related checks are currently inactive.
-- Support for using HashFS v2 archives using .scs extension.
+- 初步支持 1.50。部分纹理相关检查目前处于停用状态。
+- 支持使用 .scs 扩展名的 HashFS v2 归档包。
 
 ## 1.49
 
 ### 1.0.42 (fa585abcd511) - 22.11.2023
 
-- Supports new unit attributes for used vehicles and env profiles.
+- 支持已使用车辆与 env profiles 的新单元属性。
 
 ### 1.0.41 (66f9ea406b70) - 6.11.2023
 
-- Initial support for 1.49 during open beta
+- 在开放测试期间初步支持 1.49
 
 ## 1.48
 
 ### 1.0.40 (6faa1b89354e) - 23.6.2023
 
-- Fixed crash when validating new format of material files.
+- 修复了验证新版材质文件格式时的崩溃。
 
 ### 1.0.39 (5435398fdad2) - 23.6.2023
 
-- Fixed validation of addon hookups when using the DLC aware format.
+- 修复了使用 DLC 感知格式时对 addon hookups 的验证。
 
 ### 1.0.38 (8a4828d3bdc0) - 23.6.2023
 
-- DLCs listed as part of **dlc_dependencies** inside the version manifest are now considered as part of the base data when using the DLC aware format.
+- 使用 DLC 感知格式时，版本清单中列为 **dlc_dependencies** 一部分的 DLC 现被视为基础数据的一部分。
 
 ### 1.0.37 (11c8411444a2) - 23.6.2023
 
-- Support for 1.48 open beta
+- 支持 1.48 开放测试
 
 ## 1.47
 
 ### 1.0.36 (c90d9316d4dc) - 29.5.2023
 
-- Support for **system_warning1**, **system_warning2** and **system_warning3** sound events
+- 支持 **system_warning1**、**system_warning2** 与 **system_warning3** 声音事件
 
 ### 1.0.35 (0bf78930b473) - 15.3.2023
 
-- 1.47 support
+- 支持 1.47
 
 ## 1.46
 
 ### 1.0.34 (5b43437971ad) - 8.11.2022
 
-- Updated for compatibility with final 1.46
+- 更新以兼容 1.46 正式版
 
 ### 1.0.33 (38441c2862e0) - 12.10.2022
 
-- Fixed crash if versions.sii started with informational version
+- 修复了 versions.sii 以 informational 版本开头时的崩溃
 
 ### 1.0.32 (5b4fcc0b2516) - 27.6.2022
 
-- 1.46 support
+- 支持 1.46
 
 ## 1.45
 
 ### 1.0.31 (bd13cf127747) - 27.6.2022
 
-- 1.45 support
+- 支持 1.45
 
 ## 1.44
 
 ### 1.0.30 (ccbb66864ea3) - 10.5.2022
 
-- Do not fail if condition_data.sii is not present in the game (ATS 1.44)
+- 游戏中不存在 condition_data.sii 时不再报错（ATS 1.44）
 
 ### 1.0.29 (836e413aac4e) - 25.4.2022
 
-- 1.44 support
+- 支持 1.44
 
 ## 1.43
 
 ### 1.0.28 (b45779eeb809) - 9.12.2021
 
-- Support for newly added unit attributes (e.g. city_icon_size, no_geometry_stretch, first_direction_focus_id)
+- 支持新增的单元属性（例如 city_icon_size、no_geometry_stretch、first_direction_focus_id）
 
 ### 1.0.27 (3ba2b42b5df4) - 12.11.2021
 
-- 1.43 support
+- 支持 1.43
 
 ## 1.42
 
 ### 1.0.26 (2a736d7f7ec1) - 1.10.2021
 
-- 1.42 support
+- 支持 1.42
 
 ## 1.41
 
 ### 1.0.25 (2fb534cc2738) - 2.09.2021
 
-- Support for **accessory_addon_tank_data** accessory
+- 支持 **accessory_addon_tank_data** 配件
 
 ### 1.0.24 (8a410f02f1f4) - 1.07.2021
 
-- Support for "retarder_remote" sound in transmission accessory
+- 支持变速箱配件中的 “retarder_remote” 声音
 
 ### 1.0.23 (c2699032a20d) - 21.06.2021
 
-- 1.41 support
+- 支持 1.41
 
 ## 1.40
 
 ### 1.0.22 (f6563bb6628c) - 12.04.2021
 
-- Support for headlight lamp setup override
+- 支持覆盖前照灯灯泡设置
 
 ### 1.0.21 (f08dd65c9116) - 15.03.2021
 
-- 1.40 support
+- 支持 1.40
 
 ## 1.39
 
 ### 1.0.20 (7871b0a1f072) - 8.12.2020
 
-- added brand tag for Freightliner brand
+- 为 Freightliner 品牌添加品牌标签
 
 ### 1.0.20 (917bd8f7b2de) - 2.12.2020
 
-- compatible_versions check relaxed to allow for specifying explicit non-zero third and fourth components
+- 放宽 compatible_versions 检查，允许显式指定非零的第三、第四部分版本号
 
 ### 1.0.20 (91e0c6211ebf) - 20.10.2020
 
-- Support for position_offset parameter in soundref files
+- 支持 soundref 文件中的 position_offset 参数
 
 ### 1.0.19 (cc61be1d06b1) - 19.10.2020
 
-- Fixed air_horn sound support
+- 修复了 air_horn 声音支持
 
 ### 1.0.18 (50b6d3bf0478) - 19.10.2020
 
-- Updated for 1.39 Open Beta
+- 更新以适配 1.39 开放测试
 
 ## 1.38
 
 ### 1.0.17 (a56d7d045cc8) - 1.10.2020
 
-- Added Western Star to the Brand list
+- 将 Western Star 添加到品牌列表
 
 ### 1.0.16 (15e1b3589de8) - 29.06.2020
 
-- Fixed verification of traffic vehicles
-- Fixed incorrect report of duplicate unit name for some unit types (e.g. cargoes)
+- 修复了交通车辆的校验
+- 修复了某些单元类型（例如 cargoes）重复单元名称的误报
 
 ### 1.0.15 (02685c693f52) - 19.06.2020
 
-- Updated for ATS Open Beta 1.38
+- 更新以适配 ATS 1.38 开放测试
 
 ## 1.37
 
 ### 1.0.14 (8b094d6f3693) - 26.05.2020
 
-- Allowed direct "bank#event" reference from units in addition to soundref file
-- Improved validation of soundref files
-- Removed warning for missing sound references for accessory attributes where default is provided (e.g. sound_horn)
+- 除 soundref 文件外，允许单元直接引用 “bank#event”
+- 改进 soundref 文件的验证
+- 移除了对已有默认值的配件属性（例如 sound_horn）缺失声音引用的警告
 
 ### 1.0.13 (d9e3c1783307) - 28.04.2020
 
-- Support for Mack brand tag for ATS
+- 支持 ATS 的 Mack 品牌标签
 
 ### 1.0.12 (0c9147422e49) - 27.04.2020
 
-- Support for sound_retarder attribute of transmission accessory
+- 支持变速箱配件的 sound_retarder 属性
 
 ### 1.0.11 (34d490f577a6) - 08.04.2020
 
-- Updated for ETS2 Open Beta 1.37
+- 更新以适配 ETS2 1.37 开放测试
 
 ### 1.0.10 (0c443be8cb93) - 12.03.2020
 
-- Support for .soundref format validation
+- 支持 .soundref 格式验证
 
 ### 1.0.10 (22898975fb90) - 02.03.2020
 
-- Support for ATS Open Beta 1.37
-- Support for validating .mask format
-- Support for validating FMOD sound banks format
-- Small UI tweaks
+- 支持 ATS 1.37 开放测试
+- 支持验证 .mask 格式
+- 支持验证 FMOD 声音库格式
+- 少量 UI 调整
 
 ## 1.0.9
 
 ### 1.0.9 (2aaea92d9825) - 12.12.2019
 
-- Update to all changes introduced during open beta
-- Added International brand tag to ATS
+- 更新以适配开放测试期间引入的所有改动
+- 为 ATS 添加 International 品牌标签
 
 ### 1.0.9 (5c58b47e85f9) - 21.10.2019
 
-- Update to wander camera unit changes introduced during open beta
+- 更新以适配开放测试期间引入的 wander camera 单元改动
 
 ### 1.0.9 (cbd5aa3c8fef) - 17.10.2019
 
-- 1.36 game version support
+- 支持 1.36 游戏版本
 
 ## 1.0.8
 
 ### 1.0.8 (ef80e2961800) - 11.06.2019
 
-- Fixed validation of multiple packages. Previously if X file was in the first package, it was used for validation in all packages.
+- 修复了多个包的验证。此前若文件 X 位于第一个包中，它会被用于所有包的验证。
 
 ### 1.0.8 (3f3f9b51c140) - 06.06.2019
 
-- Added "Changelog" button opening this page.
-- Fixed language mod descriptions and titles are fetched in to set it to English. Previously steam client language was used. (If user had client set to Polish, Polish descriptions were fetched however upload override English descriptions)
+- 新增用于打开本页面的 “Changelog” 按钮。
+- 修复了模组描述与标题的获取语言，现统一设为英语。此前使用的是 Steam 客户端语言。（若用户将客户端设为波兰语，则会获取波兰语描述，但上传时会覆盖为英语描述）
 
 ### 1.0.8 (ad5d573c2a51) - 03.06.2019
 
-- Fixed game selection droplist not being activated if user has only one game installed
-- Added "Voice Navigation" mods category
+- 修复了用户仅安装一款游戏时游戏选择下拉列表未激活的问题
+- 新增 “Voice Navigation” 模组分类
 
 ### 1.0.8 (a54215a157e0) - 06.05.2019
 
-- 1.35 game version support
-- Unit files validation has been re-implemented, all parsing errors will now be properly reported as validation errors so you no longer have to look at tool.log.txt to understand what is wrong.
-- Euro Truck Simulator 2 is no longer preselected when the tool is launched so when the user wants to upload ATS mod he no longer has to wait for ETS2 data to be loaded.
-- Validation of packages was changed - from now on only universal and/or packages that are compatible with tool version are validated. Packages that are prepared for a newer version of the game than the version supported by the tool will cause a validation error.
-- Correctly detect missing effect referenced by material.
-- In case the installed game version is different than the tool version it is now properly shown to the user.
-- Validation progress dialog has been slightly redesigned.
-- Tool will now ask user for confirmation when closing tool, changing game or an item with unsaved changed to currently edited mod.
-- Disable delete button during update.
-- Fixed memory wasting caused by new item being created multiple times without a reason.
-- Fixed UI bug causing wrong item to be selected after creating a new one.
-- Fixed UI glitches when resizing window.
-- Fixed missing icons on message boxes.
-- Fixed bug that caused previously selected mod icon to be still displayed when selecting new or mod without icon.
+- 支持 1.35 游戏版本
+- 单元文件验证已重新实现，所有解析错误现都会正确报告为验证错误，因此你不再需要查看 tool.log.txt 来了解问题所在。
+- 启动工具时不再预选 Euro Truck Simulator 2，因此用户上传 ATS 模组时无需再等待 ETS2 数据加载。
+- 包的验证方式已更改——从现在起仅验证通用包和/或与工具版本兼容的包。为比工具所支持版本更新的游戏版本准备的包将导致验证错误。
+- 正确检测材质所引用但缺失的效果。
+- 若已安装的游戏版本与工具版本不同，现在会正确向用户显示。
+- 验证进度对话框经过了小幅重新设计。
+- 关闭工具、切换游戏或向当前编辑的模组添加有未保存更改的项目时，工具现在会请求用户确认。
+- 更新期间禁用删除按钮。
+- 修复了因无故多次创建新项目导致的内存浪费。
+- 修复了创建新项目后选中错误项目的 UI 缺陷。
+- 修复了调整窗口大小时的 UI 显示异常。
+- 修复了消息框图标缺失的问题。
+- 修复了新建模组或选择无图标的模组时仍显示先前所选模组图标的缺陷。
 
 ## 1.32
 
 ### 1.0.7 (51ad53473468) - 05.09.2018
 
-- Fixed validation of trailer configurations.
-- Added missing message box icons.
+- 修复了挂车配置的验证。
+- 补充缺失的消息框图标。
 
 ### 1.0.7 (121b71f23ccd) - 04.09.2018
 
-Experimental release for 1.32 compatibility. (public_beta branch)
+为兼容 1.32 发布的实验性版本。（public_beta 分支）
 
-- Added support for 1.32 version of the game.
-- Game data is now being loaded after the main dialog of the tool is open with a proper progress bar displayed. Previously it was possible when the user had many DLCs it would take a significant amount of time to start a tool.
-- The file discovering phase is now also updating UI so validation progress dialog is no longer stuck showing nothing.
-- Fixed various crashes when validating units and data files.
+- 新增对游戏 1.32 版本的支持。
+- 游戏数据现在会在工具主对话框打开后加载，并显示合适的进度条。此前当用户拥有多个 DLC 时，启动工具可能耗时很久。
+- 文件发现阶段现在也会更新 UI，因此验证进度对话框不再卡住而无任何显示。
+- 修复了验证单元与数据文件时的多种崩溃。
 
 ## 1.31
 
 ### 1.0.6 (c1006f4d79a0) - 15.05.2018
 
-Release for 1.31 compatibility.
+为兼容 1.31 发布的版本。
 
 ### 1.0.6 (5aeec64b6ae6) - 19.12.2017
 
-- Fixed crash when validating mod that contains multiple definitions of economy unit.
-- Fixed crash when validating player unit. (initial save mods)
-- Fixed validation of .sii files that are using UTF-8 with BOM encoding.
+- 修复了验证包含多个 economy 单元定义的模组时的崩溃。
+- 修复了验证 player 单元时的崩溃。（初始存档模组）
+- 修复了使用带 BOM 的 UTF-8 编码的 .sii 文件的验证。
 
 ### 1.0.6 (4928518be2a5) - 19.12.2017
 
-- Added validation of automat materials folder structure.
-- Added support for legacy material hash names.
-- Print full path to the resource relative to the mod root instead of package root for better understanding which file causes the problem in multi-package mods.
+- 新增对 automat 材质文件夹结构的验证。
+- 新增对旧版材质哈希名称的支持。
+- 输出资源相对模组根目录（而非包根目录）的完整路径，以便更好地理解在多包模组中哪个文件导致问题。
 
 ### 1.0.6 (850da2b2cfee) - 13.12.2017
 
-- Added validation if automat material file content hash matches its name.
-- Materials are now validated before any texture.
-- Added name of the material referencing tobj to missing tobj error message if available.
+- 新增验证 automat 材质文件的内容哈希是否与其名称匹配。
+- 材质现在先于任何纹理进行验证。
+- 在缺失 tobj 的错误消息中，若可用则添加引用该 tobj 的材质名称。
 
 ### 1.0.6 (3b47a0690a7b) - 12.12.2017
 
-- Fixed crash when validating UI windows.
+- 修复了验证 UI 窗口时的崩溃。
 
 ### 1.0.6 (a1fcdaeeb768) - 04.12.2017
 
-- Temporary workaround for traffic_trailer_type.sii related error in ATS vanilla data.
+- 针对 ATS 原版数据中 traffic_trailer_type.sii 相关错误的临时变通方案。
 
 ### 1.0.6 (8a923435d922) - 28.11.2017
 
-- Support for .font files.
-- More restrictive check of the data presence.
-- New validation error code (10) which indicates I/O errors.
-- Do not prepend path to the package in case there was some problem with the validation of the file that does not belong to the mod.
-- Fixed loading of the game effects database. Previously the tool was not able to load any effect and as a result, there was a spam in the tool log file.
+- 支持 .font 文件。
+- 对数据是否存在的检查更为严格。
+- 新增表示 I/O 错误的验证错误码（10）。
+- 若验证不属于该模组的文件时出现问题，不再在路径前加上包路径。
+- 修复了游戏效果数据库的加载。此前工具无法加载任何效果，导致工具日志文件中出现大量重复记录。
 
 ## 1.29
 
 ### 1.0.5 (070a99774791) - 10.11.2017
 
-Compatibility update for ATS 1.29 release - available only in **123ats_compatibility** beta.
+为 ATS 1.29 正式版发布的兼容性更新——仅在 **123ats_compatibility** beta 中提供。
 
-The access this build open Steam client then go to LIBRARY → Next to search bar select TOOLS → right-click on SCS Workshop Uploader → Properties → Betas tab → 129ats_compatibility. No password is required.
+要获取此构建，请打开 Steam 客户端，然后进入库 → 在搜索栏旁选择工具 → 右键点击 SCS Workshop Uploader → 属性 → Betas 选项卡 → 129ats_compatibility。无需密码。
 
 ## 1.28
 
 ### 1.0.5 (2835351ba167) - 26.07.2017
 
-Stable security release.
+稳定的安全性版本。
 
 ### 1.0.5 (79a99c4668c7) - 26.07.2017
 
-public_beta branch release for open beta 1.28 compatibility.
+为兼容 1.28 开放测试而发布的 public_beta 分支版本。
 
-## Very old versions
+## 极旧版本
 
 ### 1.0.5 (b04d44242646) - 15.05.2017
 
-The compatibility patch to ETS2 1.27.2.1 and ATS 1.6.1.9.
+针对 ETS2 1.27.2.1 与 ATS 1.6.1.9 的兼容性补丁。
 
 ### 1.0.5 (859ab7102bb0) - 04.03.2017
 
-The compatibility patch to ETS2 1.27 and ATS 1.6.
+针对 ETS2 1.27 与 ATS 1.6 的兼容性补丁。
 
 ### 1.0.5 (c8931052fa92) - 13.01.2017
 
-- Allow using materials from base without copying them to mod content.
+- 允许使用基础数据中的材质，而无需将其复制到模组内容中。
 
 ### 1.0.5 (6a889ac42143) - 05.12.2016
 
-The compatibility patch to ETS2 1.26 and ATS 1.5 available in **default** branch on steam.
+针对 ETS2 1.26 与 ATS 1.5 的兼容性补丁，在 Steam 的 **default** 分支中提供。
 
 ### 1.0.5 (37800fdabf36) - 15.11.2016
 
-The compatibility patch to ETS2 1.26 and ATS 1.5 - you can test it by selecting **public_beta** beta on the steam.
+针对 ETS2 1.26 与 ATS 1.5 的兼容性补丁——你可以在 Steam 上选择 **public_beta** beta 进行测试。
 
 ### 1.0.5 (ba8913a1daee) - 15.09.2016
 
-- Fixed returning of the mods list. (If the creator has more than 50 mods all of them will be shown now)
-- Fixed validation of traffic definitions.
-- Slightly optimized validation of many SII files.
+- 修复了模组列表的返回。（若创作者拥有超过 50 个模组，现在将全部显示）
+- 修复了交通定义的验证。
+- 略微优化了大量 SII 文件的验证。
 
 ### 1.0.4 (9f8292f559f8) - 08.09.2016
 
-- Updated tool to work with new units that appeared in ATS 1.4 and ETS2 1.25 updates.
-- Fixed crash when validating mods that override cutscene data.
+- 更新工具以支持 ATS 1.4 与 ETS2 1.25 更新中新增的单元。
+- 修复了验证覆盖过场动画数据的模组时的崩溃。
 
 ### 1.0.4 - 13.06.2016
 
-- Fixed crash when validating any resource that depends on substances.
-- Fixed validation of mods that override UI templates.
-- Fixed abnormal CPU usage (+/- 13%) when the tool is idle.
-- Fixed problem with unresponsive background window when closing foreground window.
-- Added support for informational packages.
-- Support for damage_data unit.
+- 修复了验证任何依赖 substances 的资源时的崩溃。
+- 修复了覆盖 UI 模板的模组的验证。
+- 修复了工具空闲时异常的 CPU 占用（+/- 13%）。
+- 修复了关闭前台窗口时后台窗口无响应的问题。
+- 新增对 informational 包的支持。
+- 支持 damage_data 单元。
 
 ### 1.0.3 - 17.03.2016
 
-- Fixed crash when validating mod that changes road look.
-- Fixed crash when validating mod that changes initial profiles. (economy unit)
+- 修复了验证修改 road look 的模组时的崩溃。
+- 修复了验证修改初始 profiles 的模组时的崩溃。（economy 单元）
 
 ### 1.0.2 - 16.03.2016
 
-- Fixed crash when validating mod that changes photo camera definition.
-- Allow using glass.dat file, however, throw a warning about that it's not the best practice to use it.
+- 修复了验证修改照片模式相机定义的模组时的崩溃。
+- 允许使用 glass.dat 文件，但会发出警告，说明使用它并非最佳实践。
 
 ### 1.0.1 - 15.03.2016
 
-- Added version to the main window of the tool.
-- Fixed modding of the files which reference prefabs, models, country and other data.
-- Fixed validation of the mod when using ZIP packages.
+- 在工具主窗口中添加版本信息。
+- 修复了引用预制件、模型、国家及其他数据的文件的模组制作问题。
+- 修复了使用 ZIP 包时的模组验证。
 
 ### 1.0 - 14.03.2016
 
-Initial release.
+初始版本。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/SCS_Workshop_Uploader/Changelog | revision: 5813 | captured: 2026-10-21 23:56:14 -->

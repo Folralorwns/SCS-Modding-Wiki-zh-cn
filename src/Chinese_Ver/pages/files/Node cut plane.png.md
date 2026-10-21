@@ -1,4 +1,4 @@
-# File:Node cut plane.png
+# 文件:Node cut plane.png
 
 ![Node cut plane.png](../../../images/files/Node%20cut%20plane.png/Node_cut_plane.png)
 

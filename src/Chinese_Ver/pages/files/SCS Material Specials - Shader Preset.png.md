@@ -1,4 +1,4 @@
-# File:SCS Material Specials - Shader Preset.png
+# 文件:SCS Material Specials - Shader Preset.png
 
 ![SCS Material Specials - Shader Preset.png](../../../images/files/SCS%20Material%20Specials%20-%20Shader%20Preset.png/SCS_Material_Specials_-_Shader_Preset.png)
 

@@ -2,32 +2,32 @@
 
 |  |  |
 | --- | --- |
-| **Name:** | r_deferred_debug |
-| **Purpose:** | Set deferred renderer debug mode. |
-| **Config:** | global |
-| **Value:** | integer - debug_mode |
+| **名称：** | r_deferred_debug |
+| **用途：** | 设置延迟渲染器调试模式。 |
+| **配置：** | global |
+| **取值：** | 整数 - debug_mode |
 
-## debug_mode values:
+## debug_mode 取值：
 
-| Value | Name |
+| 取值 | 名称 |
 | --- | --- |
-| 0 | Debug disabled |
-| 1 | Position |
-| 2 | Normals |
-| 3 | Diffuse |
-| 4 | Specular |
-| 5 | Shadow strength |
-| 6 | Specularity power |
-| 7 | Additional ambient |
-| 8 | Environment map weight |
-| 9 | Mix status |
-| 10 | Lighting diffuse |
-| 11 | Lighting specular |
-| 12 | Lighting environment map strength |
-| 13 | Composition HDR |
-| 14 | Composition LDR |
-| 15 | Distortions |
-| 16 | MLAA weight |
-| 17 | Sunshaft mask |
+| 0 | 调试已禁用 |
+| 1 | 位置 |
+| 2 | 法线 |
+| 3 | 漫反射 |
+| 4 | 镜面反射 |
+| 5 | 阴影强度 |
+| 6 | 高光强度 |
+| 7 | 附加环境光 |
+| 8 | 环境贴图权重 |
+| 9 | 混合状态 |
+| 10 | 光照漫反射 |
+| 11 | 光照镜面反射 |
+| 12 | 光照环境贴图强度 |
+| 13 | HDR 合成 |
+| 14 | LDR 合成 |
+| 15 | 畸变 |
+| 16 | MLAA 权重 |
+| 17 | 太阳光束遮罩 |
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Config_variables/r_deferred_debug | revision: 1534 | captured: 2026-10-21 23:56:14 -->

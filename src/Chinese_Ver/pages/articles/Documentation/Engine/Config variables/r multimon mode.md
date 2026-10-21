@@ -2,19 +2,19 @@
 
 |  |  |
 | --- | --- |
-| **Name:** | r_multimon_mode |
-| **Purpose:** | Controls the multi-monitor mode. |
-| **Config:** | global |
-| **Value:** | integer - multimon_mode |
+| **名称：** | r_multimon_mode |
+| **用途：** | 控制多显示器模式。 |
+| **配置：** | global |
+| **取值：** | 整数 - multimon_mode |
 
-## multimon_mode values:
+## multimon_mode 取值：
 
-| Value | Description |
+| 取值 | 说明 |
 | --- | --- |
-| 0 | disabled |
-| 1 | three equal monitors with single view (UI is positioned on the central monitor) |
-| 2 | three equal monitors with separate views |
-| 3 | four equal monitors with three separate main views and one auxiliary looking at dashboard |
-| 4 | custom configuration of the layout |
+| 0 | 禁用 |
+| 1 | 三台等宽显示器，单一视图（UI 位于中央显示器） |
+| 2 | 三台等宽显示器，各自独立视图 |
+| 3 | 四台等宽显示器，三个独立主视图和一个朝向仪表盘的辅助视图 |
+| 4 | 自定义布局配置 |
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Config_variables/r_multimon_mode | revision: 1535 | captured: 2026-10-21 23:56:14 -->

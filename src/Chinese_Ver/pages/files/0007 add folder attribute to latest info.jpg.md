@@ -1,4 +1,4 @@
-# File:0007 add folder attribute to latest info.jpg
+# 文件:0007 add folder attribute to latest info.jpg
 
 ![0007 add folder attribute to latest info.jpg](../../../images/files/0007%20add%20folder%20attribute%20to%20latest%20info.jpg/0007_add_folder_attribute_to_latest_info.jpg)
 

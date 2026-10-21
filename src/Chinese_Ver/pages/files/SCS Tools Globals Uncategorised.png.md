@@ -1,4 +1,4 @@
-# File:SCS Tools Globals Uncategorised.png
+# 文件:SCS Tools Globals Uncategorised.png
 
 ![SCS Tools Globals Uncategorised.png](../../../images/files/SCS%20Tools%20Globals%20Uncategorised.png/SCS_Tools_Globals_Uncategorised.png)
 

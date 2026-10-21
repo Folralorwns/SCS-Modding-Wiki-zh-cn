@@ -1,7 +1,7 @@
 # User talk:Cadde
 
-Hi Cadde,
+你好，Cadde，
 
-this page will be dedicated as communication channel for you about your contributions.
+本页面将作为你讨论自身贡献的交流渠道。
 
 <!-- source: https://modding.scssoft.com/wiki/User_talk%3ACadde | revision: 2679 | captured: 2026-10-21 23:56:14 -->

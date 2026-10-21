@@ -1,57 +1,57 @@
 # Documentation/Engine/Sound/TruckCabin
 
-## Sounds - The truck cabin
+## 声音 - 卡车驾驶室
 
-Another group of truck sounds are sounds tied to the truck cabin.
+另一组卡车声音是与卡车驾驶室相关的声音。
 
-### Horn
+### 喇叭
 
-Sound of the horn. It has to be 3D event. The event should be routed to the "truck_effects" audio bus. The event must be looped. The 3D position of this sounds is (by default) the truck model origin.
+喇叭的声音。它必须是 3D 事件。该事件应路由到 "truck_effects" 音频总线。事件必须循环播放。此声音的 3D 位置（默认）为卡车模型的坐标原点。
 
-### Air Horn
+### 气喇叭
 
-Sound of the air horn. It has to be 3D event. The event should be routed to the "truck_effects" audio bus. The event must be looped. The 3D position of this sounds is (by default) 1m above the truck model origin.
+气喇叭的声音。它必须是 3D 事件。该事件应路由到 "truck_effects" 音频总线。事件必须循环播放。此声音的 3D 位置（默认）位于卡车模型坐标原点上方 1 米处。
 
-### Aero Noise
+### 气动噪声
 
-The noise of the air flowing around a cabin. It has to be 3D event. The event should be routed to the "truck_noise" audio bus. The event must be looped.
+气流绕过驾驶室时产生的噪声。它必须是 3D 事件。该事件应路由到 "truck_noise" 音频总线。事件必须循环播放。
 
-The following event parameters must exist:
+以下事件参数必须存在：
 
-- aero_speed - the value is in the range <0 - 200> and represents the speed of the flowing air (in km/h)
-- aero_wnd - the value is in the range <0 - 2> and represents the state of the window:
-  - 0 ... disabled effect
-  - (0 - 1> ... indicator (state) of the window opening
-  - 2 ... camera is outside the cabin
+- aero_speed - 取值范围为 <0 - 200>，表示流动空气的速度（单位为 km/h）
+- aero_wnd - 取值范围为 <0 - 2>，表示车窗的状态：
+  - 0 ... 效果已禁用
+  - (0 - 1> ... 车窗开度的指示值（状态）
+  - 2 ... 摄像机位于驾驶室外部
 
-There are two instances of this event in the game. Each is located near the (left / right) window. Each of them parameters are independent.
+游戏中该事件有两个实例。每个实例分别位于（左侧 / 右侧）车窗附近。每个实例的参数相互独立。
 
-### Rain Noise
+### 雨声
 
-Sound effect of the raindrops to falling on the truck cabin. It has to be 3D event. The event should be routed to the "truck_noise" audio bus. The event must be looped.
+雨滴落在卡车驾驶室上的音效。它必须是 3D 事件。该事件应路由到 "truck_noise" 音频总线。事件必须循环播放。
 
-The following event parameters must exist:
+以下事件参数必须存在：
 
-- rain_int - the value is in the range <0 - 1> and represents the relative rain intensity
+- rain_int - 取值范围为 <0 - 1>，表示相对的降雨强度
 
-The 3D position of this sounds is (by default) located in the cabin.
+此声音的 3D 位置（默认）位于驾驶室内。
 
-## Sound Configuration
+## 声音配置
 
-The group of sounds configuration is stored in the "accessory_cabin_data" data.
+该组声音的配置存储在 "accessory_cabin_data" 数据中。
 
-There is no mandatory events but there is no default events either. Only the defined sounds will be played. There is array "sounds" which contents specification for the events:
+没有强制事件，但也没有默认事件。只会播放已定义的声音。数组 "sounds" 包含事件的定义：
 
 - horn
 - air_horn
 - aero_noise
 - rain_noise
 
-### Example
+### 示例
 
-There are configuration files for chassis for the "Peterbilt 579" inside folder "/def/vehicle/truck/peterbilt.579/cabin".
+在文件夹 "/def/vehicle/truck/peterbilt.579/cabin" 中有 "Peterbilt 579" 的底盘配置文件。
 
-Each accessory include *@include "sound.sui"* file which contents indirect definition of the events:
+每个配件都包含 *@include "sound.sui"* 文件，该文件间接定义了事件：
 
 ```
 	sounds[]: "horn|/sound/truck/horn/horn_01.soundref"
@@ -60,8 +60,8 @@ Each accessory include *@include "sound.sui"* file which contents indirect defin
 	sounds[]: "rain_noise|/sound/truck/default/noise_rain.soundref"
 ```
 
-### Sound Position
+### 声音位置
 
-The sound positions could be modified by the .soundref file. (see [Sound reference file](../Sound.md#Sound_reference_file))
+声音位置可通过 .soundref 文件修改。（参见 [声音参考文件](../Sound.md#Sound_reference_file)）
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Sound/TruckCabin | revision: 4805 | captured: 2026-10-21 23:56:14 -->

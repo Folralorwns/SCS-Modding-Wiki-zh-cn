@@ -1,4 +1,4 @@
-# File:Simple cube generate vcol.jpg
+# 文件:Simple cube generate vcol.jpg
 
 ![Simple cube generate vcol.jpg](../../../images/files/Simple%20cube%20generate%20vcol.jpg/Simple_cube_generate_vcol.jpg)
 

@@ -1,4 +1,4 @@
-# File:Truck accessory set project base path.jpg
+# 文件:Truck accessory set project base path.jpg
 
 ![Truck accessory set project base path.jpg](../../../images/files/Truck%20accessory%20set%20project%20base%20path.jpg/Truck_accessory_set_project_base_path.jpg)
 

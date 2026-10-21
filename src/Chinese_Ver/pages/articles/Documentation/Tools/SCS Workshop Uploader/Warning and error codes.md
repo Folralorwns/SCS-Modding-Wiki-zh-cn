@@ -1,29 +1,29 @@
-# Documentation/Tools/SCS Workshop Uploader/Warning and error codes
+# 文档/工具/SCS Workshop Uploader/警告与错误代码
 
-In the validation results you can get errors and warnings. With most of them you also have descriptive information about what is the real reason of it. We present you the list of the error and warning codes with the explanation of what they mean.
+在校验结果中，你可能会得到错误和警告。其中大多数还附有描述性信息，说明其真正的原因。下面列出错误与警告代码及其含义说明。
 
-**Errors:**
+**错误：**
 
-| Code | Name | Description |
+| 代码 | 名称 | 描述 |
 | --- | --- | --- |
-| 00001 | Generic error | Any error that does not fit error codes below. |
-| 00002 | File not found | File is not found. |
-| 00003 | Not allowed | Something that is not allowed for example placing ".." in paths or windows-like path separators. |
-| 00004 | Malformed file | The file is malformed and will definitely crash the game - you should try to reexport it or resave it. |
-| 00005 | Missing required attribute | Some of the required unit attribute is not set. |
-| 00006 | Access denied | Tool failed to create file or read it. |
-| 00007 | Not supported | Some file has not supported version or some feature is not supported. |
-| 00008 | Unable to load | Unable to load some file - in most cases its similar to `00002` error. |
-| 00009 | File is too big | File is too big. |
-| 00010 | Unused field set | Field that must not be set was set. |
+| 00001 | 通用错误 | 不符合以下错误代码的任何错误。 |
+| 00002 | 找不到文件 | 找不到文件。 |
+| 00003 | 不允许 | 某些不被允许的情况，例如在路径中放入 ".." 或使用 Windows 风格的路径分隔符。 |
+| 00004 | 文件格式错误 | 文件格式错误，必定会导致游戏崩溃 - 你应尝试重新导出或重新保存它。 |
+| 00005 | 缺少必需属性 | 某个必需的单元属性未设置。 |
+| 00006 | 访问被拒绝 | 工具创建或读取文件失败。 |
+| 00007 | 不支持 | 某个文件的版本不受支持，或某项功能不受支持。 |
+| 00008 | 无法加载 | 无法加载某个文件 - 多数情况下类似 `00002` 错误。 |
+| 00009 | 文件过大 | 文件过大。 |
+| 00010 | 设置了未使用的字段 | 设置了不得设置的字段。 |
 
-> **Useful link:** If you want to see all possible errors and solutions for them check this page - [Validation errors and solutions for them](Validation%20errors%20and%20solutions%20for%20them.md)
+> **实用链接：** 如果你想查看所有可能的错误及其解决方案，请查看此页面 - [校验错误及其解决方案](Validation%20errors%20and%20solutions%20for%20them.md)
 
-**Warnings:**
+**警告：**
 
-| Code | Name | Description |
+| 代码 | 名称 | 描述 |
 | --- | --- | --- |
-| 00001 | Generic warning | Any warning that does not fit warning codes below. |
-| 00002 | Unused field set | Field that should be not set is set. Not critical but should be fixed. |
+| 00001 | 通用警告 | 不符合以下警告代码的任何警告。 |
+| 00002 | 设置了未使用的字段 | 设置了不应设置的字段。并不严重，但应当修复。 |
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/SCS_Workshop_Uploader/Warning_and_error_codes | revision: 5187 | captured: 2026-10-21 23:56:14 -->

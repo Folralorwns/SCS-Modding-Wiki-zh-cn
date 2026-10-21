@@ -1,112 +1,112 @@
-# Documentation/Tools/Map Editor/New Editor Features 1.48
+# 文档/工具/地图编辑器/编辑器新功能 1.48
 
-## Rotate the New Item before placing
+## 放置前旋转新项
 
-When placing a new item you can now hold down the left mouse button and pre-rotate the item (in the Y axis) before placing it.
+放置新项时，你现在可以按住鼠标左键，在放置前预先旋转该项（绕 Y 轴）。
 
-- the pre-rotation is started with LMB down and item is placed with LMB up
-- works on new Model Items, Signs and Prefabs
-- the rotation is kept - it does not reset with each new item
-- there is a 200ms safety window where you can rotate the item but when placed it will be in the original rotation *(to prevent items from slightly rotating on LMB click)*
-- if you hold SHIFT during this process the item will not be placed but the rotation will be kept
+- 预旋转在按下鼠标左键时开始，松开鼠标左键时放置项
+- 适用于新的模型项、标志牌和预制件
+- 旋转会被保留 - 不会在每次新建项时重置
+- 存在 200ms 的安全窗口，在此期间你可以旋转该项，但放置时该项仍会采用原始旋转 *(以防在单击鼠标左键时项发生轻微旋转)*
+- 如果在此过程中按住 SHIFT，项不会被放置，但旋转会被保留
 
-While NOT USING this function you can hover over a node of an item in the map and press:
+在不使用此功能时，你可以将鼠标悬停在地图中某项的节点上并按下：
 
-- CTRL+ALT to assign that item's rotation (all axes) to the new item you are placing
-- CTRL to assign that item's Y rotation to the new item you are placing *(this function was also added to the move function for already placed item!)*
+- CTRL+ALT 将该项的旋转（所有轴）指定给你正在放置的新项
+- CTRL 将该项的 Y 轴旋转指定给你正在放置的新项 *(此功能也已添加到已放置项的移动功能中！)*
 
-Additionally these shortcuts can be used before placing the new item:
+此外，在放置新项之前可以使用以下快捷键：
 
-- CTRL+SHIFT+mouse_move to reset the new item's rotation to the default
-- useful when the X and Z axes of the prerotated item are not 0 at the given moment
-- HOME button can also be used to pre-rotate the new item in 90° steps from the current rotation the same way it is used on existing objects in the map
+- CTRL+SHIFT+鼠标移动 将新项的旋转重置为默认值
+- 当预旋转项的 X 轴和 Z 轴在当下不为 0 时很有用
+- HOME 键也可用于以 90° 步进从当前旋转预旋转新项，与对地图中现有对象的用法相同
 
-## Far Model Item and Visibility Area
+## 远景模型项与可见性区域
 
-**Visualisation Tweaks** <br> Far Model Item:
+**可视化调整** <br> 远景模型项：
 
-- the Far Model Area rectangle now has a distinctive pink color to be better visible in the map
-- the lines leading from the Far Model Item to it's child items are now slightly different color from the area rectangle and are now visible only when the Far Area is selected
+- 远景模型区域的矩形现在带有醒目的粉色，以便在地图中更易看见
+- 从远景模型项指向其子项的线条现在与区域矩形的颜色略有不同，并且仅在选中远景区时才可见
 
-Visibility Area:
+可见性区域：
 
-- the rectangle color has been changed to orange
-- the central cross had been removed to reduce the visual clutter
+- 矩形颜色已改为橙色
+- 已移除中央十字，以减少视觉杂乱
 
-*(the VA Properties can be accessed from the rectangle corner control nodes now so it is no longer necessary to search exclusively for the main node)*
+*(现在可以从矩形角点的控制节点访问 VA 属性，因此不必再专门寻找主节点)*
 
-- the lines leading from the VA to it's child items now have a color signifying the VA function
-- for "show objects" and "show hidden objects" function the lines that appear when you select the area are GREEN
-- for "hide objects" function the lines that appear when you select the area are RED
+- 从 VA 指向其子项的线条现在带有表示 VA 功能的颜色
+- 对于 “show objects” 和 “show hidden objects” 功能，选中区域时出现的线条为绿色
+- 对于 “hide objects” 功能，选中区域时出现的线条为红色
 
-**Systems**
+**系统**
 
-- VA and FMI child item lists now contain a [View Distance], [Distance to Center] and [Distance to Area] columns
-- Both VA and FMI now contain the Child Item counter in the top panel of the Properties
+- VA 和 FMI 的子项列表现在包含 [View Distance]、[Distance to Center] 和 [Distance to Area] 列
+- VA 和 FMI 的属性顶部面板现在都包含子项计数器
 
-## Hookup Item updates
+## 挂接项更新
 
-**Compounding**
+**组合**
 
-- Hookup Items now can be compounded using CTRL+G
-- you can only compound hookup items with other hookup items
-- you can compound max 16 hookup items in one group
-- while in compound the number of unique vehicles spawned is limited depending on the model quality of the hookup items inside the group (default quality 6 unique models, average 4, low 2 and very low 1)
+- 挂接项现在可以使用 CTRL+G 进行组合
+- 你只能将挂接项与其他挂接项组合
+- 一个组中最多可组合 16 个挂接项
+- 在组合状态下，生成的唯一车辆数量受组内挂接项模型质量的限制（默认质量 6 个唯一模型，平均 4 个，低 2 个，极低 1 个）
 
-**Parked Car pools**
+**停放车辆池**
 
-- Instead of 3 categories (common, vintage, luxury) there are now 5 categories you can use depending on the location context - common, cheap, expensive, cheap uncommon and expensive uncommon
+- 不再只有 3 个类别（common、vintage、luxury），现在有 5 个类别可根据地点环境使用 - common、cheap、expensive、cheap uncommon 和 expensive uncommon
 
-## Gate Item
+## 门项
 
-- as the name implies this item is for placing functional gates into the map
-- when you place the Gate Item model into the map it contains only one node
-- if you open the Gate Item Properties you can select
+- 顾名思义，此项用于在地图中放置功能性门
+- 将门项模型放入地图时，它只包含一个节点
+- 如果你打开门项属性，你可以选择
 
-1. the gate model
-2. option to display it as always open or always closed *(only available when the item does not have a selected trigger!)*
-3. up to two triggers that make the Gate Item functional
+1. 门模型
+2. 将其显示为始终打开或始终关闭的选项 *(仅当该项未选择触发器时可用！)*
+3. 最多两个使门项具备功能的触发器
 
-- when a trigger is selected in the list, an additional node with a trigger area appears in the map and you can move/rotate them into the position you need
-- trigger areas for this item are rectangular and the size of an average road lane so they can be more easily placed
+- 在列表中选择触发器后，地图中会出现一个带触发区域的额外节点，你可以移动/旋转它们到所需位置
+- 此项的触发区域为矩形，大小相当于普通车道，因此更易于放置
 
-Trigger Types:
+触发器类型：
 
-- AI only = works only for AI, the players cannot operate those gates and they don't open for them
+- 仅 AI = 仅对 AI 有效，玩家无法操作这些门，门也不会为他们打开
 
-1. Automatic = the gate opens automatically on the AI car approach and every following AI vehicle can drive through as long as the gate is open
-2. Manual = each AI vehicle has to stop at the trigger location and open the gate, it closes behind them
+1. 自动 = 门在 AI 车辆接近时自动打开，只要门保持打开，后续每辆 AI 车辆都能通过
+2. 手动 = 每辆 AI 车辆都必须在触发位置停车并开门，门会在它们通过后关闭
 
-- Player & AI = both for the AI vehicles and the players can operate these gates
+- 玩家与 AI = AI 车辆和玩家都可以操作这些门
 
-1. Automatic
-2. Manual (Border) = for border gates use, displays a visible trigger with border specific symbol
-3. Manual (Generic) = for depot use, uses a visible trigger with a generic gate symbol
+1. 自动
+2. 手动（边境）= 用于边境门，显示带有边境专用符号的可见触发器
+3. 手动（通用）= 用于货场，使用带有通用门符号的可见触发器
 
-- Player Only = only the players can operate this gate (for situations where the trigger is not placed on the AI line)
+- 仅玩家 = 只有玩家可以操作此门（用于触发器未放置在 AI 线路上的情况）
 
-*Beware - AI completely ignores such a gate and drives through it. It should not be placed on places with active AI traffic.*
+*注意 - AI 会完全忽略此类门并直接穿过。不应将其放置在 AI 交通活跃的位置。*
 
-1. Automatic
-2. Manual (Border)
-3. Manual (Generic)
+1. 自动
+2. 手动（边境）
+3. 手动（通用）
 
-## Item Visibility - performance counter icon
+## 项可见性 - 性能计数器图标
 
-Instead of displaying all the Performance counters at the some time you can now pick and select to display each of them separately
+现在不再同时显示所有性能计数器，而是可以逐个挑选并单独显示它们
 
-- Triangle counter
-- Draw Calls counter
-- Draw Calls (*no shadows) counter
-- Clusters counter
+- 三角形计数器
+- 绘制调用计数器
+- 绘制调用（*无阴影）计数器
+- 簇计数器
 
-## Report Bug dialogue update
+## 报告 Bug 对话框更新
 
-When you use ALT+F11 to report bug or copy coordinates you can
+当你使用 ALT+F11 报告 bug 或复制坐标时，你可以
 
-- press button to copy the whole preview line
-- press button to copy just the coordinates
-- check With Screenshot to attach a screenshot of the current view to the bug
-- check Add goto to automatically add text "goto" at the beginning of the copied coordinates text
+- 按下按钮复制整行预览
+- 按下按钮仅复制坐标
+- 勾选 With Screenshot，将当前视图的截图附加到 bug 中
+- 勾选 Add goto，在复制的坐标文本开头自动添加 “goto” 文本
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/Map_Editor/New_Editor_Features_1.48 | revision: 5307 | captured: 2026-10-21 23:56:14 -->

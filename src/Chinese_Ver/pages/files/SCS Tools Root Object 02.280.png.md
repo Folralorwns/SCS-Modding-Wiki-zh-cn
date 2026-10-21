@@ -1,4 +1,4 @@
-# File:SCS Tools Root Object 02.280.png
+# 文件:SCS Tools Root Object 02.280.png
 
 ![SCS Tools Root Object 02.280.png](../../../images/files/SCS%20Tools%20Root%20Object%2002.280.png/SCS_Tools_Root_Object_02.280.png)
 

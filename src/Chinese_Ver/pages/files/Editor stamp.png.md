@@ -1,4 +1,4 @@
-# File:Editor stamp.png
+# 文件:Editor stamp.png
 
 ![Editor stamp.png](../../../images/files/Editor%20stamp.png/Editor_stamp.png)
 

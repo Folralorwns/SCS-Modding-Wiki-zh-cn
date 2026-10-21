@@ -1,4 +1,4 @@
-# File:Editor start.png
+# 文件:Editor start.png
 
 ![Editor start.png](../../../images/files/Editor%20start.png/Editor_start.png)
 

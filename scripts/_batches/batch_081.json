@@ -1,0 +1,14 @@
+{
+ "id": 81,
+ "chars": 2296,
+ "files": [
+  "pages/templates/NavigationTile.md",
+  "pages/templates/Note.md",
+  "pages/templates/ObsoletePage.md",
+  "pages/templates/PublicBetaUploaderVersion.md",
+  "pages/templates/Tip.md",
+  "pages/templates/TutorialEntry.md",
+  "pages/templates/TutorialInfoBox.md",
+  "pages/templates/TutorialNavigation.md"
+ ]
+}

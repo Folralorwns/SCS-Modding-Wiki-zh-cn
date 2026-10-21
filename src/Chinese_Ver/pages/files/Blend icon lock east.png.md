@@ -1,4 +1,4 @@
-# File:Blend icon lock east.png
+# 文件:Blend icon lock east.png
 
 ![Blend icon lock east.png](../../../images/files/Blend%20icon%20lock%20east.png/Blend_icon_lock_east.png)
 

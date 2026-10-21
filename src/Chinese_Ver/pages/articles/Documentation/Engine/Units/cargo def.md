@@ -1,14 +1,14 @@
-# Documentation/Engine/Units/cargo def
+# 文档/引擎/单元/货物定义
 
-The **cargo_def** unit class is used to assign a cargo to be produced or accepted by a company. Units of this type are usually defined in **/def/company/<company_name>/in/<cargo_name>.sii** to mark a cargo the company accepts and **/def/company/<company_name>/out/<cargo_name>.sii** to mark a cargo the company produces.
+**cargo_def** 单元类用于指定某货物由某公司生产或接收。此类型的单元通常定义在 **/def/company/<company_name>/in/<cargo_name>.sii** 中，用于标记公司接收的货物；并定义在 **/def/company/<company_name>/out/<cargo_name>.sii** 中，用于标记公司生产的货物。
 
-## Attributes
+## 属性
 
-| Name | [Type](../Units.md#Attribute_types) | Default Value | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| **cargo** | string |  | The unit name of the cargo, corresponding to a [cargo_data](cargo%20data.md) unit. For example: `cargo: "cargo.stolen_ducks"` |
+| **cargo** | string |  | 货物的单元名称，对应一个 [cargo_data](cargo%20data.md) 单元。例如：`cargo: "cargo.stolen_ducks"` |
 
-## Related Units
+## 相关单元
 
 - [cargo_data](cargo%20data.md)
 - [company_permanent](company%20permanent.md)

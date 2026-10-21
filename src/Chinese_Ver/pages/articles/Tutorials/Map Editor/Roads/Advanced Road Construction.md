@@ -1,34 +1,34 @@
-# Tutorials/Map Editor/Roads/Advanced Road Construction
+# 教程/地图编辑器/道路/高级道路建造
 
-> [← Previous part](Road%20Node%20Manipulation.md)
+> [← 上一部分](Road%20Node%20Manipulation.md)
 >
-> [All steps](../Roads.md)
+> [所有步骤](../Roads.md)
 
-Now that we have a basic understanding of how to connect roads and simple decorations for them. Lets focus on some advanced items using the `Road` item type.
+现在我们已经基本了解如何连接道路以及为道路添加简单装饰。接下来让我们专注于使用 `Road` 项类型的一些高级内容。
 
-## **Bridges**
+## **桥梁**
 
 |  |  |  |
 | --- | --- | --- |
-| **1** | [![Road_piece_tunnel_start.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Advanced%20Road%20Construction/712px-Road_piece_tunnel_start.jpg)](../../../../files/Road%20piece%20tunnel%20start.jpg.md) | Using our example map, place a road and edit the properties to set the road look, variant, and set the terrain size to 0 meters |
-| **2** | [![Road_bridge_start.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Advanced%20Road%20Construction/712px-Road_bridge_start.jpg)](../../../../files/Road%20bridge%20start.jpg.md) | Go to railings tab, and pick a nice bridge model <br> Here is what we are using: `/model2/railing/bridge/shared_simple.pmd` <br> Take note of the road edge material and terrain material (*these are necessary with most models to have nice looking edges*) |
-| **3** | [![Road_bridge_settings.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Advanced%20Road%20Construction/712px-Road_bridge_settings.jpg)](../../../../files/Road%20bridge%20settings.jpg.md) | Allign your bridge to make it look nice and to fit with the area <br> <br> **TIP:** You can use a marker model such as `/model2/proxy_trailer_overweight.pmd` to make sure your bridge is not too low to adjacent road pieces |
-| **4** | [![No_veg_sphere.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Advanced%20Road%20Construction/712px-No_veg_sphere.jpg)](../../../../files/No%20veg%20sphere.jpg.md) | In our example, we have trees clipping through the bridge models. <br> Go to the road item properties dialog box (of the problematic road piece's terrain) and click `Add veg. sphere.` Modify the properties to adjust for size and position and set to `No Vegetation` to clean up the area |
-| **5** | [![Road_bridge_final.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Advanced%20Road%20Construction/712px-Road_bridge_final.jpg)](../../../../files/Road%20bridge%20final.jpg.md) | Use a few tools such as, brush and vertex tool to round off terrain into bridge models to develop the look you are going for |
+| **1** | [![Road_piece_tunnel_start.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Advanced%20Road%20Construction/712px-Road_piece_tunnel_start.jpg)](../../../../files/Road%20piece%20tunnel%20start.jpg.md) | 使用我们的示例地图，放置一条道路并编辑属性，设置道路外观、变体，并将地形尺寸设为 0 米 |
+| **2** | [![Road_bridge_start.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Advanced%20Road%20Construction/712px-Road_bridge_start.jpg)](../../../../files/Road%20bridge%20start.jpg.md) | 转到护栏标签页，挑一个漂亮的桥梁模型 <br> 我们使用的是：`/model2/railing/bridge/shared_simple.pmd` <br> 注意道路边缘材质和地形材质（*大多数模型都需要这些才能获得美观的边缘*） |
+| **3** | [![Road_bridge_settings.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Advanced%20Road%20Construction/712px-Road_bridge_settings.jpg)](../../../../files/Road%20bridge%20settings.jpg.md) | 调整桥梁的对齐方式，使其外观美观并与区域契合 <br> <br> **提示：** 你可以使用标记模型（例如 `/model2/proxy_trailer_overweight.pmd`）来确保桥梁相对于相邻道路部件不会太低 |
+| **4** | [![No_veg_sphere.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Advanced%20Road%20Construction/712px-No_veg_sphere.jpg)](../../../../files/No%20veg%20sphere.jpg.md) | 在我们的示例中，树木穿过了桥梁模型。 <br> 打开（有问题的道路部件地形的）道路项属性对话框，点击 `Add veg. sphere.` 修改属性以调整尺寸和位置，并将其设为 `No Vegetation` 以清理该区域 |
+| **5** | [![Road_bridge_final.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Advanced%20Road%20Construction/712px-Road_bridge_final.jpg)](../../../../files/Road%20bridge%20final.jpg.md) | 使用画笔和顶点工具等几种工具，将地形修饰成符合桥梁模型的样子，以营造你想要的外观 |
 
-## **Tunnels**
+## **隧道**
 
-Tunnels are exactly like bridges, but in reverse and hopefully not floating in the sky!
+隧道与桥梁完全一样，只是方向相反，但愿不会漂浮在空中！
 
 |  |  |  |
 | --- | --- | --- |
-| **1** | [![Road_piece_tunnel_start.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Advanced%20Road%20Construction/712px-Road_piece_tunnel_start.jpg)](../../../../files/Road%20piece%20tunnel%20start.jpg.md) | Using our example map, place a road and edit the properties to set the road look, variant, and set the terrain size to 0 meters |
-| **2** |  | Go to railings tab, and pick a nice tunnel model <br> Here is what we are using: `/model2/railing/tunnel/tunnel_hw_2_lanes_one_way_it.pmd` |
-| **3** |  | Use models, signs, building items and brushes to make your item fit with the area and look nice |
-| **4** | [![Road_piece_tunnel_final.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Advanced%20Road%20Construction/712px-Road_piece_tunnel_final.jpg)](../../../../files/Road%20piece%20tunnel%20final.jpg.md) | Add a No weather area item and set for tunnel Fit the weather area to the tunnel |
+| **1** | [![Road_piece_tunnel_start.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Advanced%20Road%20Construction/712px-Road_piece_tunnel_start.jpg)](../../../../files/Road%20piece%20tunnel%20start.jpg.md) | 使用我们的示例地图，放置一条道路并编辑属性，设置道路外观、变体，并将地形尺寸设为 0 米 |
+| **2** |  | 转到护栏标签页，挑一个漂亮的隧道模型 <br> 我们使用的是：`/model2/railing/tunnel/tunnel_hw_2_lanes_one_way_it.pmd` |
+| **3** |  | 使用模型、标志牌、建筑项和画笔，使你的项与该区域契合并显得美观 |
+| **4** | [![Road_piece_tunnel_final.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Advanced%20Road%20Construction/712px-Road_piece_tunnel_final.jpg)](../../../../files/Road%20piece%20tunnel%20final.jpg.md) | 添加一个无天气区域项并设为隧道 将天气区域调整为与隧道契合 |
 
-> [← Previous part](Road%20Node%20Manipulation.md)
+> [← 上一部分](Road%20Node%20Manipulation.md)
 >
-> [All steps](../Roads.md)
+> [所有步骤](../Roads.md)
 
 <!-- source: https://modding.scssoft.com/wiki/Tutorials/Map_Editor/Roads/Advanced_Road_Construction | revision: 5497 | captured: 2026-10-21 23:56:14 -->

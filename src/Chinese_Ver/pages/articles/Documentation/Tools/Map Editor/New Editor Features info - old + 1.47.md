@@ -1,420 +1,420 @@
-# Documentation/Tools/Map Editor/New Editor Features info - old + 1.47
+# 文档/工具/地图编辑器/编辑器新功能 - 旧版 + 1.47
 
-## Old features explanation
+## 旧功能说明
 
-### Trajectories
+### 轨迹
 
-- Trajectory item represents navigation lanes edited directly in the editor and stored in the map
-- Each trajectory has 1 to N nodes.
-- **Green** part indicates the beginning of the trajectory (first node -> id **0**) and the **red** part indicates the end of trajectory (last node -> id **N-1**).
-- In the current version we are not able to spawn vehicles to the trajectory items (with the exception of manual spawning in the debug traffic camera).
-  - It means these items must be connected to the traffic network.
-- Important editor shortcut for Trajectory items are **F6 (drop to ground)** and **Alt + F6 (drop to ground with rotation alignment)**
+- 轨迹项表示直接在编辑器中编辑并存储在地图中的导航车道
+- 每条轨迹有 1 到 N 个节点。
+- **绿色**部分表示轨迹的起点（第一个节点 -> id **0**），**红色**部分表示轨迹的终点（最后一个节点 -> id **N-1**）。
+- 在当前版本中，我们无法为轨迹项生成车辆（调试交通摄像机中的手动生成除外）。
+  - 这意味着这些项必须连接到交通网络。
+- 轨迹项的重要编辑器快捷键是 **F6（贴地）**和 **Alt + F6（贴地并对齐旋转）**
 
-When connecting Trajectories to the existing traffic lines
+将轨迹连接到现有交通线路时
 
-- Trajectory items are not connected to prefab/road nodes but to prefab/road navigation lanes. This means that you cannot use function like node snap.
-- First node can be connected with 'output' lane and last node can be connected with 'input' lane.
-- For a valid connection, you don't have to have exactly the same position, there is a tolerance 0.5m. Rotation of the node must be in the connection direction with tolerance 90 degrees.
-- **You cannot** place trajectories near another AI lanes (prefab, road) because these are separate systems and cars will crash with each other because trajectory cars don't know about prefab/road cars and vice-versa.
-- There can be always only **one connected trajectory per navigation lane**.
+- 轨迹项不是连接到预制件/道路的节点，而是连接到预制件/道路的导航车道。这意味着你不能使用类似节点吸附的功能。
+- 第一个节点可以连接到“输出”车道，最后一个节点可以连接到“输入”车道。
+- 对于有效连接，位置不必完全相同，有 0.5m 的容差。节点的旋转必须处于连接方向上，容差为 90 度。
+- 你**不能**将轨迹放置在另一个 AI 车道（预制件、道路）附近，因为它们是彼此独立的系统，车辆会相互碰撞，因为轨迹车辆不知道预制件/道路车辆，反之亦然。
+- 每条导航车道**始终只能有一条连接的轨迹**。
 
-When connecting Trajectories to other Trajectories.
+将轨迹连接到其他轨迹时。
 
-- The only valid connection is **first node <-> last node.**
-- But you can have more trajectories connected with another trajectory.
-- All nodes within one connection should have **same position** and **same rotation**.
-- Intersections cannot have more than 4 branches (4 start + 1 end **OR** 4 end + 1 start).
-- One node cannot be merge and fork intersection at one time.
-- **Do not cross** trajectories -> vehicles will crash with each other.
+- 唯一有效的连接是**第一个节点 <-> 最后一个节点。**
+- 但你可以让多条轨迹连接到另一条轨迹。
+- 一次连接中的所有节点应具有**相同位置**和**相同旋转**。
+- 交叉点不能超过 4 个分支（4 个起点 + 1 个终点**或** 4 个终点 + 1 个起点）。
+- 一个节点不能同时作为合并交叉点和分叉交叉点。
+- **不要交叉**轨迹 -> 车辆会相互碰撞。
 
-### Traffic Tool
+### 交通工具
 
-Traffic preview provides editor traffic debug layer. It works in the following way:
+交通预览提供编辑器交通调试图层。其工作方式如下：
 
-- **When the tool is activated all sectors are locked**. Traffic related pins are shown in gray color. It means that **you cannot edit map** but you can still see the map structure.
+- **工具激活时，所有扇区都会被锁定**。与交通相关的图钉显示为灰色。这意味着**你不能编辑地图**，但仍可查看地图结构。
 
-- **When it is deactivated all sector locks are restored to the state before activation**.
+- **停用后，所有扇区锁定都会恢复到激活前的状态**。
 
-- This tool requires `Snap to Ground` to be turned on to work properly.
+- 此工具需要开启 `Snap to Ground` 才能正常工作。
 
-#### Speed Limit section
+#### 限速部分
 
-- Provides information about speed limits at traffic curves.
-- The tool uses **speed units** based on attribute **`traffic_use_mph`** in *base/def/editor_data.sii*.
-- Absolute Speed Limits
-  - useful for general overview of speed limits
-  - each speed limit value has its own color
-  - **unset** speed limits are visualized using **white color**
-- Relative speed limits
-  - useful for visualization of single speed limit value
-  - selected speed limit uses **white color**
-  - **unset** speed limits are visualized using **pink color**
+- 提供交通曲线处限速的信息。
+- 该工具使用基于 *base/def/editor_data.sii* 中属性 **`traffic_use_mph`** 的**速度单位**。
+- 绝对限速
+  - 适用于限速的总体概览
+  - 每个限速值都有自己的颜色
+  - **未设置**的限速以**白色**可视化
+- 相对限速
+  - 适用于单个限速值的可视化
+  - 选中的限速使用**白色**
+  - **未设置**的限速以**粉色**可视化
 
-- Speed drops
-  - Places where speed limit changes to a lower one without a nearby traffic sign informing about it. It is visualized using blue sphere.
+- 限速下降点
+  - 指限速变为更低值、且附近没有交通标志提示的地点。以蓝色球体可视化。
 
-Usage:
+用法：
 
-- Use combo box to change visualized vehicle type
-  - By default, `(default)` is selected, which represents **limit for "general traffic"**, i.e. the limit which **corresponds to standard speed limit signs**, which are not type-exclusive (e.g. "trucks only").
+- 使用下拉框更改可视化的车辆类型
+  - 默认情况下会选中 `(default)`，它表示**“一般交通”的限速**，即**对应标准限速标志**的限速，这些标志不限定车辆类型（例如“仅限卡车”）。
 
-- To turn on **Absolute speed limit visualization**, click on ***NO LIMIT*** button.
-- To turn on **Relative speed limit visualization**, either click on one of the **button with speed limit value** or **click on one of the traffic curves** in map.
+- 要开启**绝对限速可视化**，请点击 ***NO LIMIT*** 按钮。
+- 要开启**相对限速可视化**，可点击某个**带限速值的按钮**，或**点击地图中的某条交通曲线**。
 
-#### Access/Spawning
+#### 通行/生成
 
-- Provides information about traffic access of the traffic lanes for the given vehicle type.
-- Also allows spawning AI vehicles and placing spawn points at desired locations.
+- 提供给定车辆类型下交通车道通行权限的信息。
+- 还允许生成 AI 车辆，并在所需位置放置生成点。
 
-- **green** - access is **allowed**
-  - **dark green** - access **is allowed only for vehicles without trailers**
-- **yellow** - access is **allowed exclusively** for one or more vehicle types
-  - **dark yellow** - access **is allowed only for vehicles without trailers**
-- **red** - access is **not allowed**
-- Dead Ends
-  - Dead end visualization helps **identifying places**, where vehicles of certain type(s) are **not allowed to continue their movement** and **there is risk of visible despawn.**
-  - Dead ends are visualized using blue sphere with text containing the first found 'blocked' vehicle type.
+- **绿色** - **允许**通行
+  - **深绿色** - **仅允许无挂车的车辆**通行
+- **黄色** - 仅对一种或多种车辆类型**专门允许**通行
+  - **深黄色** - **仅允许无挂车的车辆**通行
+- **红色** - **不允许**通行
+- 断头路
+  - 断头路可视化有助于**识别地点**，即某些类型的车辆**不允许继续行驶**且**存在可见消失风险**的地方。
+  - 断头路以蓝色球体可视化，其文本包含第一个发现的“受阻”车辆类型。
 
-Usage:
+用法：
 
-- **Vehicles**
-  - Use combo box to change visualized vehicle type
-  - To **spawn** a vehicle of selected type, just point the mouse cursor at one of traffic lines and click left mouse button (LMB).
-    - If possible, a vehicle appears at given position. Otherwise, an error message in console appears showing why the spawning has not been successful.
-    - By default, spawning of selected vehicle type(s) is possible only where it would be normally spawned in game. Use ***Forced spawning*** checkbox to override.
-    - If spawning of non-moving vehicles is needed, use ***Spawn paused vehicles*** checkbox or manually pause the movement using ***Pause all vehicles*** button
-      - The movement is *paused*, not *stopped.* Pausing does not affect the actual vehicle speed or acceleration.
-  - In **Remove vehicle** mode, vehicles can be removed by clicking with the left mouse button.
-  - Switch to **Select/Manipulate** mode to manipulate spawned vehicles.
-    - left mouse button (LMB) selects and deselects. Some information about the selected vehicle will be displayed in the editor's bottom status bar.
-    - Ctrl + LMB stops all vehicles close to the mouse cursor, even if they are not selected.
-- **Spawn points**
-  - The Access/Spawning tab also offers the option to place spawn points and let vehicles spawn automatically. Additionally, you can also let spawn points generate as they would in-game.
-  - For vehicles to spawn from any spawn points at all, the ***Automatic vehicle spawning*** checkbox must be checked.
-  - By default, spawn points generate automatically in the editor, as in game. They will generate at a certain distance from the editor camera as white spheres. However, you can also create manual spawn points (represented by magenta spheres), which can be placed using the submodes:
-    - In **Create spawn point** mode, spawn points can be placed on any valid traffic item by left mouse click.
-    - In **Remove** **spawn point** mode, previously placed or automatically generated spawn points can be removed by left mouse click.
-  - Manually placed spawn points have a magenta color while automatically generated spawn points are white.
-  - Using the **Freeze spawn point autogeneration** button, the current state of spawn points can be then frozen at any time, which pauses the spawn point autogeneration algorithm and leaves all automatic (white) spawn points where they are. This allows you to assess roughly where spawn points will generate in-game. The button's label will change between Freeze and Unfreeze accordingly.
-  - If you then want automatic generation of spawn points to resume, click the **Unfreeze spawn point autogeneration** button. New spawn points should start generating at a certain distance from the camera. Any manually placed spawn points are unaffected.
-  - For quicker replacing of spawn points, some simple removal options are available.
+- **车辆**
+  - 使用下拉框更改可视化的车辆类型
+  - 要**生成**选定类型的车辆，只需将鼠标光标指向某条交通线路并点击鼠标左键（LMB）。
+    - 如果可行，车辆会出现在给定位置。否则，控制台会出现错误消息，说明生成未成功的原因。
+    - 默认情况下，选定类型的车辆只能在其于游戏中正常生成的位置生成。使用 ***Forced spawning*** 复选框可覆盖此限制。
+    - 如果需要生成不移动的车辆，请使用 ***Spawn paused vehicles*** 复选框，或使用 ***Pause all vehicles*** 按钮手动暂停移动
+      - 移动是*暂停*，而非*停止*。暂停不会影响车辆的实际速度或加速度。
+  - 在 **Remove vehicle** 模式下，可通过单击鼠标左键移除车辆。
+  - 切换到 **Select/Manipulate** 模式以操作已生成的车辆。
+    - 鼠标左键（LMB）用于选择和取消选择。所选车辆的一些信息会显示在编辑器底部的状态栏中。
+    - Ctrl + LMB 会停止鼠标光标附近的所有车辆，即使它们未被选中。
+- **生成点**
+  - Access/Spawning 选项卡还提供了放置生成点并让车辆自动生成的选项。此外，你还可以让生成点按游戏内方式生成。
+  - 要让车辆能从任意生成点生成，必须勾选 ***Automatic vehicle spawning*** 复选框。
+  - 默认情况下，生成点在编辑器中会像在游戏中一样自动生成。它们会在距编辑器相机一定距离处生成为白色球体。不过，你也可以创建手动生成点（以品红色球体表示），可使用以下子模式放置：
+    - 在 **Create spawn point** 模式下，可通过鼠标左键单击将生成点放置在任何有效的交通项上。
+    - 在 **Remove** **spawn point** 模式下，可通过鼠标左键单击移除先前放置的或自动生成的生成点。
+  - 手动放置的生成点为品红色，而自动生成的生成点为白色。
+  - 使用 **Freeze spawn point autogeneration** 按钮，可以随时冻结生成点的当前状态，这会暂停生成点自动生成算法，并让所有自动（白色）生成点保留在原位。这样可以让你大致评估游戏内生成点将在何处生成。按钮标签会相应地在 Freeze 和 Unfreeze 之间变化。
+  - 如果你之后希望恢复生成点的自动生成，请点击 **Unfreeze spawn point autogeneration** 按钮。新的生成点应开始在与相机保持一定距离处生成。任何手动放置的生成点不受影响。
+  - 为了更快地替换生成点，提供了一些简单的移除选项。
 
-### Visibility Area
+### 可见性区域
 
-The idea of **Visibility Areas (VA)** is a local, viewpoint based scene adjustment.
+**可见性区域（VA）**的理念是基于视角的局部场景调整。
 
-Visibility area offers what these other tools do not: precise, pinpoint optimization by allowing the map designer to tell the engine exactly which objects to draw or not, when the player is inside the VA
+可见性区域提供了其他工具所不具备的功能：精确、定点优化，让地图设计者可以准确告诉引擎，当玩家处于 VA 内时应绘制或不绘制哪些对象
 
-- Can be rotated (yaw only)
-- Size can be changed
+- 可以旋转（仅偏航）
+- 可以更改大小
 
-#### Modes
+#### 模式
 
 - **Show hidden objects**
-  - shows all selected items even when they are normally hidden by the cutplane. Objects that are not hidden by the cutplane are displayed normally when the player is not inside the visibility area.
+  - 即使选中的项通常被剖切面隐藏，也会显示它们。当玩家不在可见性区域内时，未被剖切面隐藏的对象正常显示。
 
 - **Hide objects**
-  - All objects assigned to the visibility area are: HIDDEN when the player is inside the area and VISIBLE when the player is outside the area.
+  - 分配给可见性区域的所有对象：当玩家位于区域内时隐藏，当玩家位于区域外时可见。
 
 - **Show objects**
-  - All objects assigned to the visibility area are: VISIBLE when the player is inside the area and HIDDEN when the player is outside the area.
+  - 分配给可见性区域的所有对象：当玩家位于区域内时可见，当玩家位于区域外时隐藏。
 
-#### Adding Items
+#### 添加项
 
-- To add new objects to a VA, select the VA first, then hold down Ctrl and select on more items. Then click on VA properties and add the selected items to the area. A connecting line is created between each item in the VA list and the VA node.
+- 要向 VA 添加新对象，请先选择该 VA，然后按住 Ctrl 并选择更多项。接着点击 VA 属性并将选中的项添加到区域中。VA 列表中每一项与 VA 节点之间都会创建一条连接线。
 
-#### Selecting items from the VA
+#### 从 VA 中选择项
 
-- When inside VA properties you click the item from the list and then click **[Select item]**, or click **[Select all items]**, the node of that object is selected in map and you leave the VA properties window.
+- 在 VA 属性中，你从列表里点击该项，然后点击 **[Select item]**，或点击 **[Select all items]**，该对象的节点便会在地图中被选中，并且你会离开 VA 属性窗口。
 
-#### Removing Items
+#### 移除项
 
-- Either click on object/s in the VA list and click **[Remove item]**, or click **[Remove all items]** if you wish to empty the area.
-- Select one or more objects in the map together with the VA itself, then click VA properties and click **[Remove items currently selected in map]** button.
+- 你可以点击 VA 列表中的一个或多个对象并点击 **[Remove item]**，或点击 **[Remove all items]** 清空整个区域。
+- 在地图中选择一项或多项对象以及 VA 本身，然后点击 VA 属性并点击 **[Remove items currently selected in map]** 按钮。
 
-### Far Model item
+### 远景模型项
 
-Far Model Item is a way to display models that need to be seen from further away than from maximum allowed view distance of 1500m or need to be visible from certain points from further away than their set view distance.
+远景模型项是一种用于显示模型的方式，这些模型需要在超过 1500m 最大允许视距的更远处仍能被看到，或需要从某些点在其设定视距之外仍保持可见。
 
-There are two types of of items that can be displayed, each behaving a different way:
+可显示的项有两种类型，各自的行为方式不同：
 
-- **Far Model** = Original usage of the Far Model item and default for the all new Far Model items placed into the map.
-- **Map Items** - New usage turned on by checking the box "*use map items*".
+- **Far Model** = 远景模型项的原始用法，也是放入地图的所有新远景模型项的默认用法。
+- **Map Items** - 通过勾选“*use map items*”复选框开启的新用法。
 
-#### General Far Model usage notes
+#### 远景模型的一般使用注意事项
 
-- Do not overdo it with the number of models assigned to the Far Model Item, watch the performance.
-- Use at most 4-5 Far Model items per sector and not too close to each other.
+- 不要为远景模型项分配过多模型，注意性能。
+- 每个扇区最多使用 4-5 个远景模型项，且彼此不要靠得太近。
 
-#### Far Model - default, when "*use map item*s" is unchecked
+#### Far Model - 默认情况，即未勾选“*use map items*”时
 
-- Uses only the Far Model assets.
-- Those models are visible only from within Far Model area boundaries.
+- 仅使用远景模型资源。
+- 这些模型只能从远景模型区域边界内看到。
 
-Usage notes:
+使用注意事项：
 
-- You can scale those models in Far Model properties.
-- You can set Water Reflection to those models in properties.
-- When the Far Model item node are deleted so are the Far model assets added to it!
+- 你可以在远景模型属性中缩放这些模型。
+- 你可以在属性中为这些模型设置水面反射。
+- 删除远景模型项节点时，添加到其中的远景模型资源也会被删除！
 
-#### Map Items - when "use map items" checked
+#### Map Items - 勾选“use map items”时
 
-- Can use other items placed in the map:
-- Terrains, models, curves, buildings and bezier patches CAN be added to the Far Item.
-- *Roads, prefabs, signs and movers CAN NOT be added to the Far Item.*
-- Those models are visible from the Far Model area boundaries AND they are also visible outside far item boundaries when the camera is within their own set view distance.
+- 可以使用地图中放置的其他项：
+- 地形、模型、曲线、建筑和贝塞尔面片可以添加到远景项。
+- *道路、预制件、标志牌和移动物不能添加到远景项。*
+- 这些模型从远景模型区域边界处起可见，并且当相机处于其自身设定的视距内时，在远景项边界之外也同样可见。
 
-Usage notes:
+使用注意事项：
 
-- You can scale the assigned models normally in their Properties.
-- The water reflection of the assigned item is decided by their own Properties when outside the far item area boundary and by the Far Model item properties when inside the boundary.
-- When Far Model item node is deleted the assigned map items are NOT deleted!
+- 你可以在所分配模型的属性中正常缩放它们。
+- 在远景项区域边界之外时，所分配项的水面反射由其自身的属性决定；在边界之内时，则由远景模型项属性决定。
+- 删除远景模型项节点时，所分配的地图项不会被删除！
 
-## New features - 1.47
+## 新功能 - 1.47
 
-### Right Mouse Button (RMB) to open item/node Properties
+### 使用鼠标右键（RMB）打开项/节点属性
 
-One can now:
+现在你可以：
 
-- open Item properties of items in map using the Right Mouse Button click, regardless of the edit mode you are in *( `M`ove, `R`otate, `P`roperties etc.)*
-- open the node properties of any node in map using the `CTRL+RMB click`, regardless of the edit mode you are in
-- you don't need to select (`LMB`) the item's node beforehand, just to hover above the node and use the `RMB`
+- 无论处于哪种编辑模式 *（`M` 移动、`R` 旋转、`P` 属性等）*，都可以通过单击鼠标右键打开地图中项的项属性
+- 无论处于哪种编辑模式，都可以使用 `CTRL+RMB click` 打开地图中任意节点的节点属性
+- 你不需要事先选中（`LMB`）该项的节点，只需将鼠标悬停在该节点上并使用 `RMB`
 
-- Using `RMB click` *(or the `P`roperties mode `LMB`)* on a GREEN node of a road/terrain/building/curve item will now open it's Item Properties and selects it's red node!
+- 在道路/地形/建筑/曲线项的绿色节点上使用 `RMB click` *（或 `P` 属性模式下的 `LMB`）*，现在会打开其项属性并选中其红色节点！
 
-### Quick Edit Mode
+### 快速编辑模式
 
-**This mode is a tool for a direct interaction with and manipulation of all types of terrains, roads and road edges, by using new nodes = handlers.**
+**此模式是一种通过使用新节点 = 手柄，直接交互并操作所有类型地形、道路和道路边缘的工具。**
 
-You can turn this mode on and off by pressing the `Q` button *(or by going to Tools -> Quick Edit Mode)*.
+你可以按 `Q` 按钮 *（或前往 Tools -> Quick Edit Mode）* 来开启和关闭此模式。
 
 ![QEM.jpg](../../../../../../images/articles/Documentation/Tools/Map%20Editor/New%20Editor%20Features%20info%20-%20old%20+%201.47/300px-QEM.jpg)
 
-*Quick Edit Mode*
+*快速编辑模式*
 
-**Handlers for all terrains - ◆**
+**所有地形的手柄 - ◆**
 
-- can be dragged to the sides *(using the `M`ove function)* to change the length of the terrain
-- dragged up and down to change the coefficient of the terrain profile
-- rotated *(using the `R`otate function)* to change the angle of the main terrain material
+- 可以拖向两侧 *（使用 `M` 移动功能）* 以更改地形的长度
+- 上下拖动以更改地形轮廓系数
+- 旋转 *（使用 `R` 旋转功能）* 以更改主地形材质的角度
 
-**All handlers for terrains, roads, edges and prefab centers - ◆ ◪ ∎**
+**地形、道路、边缘和预制件中心的所有手柄 - ◆ ◪ ∎**
 
-- have their own small miniproperties you can use to make quick changes
+- 拥有各自的小型属性，可用于快速修改
 
-### Hookup Item
+### 挂接项
 
-#### What is Hookup Item?
+#### 什么是挂接项？
 
-- new type of item used to place dynamic object into the map
-- what are dynamic objects? = all objects that can change their position or their look depending on the situation *(time, part of the day etc.)* or that look different depending in the place you put them in *(state, city etc.)*
-  - right now that includes various types of parked vehicles *(even though at the moment only selected pools are available)*
-  - but in the future this will expand to various other non-vehicle objects like parasols by restaurants *(that can be open during the day but closed at night)*, trash cans *(that can be empty one time the player drives by them but full next time)*, cargo boxes and containers placed at fake company areas etc.
-- as opposed to the static models like "parked_car_physics" we have been using for this until now - objects placed through hookup item have also a certain chance to not spawn at all, leaving the parking spot empty
+- 一种用于将动态对象放置到地图中的新项类型
+- 什么是动态对象？= 所有能根据情况 *（时间、一天中的时段等）* 改变其位置或外观的对象，或外观会根据你放置的地点 *（状态、城市等）* 而不同的对象
+  - 目前包括各种类型的停放车辆 *（尽管目前只有选定的池可用）*
+  - 但将来会扩展到各种其他非车辆对象，例如餐厅旁的遮阳伞 *（白天可打开、夜间可关闭）*、垃圾桶 *（玩家经过时可能是空的，下次经过时可能是满的）*、放置在虚拟公司区域的货箱和集装箱等。
+- 与迄今为止我们为此使用的“parked_car_physics”等静态模型不同，通过挂接项放置的对象还有一定概率完全不生成，使停车位保持空置
 
-#### How the Hookup Item looks and what can we do with it?
+#### 挂接项的外观以及可以用它做什么？
 
-- you can place into the map either an empty hookup item from the item list or specific hookup *(parked car, truck etc.)* from the Content Browser
-  - the hookup item node looks similar to the static Model node, but it has a dot in the middle<br>
+- 你可以将项列表中的空挂接项，或内容浏览器中的特定挂接 *（停放的轿车、卡车等）* 放置到地图中
+  - 挂接项节点看起来与静态模型节点相似，但中间有一个点<br>
 
 ![Hookup_intro_01_empty.jpg](../../../../../../images/articles/Documentation/Tools/Map%20Editor/New%20Editor%20Features%20info%20-%20old%20+%201.47/300px-Hookup_intro_01_empty.jpg)
 
-*empty hookup*
+*空挂接项*
 
-- when you open Hookup properties you are presented with several options
+- 打开挂接项属性时，你会看到若干选项
 
 ![Hookup_intro_02_props.jpg](../../../../../../images/articles/Documentation/Tools/Map%20Editor/New%20Editor%20Features%20info%20-%20old%20+%201.47/300px-Hookup_intro_02_props.jpg)
 
-*Hookup Properties*
+*挂接项属性*
 
-**NOTE:** the green outline around the model represents the bounding box = the size of the largest object that can spawn on this hookup
+**注意：**模型周围的绿色轮廓表示包围盒 = 此挂接项上可生成的最大对象的尺寸
 
-- you can select the type of hookup you want to use either from the list, or from the Content Browser as usual
-- you can set up the view distance as usual
-- Align to node is a new feature containing three options
-  - None (the node is placed in the middle of the vehicle as usual)
-  - Front - the node is placed in front of the bounding box
-  - Back - the node is placed on the back of the bounding box
+- 你可以像往常一样从列表或内容浏览器中选择要使用的挂接类型
+- 你可以像往常一样设置视距
+- Align to node 是一项包含三个选项的新功能
+  - 无（节点如往常一样置于车辆中央）
+  - 前 - 节点置于包围盒前方
+  - 后 - 节点置于包围盒后方
 
 ![Hookup_intro_03_front.jpg](../../../../../../images/articles/Documentation/Tools/Map%20Editor/New%20Editor%20Features%20info%20-%20old%20+%201.47/300px-Hookup_intro_03_front.jpg)
 
-*Front*
+*前*
 
 ![Hookup_intro_04_back.jpg](../../../../../../images/articles/Documentation/Tools/Map%20Editor/New%20Editor%20Features%20info%20-%20old%20+%201.47/300px-Hookup_intro_04_back.jpg)
 
-*Back*
+*后*
 
-#### Spawn probability
+#### 生成概率
 
-It is meant to be used for optimization and for us to decide how often should the hookup spawn the object - in this case a car
-
--
-  - it contains 4 setups
-  - Default, 25%, 50% and 75%
-  - BUT this doesn't mean that on the default probability the model will spawn 100% of the time, or that 50% means it will the spawn rate will be 50:50!
-  - each type of hookup can have their spawn factor affected by multiple things - what item it is, whether they are placed in city are or not, whether it is a day or night etc.
-  - just as an example let's imagine "parked car (common)" has default spawn probability set to
-    - 80% spawn chance during the day
-    - 20% spawn chance during night
-  - changing the Spawn probability to 50% in this case would mean lowering the spawn chance to approx 40% spawn chance during the day and 10% spawn chance at night
-
-#### Model detail
-
-It is another new option for optimization, it is similar to picking dynamic or static lod for the static model BUT with the difference Hookup items have only dynamic lods. There are 4 options:
+它用于优化，并让我们决定挂接项应以何种频率生成对象 - 在此情况下是轿车
 
 -
-  - Default - spawns the model as usual starting from the most detailed version (lod0) when you are closest to it and dynamically changing it as you move further away (lod0->lod1->lod2->lod3)
-  - Average - spawns the model from the second most detailed (lod1) and never displays lod0 no matter how close you are to the model, as you move further away it will dynamically change the model as usual (lod1->lod2->lod3)
-    - you can use this option, and the options below, when you want to lower the quality of models the player cannot properly see anyway - like when they are obstructed by bushes or other vehicles etc.
-  - Low - spawns the model from lod2 and never displays lod0 or lod1, dynamically changes to lod3
-  - Very Low - spawns the model only at its least detailed lod
+  - 它包含 4 种设置
+  - 默认、25%、50% 和 75%
+  - 但这并不意味着在默认概率下模型会 100% 生成，也不意味着 50% 表示生成率会是 50:50！
+  - 每种挂接类型的生成因子会受多种因素影响 - 它是什么项、是否放置在城市区域、是白天还是夜晚等
+  - 举例来说，假设“parked car (common)”的默认生成概率设置为
+    - 白天 80% 的生成概率
+    - 夜间 20% 的生成概率
+  - 在这种情况下将 Spawn probability 改为 50%，意味着生成概率会降至白天约 40%、夜间约 10%
 
-#### Water reflections
+#### 模型细节
 
-Works as usual, selecting this will allow for the spawned model to be reflected in the water surfaces
+这是另一个用于优化的新选项，它类似于为静态模型选择动态或静态 lod，但区别在于挂接项只有动态 lod。共有 4 个选项：
 
-#### Ignore cut plane
+-
+  - 默认 - 像往常一样生成模型，当你离它最近时从最精细的版本（lod0）开始，并随着你远离而动态切换（lod0->lod1->lod2->lod3）
+  - 平均 - 从第二精细的版本（lod1）开始生成模型，无论你离模型多近都不会显示 lod0；随着你远离，模型会像往常一样动态切换（lod1->lod2->lod3）
+    - 当你想要降低玩家本来也无法看清的模型质量时，可以使用此选项以及下面的选项 - 例如它们被灌木或其他车辆遮挡时等。
+  - 低 - 从 lod2 开始生成模型，从不显示 lod0 或 lod1，动态切换为 lod3
+  - 极低 - 仅以最不精细的 lod 生成模型
 
-Works as usual.
+#### 水面反射
 
-#### No shadows
+与往常一样，选中此项可使生成的模型在水面中产生反射
 
-Turns off the spawned model's shadows - use this for optimization
+#### 忽略剖切面
 
-#### No mirror reflection
+与往常一样。
 
-Prevents the model to be displayed in player truck's mirrors - use this for optimization
+#### 无阴影
 
-#### No physics
+关闭生成模型的阴影 - 用于优化
 
-Turns off the spawned model's dynamic physics - use this for all objects the player should not be able to approach - like cars on the parking lots the player can't enter
+#### 无后视镜反射
 
-#### Fixed seed
+阻止模型显示在玩家卡车的后视镜中 - 用于优化
 
-It is a new option that prevents the hookup item from constantly changing the spawned model for a different one
+#### 无物理
 
-- the simplest description is that when the fixed seed flag is active the hookup item will always spawn the same object - f.e. red Skoda Octavia
-- but this model will change whenever the pool of spawnable vehicles in the hookup item is expanded with new vehicle/model
-- the intended use of this flag is when placing f.e. parked cars by the village houses or house driveways = places where you can expect always the same car
-- while for us in the editor the selected car may change quite often but for the players this should happen only occasionally after new patches or releases
+关闭生成模型的动态物理 - 适用于玩家不应能接近的所有对象 - 例如玩家无法进入的停车场中的轿车
 
-#### Hookup Item usage notes
+#### 固定种子
 
-- Hookup Item pools are controlled by their country - if you place f.e. Parked Police Car into location without country definition nothing will spawn!
+这是一个新选项，可防止挂接项不断将生成的模型更换为另一个模型
 
-- right now the Hookup item is still waiting for some additional optimization!
-- overusing them at this point will severely affect the performance of your map
+- 最简单的描述是：当固定种子标志启用时，挂接项将始终生成同一个对象 - 例如红色 Skoda Octavia
+- 但每当用新的车辆/模型扩展挂接项中的可生成车辆池时，此模型就会改变
+- 此标志的预期用途是，例如在村庄房屋或房屋车道旁放置停放的轿车 = 你期望始终是同一辆轿车的地点
+- 在编辑器中对我们来说，选中的轿车可能经常变化，但对玩家而言，这应只会在新补丁或新版本发布后偶尔发生
 
-### Force Dynamic Model Spawn
+#### 挂接项使用注意事项
 
-Editor View panel now contains a new option named Force Dynamic Model Spawn. When checked (by default) the placed Hookup items always show some model from the hookup's pool. When unchecked the placed Hookup items spawn models depend on the relevant context (day/night) and the Spawn probability set in their Properties.
+- 挂接项的池由其国家控制 - 例如将 Parked Police Car 放入没有国家定义的位置，什么都不会生成！
 
-### Context Areas
+- 目前挂接项仍在等待一些额外的优化！
+- 此时过度使用它们会严重影响地图的性能
 
-- new types of traffic area rules and categorization
-- when applicable affect not only AI traffic but also hookup items
-- three types
-  - [context]: definition of specific local context, place this over the designated location to apply the appropriate traffic behavior to it
-    - added functionality in regards to Hookup Item is most important in case of "Company area (depot), explained later in this text
-  - [context][urban]: definition of the urban areas, placed over cities, villages etc.
-  - [context][zone]: definition of context to parts of the cities, placed over whole parts of the map that can represent f.e. residential zone, or over the supermarket grounds and their parking lots
-- the intention of those areas and zones is to give context to the map so traffic knows how to behave and Hookup Items know what to spawn and when
+### 强制动态模型生成
+
+Editor View 面板现在包含一个名为 Force Dynamic Model Spawn 的新选项。勾选时（默认），已放置的挂接项始终显示其挂接池中的某个模型。未勾选时，已放置的挂接项生成的模型取决于相关上下文（白天/夜晚）及其属性中设置的 Spawn probability。
+
+### 上下文区域
+
+- 新型的交通区域规则与分类
+- 在适用时不仅影响 AI 交通，还影响挂接项
+- 三种类型
+  - [context]：特定局部上下文的定义，将其放置在指定位置之上，以对该位置应用相应的交通行为
+    - 与挂接项相关的功能增强在“公司区域（货场）”的情况下最为重要，本文稍后会说明
+  - [context][urban]：城市区域的定义，放置在城镇、村庄等之上
+  - [context][zone]：针对城市部分区域的上下文定义，放置在地图中可代表例如住宅区的整个部分之上，或放置在超市场地及其停车场之上
+- 这些区域和分区的意图是为地图提供上下文，使交通知道该如何表现，使挂接项知道该生成什么以及何时生成
 
 ![Context_areas_props.jpg](../../../../../../images/articles/Documentation/Tools/Map%20Editor/New%20Editor%20Features%20info%20-%20old%20+%201.47/300px-Context_areas_props.jpg)
 
-*context areas*
+*上下文区域*
 
-- [context][zone] Residential area
-  - placed over parts of the map containing buildings where people live
-  - allows only regular car traffic in, no trucks or big buses (in future also small van)
-  - roads inside this area spawn only such vehicles
-  - hookup items for "parked car" spawn models more frequently at night than during the day
-- [context][zone] Commercial area
-  - placed over places people gather around during the day - stores, offices, city centers etc.
-  - allows only regular car traffic in, no trucks of big buses (in future also small van)
-  - roads inside this area spawn only such vehicles
-  - hookup items for "parked car" spawn models more frequently during the day than at night
+- [context][zone] 住宅区
+  - 放置在地图中包含人们居住建筑的部分之上
+  - 仅允许普通轿车交通进入，不允许卡车或大型客车（将来还有小型厢式货车）
+  - 此区域内的道路仅生成此类车辆
+  - “parked car”的挂接项在夜间比白天更频繁地生成模型
+- [context][zone] 商业区
+  - 放置在人们白天聚集的场所之上 - 商店、办公室、市中心等
+  - 仅允许普通轿车交通进入，不允许卡车或大型客车（将来还有小型厢式货车）
+  - 此区域内的道路仅生成此类车辆
+  - “parked car”的挂接项在白天比夜间更频繁地生成模型
 
 ![Res_com_ex.jpg](../../../../../../images/articles/Documentation/Tools/Map%20Editor/New%20Editor%20Features%20info%20-%20old%20+%201.47/300px-Res_com_ex.jpg)
 
-*Residential and Commercial Area example*
+*住宅区与商业区示例*
 
-- [context] Company area
-  - placed over
-    - the area around a prefab depot you want to "expand"
-    - over the spaces of generic decorative companies you want to make dynamic
-  - when a "parked trailer (custom)"/"parked truck with trailer (custom)" is placed into this area it spawns a specific type of trailer depending on the traffic area tags written in the properties of the Traffic area item
-    - SOON this should include brand names of ingame companies, and eventually also ability of the context area to take this information from the prefab placed into it
-    - RIGHT NOW this includes the generic tags to spawn
-      - no tag - spawns generic box trailer
-      - fuel - spawns generic fuel tank trailer
-      - food - spawns generic food tank trailer
-      - chemical - spawns generic chemical tank trailer
-      - container - spawns generic container trailer
-      - construction - spawns generic construction material trailer
+- [context] 公司区域
+  - 放置在
+    - 你想要“扩展”的预制件货场周围区域
+    - 你想要使其动态化的通用装饰性公司的场地
+  - 当把“parked trailer (custom)”/“parked truck with trailer (custom)”放置到此区域时，它会根据交通区域项属性中写入的交通区域标签生成特定类型的挂车
+    - 即将支持：这应包含游戏内公司的品牌名称，并最终使上下文区域能够从放入其中的预制件获取此信息
+    - 目前，这包含以下可生成的通用标签
+      - 无标签 - 生成通用厢式挂车
+      - fuel - 生成通用燃油罐挂车
+      - food - 生成通用食品罐挂车
+      - chemical - 生成通用化学品罐挂车
+      - container - 生成通用集装箱挂车
+      - construction - 生成通用建筑材料挂车
 
 ![Comp_ex.jpg](../../../../../../images/articles/Documentation/Tools/Map%20Editor/New%20Editor%20Features%20info%20-%20old%20+%201.47/300px-Comp_ex.jpg)
 
-*Company Area example*
+*公司区域示例*
 
-Another related change is regarding Custom vehicles areas.
+另一项相关更改涉及自定义车辆区域。
 
-Before Context areas, there were two traffic area rules which you could use to allow spawning driving custom vehicles:
+在上下文区域之前，有两种交通区域规则可用于允许生成行驶中的自定义车辆：
 
-- *Urban-specific vehicles area* (for spawning garbage trucks, street sweepers, ...)
-- *Rural-specific vehicles area* (for spawning tractors, harvesters, ...)
+- *Urban-specific vehicles area*（用于生成垃圾车、扫路车……）
+- *Rural-specific vehicles area*（用于生成拖拉机、收割机……）
 
-**Now, we have the following rule instead: `[access] Custom vehicles area`**
+**现在，我们改用以下规则：`[access] Custom vehicles area`**
 
-The actual vehicle models which will spawn in the area will be automatically determined by the context, for example:
+在该区域中实际会生成的车辆模型将由上下文自动决定，例如：
 
-- in rural areas and villages - spawns rural-specific vehicles, like tractors
-- in cities - spawns city-specific vehicles, like street sweeper or garbage truck
-- in company areas - spawns vehicles specific for given company, like yard trucks in ports
+- 在农村地区和村庄 - 生成农村专用车辆，如拖拉机
+- 在城市中 - 生成城市专用车辆，如扫路车或垃圾车
+- 在公司区域 - 生成特定公司专用车辆，如港口中的堆场卡车
 
-### F8 map
+### F8 地图
 
-- Option to see the ingame background map
+- 可查看游戏内背景地图的选项
 
-- Option to highlight the roads depending on their AI traffic settings
-  - green for AI traffic on
-  - red for AI traffic off
+- 可根据道路的 AI 交通设置高亮道路的选项
+  - 绿色表示 AI 交通开启
+  - 红色表示 AI 交通关闭
 
-- the Screenshot button now works properly
-  - you can make a screenshot of the entire map
-  - or you can do a "screenshot area selection"
-    - you can create a rectangular selection area on the UI map when this option is checked
-    - when you hover your mouse by the corner of the area, the cursor changes into a cross shape and you can drag those corners to expand the selection
-  - it decides the screenshot detail based on the current zoom level of the UI map!
-  - it no longer overwrites previous map screenshot in the folder
-  - *(currently it makes pink screenshot together with the normal one - we will see in the future to make this a separate option)*
-  - WARNING - depending on the size of the map and level of zoom, the screenshot process can take a very long time to finish or even crash the editor if your PC is not powerful enough
+- Screenshot 按钮现在可正常工作
+  - 你可以截取整张地图的截图
+  - 或者进行“截图区域选择”
+    - 勾选此选项后，你可以在 UI 地图上创建矩形选择区域
+    - 当鼠标悬停在区域角落附近时，光标会变为十字形，你可以拖动这些角来扩展选择范围
+  - 它会根据 UI 地图的当前缩放级别决定截图细节！
+  - 它不再覆盖文件夹中先前的地图截图
+  - *（目前它会同时生成粉色截图和普通截图 - 将来我们会考虑将其做成单独选项）*
+  - 警告 - 取决于地图大小和缩放级别，截图过程可能耗时极长，甚至在你的电脑性能不足时使编辑器崩溃
 
-### Other fixes and changes
+### 其他修复与更改
 
-- With this update the `defaults.ini` file was updated and all terrains editor-default NOISE is now set to 0
-- Scaling Far Model Item in properties no longer keeps unselecting the scaled model in the list
-- Small tweak was made to Traffic Area Item to make it little more visible in the map - the boundary lines between the nodes had their color changed to light blue
-- Far Model properties was updated to unify the layout with the Visibility Area
-  - buttons to "select item" (highlighted in the list) and "select all items" have been added
-- mouse hovering over a Visibility Area and Far Model Item node now highlights the items assigned to it in the map
-- New debug mode added - `UI map view`
-  - highlights the roads/prefabs that are displayed on the UI map
+- 本次更新中 `defaults.ini` 文件已更新，所有地形的编辑器默认 NOISE 现在都设为 0
+- 在属性中缩放远景模型项时，不再持续取消列表中已缩放模型的选中状态
+- 对交通区域项做了小幅调整，使其在地图中稍微更易看见 - 节点之间的边界线颜色已改为浅蓝色
+- 远景模型属性已更新，以统一与可见性区域的布局
+  - 新增了“select item”（在列表中高亮）和“select all items”按钮
+- 将鼠标悬停在可见性区域和远景模型项节点上时，现在会在地图中高亮分配给它的项
+- 新增调试模式 - `UI map view`
+  - 高亮 UI 地图中显示的道路/预制件
 
-- Manual save and manual load now resets the autosave clock
-- RMB on a vertex node or the control nodes of the area item opens the Properties of the parent item
-- the Current Selection now displays the UIDs in right format
-  - you can use this when you need to copy UID of an Item or Compound
-- in Prefab Properties - `CTRL+TAB` now works to skip between same property fields of each node
-- New shortcut `CTRL+A` now works as an additional option for selection expansion
-  - using `CTRL+A` on Curve item node selects all nodes of the curve item
-    - same for terrain, trajectory etc.
-  - using `CTRL+A` on Road of Prefabs *(or QEM terrain handler)* expands the selection the same way as when using `.`
+- 手动保存和手动加载现在会重置自动保存计时
+- 在顶点节点或区域项的控制节点上单击右键会打开父项的属性
+- Current Selection 现在以正确格式显示 UID
+  - 当你需要复制项或组合的 UID 时可以使用此功能
+- 在预制件属性中 - `CTRL+TAB` 现在可用于在每个节点的相同属性字段之间跳转
+- 新快捷键 `CTRL+A` 现在可作为选择扩展的附加选项
+  - 在曲线项节点上使用 `CTRL+A` 会选择该曲线项的所有节点
+    - 地形、轨迹等也是如此
+  - 在预制件的道路上使用 `CTRL+A` *（或 QEM 地形手柄）* 会以与使用 `.` 相同的方式扩展选择
 
-## See Also
+## 另见
 
-- Editor Commands - [Documentation/Engine/Console/Commands/Editor](../../Engine/Console/Commands/Editor.md)
-- Editor Shortcuts - [Documentation/Engine/Editor Shortcuts](https://modding.scssoft.com/index.php?title=Documentation/Engine/Editor_Shortcuts&action=edit&redlink=1)
+- 编辑器命令 - [Documentation/Engine/Console/Commands/Editor](../../Engine/Console/Commands/Editor.md)
+- 编辑器快捷键 - [Documentation/Engine/Editor Shortcuts](https://modding.scssoft.com/index.php?title=Documentation/Engine/Editor_Shortcuts&action=edit&redlink=1)
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/Map_Editor/New_Editor_Features_info_-_old_%2B_1.47 | revision: 5299 | captured: 2026-10-21 23:56:14 -->

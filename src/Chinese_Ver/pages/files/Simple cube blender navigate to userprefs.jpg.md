@@ -1,4 +1,4 @@
-# File:Simple cube blender navigate to userprefs.jpg
+# 文件:Simple cube blender navigate to userprefs.jpg
 
 ![Simple cube blender navigate to userprefs.jpg](../../../images/files/Simple%20cube%20blender%20navigate%20to%20userprefs.jpg/Simple_cube_blender_navigate_to_userprefs.jpg)
 

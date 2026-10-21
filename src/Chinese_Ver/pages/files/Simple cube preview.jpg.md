@@ -1,4 +1,4 @@
-# File:Simple cube preview.jpg
+# 文件:Simple cube preview.jpg
 
 ![Simple cube preview.jpg](../../../images/files/Simple%20cube%20preview.jpg/Simple_cube_preview.jpg)
 

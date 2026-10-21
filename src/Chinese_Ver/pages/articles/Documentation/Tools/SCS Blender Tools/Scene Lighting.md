@@ -1,27 +1,27 @@
-# Documentation/Tools/SCS Blender Tools/Scene Lighting
+# 文档/工具/SCS Blender Tools/场景光照
 
-SCS Lighting panel enables easy to setup scene lighting by using game sun profile data and may be used for replicating different times of day from the SCS game. Panel can be found under *World* tab inside Blender properties window.
+SCS Lighting 面板可利用游戏中的太阳配置数据轻松设置场景光照，并可用于复现 SCS 游戏中一天里的不同时段。该面板可在 Blender 属性窗口的 *World* 选项卡下找到。
 
-If SCS Lighting is disabled (checkbox on the left side of panel header is unticked), then Blender uses fully featured reference lighting for SCS Materials, representing neutral lighting in the middle of the day. But if you want to use your own settings or same sun profiles data as game does, then tick the checkbox in header and either setup reference profile yourself by changing values in **Active Sun Profile Settings** sub-panel or search for a sun profiles SII definition file (usually found inside game structure under: "/def/climate/<climate_type>/<weather_type>.sii"). Selecting desired sun profile entry in the list, applies it's settings to Blender scene lighting.
+如果 SCS Lighting 已禁用（面板标题左侧的复选框未勾选），Blender 会为 SCS 材质使用功能齐全的参考光照，代表一天正午时的中性光照。但如果你想使用自己的设置，或与游戏相同的太阳配置数据，请勾选标题中的复选框，然后要么在 **Active Sun Profile Settings** 子面板中更改数值以自行设置参考配置，要么搜索太阳配置的 SII 定义文件（通常位于游戏结构中的：“/def/climate/<climate_type>/<weather_type>.sii”）。在列表中选择所需的太阳配置条目，其设置便会应用到 Blender 场景光照。
 
 [![SCS_Blender_Tools_Lighting.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Scene%20Lighting/SCS_Blender_Tools_Lighting.280.png)](../../../../files/SCS%20Blender%20Tools%20Lighting.280.png.md)
 
-## Sun Profiles Lib
+## 太阳配置库
 
-*[“*.sii” file, absolute or relative path to 'SCS Project Base Path']*
+*[“*.sii” 文件，指向 'SCS Project Base Path' 的绝对或相对路径]*
 
-Represents path to SII definition file with sun profiles. Once given list below will be populated with all sun profiles found in the file.
+表示包含太阳配置的 SII 定义文件的路径。指定后，下方列表将填入该文件中找到的所有太阳配置。
 
-## SCS Lighting East
+## SCS Lighting 东向
 
-Property defining east sky direction. Changing this property will rotate whole lighting scene around global Z axis - assigns direction of the sun light.
+定义东向天空方向的属性。更改此属性会使整个光照场景绕全局 Z 轴旋转——从而指定太阳光的方向。
 
-There is also locking option placed beside lighting east: [![Blend_icon_lock_east.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Scene%20Lighting/Blend_icon_lock_east.png)](../../../../files/Blend%20icon%20lock%20east.png.md). This option will force lamps to follow rotation of the camera in 3D view on global Z-axis. Once option is unchecked lamps will remain in place. So you can easily use this option to move east lighting around in 3D view by your liking.
+东向光照旁还有一个锁定选项：[![Blend_icon_lock_east.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Scene%20Lighting/Blend_icon_lock_east.png)](../../../../files/Blend%20icon%20lock%20east.png.md)。此选项会强制灯光在 3D 视图中绕全局 Z 轴跟随摄像机的旋转。一旦取消勾选该选项，灯光便会保持在原位。因此，你可以轻松用此选项在 3D 视图中按自己的喜好旋转东向光照。
 
-## Active Sun Profile Settings
+## 活动太阳配置设置
 
-This section is showing lighting values of currently selected sun profile in the list. By changing any value in this section, scene lighting will be updated accordingly to currently set values.
+此区域显示列表中当前选中太阳配置的光照数值。更改此区域中的任何数值，场景光照都会相应地按当前设置的数值更新。
 
-Settings of any selected sun profile can freely be changed, but they won't be saved back to SII definition file, so if you reload sun profiles library all changes done will be lost.
+任何选中太阳配置的设置都可以自由更改，但它们不会保存回 SII 定义文件，因此如果你重新加载太阳配置库，所做的所有更改都会丢失。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/SCS_Blender_Tools/Scene_Lighting | revision: 4289 | captured: 2026-10-21 23:56:14 -->

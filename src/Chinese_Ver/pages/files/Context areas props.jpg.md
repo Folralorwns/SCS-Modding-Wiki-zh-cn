@@ -1,4 +1,4 @@
-# File:Context areas props.jpg
+# 文件:Context areas props.jpg
 
 ![Context areas props.jpg](../../../images/files/Context%20areas%20props.jpg/Context_areas_props.jpg)
 

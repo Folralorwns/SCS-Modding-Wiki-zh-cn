@@ -1,23 +1,23 @@
 # User talk:Blueyv
 
-Hi blueyv,
+你好，blueyv，
 
-this page will be dedicated as communication channel for you about your contributions. So if you have any questions address them here please, thx.
+本页面将作为你讨论自身贡献的交流渠道。因此如果你有任何问题，请在这里提出，谢谢。
 
-## Map Editors Roads
+## 地图编辑器道路
 
-Hi again!
+又见面了！
 
-Nice to see you progressing with the wiki. However I have take a look at your tutorial and realized I forgot to tell you to check this page: [http://modding.scssoft.com/wiki/Contribution](../articles/Contribution.md)
+很高兴看到你在 wiki 上不断取得进展。不过我看了你的教程，发现我忘了让你查看这个页面：[http://modding.scssoft.com/wiki/Contribution](../articles/Contribution.md)
 
-In See Also section you can find template for user tutorial, so we would can easily keep same style for tutorials all over the page. So please, try to rework your tutorial by this template (using table etc): [http://modding.scssoft.com/wiki/Contribution/User_tutorial_template](../articles/Contribution/User%20tutorial%20template.md)
+在“参见”一节中可以找到用户教程的模板，这样我们就能轻松让整个页面上的教程保持相同风格。所以请试着用这个模板（使用表格等）改写你的教程：[http://modding.scssoft.com/wiki/Contribution/User_tutorial_template](../articles/Contribution/User%20tutorial%20template.md)
 
-Thx. [50keda](https://modding.scssoft.com/index.php?title=User:50keda&action=edit&redlink=1) ([talk](https://modding.scssoft.com/index.php?title=User_talk:50keda&action=edit&redlink=1))50keda
+谢谢。[50keda](https://modding.scssoft.com/index.php?title=User:50keda&action=edit&redlink=1) ([讨论](https://modding.scssoft.com/index.php?title=User_talk:50keda&action=edit&redlink=1))50keda
 
-## User page
+## 用户页面
 
-Not that I want to restrict you, however before approving your user page, please extend it a bit. I especially like [User:Smarty](../users/Smarty.md) page. Just introduce yourself and then put up some section for you work and link your tutorials there ;)
+并非我想限制你，但在批准你的用户页面之前，请把它稍微扩充一下。我特别喜欢 [User:Smarty](../users/Smarty.md) 页面。简单介绍一下你自己，然后为你做的工作建几个小节，并在那里链接你的教程 ;)
 
-Thx, [50keda](https://modding.scssoft.com/index.php?title=User:50keda&action=edit&redlink=1) ([talk](https://modding.scssoft.com/index.php?title=User_talk:50keda&action=edit&redlink=1))50keda
+谢谢，[50keda](https://modding.scssoft.com/index.php?title=User:50keda&action=edit&redlink=1) ([讨论](https://modding.scssoft.com/index.php?title=User_talk:50keda&action=edit&redlink=1))50keda
 
 <!-- source: https://modding.scssoft.com/wiki/User_talk%3ABlueyv | revision: 3236 | captured: 2026-10-21 23:56:14 -->

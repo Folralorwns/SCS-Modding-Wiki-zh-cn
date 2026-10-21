@@ -1,14 +1,14 @@
-# Documentation/Engine/Game data
+# 文档/引擎/游戏数据
 
-> **TIP:** Be aware that this page is obsolete, due to big changes in game structure with each update! For more information on structure changes check [modding updates](../../Games/ETS2/Modding%20guides.md) pages.
+> **提示：** 请注意，本页面已过时，因为每次更新都会带来游戏结构的重大变化！有关结构变化的更多信息，请查看[模组更新](../../Games/ETS2/Modding%20guides.md)页面。
 
-All of SCS games are using partially prescribed folder structure. This means that some resources must have the proper name and be placed into the proper folder otherwise game may malfunction or even crash. That's why this topic is giving insight to game base folder structure, its crucial resources and their place in folders.
+所有 SCS 游戏都使用部分规定的文件夹结构。这意味着某些资源必须具有正确的名称并放置在正确的文件夹中，否则游戏可能出错甚至崩溃。因此，本主题将深入介绍游戏基础文件夹结构、其中的关键资源及其在文件夹中的位置。
 
-In general, this topic is showing and describing the structure of the folders and files as you get them by using the [Game Archive Extractor](../Tools/Game%20Archive%20Extractor.md) for two basic files with .scs extension found in game installation directory: "**base.scs**" and "**def.scs**".
+总体而言，本主题展示并描述通过 [Game Archive Extractor](../Tools/Game%20Archive%20Extractor.md) 从游戏安装目录中两个基本 .scs 扩展名文件（"**base.scs**" 和 "**def.scs**"）提取得到的文件夹和文件结构。
 
-## Root game folder
+## 游戏根文件夹
 
-Root game folder consists of:
+游戏根文件夹包括：
 
 ```
 Root game folder
@@ -36,9 +36,9 @@ Root game folder
  └version.txt     File containing game version string.
 ```
 
-### Definitions
+### 定义
 
-Definitions for most of configurable game content like: vehicles, economy, map assets etc.
+用于大多数可配置游戏内容的定义，例如：车辆、经济、地图资产等。
 
 ```
 Root game folder
@@ -99,11 +99,11 @@ Root game folder
   └vehicle_lamp_colors.sii       Defines players vehicle light mask colors.
 ```
 
-#### Camera definitions
+#### 摄像机定义
 
-Camera definitions folder ("**/def/camera**") is using "**camera_storage(.infix).sii**" files as storage files defining cameras that can be used by player while in game (UI interface is not handled by cameras, as UI is drawn directly on screen 2D plane). Note that this defines only storage for available in game cameras, but which camera is used in the game depends on currently user selected view and current used player vehicle.
+摄像机定义文件夹（"**/def/camera**"）使用 "**camera_storage(.infix).sii**" 文件作为存储文件，定义玩家在游戏中可以使用的摄像机（UI 界面不由摄像机处理，因为 UI 直接绘制在屏幕的 2D 平面上）。请注意，这里只定义游戏内可用摄像机的存储，而游戏中实际使用哪个摄像机取决于用户当前选择的视图和当前使用的玩家车辆。
 
-Beside storage files camera definitions folder also includes "**cutscene.sii**" file which defines camera and its movement in different cut-scenes.
+除了存储文件之外，摄像机定义文件夹还包含 "**cutscene.sii**" 文件，用于定义不同过场动画中的摄像机及其运动。
 
 ```
 Root game folder
@@ -117,11 +117,11 @@ Root game folder
     └cutscene.sii               Defines cut scene data for each type.
 ```
 
-#### Cargo definitions
+#### 货物定义
 
-This folder contains all cargoes definitions that player can transport in the game.
+此文件夹包含玩家在游戏中可以运输的所有货物定义。
 
-Unique cargo is defined by SII file and folder having one or more SII files defining trailers which can carry this cargo. So for each cargo you have one SII file inside "**/def/cargo/**" and one or multiple SII files inside folder "**/def/cargo/<cargo_name>/**". Example definition for cargo: "**<cargo_name>**" is shown in the tree below.
+每种货物由一个 SII 文件以及一个包含一个或多个 SII 文件的文件夹定义，这些 SII 文件定义可以运载该货物的挂车。因此，对于每种货物，你在 "**/def/cargo/**" 中有一个 SII 文件，并在 "**/def/cargo/<cargo_name>/**" 文件夹中有一个或多个 SII 文件。下方树状图展示了货物 "**<cargo_name>**" 的示例定义。
 
 ```
 Root game folder
@@ -138,11 +138,11 @@ Root game folder
     └...                        The rest of unique cargoes definition.
 ```
 
-#### Climate definitions
+#### 气候定义
 
-Each climate is defined in its own folder "**/def/climate/<climate_name>/**" and usually have profile SII files: one for nice weather "**nice.sii**" and second for bad weather "**bad.sii**". Climates definitions are used in Map Editor (Editor Settings -> Weather tab).
+每种气候定义在各自的文件夹 "**/def/climate/<climate_name>/**" 中，通常包含配置文件 SII：一个用于好天气 "**nice.sii**"，另一个用于恶劣天气 "**bad.sii**"。气候定义在地图编辑器中使用（Editor Settings -> Weather 选项卡）。
 
-By default there should be at least two climates:
+默认情况下应至少有两种气候：
 
 ```
 Root game folder
@@ -154,11 +154,11 @@ Root game folder
     └...          The rest of climates.
 ```
 
-#### Company definitions
+#### 公司定义
 
-Companies are entry and exit places on map for player missions (e.g. trailer delivery). So when defining new company make sure to include it in company storage file "**/def/company(.infix).sii**" otherwise company won't appear in the Map Editor and later in game.
+公司是地图上玩家任务（例如挂车交付）的进入和离开地点。因此，在定义新公司时，请务必将其包含在公司存储文件 "**/def/company(.infix).sii**" 中，否则该公司不会出现在地图编辑器中，之后也不会出现在游戏中。
 
-Company definition folder with included company "**<company_name_1>**" would look like:
+包含公司 "**<company_name_1>**" 的公司定义文件夹如下所示：
 
 ```
 Root game folder
@@ -176,13 +176,13 @@ Root game folder
     └...                     The rest of companies definitions.
 ```
 
-#### Country definitions
+#### 国家定义
 
-Defines available countries that can be used in the Map Editor and later in game. While defining new country make sure to include it in country storage file "**/def/country(.infix).sii**".
+定义可在地图编辑器中使用、并随后在游戏中使用的国家。在定义新国家时，请务必将其包含在国家存储文件 "**/def/country(.infix).sii**" 中。
 
-Each country has its own folder defining all possible country specific data. Worth mentioning is modification of AI traffic appearing frequencies, which is done by adding SII files inside "**/def/country/<country_name>/ai/**" folder. Each SII file defines modified frequency for one AI vehicle, where its name tells which car it is. Possible file names are AI vehicles unit name suffixes used inside AI vehicle definitions (AI vehicles definitions can be found in: "**/def/vehicle/ai/**").
+每个国家都有自己的文件夹，用于定义所有可能的国家特定数据。值得一提的是 AI 交通出现频率的修改，其做法是在 "**/def/country/<country_name>/ai/**" 文件夹中添加 SII 文件。每个 SII 文件定义一种 AI 车辆修改后的频率，其名称表明对应哪种车辆。可用的文件名是 AI 车辆定义中使用的 AI 车辆单元名称后缀（AI 车辆定义可在 "**/def/vehicle/ai/**" 中找到）。
 
-Tree overview of country definitions:
+国家定义的树状概览：
 
 ```
 Root game folder
@@ -201,13 +201,13 @@ Root game folder
     └...                   The rest of the countries definition.
 ```
 
-#### Ferry definitions
+#### 渡轮定义
 
-Defines names of the ferries and their connections. For proper working in game this ferries has to be used in Map Editor while adding Ferry points. All ferries also have to be included in ferry storage file "**/def/ferry(.infix).sii**".
+定义渡轮的名称及其连接。为使游戏正常运行，在地图编辑器中添加渡轮点时必须使用这些渡轮。所有渡轮还必须包含在渡轮存储文件 "**/def/ferry(.infix).sii**" 中。
 
-Connections on the other hand are defined in "**/def/ferry/connection/**" folder. Each file in that folder defines one direction connection from one ferry to second ferry. How connection is directed is defined by SiiUnit name, so for example SiiUnit name: "**conn.&lt;ferry1&gt;.&lt;ferry2&gt;**" is presenting ferry connection from &lt;ferry1&gt; to &lt;ferry2&gt;.
+而连接则定义在 "**/def/ferry/connection/**" 文件夹中。该文件夹中的每个文件定义一个从一个渡轮到另一个渡轮的单向连接。连接的方向由 SiiUnit 名称定义，例如 SiiUnit 名称 "**conn.&lt;ferry1&gt;.&lt;ferry2&gt;**" 表示从 &lt;ferry1&gt; 到 &lt;ferry2&gt; 的渡轮连接。
 
-Tree overview of ferry definitions:
+渡轮定义的树状概览：
 
 ```
 Root game folder
@@ -217,16 +217,16 @@ Root game folder
     └...          SII files defining ferries. Each file defines one unique ferry.
 ```
 
-#### Sign definitions
+#### 标志牌定义
 
-Sign definitions are meant for new on-the-fly sign generation system which uses:
+标志牌定义用于新的即时标志牌生成系统，该系统使用：
 
-- Image atlases which are used to combine several related image into one and use atlas entries to address only part of the image.
-- Frame templates which replaces sign background images for generated ones, where quality is not compromised with scaling.
+- 图像图集，用于将多个相关图像合并为一个，并使用图集条目仅引用图像的一部分。
+- 边框模板，用于将标志牌背景图像替换为生成的图像，且缩放时不会损失质量。
 
-Moreover sign definitions includes projects and template folder where game saves projects and end sign templates created within Map Editor.
+此外，标志牌定义还包括项目和模板文件夹，游戏在此保存在地图编辑器中创建的项目和最终标志牌模板。
 
-Whole sign definitions tree structure:
+标志牌定义的完整树状结构：
 
 ```
 Root game folder
@@ -239,9 +239,9 @@ Root game folder
     └templates.sii    Templates storage file including templates from "/def/sign/template/ folder. Also managed by Map Editor
 ```
 
-#### Vehicle definitions
+#### 车辆定义
 
-Vehicle definitions are responsible for configuration of any type of vehicles and its parts in SCS games that are not map assets. Biggest part of this configurations belongs to configuration of possible player vehicles and its parts.
+车辆定义负责配置 SCS 游戏中非地图资产的各种车辆类型及其部件。这些配置的绝大部分属于玩家可用车辆及其部件的配置。
 
 ```
 Root game folder
@@ -286,13 +286,13 @@ Root game folder
     └trailer_storage.sii                Storage file for inclusion of trailers for player. For new trailers use e.g. "traffic_storage.mymod.sii".
 ```
 
-##### AI vehicle definitions
+##### AI 车辆定义
 
-AI vehicle definition consists of AI traffic vehicles definition files and folders for them containing "**chassis.sii**" file defining chassis data of each vehicle. All of the vehicles definition files have to be included in one of traffic storage files: "**traffic_storage_bus(.infix).sii**", "**traffic_storage_bus(.infix).sii**", "**traffic_storage_bus(.infix).sii**" or any other custom defined traffic vehicle type storage file.
+AI 车辆定义由 AI 交通车辆定义文件以及相应的文件夹组成，文件夹中包含定义各车辆底盘数据的 "**chassis.sii**" 文件。所有车辆定义文件都必须包含在以下某个交通存储文件中："**traffic_storage_bus(.infix).sii**"、"**traffic_storage_bus(.infix).sii**"、"**traffic_storage_bus(.infix).sii**"，或任何其他自定义的交通车辆类型存储文件。
 
-> **Note:** Euro Truck Simulator 2 has extra: "**/def/vehicle/ai/truck/**" subfolder for grouping folders of traffic truck chassis definitions.
+> **注意：** Euro Truck Simulator 2 额外有 "**/def/vehicle/ai/truck/**" 子文件夹，用于对交通卡车底盘定义的文件夹进行分组。
 
-> **Note:** This folder doesn't include trailers definitions for traffic as it's a common practice that trailers for AI traffic are defined inside Trailer definitions.
+> **注意：** 此文件夹不包含交通挂车的定义，因为通常的做法是在挂车定义中定义 AI 交通挂车。
 
 ```
 Root game folder
@@ -309,11 +309,11 @@ Root game folder
       └...                  The rest of AI traffic vehicles definition files.
 ```
 
-##### Trailer definitions
+##### 挂车定义
 
-Trailer definitions defines trailers for usage with players truck or for usage by AI traffic. For defining a trailer, one SII file and folder with "**chassis.sii**" and/or additional cargo definitions has to be created. All of the trailers definition files also have to be included in one of the storage files to be used in game. In case trailer should be used by player it has to be included in one of the "**trailer_storage(.infix).sii**" files and if trailer should be used by AI trucks it has to be included in one of "**traffic_storage_semi_trailer(.infix).sii**" files or custom type of AI trailers storage file.
+挂车定义用于定义供玩家卡车使用的挂车或供 AI 交通使用的挂车。定义挂车时，必须创建一个 SII 文件以及一个包含 "**chassis.sii**" 和/或额外货物定义的文件夹。所有挂车定义文件还必须包含在某个存储文件中才能在游戏中使用。如果挂车应由玩家使用，则必须将其包含在某个 "**trailer_storage(.infix).sii**" 文件中；如果挂车应由 AI 卡车使用，则必须将其包含在某个 "**traffic_storage_semi_trailer(.infix).sii**" 文件中，或包含在自定义类型的 AI 挂车存储文件中。
 
-> **Note:** AI trailers and player trailers are handled somewhat differently. Player trailers use the "**trailer**" SiiUnit class with a naming convention of `trailer.<name>`, while AI trailers use the "**traffic_trailer**" SiiUnit class and a naming convention of `traffic.trailer.<name>`.
+> **注意：** AI 挂车和玩家挂车的处理方式有所不同。玩家挂车使用 "**trailer**" SiiUnit 类，命名约定为 `trailer.<name>`；而 AI 挂车使用 "**traffic_trailer**" SiiUnit 类，命名约定为 `traffic.trailer.<name>`。
 
 ```
 Root game folder
@@ -337,17 +337,17 @@ Root game folder
       └...                       The rest of definition files defining other trailers.
 ```
 
-##### Player trucks definitions
+##### 玩家卡车定义
 
-Player truck definitions are containing all definitions that defines trucks that player can use in game and accessories for them.
+玩家卡车定义中包含用于定义玩家可在游戏中使用的卡车及其配件的所有定义。
 
-For more information see the dedicated page: [Player trucks definitions](Game%20data/Player%20trucks%20definitions.md).
+更多信息请参见专门页面：[玩家卡车定义](Game%20data/Player%20trucks%20definitions.md)。
 
-#### World definitions
+#### 世界定义
 
-Defines all world items that can be placed on the map with Map Editor and their behaviour. All of the different item types have their own definition file where items of the same type are defined.
+定义所有可使用地图编辑器放置到地图上的世界物品及其行为。所有不同的物品类型都有自己的定义文件，同类型的物品在该文件中定义。
 
-While defining new world items alternative infixed naming of SII file shall be used e.g. for defining new static models infixed file example would be: "**model.mymod.sii**".
+定义新世界物品时，应改用带中缀的 SII 文件命名方式，例如定义新静态模型时，带中缀的文件示例为："**model.mymod.sii**"。
 
 ```
 Root game folder
@@ -389,9 +389,9 @@ Root game folder
     └vegetation_old.sii          Obsolete. Used only for backward compatibility.
 ```
 
-### Fonts
+### 字体
 
-Folder for storing game fonts. Mostly used in UI and inside vehicle dashboard displays.
+用于存储游戏字体的文件夹。主要用于 UI 以及车辆仪表盘显示屏内部。
 
 ```
 Root Game Folder
@@ -400,9 +400,9 @@ Root Game Folder
   └sign                      Fonts used by road signs.
 ```
 
-### Predefined materials
+### 预定义材质
 
-Library of predefined materials and textures.
+预定义材质和纹理库。
 
 ```
 Root Game Folder
@@ -423,9 +423,9 @@ Root Game Folder
   └material.db     Physical materials (substances) database. Names of this substances may be used on materials attribute called "Substance".
 ```
 
-### Sounds
+### 声音
 
-Library of sounds used by game.
+游戏使用的声音库。
 
 ```
 Root Game Folder
@@ -438,9 +438,9 @@ Root Game Folder
   └ui                      Sound effects used when user is interacting with the UI. For example click on the UI element.
 ```
 
-### UI definitions
+### UI 定义
 
-Library of all UI layouts and control definitions including vehicle dashboards.
+所有 UI 布局和控件定义的库，包括车辆仪表盘。
 
 ```
 Root Game Folder
@@ -455,7 +455,7 @@ Root Game Folder
   └...                     UI window layouts for all in game windows.
 ```
 
-### Vehicle model resources
+### 车辆模型资源
 
 ```
 Root Game Folder

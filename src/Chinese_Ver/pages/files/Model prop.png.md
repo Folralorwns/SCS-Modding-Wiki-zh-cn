@@ -1,4 +1,4 @@
-# File:Model prop.png
+# 文件:Model prop.png
 
 ![Model prop.png](../../../images/files/Model%20prop.png/Model_prop.png)
 

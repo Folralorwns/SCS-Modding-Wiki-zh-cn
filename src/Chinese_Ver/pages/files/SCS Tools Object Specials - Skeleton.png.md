@@ -1,4 +1,4 @@
-# File:SCS Tools Object Specials - Skeleton.png
+# 文件:SCS Tools Object Specials - Skeleton.png
 
 ![SCS Tools Object Specials - Skeleton.png](../../../images/files/SCS%20Tools%20Object%20Specials%20-%20Skeleton.png/SCS_Tools_Object_Specials_-_Skeleton.png)
 

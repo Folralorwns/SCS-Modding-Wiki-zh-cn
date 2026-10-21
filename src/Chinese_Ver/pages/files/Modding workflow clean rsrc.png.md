@@ -1,4 +1,4 @@
-# File:Modding workflow clean rsrc.png
+# 文件:Modding workflow clean rsrc.png
 
 ![Modding workflow clean rsrc.png](../../../images/files/Modding%20workflow%20clean%20rsrc.png/Modding_workflow_clean_rsrc.png)
 

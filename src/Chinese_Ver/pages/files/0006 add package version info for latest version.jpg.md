@@ -1,4 +1,4 @@
-# File:0006 add package version info for latest version.jpg
+# 文件:0006 add package version info for latest version.jpg
 
 ![0006 add package version info for latest version.jpg](../../../images/files/0006%20add%20package%20version%20info%20for%20latest%20version.jpg/0006_add_package_version_info_for_latest_version.jpg)
 

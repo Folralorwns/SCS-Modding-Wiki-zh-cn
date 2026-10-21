@@ -1,0 +1,12 @@
+{
+ "id": 4,
+ "chars": 3378,
+ "files": [
+  "pages/articles/Documentation/Engine/Configuration variables/g steam screenshots.md",
+  "pages/articles/Documentation/Engine/Configuration variables/g trans.md",
+  "pages/articles/Documentation/Engine/Configuration variables/g truck light quality.md",
+  "pages/articles/Documentation/Engine/Configuration variables/r color correction.md",
+  "pages/articles/Documentation/Engine/Configuration variables/r fake shadows.md",
+  "pages/articles/Documentation/Engine/Configuration variables/r nv stereo mode.md"
+ ]
+}

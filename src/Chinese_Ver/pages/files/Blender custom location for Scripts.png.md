@@ -1,4 +1,4 @@
-# File:Blender custom location for Scripts.png
+# 文件:Blender custom location for Scripts.png
 
 ![Blender custom location for Scripts.png](../../../images/files/Blender%20custom%20location%20for%20Scripts.png/Blender_custom_location_for_Scripts.png)
 

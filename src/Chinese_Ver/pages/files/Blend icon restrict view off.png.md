@@ -1,4 +1,4 @@
-# File:Blend icon restrict view off.png
+# 文件:Blend icon restrict view off.png
 
 ![Blend icon restrict view off.png](../../../images/files/Blend%20icon%20restrict%20view%20off.png/Blend_icon_restrict_view_off.png)
 

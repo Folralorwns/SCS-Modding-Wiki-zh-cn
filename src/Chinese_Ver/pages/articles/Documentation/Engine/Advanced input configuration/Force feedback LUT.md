@@ -1,19 +1,19 @@
-# Documentation/Engine/Advanced input configuration/Force feedback LUT
+# 文档/引擎/高级输入配置/力反馈 LUT
 
-With game update 1.42 (ETS2 & ATS) engine got support for custom force feedback **L**ook **U**p **T**able, which can alternate the linearity of the output force from the wheel. The intention of this is to enable users to overcome inability of some steering wheel hardware linear output and calibrate the output by their liking.
+在 1.42 游戏更新（ETS2 与 ATS）中，引擎获得了对自定义力反馈查找表（**L**ook **U**p **T**able）的支持，它可以改变方向盘输出力的线性度。其目的在于让用户能够克服某些方向盘硬件无法线性输出的局限，并按自己的喜好校准输出。
 
-## Usage
+## 用法
 
-To use custom used defined FFB LUT, one needs to create a unit file inside the profile folder:
+要使用用户自定义的 FFB LUT，需要在配置文件文件夹中创建一个单元文件：
 
-- local profile: `<game_user_path>/profiles/<profile_hash>/ffb_lut.sii`
-- Steam Cloud profile: `<game_user_path>/steam_profiles/<profile_hash>/ffb_lut.sii`
+- 本地配置：`<game_user_path>/profiles/<profile_hash>/ffb_lut.sii`
+- Steam 云配置：`<game_user_path>/steam_profiles/<profile_hash>/ffb_lut.sii`
 
-When profile with defined `ffb_lut.sii` is loaded, usage of the file will be marked with exclamation mark beside **Overall gain** option in the controller settings. Additionally, if file is properly loaded, it will be always used no matter which steering wheel is currently in use. So in case you are having two steering wheels and switching between them, then custom ffb LUT will be same for both of the wheels.
+当加载了已定义 `ffb_lut.sii` 的配置文件时，控制器设置中 **Overall gain** 选项旁会出现感叹号，标示该文件正在被使用。此外，如果文件已正确加载，则无论当前使用的是哪个方向盘，它都会始终被使用。因此，如果你有两个方向盘并在它们之间切换，那么自定义 ffb LUT 对两个方向盘都是相同的。
 
-## File contents
+## 文件内容
 
-Custom force feedback LUT is text file containing just one unit:
+自定义力反馈 LUT 是仅包含一个单元的文本文件：
 
 ```
 SiiNunit
@@ -28,8 +28,8 @@ input_force_feedback_lut : ffb.lut {
 }
 ```
 
-The `input_force_feedback_lut` unit contains one array variable named `output_values`, which defines lookup value for appropriate input value. Input value for each entry is calculated as: `<entry_index> / (<number_of_entries> - 1)`. All the input values in-between are linearly interpolated between the closest two entries.
+`input_force_feedback_lut` 单元包含一个名为 `output_values` 的数组变量，它为相应的输入值定义查找值。每个条目的输入值按如下方式计算：`<entry_index> / (<number_of_entries> - 1)`。介于其间的所有输入值都在最近的两个条目之间进行线性插值。
 
-Note that all output values will be clamped to the interval <0,1> since scaling above 1.0 could mean unpredictable behavior.
+请注意，所有输出值都会被限制在 <0,1> 区间内，因为缩放超过 1.0 可能导致不可预测的行为。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Advanced_input_configuration/Force_feedback_LUT | revision: 5718 | captured: 2026-10-21 23:56:14 -->

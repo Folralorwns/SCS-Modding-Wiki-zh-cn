@@ -1,33 +1,33 @@
-# Documentation/Engine/Units
+# 文档/引擎/单元
 
-## What is unit?
+## 什么是单元？
 
-Units are objects inside SCS game engine. One of their core abilities is so they can be serialized or deserialized making it a perfect tool to give content creators a way to define various parts of the games.
+单元是 SCS 游戏引擎内部的对象。其核心能力之一是能够被序列化或反序列化，这使其成为让内容创作者定义游戏各个部分的理想工具。
 
-Unit has:
+单元具有：
 
-- Name - units can be nameless or have some specified name. Unit names are divided into components which are 12-char tokens separated by dot - for example correct unit name will be `vehicle.dummy.truck` incorrect will be `vehicledummytruck` however in most cases you should not use them, in case some mod is using name `vehicle.dummy.truck` and you will also use this your mod will fail to load. To create nameless unit simply use dot as the prefix for your unit name for example `.my_mod.nameless.units`
-- Attributes - attributes are set of the data that unit can store, it can be number, text, other unit connection, set of them etc.
+- 名称——单元可以无名，也可以带有指定名称。单元名称被划分为多个组件，这些组件是以点分隔的 12 字符 token——例如正确的单元名称是 `vehicle.dummy.truck`，错误的则是 `vehicledummytruck`；不过在大多数情况下你不应使用它们，因为如果某个模组使用了 `vehicle.dummy.truck` 这一名称，而你也使用了，你的模组将无法加载。要创建无名单元，只需为单元名称加上点作为前缀，例如 `.my_mod.nameless.units`
+- 属性——属性是单元可以存储的一组数据，可以是数字、文本、与其他单元的连接、这些内容的集合等。
 
-### SII files
+### SII 文件
 
-Units are stored in SII files. There are two versions of this file supported by the game engine: plain-text and binary. However, only the plain-text format is used for definitions.
+单元存储在 SII 文件中。游戏引擎支持两种版本的此类文件：纯文本和二进制。不过，定义只使用纯文本格式。
 
-#### Structure
+#### 结构
 
-The magic mark – used to check if the file is a real SII file or not.
+魔法标记——用于检查文件是否为真正的 SII 文件。
 
 ```
 SiiNunit
 ```
 
-The opening bracket used to explicitly show the global file scope start
+左花括号，用于明确表示全局文件作用域的开始
 
 ```
 {
 ```
 
-Here you put your unit definitions
+在此处放置你的单元定义
 
 ```
 some_unit : .my_mod.unit
@@ -40,17 +40,17 @@ some_unit : .my_mod.unit
 }
 ```
 
-The closing bracket for the SiiNunit
+SiiNunit 的右花括号
 
 ```
 }
 ```
 
-It's always good to add one blank line at the end of the file.
+始终最好在文件末尾添加一个空行。
 
-#### Unit definition entry
+#### 单元定义条目
 
-Unit definition entry format is:
+单元定义条目的格式为：
 
 ```
 class name : unit name
@@ -59,11 +59,11 @@ class name : unit name
 }
 ```
 
-#### Comments
+#### 注释
 
-You can comment some of your data using C-like multi-line comments syntax starting from `/*` and ending with `*/`.
+你可以使用类似 C 的多行注释语法来注释部分数据，注释以 `/*` 开头，以 `*/` 结尾。
 
-**Example:**
+**示例：**
 
 ```
 /* Definition of some unit.
@@ -74,9 +74,9 @@ some_unit : .my_mod.unit
 }
 ```
 
-Also you can use one-line comments which start from `#` or `//`.
+此外，你还可以使用以 `#` 或 `//` 开头的单行注释。
 
-**Example:**
+**示例：**
 
 ```
 some_unit : .my_mod.unit // Some unit
@@ -86,11 +86,11 @@ some_unit : .my_mod.unit // Some unit
 }
 ```
 
-#### Includes
+#### 包含
 
-You can also include the contents of other files using the SII preprocessor directive - `@include`. The contents of the included file will be read as if they were in the file itself.
+你还可以使用 SII 预处理器指令 `@include` 来包含其他文件的内容。被包含文件的内容会像它原本就在该文件中一样被读取。
 
-**Example:**<br> *some_file_using_include.sii*
+**示例：**<br> *some_file_using_include.sii*
 
 ```
 SiiNunit
@@ -110,7 +110,7 @@ example: doing.includes
     ninjas: true
 ```
 
-*How the game “sees” some_file_using_include.sii:*
+*游戏“看到” some_file_using_include.sii 的样子：*
 
 ```
 SiiNunit
@@ -124,9 +124,9 @@ example: doing.includes
 }
 ```
 
-You may notice usage of the new extension - **.sui**. It's used for unit serialized files without magic mark `SiiNunit` that are included somewhere in different files. We recommend you also use this extension.
+你可能会注意到使用了新的扩展名——**.sui**。它用于不含魔法标记 `SiiNunit` 的单元序列化文件，这些文件会被包含在其他不同文件中。我们也建议你使用这一扩展名。
 
-> **Note:** The `@include` directive must appear at the beginning of a new line with no whitespace (space, tab, etc) before it. The following examples will **not** work:
+> **注意：** `@include` 指令必须出现在新行的开头，其前面不能有任何空白字符（空格、制表符等）。以下示例**不会**生效：
 >
 > ```
 > SiiNunit
@@ -140,9 +140,9 @@ You may notice usage of the new extension - **.sui**. It's used for unit seriali
 > }
 > ```
 
-### Attribute types
+### 属性类型
 
-| Type | Value | Example | Notes |
+| 类型 | 值 | 示例 | 备注 |
 | --- | --- | --- | --- |
 | string | "x" | attribute: "String value" |  |
 | float | x | attribute: 1.0 // Using normal float-notation<br>attribute: &3f800000 // using ieee754 hexa notation |  |
@@ -163,14 +163,14 @@ You may notice usage of the new extension - **.sui**. It's used for unit seriali
 | u32 | x | attribute: 15 |  |
 | u64 | x | attribute: 15 |  |
 | bool (boolean) | x | attribute: true attribute: false |  |
-| token | x | attribute: value | Token is a string of maximum length of 12 characters, only lowercase alphanumeric characters and underscore can be used [`a-z0-9_`] |
-| owner pointer (owner_ptr) | x | attribute: .some.nameless.unit | **owner_ptr** refers to unit defined within the same SiiNunit (eg. `.trailer.tchassis`) |
-| link pointer (link_ptr) | x | attribute: some.named.unit | **link_ptr** refers to a named unit that is defined elsewhere (eg. `cabin_a.brand.model.cabin`) |
-| resource_tie | "x" | attribute: "path/to/some/resource.pma" | **resource_tie** is typically used to bind animations to animated models. The syntax is the same as for 'string' type attributes. |
+| token | x | attribute: value | token 是长度不超过 12 个字符的字符串，只能使用小写字母数字字符和下划线 [`a-z0-9_`] |
+| 所有者指针（owner_ptr） | x | attribute: .some.nameless.unit | **owner_ptr** 指向在同一 SiiNunit 中定义的单元（例如 `.trailer.tchassis`） |
+| 链接指针（link_ptr） | x | attribute: some.named.unit | **link_ptr** 指向在其他位置定义的有名单元（例如 `cabin_a.brand.model.cabin`） |
+| resource_tie | "x" | attribute: "path/to/some/resource.pma" | **resource_tie** 通常用于将动画绑定到动画模型。其语法与 'string' 类型属性相同。 |
 
-#### Arrays
+#### 数组
 
-You can also use arrays of the values. The array syntax is:
+你也可以使用值的数组。数组语法为：
 
 ```
 attribute_name[]: value
@@ -178,7 +178,7 @@ attribute_name[]: value2
 attribute_name[]: value3
 ```
 
-In some cases you may notice fixed-arrays written in this format:
+在某些情况下，你可能会看到以这种格式编写的固定数组：
 
 ```
 attribute_name: 3           <-- Size of the array.
@@ -187,7 +187,7 @@ attribute_name[1]: 5        <-- 2nd element
 attribute_name[2]: 9        <-- 3rd element
 ```
 
-## Documented Unit Types
+## 已记录的单元类型
 
 - [accessory addon data](Units/accessory%20addon%20data.md)
 - [accessory addon int data](Units/accessory%20addon%20int%20data.md)

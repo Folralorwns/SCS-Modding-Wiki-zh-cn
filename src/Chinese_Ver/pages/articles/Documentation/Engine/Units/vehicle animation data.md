@@ -1,39 +1,39 @@
-# Documentation/Engine/Units/vehicle animation data
+# 文档/引擎/单元/车辆动画数据
 
-The **vehicle_animation_data** unit class is used to define a single animation with all the necessary information needed for the animation to function properly.
+**vehicle_animation_data** 单元类用于定义单个动画，并包含动画正常运行所需的全部必要信息。
 
-## Attributes
+## 属性
 
-| Name | [Type](../Units.md#Attribute_types) | Default Value | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| model | string |  | Path to the model descriptor (.pmd) of the animated model. *Added in 1.61* |
-| anim | string |  | Path to the animation descriptor (.pma) of the animation. *Added in 1.61* |
-| type | enum | ignored_anim | Determines the type of the animation, i.e., how it is handled/played in-game. Supported animation types are: suspension (animated suspension, can be used on vehicles or trailers) *Added in 1.61* ignored_anim (does nothing, only serves as a default value and a fallback) *Added in 1.61* |
-| wheel_index | unsigned | 0 | Index of the that this animation belongs to, ignored for animations that don't support it. *Added in 1.61* |
-| min | float | 0.0 | Value that the start of the animation corresponds to. Depending on the animation, it can be in meters, degrees or not needed at all. *Added in 1.61* |
-| range | float | 1.0 | Range of the animation measured from the *min* value. Depending on the animation, it can be in meters, degrees or not needed at all. *Added in 1.61* |
-| default_position | float | 0.0 | Default position that the animation is set to upon loading. Must be set with regards to *min* and *range* values. Depending on the animation, it can be in meters, degrees or not needed at all. *Added in 1.61* |
-| main_bone | token |  | Token name of the bone that defines the animation motion, ignored for animations that don't need it. *Added in 1.61* |
+| model | string |  | 动画模型的模型描述符（.pmd）路径。*在 1.61 中添加* |
+| anim | string |  | 动画的动画描述符（.pma）路径。*在 1.61 中添加* |
+| type | enum | ignored_anim | 决定动画的类型，即在游戏内如何处理/播放动画。支持的动画类型有：suspension（动画悬挂，可用于车辆或挂车）*在 1.61 中添加* ignored_anim（不做任何事，仅作为默认值和回退值）*在 1.61 中添加* |
+| wheel_index | unsigned | 0 | 此动画所属车轮的索引，对于不支持该属性的动画将被忽略。*在 1.61 中添加* |
+| min | float | 0.0 | 动画起点所对应的值。取决于动画类型，单位可以是米、度，或根本不需要。*在 1.61 中添加* |
+| range | float | 1.0 | 从 *min* 值起算的动画范围。取决于动画类型，单位可以是米、度，或根本不需要。*在 1.61 中添加* |
+| default_position | float | 0.0 | 加载时为动画设置的默认位置。必须参照 *min* 和 *range* 值来设置。取决于动画类型，单位可以是米、度，或根本不需要。*在 1.61 中添加* |
+| main_bone | token |  | 定义动画运动的骨骼的 token 名称，对于不需要它的动画将被忽略。*在 1.61 中添加* |
 
-## Animation setup guides
+## 动画设置指南
 
-Guides on how to setup the animations, future animations will be added here.
+关于如何设置这些动画的指南，日后将在此处添加更多动画。
 
-### Suspension animation
+### 悬挂动画
 
-#### Model setup
+#### 模型设置
 
-Suspension models are placed on the **susp_i** locator where **i** is the axle index starting from 0. These locator are to be placed in the chassis model. The suspension model should always contain the left and right suspension for a given axle and the origin should be set accordingly to the corresponding **susp_i** locator.
+悬挂模型放置在 **susp_i** 定位器上，其中 **i** 是从 0 开始的车轴索引。这些定位器需放置在底盘模型中。给定车轴的悬挂模型应始终同时包含左侧和右侧悬挂，并且原点应相应设置为对应的 **susp_i** 定位器。
 
-The most important requirement is that the animation starts at the bottom of the travel and ends at the top. The required range of motion for the suspension is described in the data definition paragraph.
+最重要的要求是动画从行程底部开始，到顶部结束。悬挂所需的运动范围将在数据定义部分中说明。
 
-There is an extra requirement when creating a suspension animation for an axle that has its type set to **axle_suspension_type[]: solidaxle**. The skeleton has to have a bone, that is located at the exact point at which the suspension contacts the axle. This ensures, that the suspension does not track the wheel, but tracks the solid axle contact point instead. The name of this bone will be needed later for the data definition.
+当为类型设置为 **axle_suspension_type[]: solidaxle** 的车轴创建悬挂动画时，还有一个额外要求。骨架必须包含一根骨骼，其位置正好在悬挂与车轴接触的点上。这可以确保悬挂不跟随车轮，而是跟随整体式车轴的接触点。该骨骼的名称稍后将在数据定义中用到。
 
 [![Suspension_axle_contact_point.png](../../../../../../images/articles/Documentation/Engine/Units/vehicle%20animation%20data/Suspension_axle_contact_point.png)](../../../../files/Suspension%20axle%20contact%20point.png.md)
 
-#### Data definition
+#### 数据定义
 
-Suspension animations are defined in **accessory_chassis_data** like so:
+悬挂动画在 **accessory_chassis_data** 中如下定义：
 
 ```
 SiiNunit
@@ -91,16 +91,16 @@ vehicle_animation_data: .susp_3
 }	#end of SiiNunit global scope
 ```
 
-The animations are defined as a unit type vehicle_animation_data and are stored in the array animation[]. Here, **wheel_index** specifies the wheel, that this animation is representing. Attributes **model** and **anim** contain the paths to the model descriptor (.pmd) and the animation descriptor (.pma) files, respectively. There is a slight exception when animating suspension for a wheel that is located on an axle model (defined in **accessory_chassis_data** in **axle_model[]**). In this case, the suspension needs to be animated directly on the axle model and the **model** attribute will be ignored.
+这些动画定义为 vehicle_animation_data 类型的单元，并存储在 animation[] 数组中。其中，**wheel_index** 指定此动画所代表的车轮。属性 **model** 和 **anim** 分别包含模型描述符（.pmd）和动画描述符（.pma）文件的路径。当为位于车轴模型上的车轮制作悬挂动画时（车轴模型在 **accessory_chassis_data** 的 **axle_model[]** 中定义），存在一个小的例外。在这种情况下，悬挂需要直接在车轴模型上制作动画，并且 **model** 属性将被忽略。
 
-Suspension animations rely on the following attributes to be set correctly:
+悬挂动画依赖以下属性被正确设置：
 
-- min - this is the starting as well as the lowest point of the animation, it is in centimeters mesured from the wheel locator (e.g., -8.0 means that the animation is able to reach at maximum 8cm below the wheel locator),
-- range - this specifies the amount of actual travel that the animation can cover measured from the lowest point up, it should be exactly the same or slightly bigger than **2 * residual_travel** (converted to cm) for that axle,
-- main_bone - this parameter is critical for solid axle suspension as it specifies the exact point at which the suspension is attached to the solid axle so the suspension can track that instead of tracking the wheel itself, double wishbone and MacPherson suspension remain unaffected by this parameter.
+- min——这是动画的起点，也是最低点，以厘米为单位从车轮定位器算起（例如，-8.0 表示动画最多能到达车轮定位器下方 8cm 处），
+- range——指定动画从最低点向上算起所能覆盖的实际行程量，它应恰好等于或略大于该车轴的 **2 * residual_travel**（转换为 cm），
+- main_bone——此参数对整体式车轴悬挂至关重要，因为它指定悬挂与整体式车轴连接的确切点，使悬挂可以跟随该点而非跟随车轮本身；双横臂式和麦弗逊式悬挂不受此参数影响。
 
 [![Suspension_animation_limits.png](../../../../../../images/articles/Documentation/Engine/Units/vehicle%20animation%20data/Suspension_animation_limits.png)](../../../../files/Suspension%20animation%20limits.png.md)
 
-For example, if the animation has **min = -8.0** and **range = 16.0**, then the animation will be able to track the wheel as long as it stays 8cm above or below the wheel locator.
+例如，如果动画的 **min = -8.0** 且 **range = 16.0**，那么只要车轮保持在定位器上方或下方 8cm 以内，动画就能跟随车轮。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Units/vehicle_animation_data | revision: 5807 | captured: 2026-10-21 23:56:14 -->

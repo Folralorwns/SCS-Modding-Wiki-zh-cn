@@ -1,30 +1,30 @@
-# Documentation/Engine/Units/trailer
+# 文档/引擎/单元/挂车
 
-> **Note:** WIP — [Smarty](../../../../users/Smarty.md) ([talk](../../../../user_talk/Smarty.md)) 19:32, 21 June 2017 (CEST)
+> **注意：** 编写中——[Smarty](../../../../users/Smarty.md)（[讨论](../../../../user_talk/Smarty.md)）19:32, 21 June 2017 (CEST)
 
-The **trailer** unit class is used to define playable trailers. Units of this type are usually defined in **/def/vehicle/trailer/<trailer_name>.sii** along with their accessory units and any "slave" trailer units. They are [included](../Units.md#Includes) via **/def/vehicle/trailer_storage.<mod_name>.sii** and therefore **must not** use the SiiNunit magic mark.
+**trailer** 单元类用于定义可玩的挂车。此类型的单元通常定义在 **/def/vehicle/trailer/<trailer_name>.sii** 中，与其配件单元以及任何“从属”挂车单元一同定义。它们通过 **/def/vehicle/trailer_storage.<mod_name>.sii** 被[包含](../Units.md#Includes)，因此**不得**使用 SiiNunit 魔法标记。
 
-This unit class is also used to store trailers in memory and the save-game (eg. player's active trailer, job market, etc). Therefore, there are numerous attributes that are not used when manually defining a trailer.
+此单元类还用于在内存和存档中存储挂车（例如玩家当前启用的挂车、任务市场等）。因此，有许多属性在手动定义挂车时不会用到。
 
-## Attributes
+## 属性
 
-| Name | [Type](../Units.md#Attribute_types) | Default Value | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| accessories | array<owner_ptr> |  | Each member points to an accessory unit belonging to the trailer. Valid unit classes are vehicle_accessory, vehicle_addon_accessory, vehicle_wheel_accessory, and vehicle_paint_job_accessory. |
-| odometer | uint |  | Counts the integer part of the vehicle's odometer. This should not be set in the definition. |
-| odometer_float_part | float |  | Counts the decimal part of the vehicle's odometer. This should not be set in the definition. |
-| trip_fuel | float |  | This should not be set in the definition. |
-| trip_distance | float |  | This should not be set in the definition. |
-| license_plate | string |  | This stores the license plate number and any formatting applied by the license plate template when the trailer was initialized. This should not be set in the definition. |
-| cargo_mass | float |  | This is inherited from the cargo mass and mass ratio from the [trailer_def](trailer%20def.md) unit associated with the job for which the trailer has been generated. This should not be set in the definition. |
-| virtual_rear_wheels_offset | float |  | This attribute is used to offset the physical (but not visual) position of the trailer's wheels in order to adjust its turning radius. It should generally not be used for playable trailers. |
-| slave_trailer | owner_ptr |  | Points to a **trailer** unit which forms the next vehicle in a multipivot configuration. The slave trailer will have its *hook* locator hooked up to the master trailer's *s_hook* locator. |
+| accessories | array<owner_ptr> |  | 每个成员指向属于该挂车的一个配件单元。有效的单元类为 vehicle_accessory、vehicle_addon_accessory、vehicle_wheel_accessory 和 vehicle_paint_job_accessory。 |
+| odometer | uint |  | 记录车辆里程表的整数部分。不应在定义中设置。 |
+| odometer_float_part | float |  | 记录车辆里程表的小数部分。不应在定义中设置。 |
+| trip_fuel | float |  | 不应在定义中设置。 |
+| trip_distance | float |  | 不应在定义中设置。 |
+| license_plate | string |  | 此属性存储车牌号码以及挂车初始化时车牌模板所应用的任何格式。不应在定义中设置。 |
+| cargo_mass | float |  | 从为该挂车所生成任务关联的 [trailer_def](trailer%20def.md) 单元的货物质量和质量比例继承而来。不应在定义中设置。 |
+| virtual_rear_wheels_offset | float |  | 此属性用于偏移挂车车轮的物理（而非视觉）位置，以调整其转弯半径。通常不应用于可玩的挂车。 |
+| slave_trailer | owner_ptr |  | 指向构成多铰接配置中下一辆车的 **trailer** 单元。从属挂车的 *hook* 定位器将挂接到主挂车的 *s_hook* 定位器。 |
 
-## Required Accessories
+## 必需配件
 
-A valid trailer unit must have a chassis accessory (accessory_chassis_data via vehicle_accessory) and a wheel accessory for each axle (accessory_wheel_data via vehicle_wheel_accessory).
+有效的挂车单元必须具有一个底盘配件（通过 vehicle_accessory 的 accessory_chassis_data），并且每个车轴各有一个车轮配件（通过 vehicle_wheel_accessory 的 accessory_wheel_data）。
 
-## Related Units
+## 相关单元
 
 - [trailer_def](trailer%20def.md)
 - [vehicle_accessory](vehicle%20accessory.md)

@@ -1,29 +1,29 @@
-# Documentation/Engine/Units/accessory cabin data
+# 文档/引擎/单元/配件驾驶室数据
 
-The **accessory_cabin_data** unit class configures the models for the cabin of the [player's vehicle](../Game%20data/Player%20trucks%20definitions.md). Units of this type are found in **/def/vehicle/truck/<brand.model>/cabin/**.
+**accessory_cabin_data** 单元类配置[玩家车辆](../Game%20data/Player%20trucks%20definitions.md)驾驶室的模型。此类型的单元位于 **/def/vehicle/truck/<brand.model>/cabin/** 中。
 
-## Attributes
+## 属性
 
-Many common attributes are inherited from [**accessory_data**](accessory%20data.md).
+许多通用属性继承自 [**accessory_data**](accessory%20data.md)。
 
-| Name | [Type](../Units.md#Attribute_types) | Default Value | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| detail_model | string |  | Path to the detailed mesh model descriptor (.pmd). This is used only for vehicles used by player. Additionally they are used in vehicle previews & browser windows. |
-| model | string |  | Path to the model descriptor (.pmd). If only a single LOD is used, it should be set up as **model**, and the other attributes (detail_model, lods) should not be defined. |
-| lods | array&lt;string&gt; |  | Paths to the reduced level-of-detail model descriptors (.pmd), in order of increasing viewing distance (decreasing model complexity). |
-| collision | string |  | Path to the collision descriptor (.pmc). |
-| variant | token |  | Selects the variant to be used for all models/collisions defined. This is required if the cabin and chassis share a model as is currently the standard practice in ETS2 and ATS. Default value is *default*. **Note:** All models defined for this **accessory_cabin_data** must have this variant name. |
-| variant_uk | token |  | Selects the variant to be used for all models/collisions for right-hand-drive (RHD) vehicles. If unset, defaults to the same value as **variant**. **Note:** All models defined for this **accessory_cabin_data** must have this variant name. |
-| look | token |  | Selects the look to be used for all models defined. Default value is *default*. **Note:** All models defined for this **accessory_cabin_data** must have this look name. |
-| wiper_model | string |  | Path to the animated wiper model (.pmg). |
-| wiper_anim | resource_tie |  | Path to the wiper animation (.pma). |
-| rear_wiper_anim | resource_tie |  | Path to the rear wiper animation (.pma). *Added in 1.61* |
-| wiper_model_uk | string |  | Path to the animated wiper model (.pmg) for RHD vehicles. If unset, defaults to the value of **wiper_model**. |
-| wiper_anim_uk | resource_tie |  | Path to the wiper animation (.pma) for RHD vehicles. If unset, defaults to the value of **wiper_anim**. |
-| drl_with_headlights | float | 0.0 | Sets the relative strength of the daytime running lights when the headlights are on. For the DRL to be *off* when the headlights are on, a value of 0 is used. If the DRL should stay on and not dim when the headlights are on, a value of 1 is used. An intermediate value will dim the DRL when the headlights are on, and a value greater than 1 will intensify the DRL when the headlights are on. The typical value in ETS2 is 0.4. |
-| suspension | bool | true | When true, physical simulation of cabin air suspension is enabled. |
-| suspension_type | token | 4air | Defines type of cabin suspension if suspension is enabled. possible values are *4air* (EU type) and *hinge2air*(US type). *Added in 1.47* |
-| sounds | array&lt;string&gt; |  | Each item assigns an FMOD event to a function, using the "*sound_name\|sound_path*" [format](../../../Games/ETS2/Modding%20guides/1.39.md#Accessories). *Added in 1.39* Expected sound event names are: horn, aero_noise, and rain_noise. |
-| animation | array<owner_ptr> |  | Each member points to the unit name of a [vehicle_animation_data](vehicle%20animation%20data.md) unit. *Added in 1.61* |
+| detail_model | string |  | 详细网格模型描述符（.pmd）的路径。此模型仅用于玩家使用的车辆。此外，它还用于车辆预览和浏览器窗口。 |
+| model | string |  | 模型描述符（.pmd）的路径。如果只使用单个 LOD，则应将其设置为 **model**，并且不应定义其他属性（detail_model、lods）。 |
+| lods | array&lt;string&gt; |  | 简化细节层级模型描述符（.pmd）的路径，按观察距离递增（模型复杂度递减）的顺序排列。 |
+| collision | string |  | 碰撞描述符（.pmc）的路径。 |
+| variant | token |  | 选择用于所有已定义模型/碰撞的 variant。如果驾驶室和底盘共用同一个模型（这是目前 ETS2 和 ATS 中的标准做法），则此项为必需。默认值为 *default*。**注意：** 为此 **accessory_cabin_data** 定义的所有模型都必须使用此 variant 名称。 |
+| variant_uk | token |  | 选择用于右舵（RHD）车辆所有模型/碰撞的 variant。如果未设置，则默认为与 **variant** 相同的值。**注意：** 为此 **accessory_cabin_data** 定义的所有模型都必须使用此 variant 名称。 |
+| look | token |  | 选择用于所有已定义模型的 look。默认值为 *default*。**注意：** 为此 **accessory_cabin_data** 定义的所有模型都必须使用此 look 名称。 |
+| wiper_model | string |  | 动画雨刮器模型（.pmg）的路径。 |
+| wiper_anim | resource_tie |  | 雨刮器动画（.pma）的路径。 |
+| rear_wiper_anim | resource_tie |  | 后雨刮器动画（.pma）的路径。*在 1.61 中添加* |
+| wiper_model_uk | string |  | 用于右舵车辆的动画雨刮器模型（.pmg）的路径。如果未设置，则默认为 **wiper_model** 的值。 |
+| wiper_anim_uk | resource_tie |  | 用于右舵车辆的雨刮器动画（.pma）的路径。如果未设置，则默认为 **wiper_anim** 的值。 |
+| drl_with_headlights | float | 0.0 | 设置前照灯开启时昼间行车灯的相对强度。若希望前照灯开启时昼间行车灯*关闭*，则使用值 0。若希望前照灯开启时昼间行车灯保持开启且不调暗，则使用值 1。中间值会在前照灯开启时调暗昼间行车灯，而大于 1 的值会在前照灯开启时增强昼间行车灯。ETS2 中的典型值为 0.4。 |
+| suspension | bool | true | 为 true 时，启用驾驶室空气悬架的物理模拟。 |
+| suspension_type | token | 4air | 如果启用了悬架，则定义驾驶室悬架的类型。可能的值为 *4air*（欧盟类型）和 *hinge2air*（美国类型）。*在 1.47 中添加* |
+| sounds | array&lt;string&gt; |  | 每个条目使用“*sound_name\|sound_path*”[格式](../../../Games/ETS2/Modding%20guides/1.39.md#Accessories)为某个功能分配一个 FMOD 事件。*在 1.39 中添加* 预期的声音事件名称为：horn、aero_noise 和 rain_noise。 |
+| animation | array<owner_ptr> |  | 每个成员指向一个 [vehicle_animation_data](vehicle%20animation%20data.md) 单元的单元名称。*在 1.61 中添加* |
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Units/accessory_cabin_data | revision: 5809 | captured: 2026-10-21 23:56:14 -->

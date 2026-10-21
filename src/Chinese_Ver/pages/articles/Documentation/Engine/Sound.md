@@ -1,83 +1,83 @@
 # Documentation/Engine/Sound
 
-> **Note:** **The sound system and current pages are in a 'work in progress' state. We will continuously update content of the site and the audio data structures.**
+> **注意：** **声音系统与当前页面处于"开发中"状态。我们将持续更新站点内容和音频数据结构。**
 
 ## FMOD®
 
-The FMOD® system is now (from 1.37 version) used as a core sound engine in the game.<br> The FMOD® Studio version you should use depending on your game version can be found [here](Sound/Downloads.md).
+FMOD® 系统现在（从 1.37 版本起）作为游戏中的核心声音引擎使用。<br> 你应根据游戏版本选择使用的 FMOD® Studio 版本，可在[此处](Sound/Downloads.md)找到。
 
-*See FMOD documentation ([www.fmod.com](http://www.fmod.com)) to get a better understanding of the sound system.*
+*参阅 FMOD 文档（[www.fmod.com](http://www.fmod.com)）以更好地理解声音系统。*
 
-## Sound and Sound Bank(s)
+## 声音与声音库
 
-Each sound is represented by the sound **Event**. An Event is an instanceable sound unit of the FMOD Studio project. All sounds/events are provided by sound banks. The final sound banks are built by FMOD Studio.
+每个声音都由声音 **事件** 表示。事件是 FMOD Studio 项目中可实例化的声音单元。所有声音/事件均由声音库提供。最终的声音库由 FMOD Studio 构建。
 
-FMOD Studio builds the "[bank name].bank" file for each bank in the sound project. It is a collection of the Events and Parameters used for the sound playing in the game.
+FMOD Studio 为声音项目中的每个库构建 "[bank name].bank" 文件。它是游戏中用于声音播放的事件与参数的集合。
 
-## Master Bank
+## 主声音库
 
-Master Bank is the primary sound bank of the sound system. There are no Events in the bank.
+主声音库是声音系统的主要声音库。该库中没有事件。
 
-**The Master Bank defines:**
+**主声音库定义了：**
 
-- The sound buses<br>Events in FMOD Studio do not exist in a vacuum. Their output is routed into the project mixer. The Events have to be routed to one of the buses registered in the Master Bank. Users can set the sound volume and mute state in the application settings for each bus which is used as a routing target for sound events.
-- Mixer and Routing<br>The project mixer consists of a number of interconnected buses. Connection between the audio buses describe the sound event flow through the sound system.
-- Global Parameters<br>An event contains and is primarily composed of tracks and parameters. Some parameters are defined in the master. These parameters are global and can be used for Automation and Modulation of events across all banks.
+- 声音总线<br>FMOD Studio 中的事件并非孤立存在。它们的输出被路由到项目混音器。事件必须路由到主声音库中注册的某个总线。对于每个用作声音事件路由目标的总线，用户可以在应用设置中设置声音音量和静音状态。
+- 混音器与路由<br>项目混音器由若干相互连接的总线组成。音频总线之间的连接描述了声音事件在声音系统中的流动。
+- 全局参数<br>事件包含并主要由轨道和参数组成。部分参数在主声音库中定义。这些参数是全局的，可用于跨所有库对事件进行自动化与调制。
 
-The Master Bank is a fundamental building block of the sound system so: **Never change the Master Bank!**
+主声音库是声音系统的基础构件，因此：**切勿修改主声音库！**
 
-Only if you are absolutely sure what you are doing and you are rewriting all the sounds of the game you can change it.
+只有当你完全确定自己在做什么，并且正在重写游戏中的所有声音时，才可以修改它。
 
-## Sound definition
+## 声音定义
 
-A common sound in game is the **Event** in the FMOD Studio project. Each object (bank, bus, event, parameter, etc.) used by the FMOD system has a Globally Unique Identifier - **GUID**.<br> (*GUID is something like this: {1315eda7-1829-4dd8-9d1a-176f65637ab2}*)
+游戏中的常见声音是 FMOD Studio 项目中的 **事件**。FMOD 系统使用的每个对象（库、总线、事件、参数等）都有一个全局唯一标识符 - **GUID**。<br>（*GUID 类似于这样：{1315eda7-1829-4dd8-9d1a-176f65637ab2}*）
 
-The sound system uses GUIDs internally for the processing objects. It's very important. If you delete an object in the sound project (bus, event, etc.) and create a new object even with the same name, it will be a different object because the object has a different GUID.
+声音系统内部使用 GUID 处理对象。这一点非常重要。如果你在声音项目中删除一个对象（总线、事件等）并创建一个新对象，即使名称相同，它也会是另一个对象，因为该对象的 GUID 不同。
 
-FMOD Studio exports GUIDs to the txt file.
+FMOD Studio 会将 GUID 导出到 txt 文件。
 
-1. Use FMOD Studio menu command: File / Export GUIDs...
-2. A new file GUIDS.txt is written to the "build" subfolder of the project main folder.
-3. The file has to be renamed to "[bank filename].guids" and has to be placed next to the corresponding "bank" file. It's a "dictionary" between names of the objects in the bank and their GUIDs.
+1. 使用 FMOD Studio 菜单命令：File / Export GUIDs...
+2. 新文件 GUIDS.txt 会写入项目主文件夹的 "build" 子文件夹。
+3. 该文件必须重命名为 "[bank filename].guids"，并放置在对应 "bank" 文件旁边。它是库中对象名称与其 GUID 之间的"字典"。
 
-The game uses two ways to define usage of a sound object:
+游戏使用两种方式定义声音对象的使用：
 
-1. Direct 'sound id':<br>"Sound id" is string in format "[bank filename]#[event name]". Where [bank filename] is file of the bank relative to the game "base" folder and [event name] is name of the event in the FMOD Studio project.<br>Example: *"/sound/ui/ui.bank#click"*
-2. Sound reference file:<br>Sound reference file is used as link for the sound specification. It uses a simple path to the soundref file (e.g. *"/sound/ui/ui_click.soundref"*).
+1. 直接使用 'sound id'：<br>"Sound id" 是格式为 "[bank filename]#[event name]" 的字符串。其中 [bank filename] 是相对于游戏 "base" 文件夹的库文件，[event name] 是 FMOD Studio 项目中事件的名称。<br>示例：*"/sound/ui/ui.bank#click"*
+2. 声音引用文件：<br>声音引用文件用作声音规格的链接。它使用指向 soundref 文件的简单路径（例如 *"/sound/ui/ui_click.soundref"*）。
 
-## Sound reference file
+## 声音引用文件
 
-We prefer and we recommend to use sound reference files.
+我们更倾向并推荐使用声音引用文件。
 
-- There are more possibilities to configure sound.
-- It is easier for changing / modding individual sounds.
+- 配置声音的可能性更多。
+- 更容易更改 / 模组化单个声音。
 
-**Sound reference file structure:**
+**声音引用文件结构：**
 
-Soundref file is a text file (with UTF-8 encoding).
+Soundref 文件是文本文件（采用 UTF-8 编码）。
 
-- Its contents are a 'sound id' on one line with following format: source="[bank filename]#[event name]".
-- There is possibility in the file to change the 3D placement of the sound relative to the default position. Format is as follows, on a separate line: "position_offset=-left/+right;-down/+up;-front/+back" (in meters).
+- 其内容是一行 'sound id'，格式如下：source="[bank filename]#[event name]"。
+- 文件中可以更改声音相对于默认位置的 3D 定位。格式如下，单独一行："position_offset=-left/+right;-down/+up;-front/+back"（单位：米）。
 
-Example of content of the file *"ui_click.soundref":* `source="/sound/ui/ui.bank#click"`
+文件 *"ui_click.soundref"* 的内容示例：`source="/sound/ui/ui.bank#click"`
 
-## Sound documentation
+## 声音文档
 
-- [Audio buses, routing and mixer](Sound/Mixer.md)
-- (WIP) Global parameters
-- [Sounds - Truck Engine](Sound/TruckEngine.md)
-- [Sounds - Truck Transmission and Retarder](Sound/TruckTransmission.md)
-- [Sounds - Truck Chassis](Sound/TruckChassis.md)
-- [Sounds - Truck Cabin (horns and noises)](Sound/TruckCabin.md)
-- [Sounds - Truck Cabin Filtering (in/out, windows)](Sound/TruckCabinFiltering.md)
-- [Sounds - Remote Truck (multiplayer)](Sound/TruckRemote.md)
-- (WIP) Sounds - Truck Interior
-- [Sounds - Tires](Sound/Tires.md)
-- (WIP) Sounds - Collisions
-- (WIP) Sounds - Traffic
-- [Sounds - World](Sound/SoundWorld.md)
-- (WIP) Sounds - Game UI and Music
-- [Modding sounds](Sound/Modding.md)
-- [Downloads (templates, samples)](Sound/Downloads.md)
+- [音频总线、路由与混音器](Sound/Mixer.md)
+- (WIP) 全局参数
+- [声音 - 卡车发动机](Sound/TruckEngine.md)
+- [声音 - 卡车变速箱与缓速器](Sound/TruckTransmission.md)
+- [声音 - 卡车底盘](Sound/TruckChassis.md)
+- [声音 - 卡车驾驶室（喇叭与噪声）](Sound/TruckCabin.md)
+- [声音 - 卡车驾驶室过滤（内/外、车窗）](Sound/TruckCabinFiltering.md)
+- [声音 - 远程卡车（多人游戏）](Sound/TruckRemote.md)
+- (WIP) 声音 - 卡车内饰
+- [声音 - 轮胎](Sound/Tires.md)
+- (WIP) 声音 - 碰撞
+- (WIP) 声音 - 交通
+- [声音 - 世界](Sound/SoundWorld.md)
+- (WIP) 声音 - 游戏 UI 与音乐
+- [制作声音模组](Sound/Modding.md)
+- [下载（模板、示例）](Sound/Downloads.md)
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Sound | revision: 5784 | captured: 2026-10-21 23:56:14 -->

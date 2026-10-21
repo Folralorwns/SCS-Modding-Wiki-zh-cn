@@ -1,4 +1,4 @@
-# File:SCS Tools Object Specials - Variants 08.png
+# 文件:SCS Tools Object Specials - Variants 08.png
 
 ![SCS Tools Object Specials - Variants 08.png](../../../images/files/SCS%20Tools%20Object%20Specials%20-%20Variants%2008.png/SCS_Tools_Object_Specials_-_Variants_08.png)
 

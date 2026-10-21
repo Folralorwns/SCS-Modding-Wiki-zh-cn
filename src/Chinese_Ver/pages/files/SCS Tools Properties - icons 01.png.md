@@ -1,4 +1,4 @@
-# File:SCS Tools Properties - icons 01.png
+# 文件:SCS Tools Properties - icons 01.png
 
 ![SCS Tools Properties - icons 01.png](../../../images/files/SCS%20Tools%20Properties%20-%20icons%2001.png/SCS_Tools_Properties_-_icons_01.png)
 

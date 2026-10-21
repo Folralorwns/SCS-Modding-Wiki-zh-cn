@@ -1,4 +1,4 @@
-# File:Cmd link.jpg
+# 文件:Cmd link.jpg
 
 ![Cmd link.jpg](../../../images/files/Cmd%20link.jpg/Cmd_link.jpg)
 

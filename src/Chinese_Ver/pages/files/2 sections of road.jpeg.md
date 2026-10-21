@@ -1,4 +1,4 @@
-# File:2 sections of road.jpeg
+# 文件:2 sections of road.jpeg
 
 ![2 sections of road.jpeg](../../../images/files/2%20sections%20of%20road.jpeg/2_sections_of_road.jpeg)
 

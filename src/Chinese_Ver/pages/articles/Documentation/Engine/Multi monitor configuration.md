@@ -1,65 +1,65 @@
 # Documentation/Engine/Multi monitor configuration
 
-## Prerequisites
+## 前提条件
 
-Only multimon configurations which are presented to the game as a single big resolution virtual screen are supported. You need to be using either Nvidia Surround or AMD Eyefinity or equivalent depending on your graphics chipset type. When using the game set up with multiple separate views per the instructions below, the driver based bezel correction (the one that your display drivers may offer) should be disabled and the corresponding cvars (game config variables, see bellow) should be used instead to have the game handle the bezel gaps on its own.
+仅支持以单个高分辨率虚拟屏幕的形式呈现给游戏的多显示器配置。你需要根据显卡芯片组类型使用 Nvidia Surround、AMD Eyefinity 或类似技术。按照下文说明以多个独立视图设置游戏时，应禁用基于驱动程序的边框校正（即显示驱动可能提供的那个），并改用相应的 cvar（游戏配置变量，见下文），让游戏自行处理边框间隙。
 
-The default interior cameras look slightly downwards to make the truck dashboard more visible. While that works well for normal monitor, it looks wrong on side views of multi monitor setup. For that reason it is recommended to set g_interior_camera_zero_pitch to 1 before launching the game to disable this feature without need to modify game data.
+默认内饰摄像机略微向下，以便更清楚地看到卡车仪表盘。这在普通显示器上效果良好，但在多显示器设置的侧视图中会显得不正确。因此，建议在启动游戏前将 g_interior_camera_zero_pitch 设为 1，以在不修改游戏数据的情况下禁用此特性。
 
-## Predefined modes
+## 预定义模式
 
-### Types
+### 类型
 
-The game supports several built-in modes. Those modes are selected using **r_multimon_mode** cvar. Note that all built in-modes expect at least three monitors and will actually enabled only when the resolution has aspect ratio of at least 2.5:1.
+游戏支持多种内置模式。这些模式通过 **r_multimon_mode** cvar 选择。请注意，所有内置模式都期望至少三台显示器，并且仅当分辨率的宽高比至少为 2.5:1 时才会真正启用。
 
-Following modes are supported:
+支持以下模式：
 
-- **0** - Single view and UI covering entire area. The display is represented as single ultra wide planar display with the UI (user interface) covering the entire area. This is the default. The disadvantage is that because of the wide FOV (field of view), the image on the sides is significantly distorted.
+- **0** - 单一视图，UI 覆盖整个区域。显示器被表示为单个超宽平面显示器，UI（用户界面）覆盖整个区域。这是默认值。缺点是由于 FOV（视场角）很宽，两侧图像会明显失真。
 
 [![Multimon_schema_flat.png](../../../../../images/articles/Documentation/Engine/Multi%20monitor%20configuration/Multimon_schema_flat.png)](../../../files/Multimon%20schema%20flat.png.md)
 
-- **1** - Single view covering entire area with the UI elements positioned in the center of the third monitor (e.g. on the center monitor in three-monitor setup). This is similar to **0** however the UI covers only the area of the center monitor.
-- **2** - Three separate views for three monitors. Each monitor has its own view, with the default FOV of 50 degrees horizontally. UI is positioned on the center monitor.
+- **1** - 单一视图覆盖整个区域，UI 元素位于第三台显示器的中央（例如三显示器设置中的中央显示器）。这与 **0** 类似，但 UI 只覆盖中央显示器的区域。
+- **2** - 三台显示器三个独立视图。每台显示器都有自己的视图，默认水平 FOV 为 50 度。UI 位于中央显示器上。
 
 [![Multimon_schema_3.png](../../../../../images/articles/Documentation/Engine/Multi%20monitor%20configuration/Multimon_schema_3.png)](../../../files/Multimon%20schema%203.png.md)
 
-- **3** - Uses leftmost three monitors from a four-monitor setup to show the same views as with **2** and the last monitor shows auxiliary view looking downwards at the dashboard and steering wheel.
+- **3** - 使用四显示器设置中最左侧的三台显示器显示与 **2** 相同的视图，最后一台显示器显示俯视仪表盘和方向盘的辅助视图。
 
 [![Multimon_schema_31.png](../../../../../images/articles/Documentation/Engine/Multi%20monitor%20configuration/Multimon_schema_31.png)](../../../files/Multimon%20schema%2031.png.md)
 
-### Additional configuration
+### 附加配置
 
-The visualization in modes **2** and **3** can be further controlled by following cvars:
+模式 **2** 和 **3** 的可视化还可通过以下 cvar 进一步控制：
 
-- **r_multimon_border_fov_left** and **r_multimon_border_fov_right** - Visual angle in degrees covered by the bezel (e.g. monitor frame) between center and left/right monitor. Used for bezel correction.
-- **r_multimon_fov_horizontal** and **r_multimon_fov_vertical** - Field of view used for each view. If only one from them is nonzero, the remaining one is calculated to keep the aspect ratio of the resolution. If both are zero, the default FOV calculation based on current in-game camera is used.
-- **r_multimon_vert_offset_left** and **r_multimon_vert_offset_right** - Vertical offset in meters of the left/right monitor from the center one. Can be used to move the left side view up or down to improve visibility of the mirrors given the limited vertical field of view.
-- **r_multimon_rotation_center**, **r_multimon_rotation_left**, **r_multimon_rotation_right** and **r_multimon_rotation_aux** - Additional counter-clockwise rotation applied to of views of individual monitors. Most likely used with value 90 or -90 to compensate for monitor which is physically in different orientation (e.g. portrait vs landscape) than configured in the graphics driver. This allows for mixing portrait and landscape orientations even when not supported by the driver.
-- **r_multimon_interior_in_main** - Controls rendering of the cabin interior in the main views. Can be used to disable interior if some form of physical interior is present.
-- **r_multimon_exterior_in_aux** - Controls rendering of the exterior to the auxiliary view (mode 3). Note that shadows are currently still updated even if exterior is disabled.
+- **r_multimon_border_fov_left** 和 **r_multimon_border_fov_right** - 中央显示器与左/右显示器之间由边框（例如显示器外框）覆盖的视角，单位为度。用于边框校正。
+- **r_multimon_fov_horizontal** 和 **r_multimon_fov_vertical** - 每个视图使用的视场角。如果其中只有一个非零，另一个会按分辨率宽高比计算。如果两者都为零，则使用基于当前游戏内摄像机的默认 FOV 计算。
+- **r_multimon_vert_offset_left** 和 **r_multimon_vert_offset_right** - 左/右显示器相对中央显示器的垂直偏移，单位为米。可用于上下移动左侧视图，以在垂直视场角有限的情况下改善后视镜的可见性。
+- **r_multimon_rotation_center**、**r_multimon_rotation_left**、**r_multimon_rotation_right** 和 **r_multimon_rotation_aux** - 应用于各显示器视图的额外逆时针旋转。最可能使用值 90 或 -90，以补偿物理方向与显卡驱动中配置不同的显示器（例如纵向与横向）。这样即使驱动程序不支持，也能混用纵向和横向方向。
+- **r_multimon_interior_in_main** - 控制主视图中驾驶室内饰的渲染。如果存在某种形式的实体内饰，可用于禁用内饰。
+- **r_multimon_exterior_in_aux** - 控制辅助视图（模式 3）中外部场景的渲染。请注意，即使禁用了外部场景，阴影目前仍会更新。
 
-## Customized mode
+## 自定义模式
 
-This mode allows bigger flexibility over the setup for 1-4 monitors. It is enabled by setting **r_multimon_mode** cvar to 4. Note that unlike the predefined modes, this mode can be enabled regardless of the aspect ratio of the display. In this mode the game takes the configuration from **\Documents\<game name>\multimon_config.sii**. If the file does not exist, it is created the first time the game starts in this mode. You can either edit the file manually or use in-game [multimon](Console/Commands/multimon.md) command to do most adjustments on the fly. Note that when using the **[multimon](Console/Commands/multimon.md)** command, care must be taken to explicitly save the result before exiting the game or changing settings using the game options screen as the changes would be lost in that case.
+此模式为 1-4 台显示器的设置提供了更大的灵活性。通过将 **r_multimon_mode** cvar 设为 4 来启用。请注意，与预定义模式不同，此模式不受显示器宽高比的限制。在此模式下，游戏从 **\Documents\<game name>\multimon_config.sii** 读取配置。如果该文件不存在，则会在游戏首次以此模式启动时创建。你既可以手动编辑该文件，也可以使用游戏内 [multimon](Console/Commands/multimon.md) 命令在运行时完成大部分调整。请注意，使用 **[multimon](Console/Commands/multimon.md)** 命令时，务必在退出游戏或通过游戏选项界面更改设置之前显式保存结果，否则这些更改将会丢失。
 
-Position of the UI and monitors in the virtual display created by driver is specified using normalized coordinates where [0,0] corresponds to left bottom corner and [1,1] corresponds to top right corner. Entire monitor or UI must fit inside the [0;1] range or the behavior is undefined.
+UI 和各显示器在驱动程序创建的虚拟显示中的位置使用归一化坐标指定，其中 [0,0] 对应左下角，[1,1] 对应右上角。整个显示器或 UI 必须位于 [0;1] 范围内，否则行为未定义。
 
-### Attributes of the ui
+### ui 的属性
 
-- **normalized_ui_x** - Position of bottom left corner of the UI in the virtual display created by driver.
-- **normalized_ui_width** - Width of the UI inside the virtual display created by driver.
+- **normalized_ui_x** - UI 左下角在驱动程序创建的虚拟显示中的位置。
+- **normalized_ui_width** - UI 在驱动程序创建的虚拟显示中的宽度。
 
-### Attributes of single monitor
+### 单个显示器的属性
 
-- **name** - Name of the monitor for use with **[multimon](Console/Commands/multimon.md)** command.
-- **normalized_x** and **normalized_y** - Position of bottom left corner of the monitor in the virtual display created by driver.
-- **normalized_width** and **normalized_height** - Dimensions of the view of the monitor in the virtual display created by driver.
-- **horizontal_fov_relative_offset** and **vertical_fov_relative_offset** - This value is multiplied by field of view of the primary monitor and added to heading and pitch of the camera. Can be used to make the monitor position itself relatively when the fov of the primary monitor is calculated automatically.
-- **heading_offset**, **pitch_offset** and **roll_offset** - Rotational offset in degrees added to orientation of the camera. Can be used to point the view in desired relative direction or to do bezel correction.
-- **camera_space_offset** - Offset of the camera from the standard position. Can be used to move the camera to some specific position or bias it vertically to better match physical layout of monitors.
-- **horizontal_fov_override** and **vertical_fov_override** - Overrides corresponding field of view angle. If both values are zero, the angle calculated by the standard camera is used. If at least one is non-zero, it is used directly and the second angle is calculated to keep the aspect ratio.
-- **render_interior** - Enables rendering of the cabin interior. Can be used if you have a physical cabin.
-- **render_exterior** - Enables rendering of the exterior scene (e.g. skybox, world and outside of the truck) to the view. Note that shadows cast to the view will still contain the exterior scene regardless of this setting.
-- **frustum_subrect_x**, **frustum_subrect_y**, **frustum_subrect_width** and **frustum_subrect_height** - Allows to specify part of the full frustum cone which is rendered into the monitor. Can be used to move center of the projection outside of the center of the monitor. For example when using two front monitors to represent windshield of the truck while the driver is sitting before the left one, left part of the frustum can be removed to move the center of the projection before the driver. Note that change of this view will change the effective aspect ratio so both fov overrides need to be set to correct it.
+- **name** - 显示器名称，供 **[multimon](Console/Commands/multimon.md)** 命令使用。
+- **normalized_x** 和 **normalized_y** - 显示器左下角在驱动程序创建的虚拟显示中的位置。
+- **normalized_width** 和 **normalized_height** - 显示器视图在驱动程序创建的虚拟显示中的尺寸。
+- **horizontal_fov_relative_offset** 和 **vertical_fov_relative_offset** - 该值乘以主显示器的视场角，并加到摄像机的偏航角和俯仰角上。当主显示器的 fov 自动计算时，可用于让显示器相对定位。
+- **heading_offset**、**pitch_offset** 和 **roll_offset** - 加到摄像机朝向的旋转偏移，单位为度。可用于将视图指向所需的相对方向，或进行边框校正。
+- **camera_space_offset** - 摄像机相对标准位置的偏移。可用于将摄像机移到某个特定位置，或在垂直方向上偏移它，以更好地匹配显示器的物理布局。
+- **horizontal_fov_override** 和 **vertical_fov_override** - 覆盖相应的视场角。如果两个值都为零，则使用标准摄像机计算的角度。如果至少有一个非零，则直接使用该值，并按宽高比计算第二个角度。
+- **render_interior** - 启用驾驶室内饰的渲染。如果你有实体驾驶室，可使用此项。
+- **render_exterior** - 启用将外部场景（例如天空盒、世界以及卡车外部）渲染到视图。请注意，无论此设置如何，投射到该视图的阴影仍会包含外部场景。
+- **frustum_subrect_x**、**frustum_subrect_y**、**frustum_subrect_width** 和 **frustum_subrect_height** - 允许指定完整视锥体中渲染到该显示器的部分。可用于将投影中心移到显示器中心之外。例如，当使用两台前置显示器表示卡车挡风玻璃而驾驶员坐在左侧那台之前时，可以移除视锥体的左侧部分，将投影中心移到驾驶员前方。请注意，更改该视图会改变有效宽高比，因此需要设置两个 fov 覆盖值来修正。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Multi_monitor_configuration | revision: 1686 | captured: 2026-10-21 23:56:14 -->

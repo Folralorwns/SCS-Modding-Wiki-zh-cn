@@ -1,83 +1,83 @@
-# Documentation/Tools/SCS Blender Tools/SCS Tools in Tool Shelf
+# 文档/工具/SCS Blender Tools/工具架中的 SCS Tools
 
 ![SCS_Tools_Shelf.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/SCS%20Tools%20in%20Tool%20Shelf/SCS_Tools_Shelf.png)
 
-SCS Tools shelf consist of set of tools which can be used for objects in 3D viewport.
+SCS Tools 工具架由一组工具组成，这些工具可用于 3D 视口中的对象。
 
-## Tool Shelf
+## 工具架
 
-### Add Root
+### 添加根对象
 
-Creates a new SCS Root Object. If there is any selection, it will automatically set these objects for SCS Game Object content by parenting it to the SCS Root Object.
+创建一个新的 SCS Root Object。如果当前有选中项，它会将这些对象父级设置为该 SCS Root Object，从而自动把它们纳入 SCS Game Object 的内容。
 
-### Add Root (with name request)
+### 添加根对象（附带名称请求）
 
-Creates a new SCS Root Object. User can specify a name for the Root object in a window, that will appear. If there is any selection, it will automatically set these objects for SCS Game Object content by parenting it to the SCS Root Object.
+创建一个新的 SCS Root Object。用户可以在随后弹出的窗口中为根对象指定名称。如果当前有选中项，它会将这些对象父级设置为该 SCS Root Object，从而自动把它们纳入 SCS Game Object 的内容。
 
-### Check Geometry
+### 检查几何体
 
-Checks selected objects for degenerated polygons which shall be removed before exporting, as they might cause FPS drop-down with some graphics cards. Operator takes selected objects and selects vertices of degenerated polygons. Degenerated polygons are discovered trough [Heron's Formula](https://en.wikipedia.org/wiki/Heron%27s_formula).
+检查选中对象中是否存在退化多边形，这类多边形应在导出前移除，因为它们可能在某些显卡上导致 FPS 下降。该操作符会获取选中对象，并选中退化多边形的顶点。退化多边形通过 [海伦公式](https://en.wikipedia.org/wiki/Heron%27s_formula) 检测。
 
 ### VColoring
 
-Enters a complex [Vertex coloring](SCS%20Tools%20in%20Tool%20Shelf/VColoring.md) mode, where you can edit 4 vertex color layers which are baked to vertex color layer used by shader and export in real-time. The extra icon button [![Blend_icon_file_refresh.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/SCS%20Tools%20in%20Tool%20Shelf/Blend_icon_file_refresh.png)](../../../../files/Blend%20icon%20file%20refresh.png.md) on the side gives you ability to freshly rebake 4 layers in case you edited one of them by hand without using **VColoring** operator.
+进入复杂的 [顶点着色](SCS%20Tools%20in%20Tool%20Shelf/VColoring.md) 模式，在其中可以编辑 4 个顶点颜色层，这些层会实时烘焙到着色器所使用的顶点颜色层并导出。侧边的额外图标按钮 [![Blend_icon_file_refresh.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/SCS%20Tools%20in%20Tool%20Shelf/Blend_icon_file_refresh.png)](../../../../files/Blend%20icon%20file%20refresh.png.md) 让你可以重新烘焙这 4 个层，以应对你未使用 **VColoring** 操作符而手动编辑了其中某个层的情况。
 
-## Convex
+## 凸包
 
-### Make Convex
+### 生成凸包
 
-Makes a new object from selected Model objects. This new object is always convex and can be used as a base for convex colliders.
+基于选中的模型对象生成一个新对象。该新对象始终为凸形，可用作凸包碰撞体的基础。
 
-### Convert to Locator
+### 转换为定位器
 
-Converts selected objects into a new Collider Locator. There are additional choices for deleting of source object(s) – Delete Original Geometry, and for creating a single Locator or multiple Locators from every selected object – Individual Objects.
+将选中对象转换为新的碰撞定位器。此外还可设置以下选项：用于删除源对象的 Delete Original Geometry，以及用于从每个选中对象创建单个定位器还是多个定位器的 Individual Objects。
 
-### Convert to Mesh
+### 转换为网格
 
-Converts selected Collision Locator(s) into editable Model (Mesh) object(s).
+将选中的碰撞定位器转换为可编辑的模型（网格）对象。
 
-## Visibility Tools
+## 可见性工具
 
-Visibility tools consists of sub-panel for viewing objects by type and three additional visibility operators.
+可见性工具包含一个按类型查看对象的子面板，以及三个额外的可见性操作符。
 
-### Switching by type
+### 按类型切换
 
 [![SCS_Tools_Shelf_Op_Table.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/SCS%20Tools%20in%20Tool%20Shelf/SCS_Tools_Shelf_Op_Table.png)](../../../../files/SCS%20Tools%20Shelf%20Op%20Table.png.md)
 
-First table alters visibility of Model and Locators objects. Second table is used only for Prefab Locators.
+第一个表格用于更改模型对象和定位器对象的可见性。第二个表格仅用于预制件定位器。
 
-### Global vs. SCS Root
+### 全局与 SCS Root
 
-This option switches scope of visibility operators in this sub-panel. When using ***Global*** operators will be applied among all of the objects in current scene, in the case of ***SCS Root*** only the objects within current SCS Game Object will be altered.
+此选项用于切换该子面板中可见性操作符的作用范围。使用 ***Global*** 时，操作符会作用于当前场景中的所有对象；使用 ***SCS Root*** 时，则只会更改当前 SCS Game Object 内的对象。
 
-### Current SCS Root
+### 当前 SCS Root
 
-Additional operators for switching visibility of objects within the SCS Game Object of active object:
+用于切换活动对象所在 SCS Game Object 内对象可见性的额外操作符：
 
-- ***Invert Visibility*** - inverts visibility of all objects.
-- ***View All*** - shows all objects.
-- ***Isolate*** - show all objects within SCS Game Object of active object and hide all other objects in scene.
+- ***Invert Visibility*** - 反转所有对象的可见性。
+- ***View All*** - 显示所有对象。
+- ***Isolate*** - 显示活动对象所在 SCS Game Object 内的所有对象，并隐藏场景中的其他所有对象。
 
-## Display Methods
+## 显示方式
 
-### Glass Objects
+### 玻璃对象
 
-- ***Wires / Textured*** - two operators for quick setting of the drawing type for all Glass objects in the scene.
+- ***Wires / Textured*** - 两个操作符，用于快速设置场景中所有玻璃对象的绘制类型。
 
-### Shadow Casters
+### 投射阴影对象
 
-- ***Wires / Textured*** - two operators for quick setting of the drawing type for all Shadow caster objects in the scene.
+- ***Wires / Textured*** - 两个操作符，用于快速设置场景中所有阴影投射对象的绘制类型。
 
-### Collision Locators
+### 碰撞定位器
 
-- ***All Wires / No Wires*** - operators to quickly turn ON or OFF all the wires in all Collision Locators in the scene.
-- ***All Faces / No Faces*** - operators to quickly turn ON or OFF all the faces in all Collision Locators in the scene.
+- ***All Wires / No Wires*** - 用于快速开启或关闭场景中所有碰撞定位器线框的操作符。
+- ***All Faces / No Faces*** - 用于快速开启或关闭场景中所有碰撞定位器面的操作符。
 
-## See also
+## 另见
 
-Depending on the current 3D viewport mode in Blender you will also find:
+根据 Blender 中当前 3D 视口的模式，你还会看到：
 
-1. [Lamp Switcher & UV Tool](SCS%20Tools%20in%20Tool%20Shelf/Lamp%20Switcher%20&%20UV%20Tool.md) -> while in **Edit Mode**
-2. [Wrap & Stats Tools](SCS%20Tools%20in%20Tool%20Shelf/Wrap%20&%20Stats%20Tools.md) -> while in **Vertex Paint** mode
+1. [灯光切换器与 UV 工具](SCS%20Tools%20in%20Tool%20Shelf/Lamp%20Switcher%20&%20UV%20Tool.md) -> 处于 **Edit Mode** 时
+2. [包裹与统计工具](SCS%20Tools%20in%20Tool%20Shelf/Wrap%20&%20Stats%20Tools.md) -> 处于 **Vertex Paint** 模式时
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/SCS_Blender_Tools/SCS_Tools_in_Tool_Shelf | revision: 3439 | captured: 2026-10-21 23:56:14 -->

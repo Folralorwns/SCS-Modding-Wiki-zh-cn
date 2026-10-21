@@ -1,15 +1,15 @@
 # Documentation/Engine/Console
 
-Each SCS game has console. To enable it you need to navigate to your `config.cfg` file and set both `g_console` and `g_developer` config variables to `1`. You can access the console using `~` key by default.
+每款 SCS 游戏都有控制台。要启用它，需要打开 `config.cfg` 文件，并将 `g_console` 和 `g_developer` 两个配置变量都设为 `1`。默认情况下，你可以使用 `~` 键打开控制台。
 
-## Shortcuts that you can use while using console
+## 使用控制台时可用的快捷键
 
-- `Ctrl + Shift` - Change mode of displaying messages - errors and warnings, all.
-- `PageUp and PageDown` - Scroll up / down content of the console.
-- `Shift + PageUp or PageDown` Scroll fast up / down content of the console.
-- `Ctrl + PageUp or PageDown` Scroll slow up / down content of the console.
+- `Ctrl + Shift` - 切换消息的显示模式 - 错误与警告、全部。
+- `PageUp and PageDown` - 向上/向下滚动控制台内容。
+- `Shift + PageUp or PageDown` 快速向上/向下滚动控制台内容。
+- `Ctrl + PageUp or PageDown` 慢速向上/向下滚动控制台内容。
 
-## See also
+## 另见
 
 - [Commands](Console/Commands.md)
 

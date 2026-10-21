@@ -1,69 +1,69 @@
-# Documentation/Tools/SCS Blender Tools/Conversion Helper
+# 文档/工具/SCS Blender Tools/转换助手
 
-Conversion helper panel features tools for automated files conversion and mod packing. Panel with conversion helper can be found below [Export Panel](Export%20Panel.md) located within *Output* tab in Blender properties window.
+转换助手面板提供自动转换文件与打包模组的工具。包含转换助手的面板位于 Blender 属性窗口 *Output* 选项卡中的 [Export Panel](Export%20Panel.md) 下方。
 
-However before you use Conversion Helper you should download latest [Conversion Tools](../Conversion%20Tools.md) for the game you want to create mod for and set path to conversion tools under *Conversion Tools Path*. Additionally make sure you have checked [Intended workflow](Intended%20workflow.md) images, for better understanding how mod system works when using SCS Blender Tools and Conversion Tools.
+不过，在使用转换助手之前，你应先下载适用于你所要制作模组的游戏的最新 [Conversion Tools](../Conversion%20Tools.md)，并在 *Conversion Tools Path* 下设置转换工具的路径。此外，请确保已查看 [Intended workflow](Intended%20workflow.md) 图片，以便更好地理解使用 SCS Blender Tools 与 Conversion Tools 时模组系统的工作方式。
 
 [![SCS_Tools_Conv_Hlpr.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Conversion%20Helper/SCS_Tools_Conv_Hlpr.280.png)](../../../../files/SCS%20Tools%20Conv%20Hlpr.280.png.md)
 
-Small razor icon located on the right side of SCS Conversion Helper panel header represents **Clean Converted Data** operator. This operator will immediately clean content that you converted before or is left there from some other time. In general this makes sure your mod won't have any unused resources (leftover textures, old materials) in the converted result. Same action can also be achieved while using [Mod Packing](../Conversion%20Tools.md#Mod_Packing) with enabled **Clean** option.
+位于 SCS Conversion Helper 面板标题右侧的小剃刀图标代表 **Clean Converted Data** 操作符。该操作符会立即清理你之前转换的内容，或此前遗留的内容。总的来说，这可确保你的模组在转换结果中不包含任何未使用的资源（残留的贴图、旧材质）。在使用 [Mod Packing](../Conversion%20Tools.md#Mod_Packing) 并启用 **Clean** 选项时，也可实现相同的操作。
 
-Conversion helper also support switchable **Custom Paths**. Once they are enabled conversion helper panel gets extended as seen on image below.
+转换助手还支持可切换的 **Custom Paths**。启用后，转换助手面板会如下方图片所示进行扩展。
 
 [![SCS_Tools_Conv_Hlpr_Custom_Paths.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Conversion%20Helper/SCS_Tools_Conv_Hlpr_Custom_Paths.280.png)](../../../../files/SCS%20Tools%20Conv%20Hlpr%20Custom%20Paths.280.png.md)
 
-## Custom Paths Usage
+## 自定义路径用法
 
-Custom Paths are holding list property for multiple custom paths that you want to convert at the same time. Use this custom paths if you want to merge resources from 2 or more different mods of yours. Example usage is shown in [Intended workflow#Usual mod combined with dependency mod (using custom paths)](Intended%20workflow.md#Usual_mod_combined_with_dependency_mod_(using_custom_paths))
+自定义路径是一个列表属性，用于保存你希望同时转换的多个自定义路径。当你要合并自己 2 个或多个不同模组的资源时，请使用这些自定义路径。示例用法见 [Intended workflow#Usual mod combined with dependency mod (using custom paths)](Intended%20workflow.md#Usual_mod_combined_with_dependency_mod_(using_custom_paths))
 
-On the side of the list you can find operators for managing your custom paths:
+在列表侧边，你可以找到用于管理自定义路径的操作符：
 
-- **+** - opens file selector where you should browse for new custom path you want to use.
-- **−** - deletes currently selected custom path in the list.
-- ⯅ - moves up currently selected custom path in the list. Ordering in the list doesn't have influence on converted result. It is only there so you can order paths however you like.
-- ⯆ - moves down currently selected custom path in the list. Ordering in the list doesn't have influence on converted result. It is only there so you can order paths however you like.
+- **+** - 打开文件选择器，你需要在其中浏览以选择要使用的新自定义路径。
+- **−** - 删除列表中当前选中的自定义路径。
+- ⯅ - 将列表中当前选中的自定义路径上移。列表中的顺序不会影响转换结果，它只是让你可以按自己的喜好排列路径。
+- ⯆ - 将列表中当前选中的自定义路径下移。列表中的顺序不会影响转换结果，它只是让你可以按自己的喜好排列路径。
 
-## Manual Conversion
+## 手动转换
 
-While mod packing with **Convert** already triggers automatic conversion before packing, one can still execute manual conversion. Currently there are three different variations:
+虽然使用 **Convert** 进行模组打包时已在打包前触发自动转换，但你仍可执行手动转换。目前共有三种不同方式：
 
-- **CONVERT CURRENT SCS PROJECT** - operator which will only convert resources in your currently set SCS Project Base Path.
-- **CONVERT CUSTOM MAPS** *(seen and functional only if custom paths are enabled)* - operator which converts resources only from defined custom paths.
-- **CONVERT ALL** *(seen and functional only if custom paths are enabled)* - operator which converts resources from custom paths + resources from currently set SCS Project Base Path.
+- **CONVERT CURRENT SCS PROJECT** - 仅转换当前设置的 SCS Project Base Path 中资源的操作符。
+- **CONVERT CUSTOM MAPS** *（仅在启用自定义路径时可见并可用）* - 仅转换已定义自定义路径中资源的操作符。
+- **CONVERT ALL** *（仅在启用自定义路径时可见并可用）* - 转换自定义路径中的资源以及当前设置的 SCS Project Base Path 中资源的操作符。
 
-Usage of manual conversion is recommended when you want to pack your mod later or by hand.
+当你打算稍后打包或手动打包模组时，建议使用手动转换。
 
-## Mod Packing
+## 模组打包
 
-This section is featuring properties and operators for packing a mod for SCS game.
+本节包含用于为 SCS 游戏打包模组的属性和操作符。
 
-First two options are specifying destination and name:
+前两个选项用于指定目标位置和名称：
 
-- **Mod Folder Path** - property holding folder where mod should be placed. On the side of this property you have search icon operator for auto retrieve of the mod paths for Euro Truck Simulator 2 or American Truck Simulator.
-- **Mod Name** - property holding name of the mod ZIP file.
+- **Mod Folder Path** - 保存模组应放置的文件夹的属性。在该属性侧边有搜索图标操作符，用于自动获取 Euro Truck Simulator 2 或 American Truck Simulator 的模组路径。
+- **Mod Name** - 保存模组 ZIP 文件名称的属性。
 
-Third row defines type of the compression you want to use for your mod package:
+第三行定义要用于模组包的压缩类型：
 
-- **Folder** - this option creates folder inside selected mod destination and copies result of conversion tools to it, instead of creating a ZIP package. Created folder is named the same as ZIP package: by mod name property.
-- **ZIP (Uncompressed)** - pack mod into uncompressed ZIP file.
-- **ZIP (Moderate)** - pack mod into compressed ZIP file (helper uses deflated compression, which is supported by SCS games).
+- **Folder** - 该选项会在所选模组目标位置内创建文件夹，并将 Conversion Tools 的转换结果复制到其中，而不会创建 ZIP 包。创建的文件夹名称与 ZIP 包相同，即由模组名称属性决定。
+- **ZIP (Uncompressed)** - 将模组打包为未压缩的 ZIP 文件。
+- **ZIP (Moderate)** - 将模组打包为压缩的 ZIP 文件（助手使用 deflate 压缩，SCS 游戏支持该格式）。
 
-Next row features switches of automated actions that can be done before mod will be packed:
+下一行包含可以在打包模组之前执行的自动操作开关：
 
-- **Clean** - enable this switch if you want to make clean conversion without any leftovers from previous packing or converting.
-- **Export** - enable this switch if you want to run automated Blender Tools export. Scope of the content which will be auto exported is defined with Export Scope property in [Export Panel](Export%20Panel.md).
-- **Convert** - enable this switch if you want for your resources to be converted before packing. This automated conversion will convert SCS Project Base Path as well as any defined custom paths.
+- **Clean** - 如果你希望进行干净的转换、不残留之前打包或转换的内容，请启用此开关。
+- **Export** - 如果你希望运行自动 Blender Tools 导出，请启用此开关。自动导出的内容范围由 [Export Panel](Export%20Panel.md) 中的 Export Scope 属性定义。
+- **Convert** - 如果你希望在打包前转换资源，请启用此开关。该自动转换会转换 SCS Project Base Path 以及所有已定义的自定义路径。
 
-### PACK MOD aka Magic Button
+### PACK MOD 又称魔法按钮
 
-Final magic operator found at the bottom of the panel is **>>>> PACK MOD <<<<**. This operator firstly executes enabled automated actions and on the end packs conversion tools result into the ZIP package and copies it to the selected mod destination.
+面板底部的最终魔法操作符是 **>>>> PACK MOD <<<<**。该操作符会先执行已启用的自动操作，最后将 Conversion Tools 的转换结果打包为 ZIP 包，并复制到所选的模组目标位置。
 
-So if you don't want to bother with manual exporting/converting, then for easy usage follow this few steps:
+因此，如果你不想费心处理手动导出/转换，可按以下几步轻松操作：
 
-1. Set mod folder path to: "[<Game User Path>](../../Engine/Game%20user%20path.md)/mod"
-2. Fill-in mod name
-3. Enable all options
-4. Press PACK MOD.
-5. Once packing is done, run the game and try your mod out!
+1. 将模组文件夹路径设置为："[<Game User Path>](../../Engine/Game%20user%20path.md)/mod"
+2. 填写模组名称
+3. 启用所有选项
+4. 按下 PACK MOD。
+5. 打包完成后，运行游戏并试用你的模组！
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/SCS_Blender_Tools/Conversion_Helper | revision: 4287 | captured: 2026-10-21 23:56:14 -->

@@ -1,180 +1,180 @@
 # Documentation/Engine/Truck Interior Animations and IDs
 
-## Interior Animations
+## 内饰动画
 
-The movement of various things in the truck interior is controlled by program-driven animations ( ***_anim** ). For each animation, the range is set by the ***_anim_min** and ***_anim_max** values. As most animations expect a range from 0 to 1, these are also the default values. If an animation expects any other value range, it will be stated below.
+卡车内饰中各种物体的运动由程序驱动的动画（***_anim**）控制。每个动画的范围由 ***_anim_min** 和 ***_anim_max** 值设定。由于大多数动画期望的范围是 0 到 1，这些也是默认值。如果某个动画期望其他值范围，将在下文说明。
 
-### Special Animations
+### 特殊动画
 
-| Attribute Name | Function | Behavior | Notes |
+| 属性名 | 功能 | 行为 | 备注 |
 | --- | --- | --- | --- |
-| wheel_anim | Steering wheel | 0 - left full lock<br>0.5 - center<br>1 - right full lock | *(Obsolete in 1.42)*<br><br>For best results, each keyframe should be less than 45°<br>The steering wheel bone should be named **steering_w** for compatibility with [interchangeable steering wheels](../../Games/ETS2/Modding%20guides/1.25.md#Steering_wheel_accessory). |
-| wheel_updown_anim | Steering column tilt adjustment | 0 - lowest setting<br>1 - highest setting | The default position is set by **wheel_updown_anim_default** |
-| wheel_frontback_anim | Steering column telescope adjustment | 0 - fully retracted<br>1 - fully extended | The default position is set by **wheel_frontback_anim_default** |
-| wiper_anim | Windshield wipers | 0→1 is a full wipe cycle<br>(from park to full travel and back to park) | The keyframes at 0 and 1 should match. |
-| rear_wiper_anim | Rear windshield wipers | 0→1 is a full wipe cycle<br>(from park to full travel and back to park) | The keyframes at 0 and 1 should match. *Added in 1.61* |
-| gadget_anim |  | 0→1 is a full animation cycle<br>(animation will be played as a continuous loop) | This animation is played in a loop while the truck's ignition/electricity is on. |
-| left_window_anim | Left window up/down animation | 0 - closed<br>1 - open | Controlled with window up/down controls. |
-| right_window_anim | Right window up/down animation | 0 - closed<br>1 - open | Controlled with window up/down controls. |
+| wheel_anim | 方向盘 | 0 - 左满舵<br>0.5 - 居中<br>1 - 右满舵 | *(1.42 中已废弃)*<br><br>为获得最佳效果，每个关键帧应小于 45°<br>方向盘骨骼应命名为 **steering_w**，以兼容[可互换方向盘](../../Games/ETS2/Modding%20guides/1.25.md#Steering_wheel_accessory)。 |
+| wheel_updown_anim | 转向柱倾斜调节 | 0 - 最低位置<br>1 - 最高位置 | 默认位置由 **wheel_updown_anim_default** 设定 |
+| wheel_frontback_anim | 转向柱伸缩调节 | 0 - 完全缩回<br>1 - 完全伸出 | 默认位置由 **wheel_frontback_anim_default** 设定 |
+| wiper_anim | 风挡雨刮 | 0→1 为一个完整的刮水循环<br>（从停靠位到最大行程再回到停靠位） | 0 和 1 处的关键帧应相同。 |
+| rear_wiper_anim | 后风挡雨刮 | 0→1 为一个完整的刮水循环<br>（从停靠位到最大行程再回到停靠位） | 0 和 1 处的关键帧应相同。*1.61 中新增* |
+| gadget_anim |  | 0→1 为一个完整的动画循环<br>（动画将作为连续循环播放） | 当卡车点火/通电时，此动画以循环方式播放。 |
+| left_window_anim | 左车窗升降动画 | 0 - 关闭<br>1 - 开启 | 通过车窗升降控件操作。 |
+| right_window_anim | 右车窗升降动画 | 0 - 关闭<br>1 - 开启 | 通过车窗升降控件操作。 |
 
-### Stick Animations
+### 操纵杆动画
 
 <table class="wikitable">
 <tbody><tr>
-<th>Attribute Name
+<th>属性名
 </th>
-<th>Function
+<th>功能
 </th>
-<th>Behavior
+<th>行为
 </th>
-<th>Notes
+<th>备注
 </th></tr>
 <tr>
 <td>blinker_anim
 </td>
-<td>Turn signal control lever
+<td>转向信号控制杆
 </td>
-<td>0 - left indicator active<br/>0.5 - rest position<br/>1 - right indicator active
+<td>0 - 左侧转向灯激活<br/>0.5 - 静止位置<br/>1 - 右侧转向灯激活
 </td>
 <td>
 </td></tr>
 <tr>
 <td>lights_anim
 </td>
-<td>Headlight control
+<td>前照灯控制
 </td>
-<td>0 - lights off<br/>0.5 - parking/clearance lights on<br/>1 - headlights on
+<td>0 - 灯光关闭<br/>0.5 - 驻车/示宽灯开启<br/>1 - 前照灯开启
 </td>
 <td>
 </td></tr>
 <tr>
 <td>high_beam_anim
 </td>
-<td>High beam headlight control
+<td>远光灯控制
 </td>
-<td>0 - rest position<br/>1 - high beams on
+<td>0 - 静止位置<br/>1 - 远光灯开启
 </td>
 <td>
 </td></tr>
 <tr>
 <td>light_horn_stick_anim
 </td>
-<td>Light/city horn button
+<td>灯光喇叭/城市喇叭按钮
 </td>
-<td>0 - rest position<br/>1 - light horn being applied
+<td>0 - 静止位置<br/>1 - 灯光喇叭被按下
 </td>
 <td>
 </td></tr>
 <tr>
 <td>wiper_stick_anim
 </td>
-<td>Windshield wiper control
+<td>风挡雨刮控制
 </td>
-<td>0 - off<br/>1 - maximum speed
+<td>0 - 关闭<br/>1 - 最高速度
 </td>
-<td>This animation is interpolated based on the total number of wiper speeds. For example, if there are two additional wiper speeds (delays), 0.33 would correspond with the first and 0.67 with the second delay definition.
+<td>此动画根据雨刮速度的总数进行插值。例如，如果有两个额外的雨刮速度（延迟），0.33 对应第一个延迟定义，0.67 对应第二个。
 </td></tr>
 <tr>
 <td rowspan="2">parking_stick_anim
 </td>
-<td rowspan="2">Parking brake control
+<td rowspan="2">驻车制动控制
 </td>
-<td rowspan="2">0 - parking brake released<br/>1 - parking brake applied
+<td rowspan="2">0 - 驻车制动释放<br/>1 - 驻车制动施加
 </td>
-<td><b>North America:</b> Whether 'in' or 'out' is the applied state will depend on the truck – make sure that the animation matches the label on the valve or you will look like a goof.
-<p>The typical usage is for 'push to release' systems where the 0.0 state is 'in' and the 1.0 state is 'out'.
+<td><b>北美：</b>“in”（推入）还是“out”（拉出）为施加状态取决于卡车——确保动画与阀上的标签相符，否则会显得很滑稽。
+<p>典型用法适用于“推入释放”系统，其中 0.0 状态为 'in'（推入），1.0 状态为 'out'（拉出）。
 </p>
 </td></tr>
 <tr>
-<td><b>Europe:</b>
+<td><b>欧洲：</b>
 </td></tr>
 <tr>
 <td>parking_stick_electric_anim
 </td>
-<td>Parking brake control
+<td>驻车制动控制
 </td>
-<td>0 - parking brake releasing<br/>0.5 - parking brake mid/neutral/return position<br/>1 - parking brake application
+<td>0 - 驻车制动释放中<br/>0.5 - 驻车制动中间/中立/回位位置<br/>1 - 驻车制动施加
 </td>
-<td>Electronic version of parking brake. It is clicked to some position and then returns automatically to default position (games handles return procedurally).
+<td>驻车制动的电子版本。它被拨到某个位置后会自动返回默认位置（游戏以程序化方式处理回位）。
 </td></tr>
 <tr>
 <td>parking_stick_handbrake_anim
 </td>
-<td>Handbrake control
+<td>手刹控制
 </td>
-<td>0 - handbrake disengaged<br/>0.5 - handbrake engaged<br/>1 - handbrake disengaged
+<td>0 - 手刹分离<br/>0.5 - 手刹接合<br/>1 - 手刹分离
 </td>
-<td>Handbrake version of parking brake. Plays the first half when engaging the handbrake and the second half when disengaging handbrake. Keyframe at time 0.0 and 1.0 should be the same. <i>Added in 1.61</i>
+<td>驻车制动的手刹版本。接合手刹时播放前半段，分离手刹时播放后半段。0.0 和 1.0 时刻的关键帧应相同。<i>1.61 中新增</i>
 </td></tr>
 <tr>
 <td>flasher_4way_anim
 </td>
-<td>Four-way flasher (hazard light) control
+<td>四闪（危险报警灯）控制
 </td>
-<td>0 - rest position<br/>1 - hazard lights are active
+<td>0 - 静止位置<br/>1 - 危险报警灯激活
 </td>
-<td>For a button, the “depressed” state would be 0.5 to make the button press and rebound for both activation and deactivation
+<td>对于按钮，“按下”状态应为 0.5，以使按钮在激活和停用时都能按下并回弹
 </td></tr>
 <tr>
 <td>engine_start_anim
 </td>
-<td>Ignition and starting controls
+<td>点火与启动控制
 </td>
-<td>0 - off<br/>0.33 - electricity on<br/>0.67 - engine on<br/>1 - engine starting
+<td>0 - 关闭<br/>0.33 - 通电<br/>0.67 - 发动机开启<br/>1 - 发动机启动中
 </td>
 <td>
 </td></tr>
 <tr>
 <td>beacon_anim
 </td>
-<td>Beacon on/off switch
+<td>警示灯开/关开关
 </td>
-<td>0 - beacon off
-<p>1 - beacon on
+<td>0 - 警示灯关闭
+<p>1 - 警示灯开启
 </p>
 </td></tr>
 <tr>
 <td>trailer_air_stick_anim
 </td>
-<td>Trailer air supply valve
+<td>挂车空气供给阀
 </td>
-<td>0 - trailer disconnected
-<p>1 - trailer connected
+<td>0 - 挂车未连接
+<p>1 - 挂车已连接
 </p>
 </td>
-<td>This is directly tied to whether a trailer is connected to the truck or not.
-<p>Typical usage is for a 'push to supply' type, so the valve is 'out' in the 0.0 state and 'in' in the 1.0 state
+<td>这直接关联挂车是否连接到卡车。
+<p>典型用法适用于“推入供气”类型，因此阀门在 0.0 状态为 'out'（拉出），在 1.0 状态为 'in'（推入）
 </p>
 </td></tr>
 <tr>
 <td>trailer_air_stick_electric_anim
 </td>
-<td>Trailer air supply valve
+<td>挂车空气供给阀
 </td>
-<td>0 - trailer disconnecting<br/>0.5 - trailer air mid/neutral/return position<br/>1 - trailer connecting
+<td>0 - 挂车断开连接中<br/>0.5 - 挂车空气中间/中立/回位位置<br/>1 - 挂车连接中
 </td>
-<td>Electronic version of trailer air supply. It is clicked to some position and then returns automatically to default position (games handles return procedurally).
+<td>挂车空气供给的电子版本。它被拨到某个位置后会自动返回默认位置（游戏以程序化方式处理回位）。
 </td></tr>
 <tr>
 <td>trailer_brake_stick_anim
 </td>
-<td>Trailer brake hand valve
-<p>(sometimes called the 'spike')
+<td>挂车制动手动阀
+<p>（有时称为 'spike'）
 </p>
 </td>
-<td>0 - rest position
-<p>1 - trailer brake hand valve fully applied
+<td>0 - 静止位置
+<p>1 - 挂车制动手动阀完全施加
 </p>
 </td>
-<td>Do not confuse this with the trailer supply valve - the hand valve is used (rarely) to apply only the trailer brakes in a controlled manner
+<td>不要将其与挂车供给阀混淆——手动阀用于（很少使用）以受控方式仅施加挂车制动
 </td></tr>
 <tr>
 <td>retarder_stick_anim
 </td>
-<td>Retarder control
+<td>缓速器控制
 </td>
-<td>0 - off
-<p>1 - maximum setting
+<td>0 - 关闭
+<p>1 - 最大设置
 </p>
 </td>
 <td>
@@ -182,27 +182,27 @@ The movement of various things in the truck interior is controlled by program-dr
 <tr>
 <td>engine_brake_stick_anim
 </td>
-<td>Engine brake control
+<td>发动机制动控制
 </td>
-<td>0 - off
-<p>1 - maximum setting
+<td>0 - 关闭
+<p>1 - 最大设置
 </p>
 </td>
-<td><i>Added in 1.38</i>
+<td><i>1.38 中新增</i>
 </td></tr>
 <tr>
 <td>auto_transmission_stick_anim
 </td>
-<td>Automatic transmission gear selector
+<td>自动变速箱换挡选择器
 </td>
-<td>0 - reverse<br/>0.5 - neutral<br/>1 - drive
+<td>0 - 倒挡<br/>0.5 - 空挡<br/>1 - 前进挡
 </td>
 <td>
 </td></tr>
 <tr>
 <td>lift_axle_stick_anim
 </td>
-<td>Lift axle switch/control
+<td>提升桥开关/控制
 </td>
 <td>
 </td>
@@ -211,466 +211,466 @@ The movement of various things in the truck interior is controlled by program-dr
 <tr>
 <td>differential_lock_stick_anim
 </td>
-<td>Differential lock switch/control
+<td>差速锁开关/控制
 </td>
-<td>0 - disengaged<br/>1 - engaged
+<td>0 - 分离<br/>1 - 接合
 </td>
-<td><i>Added in ETS2 1.27/ATS 1.6</i>
+<td><i>ETS2 1.27/ATS 1.6 中新增</i>
 </td></tr>
 <tr>
 <td>left_window_stick_anim
 </td>
-<td>Left window switch/control
+<td>左车窗开关/控制
 </td>
-<td>0 - closing<br/>0.5 - rest position<br/>1 - opening
+<td>0 - 关闭中<br/>0.5 - 静止位置<br/>1 - 开启中
 </td>
 <td>
 </td></tr>
 <tr>
 <td>right_window_stick_anim
 </td>
-<td>Right window switch/control
+<td>右车窗开关/控制
 </td>
-<td>0 - closing<br/>0.5 - rest position<br/>1 - opening
+<td>0 - 关闭中<br/>0.5 - 静止位置<br/>1 - 开启中
 </td>
 <td>
 </td></tr>
 <tr>
 <td>left_window_stick_manual_anim
 </td>
-<td>Left window manual control
+<td>左车窗手动控制
 </td>
-<td>0 - window closed<br/>1 - window opened
+<td>0 - 车窗关闭<br/>1 - 车窗开启
 </td>
-<td>Plays from 0 to 1 while the window anim is playing, allows lowering the windows without engine electrics. <i>Added in 1.61</i>
+<td>在车窗动画播放时从 0 播放到 1，允许在发动机未通电时降下车窗。<i>1.61 中新增</i>
 </td></tr>
 <tr>
 <td>right_window_stick_manual_anim
 </td>
-<td>Right window manual control
+<td>右车窗手动控制
 </td>
-<td>0 - window closed<br/>1 - window opened
+<td>0 - 车窗关闭<br/>1 - 车窗开启
 </td>
-<td>Plays from 0 to 1 while the window anim is playing, allows lowering the windows without engine electrics. <i>Added in 1.61</i>
+<td>在车窗动画播放时从 0 播放到 1，允许在发动机未通电时降下车窗。<i>1.61 中新增</i>
 </td></tr></tbody></table>
 
-### Gauge animations
+### 仪表动画
 
-This set of animations handles analog gauges. The related ***_min** and ***_max** attributes set the values that the start and end of the animation correspond to. Where the simulated value exceeds the min/max attribute, the animation is clamped.
+这组动画用于模拟指针式仪表。相关的 ***_min** 和 ***_max** 属性设定动画起点和终点所对应的值。当模拟值超出 min/max 属性时，动画会被钳制。
 
-> **Note:** All ***_psi_*** attributes have been renamed to ***_pressure_*** as of ETS2 1.27/ATS 1.6. This is to reflect the change to *bar* (atmospheres) as the working pressure unit instead of *psi*.
+> **注意：** 自 ETS2 1.27/ATS 1.6 起，所有 ***_psi_*** 属性已重命名为 ***_pressure_***。这是为了反映工作压力单位由 *psi* 改为 *bar*（大气压）。
 
-| Attribute Name | Function | Behavior | Notes |
+| 属性名 | 功能 | 行为 | 备注 |
 | --- | --- | --- | --- |
-| oil_pressure_anim | Engine oil pressure (bar) | 0 - oil_pressure_anim_min 1 - oil_pressure_anim_max | 3-6 bars (43.5-87 psi) is typical working value |
-| water_temp_anim | Engine water/coolant temperature (°C) | 0 - water_temp_anim_min 1 - water_temp_anim_max | working value 90°C |
-| battery_anim | Battery potential (V) | 0 - battery_anim_min 1 - battery_anim_max | Nominally 24V. For 12V systems, set the min/max attributes to twice the value the gauge displays and it should appear as if it is indeed a 12V system. |
-| oil_temp_anim | Engine oil temperature (°C) | 0 - oil_temp_anim_min 1 - oil_temp_anim_max | working value 90°C |
-| exhaust_temp_anim | Exhaust gas temperature (°C) | 0 - exhaust_temp_anim_min 1 - exhaust_temp_anim_max | working range cca to 650°C |
-| diff_temp_anim | Differential temperature (°C) | 0 - diff_temp_anim_min 1 - diff_temp_anim_max | working value 90°C |
-| tachometer_anim | Tachometer in rpm (revolution per minute) | 0 - tachometer_anim_min 1 - tachometer_anim_max |  |
-| speedometer_anim | Speedometer (km/h) | 0 - speedometer_anim_min 1 - speedometer_anim_max | 1mph = 1.60934km/h |
-| air_pressure_anim | Air brake reservoir pressure (bar) | 0 - air_pressure_anim_min 1 - air_pressure_anim_max |  |
-| brake_pressure_anim | Air brake application (bar) | 0 - brake_pressure_anim_min 1 - brake_pressure_anim_max |  |
-| general_air_press_anim | General air supply (bar) | 0 - general_air_press_anim_min 1 - general_air_press_anim_max |  |
-| trailer_air_press_anim | Trailer air supply (bar) | 0 - trailer_air_press_anim_min 1 - trailer_air_press_anim_max |  |
-| suspension_load_anim | Suspension load (newtons) | 0 - suspension_load_anim_min 1 - suspension_load_anim_max | expects range in newtons (22t trailer creates like 70kN on kingpin) |
-| fuel_anim | Fuel gauge (relative to full) | 0 - fuel_anim_min 1 - fuel_anim_max | By default, 0 corresponds to empty state and 1 corresponds to full |
-| ad_blue_anim | Ad Blue/DEF gauge (relative to full) | 0 - fuel_anim_min 1 - fuel_anim_max | By default, 0 corresponds to empty state and 1 corresponds to full |
-| turbo_anim | Manifold pressure |  |  |
-| consumption_anim | Instantaneous fuel consumption in l/100km | 0 - consumption_anim_min 1 - consumption_anim_max | scania gauge has 0 to 120 |
-| clock_big_anim | Analog clock, minute hand (0-60) | 0 - clock_big_anim_min (default 0) 1 - clock_big_anim_max (default 60) |  |
-| clock_small_anim | Analog clock, hour hand (0-12) | 0 - clock_small_anim_min (default 0) 1 - clock_small_anim_max (default 24) |  |
-| generic_anim | Animation for other gauges. | 0 when truck is turned off 1 when truck is turned on |  |
-| odometer_digit_0_anim<br> odometer_digit_1_anim<br> odometer_digit_2_anim<br> odometer_digit_3_anim<br> odometer_digit_4_anim<br> odometer_digit_5_anim<br> odometer_digit_6_anim<br> odometer_digit_7_anim | Analog odometer animations | Each anim has 10 keyframes 1 keyframe for each number 0-9 | Digit 0 shows the tenths, digit 1 shows ones, digit 2 shows tens, ..., digit 7 shows millions. Digit 1 is required for the odometer to function, other digits are optional. Distance unit shown (km or m) is controlled by **use_mile_units** in **accessory_interior_data**. *Added in 1.61* |
-| trip_counter_digit_0_anim<br> trip_counter_digit_1_anim<br> trip_counter_digit_2_anim<br> trip_counter_digit_3_anim | Analog trip counter animations | Each anim has 10 keyframes 1 keyframe for each number 0-9 | Digit 0 shows the tenths, digit 1 shows ones, digit 2 shows tens, digit 3 shows hundreds. Digit 1 is required for the trip counter to function, other digits are optional. Distance unit shown (km or m) is controlled by **use_mile_units** in **accessory_interior_data**. *Added in 1.61* |
+| oil_pressure_anim | 发动机机油压力（bar） | 0 - oil_pressure_anim_min 1 - oil_pressure_anim_max | 典型工作值为 3-6 bar（43.5-87 psi） |
+| water_temp_anim | 发动机水温/冷却液温度（°C） | 0 - water_temp_anim_min 1 - water_temp_anim_max | 工作值 90°C |
+| battery_anim | 蓄电池电压（V） | 0 - battery_anim_min 1 - battery_anim_max | 标称 24V。对于 12V 系统，将 min/max 属性设为仪表显示值的两倍，它就会表现得如同真正的 12V 系统。 |
+| oil_temp_anim | 发动机机油温度（°C） | 0 - oil_temp_anim_min 1 - oil_temp_anim_max | 工作值 90°C |
+| exhaust_temp_anim | 排气温度（°C） | 0 - exhaust_temp_anim_min 1 - exhaust_temp_anim_max | 工作范围约到 650°C |
+| diff_temp_anim | 差速器温度（°C） | 0 - diff_temp_anim_min 1 - diff_temp_anim_max | 工作值 90°C |
+| tachometer_anim | 转速表，单位 rpm（每分钟转数） | 0 - tachometer_anim_min 1 - tachometer_anim_max |  |
+| speedometer_anim | 速度表（km/h） | 0 - speedometer_anim_min 1 - speedometer_anim_max | 1mph = 1.60934km/h |
+| air_pressure_anim | 空气制动储气筒压力（bar） | 0 - air_pressure_anim_min 1 - air_pressure_anim_max |  |
+| brake_pressure_anim | 空气制动施加压力（bar） | 0 - brake_pressure_anim_min 1 - brake_pressure_anim_max |  |
+| general_air_press_anim | 总空气供给（bar） | 0 - general_air_press_anim_min 1 - general_air_press_anim_max |  |
+| trailer_air_press_anim | 挂车空气供给（bar） | 0 - trailer_air_press_anim_min 1 - trailer_air_press_anim_max |  |
+| suspension_load_anim | 悬架载荷（牛顿） | 0 - suspension_load_anim_min 1 - suspension_load_anim_max | 期望以牛顿为单位的范围（22t 挂车在牵引销上约产生 70kN） |
+| fuel_anim | 燃油表（相对满油） | 0 - fuel_anim_min 1 - fuel_anim_max | 默认情况下，0 对应空油状态，1 对应满油 |
+| ad_blue_anim | Ad Blue/DEF 表（相对满量） | 0 - fuel_anim_min 1 - fuel_anim_max | 默认情况下，0 对应空量状态，1 对应满量 |
+| turbo_anim | 进气歧管压力 |  |  |
+| consumption_anim | 瞬时燃油消耗，单位 l/100km | 0 - consumption_anim_min 1 - consumption_anim_max | 斯堪尼亚仪表为 0 到 120 |
+| clock_big_anim | 指针时钟，分针（0-60） | 0 - clock_big_anim_min（默认 0） 1 - clock_big_anim_max（默认 60） |  |
+| clock_small_anim | 指针时钟，时针（0-12） | 0 - clock_small_anim_min（默认 0） 1 - clock_small_anim_max（默认 24） |  |
+| generic_anim | 用于其他仪表的动画。 | 卡车关闭时为 0，卡车开启时为 1 |  |
+| odometer_digit_0_anim<br> odometer_digit_1_anim<br> odometer_digit_2_anim<br> odometer_digit_3_anim<br> odometer_digit_4_anim<br> odometer_digit_5_anim<br> odometer_digit_6_anim<br> odometer_digit_7_anim | 指针式里程表动画 | 每个动画有 10 个关键帧，数字 0-9 各一个关键帧 | 数字 0 显示十分位，数字 1 显示个位，数字 2 显示十位，……，数字 7 显示百万位。里程表要正常工作需要数字 1，其他数字是可选的。显示的距离单位（km 或 m）由 **use_mile_units** 控制，该属性位于 **accessory_interior_data** 中。*1.61 中新增* |
+| trip_counter_digit_0_anim<br> trip_counter_digit_1_anim<br> trip_counter_digit_2_anim<br> trip_counter_digit_3_anim | 指针式小计里程动画 | 每个动画有 10 个关键帧，数字 0-9 各一个关键帧 | 数字 0 显示十分位，数字 1 显示个位，数字 2 显示十位，数字 3 显示百位。小计里程要正常工作需要数字 1，其他数字是可选的。显示的距离单位（km 或 m）由 **use_mile_units** 控制，该属性位于 **accessory_interior_data** 中。*1.61 中新增* |
 
-### Indicator animations
+### 指示灯动画
 
-These animations are not interpolated from 0 to 1. Instead they have only 2 states: switched off (0) and switched on (1), so these animations should have only 2 key frames. All indicator animations are triggered during the start-up electrical check, as well as for their particular functions.
+这些动画不在 0 到 1 之间插值。它们只有 2 种状态：关闭（0）和开启（1），因此这些动画应只有 2 个关键帧。所有指示灯动画都会在启动时的电气自检中触发，也会因其特定功能而触发。
 
 <table class="wikitable">
 <tbody><tr>
-<th>Attribute Name
+<th>属性名
 </th>
-<th>Function
+<th>功能
 </th>
-<th>Behavior
+<th>行为
 </th>
-<th>Notes
+<th>备注
 </th></tr>
 <tr>
 <td>button_left_blinker
 </td>
-<td>Left turn signal indicator
+<td>左转向指示灯
 </td>
-<td rowspan="2">Flashes on and off with left/right turn signal
+<td rowspan="2">随左/右转向信号闪烁
 </td>
-<td rowspan="2">The related attribute <b>blinker_delay</b> is describing length of the half blinking loop (in seconds)
+<td rowspan="2">相关属性 <b>blinker_delay</b> 描述半个闪烁循环的长度（以秒为单位）
 </td></tr>
 <tr>
 <td>button_right_blinker
 </td>
-<td>Right turn signal indicator
+<td>右转向指示灯
 </td></tr>
 <tr>
 <td>button_water_temp
 </td>
-<td>Water temperature warning light
+<td>水温警告灯
 </td>
-<td>On when engine temperature is excessive
+<td>发动机温度过高时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>indicator_oil_temp
 </td>
-<td>Engine oil temperature warning light
+<td>发动机机油温度警告灯
 </td>
-<td>On when engine oil temperature is excessive
+<td>发动机机油温度过高时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>indicator_position_lights
 </td>
-<td>Position light indicator
+<td>位置灯指示灯
 </td>
-<td>On when positional/marker/parking lights are on
+<td>位置灯/示宽灯/驻车灯开启时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>button_lights
 </td>
-<td>Headlight indicator
+<td>前照灯指示灯
 </td>
-<td>On when headlights are on
+<td>前照灯开启时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>button_high_beam_lights
 </td>
-<td>Highbeam indicator
+<td>远光灯指示灯
 </td>
-<td>On when highbeam headlights are on
+<td>远光灯开启时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>indicator_aux_lights_front
 </td>
-<td>Front auxiliary lights indicator
+<td>前辅助灯指示灯
 </td>
-<td>On when <i>front</i> auxiliary lights are on
+<td><i>前</i>辅助灯开启时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>indicator_aux_lights_roof
 </td>
-<td>Roof auxiliary lights indicator
+<td>车顶辅助灯指示灯
 </td>
-<td>On when <i>roof</i> auxiliary lights are on
+<td><i>车顶</i>辅助灯开启时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>indicator_aux_lights_any
 </td>
-<td>Auxiliary lights indicator
+<td>辅助灯指示灯
 </td>
-<td>On when any auxiliary lights are on
+<td>任何辅助灯开启时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>indicator_low_air_pressure
 </td>
-<td>Low air pressure warning light
+<td>气压过低警告灯
 </td>
-<td>On when air pressure drops below cca 5 bars
+<td>气压降至约 5 bar 以下时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>indicator_low_oil_pressure
 </td>
-<td>Low oil pressure warning light
+<td>机油压力过低警告灯
 </td>
-<td>On when engine oil pressure is low
+<td>发动机机油压力过低时点亮
 </td>
-<td>This will also illuminate when the electrical is on and the engine is off
+<td>通电且发动机熄火时也会点亮
 </td></tr>
 <tr>
 <td>button_battery_warning
 </td>
-<td>Low battery voltage warning light
+<td>蓄电池电压过低警告灯
 </td>
-<td>On when battery voltage is low
+<td>蓄电池电压过低时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>button_low_fuel
 </td>
-<td>Low fuel warning light
+<td>燃油不足警告灯
 </td>
-<td>On when fuel level is low
+<td>燃油液位过低时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>indicator_low_adblue
 </td>
-<td>Low AdBlue/DEF warning light
+<td>AdBlue/DEF 不足警告灯
 </td>
-<td>On when AdBlue/DEF level is low
+<td>AdBlue/DEF 液位过低时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>button_jakebrake
 </td>
-<td>Engine brake indicator light
+<td>发动机制动指示灯
 </td>
-<td>On when engine brake (jake brake) is armed or active
+<td>发动机制动（雅各布制动）已预备或激活时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>button_parking_brake
 </td>
-<td>Parking brake indicator light
+<td>驻车制动指示灯
 </td>
-<td>On when parking brake is applied
+<td>驻车制动施加时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>button_4way
 </td>
-<td>Four-way flasher status light
+<td>四闪状态灯
 </td>
-<td>On when four-way flasher is on
+<td>四闪开启时点亮
 </td>
-<td>Indicator should be placed on hazard warning button for blinking
+<td>指示灯应置于危险报警灯按钮上以便闪烁
 </td></tr>
 <tr>
 <td>indicator_retarder
 </td>
-<td>Retarder status light
+<td>缓速器状态灯
 </td>
-<td>On when the retarder is active
+<td>缓速器激活时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>indicator_warning
 </td>
-<td>Damage warning indicator
+<td>损坏警告指示灯
 </td>
-<td>On when damage is 15% or more
+<td>损坏达到 15% 或以上时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>indicator_stop
 </td>
-<td>Critical damage indicator
+<td>严重损坏指示灯
 </td>
-<td>On when damage is 50% or more
+<td>损坏达到 50% 或以上时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>indicator_axle_lift
 </td>
-<td>Lift axle indicator
+<td>提升桥指示灯
 </td>
-<td>On when lift axle is up
+<td>提升桥升起时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>indicator_cruise_control
 </td>
-<td>Cruise control status light
+<td>巡航控制状态灯
 </td>
-<td>On when cruise control is engaged
+<td>巡航控制接合时点亮
 </td>
 <td>
 </td></tr>
 <tr>
 <td>indicator_generic
 </td>
-<td>Animation for other indicators
+<td>用于其他指示灯的动画
 </td>
-<td>0 most of the time, 1 when truck is making electricity check (after turned on).
+<td>大部分时间为 0，卡车进行电气自检时（开启后）为 1。
 </td>
 <td>
 </td></tr>
 <tr>
 <td>indicator_differential_lock
 </td>
-<td>Differential lock status light
+<td>差速锁状态灯
 </td>
-<td>On when differential lock is engaged
+<td>差速锁接合时点亮
 </td>
-<td><i>Added in ETS2 1.27/ATS 1.6</i>
+<td><i>ETS2 1.27/ATS 1.6 中新增</i>
 </td></tr>
 <tr>
 <td>indicator_trailer_axle_lift
 </td>
-<td>Trailer lift axle status light
+<td>挂车提升桥状态灯
 </td>
-<td>On when trailer axle(s) are raised.
+<td>挂车车桥升起时点亮。
 </td>
-<td><i>Added in ETS2 1.27/ATS 1.6</i>
+<td><i>ETS2 1.27/ATS 1.6 中新增</i>
 </td></tr>
 <tr>
 <td>indicator_weigh_green
 </td>
-<td>(ATS) Weigh pass transponder green (bypass) light
+<td>（ATS）称重站通行应答器绿色（绕行）灯
 </td>
-<td>On when the player may bypass an upcoming weigh station
+<td>玩家可以绕过前方称重站时点亮
 </td>
-<td><i>Added in ETS2 1.27/ATS 1.6</i>
+<td><i>ETS2 1.27/ATS 1.6 中新增</i>
 </td></tr>
 <tr>
 <td>indicator_weigh_red
 </td>
-<td>(ATS) Weigh pass transponder red (no bypass) light
+<td>（ATS）称重站通行应答器红色（不可绕行）灯
 </td>
-<td>On when the player must enter an upcoming weigh station
+<td>玩家必须进入前方称重站时点亮
 </td>
-<td><i>Added in ETS2 1.27/ATS 1.6</i>
+<td><i>ETS2 1.27/ATS 1.6 中新增</i>
 </td></tr>
 <tr>
 <td>indicator_blind_spot_left
 </td>
-<td>Left blind spot indicator
+<td>左侧盲区指示灯
 </td>
-<td>On when some vehicle is near left blind spot of player vehicle
+<td>有其他车辆接近玩家车辆的左侧盲区时点亮
 </td>
-<td><i>Added in ETS2 1.47/ATS 1.45</i>
+<td><i>ETS2 1.47/ATS 1.45 中新增</i>
 </td></tr>
 <tr>
 <td>indicator_blind_spot_right
 </td>
-<td>Right blind spot indicator
+<td>右侧盲区指示灯
 </td>
-<td>On when some vehicle is near right blind spot of player vehicle
+<td>有其他车辆接近玩家车辆的右侧盲区时点亮
 </td>
-<td><i>Added in ETS2 1.47/ATS 1.45</i>
+<td><i>ETS2 1.47/ATS 1.45 中新增</i>
 </td></tr></tbody></table>
 
-## Dashboards IDs
+## 仪表板 ID
 
-Screen of dashboard computers uses our UI library and shows thus UI elements. Each element has unique ID and can be used only once (due to caching). Most of fields can be used as two parameter template - value and unit, both are used accordingly to current game options. As in different languages can be units and other texts translated ensure that there are enough space for all of them.
+仪表板电脑的屏幕使用我们的 UI 库，因此显示的是 UI 元素。每个元素都有唯一 ID，且只能使用一次（因为缓存）。大多数字段可用作双参数模板——值和单位，两者都会根据当前游戏选项使用。由于不同语言中单位和其它文本可能被翻译，要确保为它们留出足够空间。
 
-### Screen IDs ( **ui::group** type):
+### 屏幕 ID（**ui::group** 类型）：
 
-- 100 to 800 - basic screens, up to 8 screens
-- 900 - warning screen, used when truck is damage and should be repaired, shown alone (without shared screen)
-- 910 to 913 - parking cameras screens, up to 4 screens (enabled when driving in R and/or user activates parking cameras)
-- 950 - shared screen (used together with all basic screens)
+- 100 到 800 - 基础屏幕，最多 8 个屏幕
+- 900 - 警告屏幕，在卡车受损且需要维修时使用，单独显示（不共用屏幕）
+- 910 到 913 - 驻车摄像头屏幕，最多 4 个屏幕（在挂 R 挡行驶和/或用户激活驻车摄像头时启用）
+- 950 - 共用屏幕（与所有基础屏幕一起使用）
 
-### Element IDs (mostly **ui::text_common** type):
+### 元素 ID（大多为 **ui::text_common** 类型）：
 
-- 1000 - ambient temperature
-- 1010 - oil temperature
-- 1020 - current speed
-- 1030 - odometer, needs space for at least six digits
-- 1040 - current gear, uses N, A[number], R or R[number] for automatic and N, [number], R or R[number] for manual or sequential
-- 1050 - current clock time in proper format, eg. "12:34" (am/pm is omitted)
-- 1060 - remaining fuel in tank
-- 1070 - ui_text_bar for fuel bar, the text is cut according to current fuel tank state
-- 1075 - *(obsolete in 1.49)* ui::text that defines size, orientation and range of fuel bar (typical data "H~~0~~1", horizontal range 0 to 1)
-- 1080 - guessed operating range of vehicle
-- 1090 - water temperature
-- 1100 - cruise control speed value
-- 1110 - ui_text_bar for oil pressure bar, the text is cut according to current oil pressure
-- 1115 - *(obsolete in 1.49)* ui::text that defines size, orientation and range of oil pressure bar (typical data "H~~0~~8", horizontal range 0bar to 8bar (116psi))
-- 1120 - ui_text_bar for air pressure bar, the text is cut according to current air pressure
-- 1125 - *(obsolete in 1.49)* ui::text that defines size, orientation and range of air pressure bar (typical data "H~~0~~12", horizontal range 0bar to 12bar (174psi))
-- 1130 - ui_text_bar for turbo pressure bar, the text is cut according to current oil pressure
-- 1135 - *(obsolete in 1.49)* ui::text that defines size, orientation and range of turbo pressure bar (typical data "H~~0~~1", horizontal range 0 to 1)
-- 1140 - ui_text_bar for adblue bar, the text is cut according to current adblue tank state
-- 1145 - *(obsolete in 1.49)* ui::text that defines size, orientation and range of adblue bar (typical data "H~~0~~1", horizontal range 0 to 1)
-- 1150 - ui_text_bar for water temperature bar, the text is cut according to current water temperature
-- 1155 - *(obsolete in 1.49)* ui::text that defines size, orientation and range of water temperature bar (typical data "H~~0~~130", horizontal range 0°C to 130°C (32°F to 266°F))
-- 1160 - instant consumption
-- 1170 - average (trip) consumption
-- 1180 - ui_text_bar for brake pedal pressure bar, the text is cut according to current pressure
-- 1185 - *(obsolete in 1.49)* ui::text that defines size, orientation and range of brake pedal pressure bar (typical data "H~~0~~1", horizontal range 0 to 1)
-- 1190 - damage warning icon, can be ui::group or ui::text or any other element that could show/hide
-- 1200 - low fuel warning icon, can be ui::group or ui::text or any other element that could show/hide
-- 1210 - trip distance
-- 1220 - compass, displays strings like "N", "E", "SW".
-- 1230 - engine brake icon
-- 1240 - cruise control icon, can be ui::group or ui::text or any other element that could show/hide. Cruise control speed (id 1100) explicitly CAN be child of this group.
-- 1250 - cruise control memory icon, can be ui::group or ui::text or any other element that could show/hide.
-- 1260 - low air pressure warning icon
-- 1270 - parking brake indicator icon
-- 1280 - engine running time
-- 1290 - retarder icon
-- 1300 - transmission gear (raw, without mode info)
-- 1310 - transmission mode (without gear info, A/M)
-- 1320 - battery voltage
-- 1330 - battery voltage gauge, expected to be ui_gauge element type
-- 1340 - oil temperature gauge, expected to be ui_gauge element type
-- 1350 - ui_text_bar for instant fuel economy bar, the text is cut according to current value
-- 1355 - *(obsolete in 1.49)* ui::text that defines size, orientation and range of instant fuel economy bar (typical data "H~~0~~5", horizontal range 0 to 5 km/l (11.8mpg))
-- 1360 - ui_text_bar for average fuel economy bar, the text is cut according to current value
-- 1365 - *(obsolete in 1.49)* ui::text that defines size, orientation and range of average fuel economy bar (typical data "H~~0~~5", horizontal range 0 to 5 km/l (11.8mpg))
-- 1370 - air pressure value (psi only)
-- 1380 - transmission mode, detailed (D/N/R/M)
-- 1390 - trip time
-- 1400 - trip average speed (trip distance / trip time)
-- 1410 - smart cruise control tolerance if CC is engaged, otherwise hides the element
-- 1420 - damage stop icon, can be ui::group or ui::text or any other element that could show/hide
-- 1430 - speed gauge, expected to be ui_gauge element type
-- 1440 - revolutions per minute (rpm) gauge, expected to be ui_gauge element type
-- 1450 - cruise control speed gauge, expected to be ui_gauge element type
-- 1460 - water temperature gauge, expected to be ui_gauge element type
-- 1470 - parking lights icon, can be ui::group or ui::text or any other element that could show/hide
-- 1480 - low beam lights icon, can be ui::group or ui::text or any other element that could show/hide
-- 1490 - differential lock icon, can be ui::group or ui::text or any other element that could show/hide
-- 1500 - fuel consumed since last trip computer reset
-- 1510 - remaining fuel in tank percent (range 0-100)
-- 1520 - remaining adblue in tank percent (range 0-100)
-- 1530 - ETA (estimated time to arrival), hidden when time is not available (no delivery, no navigation etc.)
-- 1540 - time until rest is needed, hidden when g_fatigue is 0 (fatigue option is disabled)
-- 1550 - ui_text_bar for differential temperature bar, the text is cut according to current value
-- 1555 - *(obsolete in 1.49)* ui::text that defines size, orientation and range of differential temperature bar (typical data "H~~0~~130", horizontal range 0°C to 130°C (32°F to 266°F))
-- 1560 - ui_text_bar for suspension load bar, the text is cut according to current value
-- 1565 - *(obsolete in 1.49)* ui::text that defines size, orientation and range of suspension load bar (typical data "H~~0~~100000", horizontal range 0 to 100kN)
-- 1570 - left blinker icon
-- 1580 - right blinker icon
-- 1590 - high beam icon
-- 1600 - ui_text_bar for oil temperature bar, the text is cut according to current value
-- 1605 - *(obsolete in 1.49)* ui::text that defines size, orientation and range of oil temperature bar (typical data "H~~0~~130", horizontal range 0°C to 130°C (32°F to 266°F))
-- 1610 - speed limit
-- 1620 - digital main mirrors, can be any element that can show/hide (shown when digital main mirrors are detected by the main mirrors using camera unit prefix)
-- 1630 - digital side mirror, can be any element that can show/hide (shown when digital side mirror is detected by the side mirror using camera unit prefix)
-- 1640 - digital front mirror, can be any element that can show/hide (shown when digital front mirror is detected by the front mirror using camera unit prefix)
-- 1650 - digital hood mirrors, can be any element that can show/hide (shown when digital hood mirror is detected by the hood mirror using camera unit prefix)
-- 1660 - close blind spot indicator (side depends on `left_hand_traffic` interior data attribute), can be any element that can show/hide (shown when obstacle is detected on left side of the vehicle)
-- 1670 - far blind spot indicator (side depends on `left_hand_traffic` interior data attribute), can be any element that can show/hide (shown when obstacle is detected on right side of the vehicle)
-- 1680 - trip recuperation (energy returned)
-- 1690 - ui_text_bar for power consumption, the text is cut according to current value (specific behavior based on Renaut E-Tech)
-- 1700 - ui_text_bar for rpm, the text is cut according to current value (values in RPM)
-- 1710 - ui_text_bar for speed, the text is cut according to current value (values in km/h)
-- 1720 - power consumption gauge, expected to be ui_gauge element type (max recuperation: -1, idle: 0, max power: 1)
-- 1730 - engine RPM divided by 1000 (rounded to one decimal place)
-- 1740 - fuel gauge, expected to be ui_gauge element type (empty fuel: 0, max. fuel: 1)
-- 1750 - average (trip) consumption gauge, expected to be ui_gauge element type (value in l/100km)
-- 1760 - oil pressure value
+- 1000 - 环境温度
+- 1010 - 机油温度
+- 1020 - 当前速度
+- 1030 - 里程表，至少需要六位数字的空间
+- 1040 - 当前挡位，自动挡使用 N、A[number]、R 或 R[number]，手动或顺序挡使用 N、[number]、R 或 R[number]
+- 1050 - 当前时钟时间，格式正确，例如 "12:34"（省略上午/下午）
+- 1060 - 油箱内剩余燃油
+- 1070 - 用于燃油条的 ui_text_bar，文本根据当前油箱状态裁剪
+- 1075 - *(1.49 中已废弃)* 定义燃油条尺寸、方向和范围的 ui::text（典型数据 "H~~0~~1"，水平范围 0 到 1）
+- 1080 - 车辆预估可行驶里程
+- 1090 - 水温
+- 1100 - 巡航控制速度值
+- 1110 - 用于机油压力条的 ui_text_bar，文本根据当前机油压力裁剪
+- 1115 - *(1.49 中已废弃)* 定义机油压力条尺寸、方向和范围的 ui::text（典型数据 "H~~0~~8"，水平范围 0bar 到 8bar（116psi））
+- 1120 - 用于气压条的 ui_text_bar，文本根据当前气压裁剪
+- 1125 - *(1.49 中已废弃)* 定义气压条尺寸、方向和范围的 ui::text（典型数据 "H~~0~~12"，水平范围 0bar 到 12bar（174psi））
+- 1130 - 用于涡轮压力条的 ui_text_bar，文本根据当前机油压力裁剪
+- 1135 - *(1.49 中已废弃)* 定义涡轮压力条尺寸、方向和范围的 ui::text（典型数据 "H~~0~~1"，水平范围 0 到 1）
+- 1140 - 用于 AdBlue 条的 ui_text_bar，文本根据当前 AdBlue 箱状态裁剪
+- 1145 - *(1.49 中已废弃)* 定义 AdBlue 条尺寸、方向和范围的 ui::text（典型数据 "H~~0~~1"，水平范围 0 到 1）
+- 1150 - 用于水温条的 ui_text_bar，文本根据当前水温裁剪
+- 1155 - *(1.49 中已废弃)* 定义水温条尺寸、方向和范围的 ui::text（典型数据 "H~~0~~130"，水平范围 0°C 到 130°C（32°F 到 266°F））
+- 1160 - 瞬时消耗
+- 1170 - 平均（行程）消耗
+- 1180 - 用于制动踏板压力条的 ui_text_bar，文本根据当前压力裁剪
+- 1185 - *(1.49 中已废弃)* 定义制动踏板压力条尺寸、方向和范围的 ui::text（典型数据 "H~~0~~1"，水平范围 0 到 1）
+- 1190 - 损坏警告图标，可以是 ui::group 或 ui::text 或任何其他可显示/隐藏的元素
+- 1200 - 燃油不足警告图标，可以是 ui::group 或 ui::text 或任何其他可显示/隐藏的元素
+- 1210 - 行程距离
+- 1220 - 指南针，显示诸如 "N"、"E"、"SW" 的字符串。
+- 1230 - 发动机制动图标
+- 1240 - 巡航控制图标，可以是 ui::group 或 ui::text 或任何其他可显示/隐藏的元素。巡航控制速度（id 1100）明确可以为此组的子元素。
+- 1250 - 巡航控制记忆图标，可以是 ui::group 或 ui::text 或任何其他可显示/隐藏的元素。
+- 1260 - 气压过低警告图标
+- 1270 - 驻车制动指示图标
+- 1280 - 发动机运行时间
+- 1290 - 缓速器图标
+- 1300 - 变速箱挡位（原始值，不含模式信息）
+- 1310 - 变速箱模式（不含挡位信息，A/M）
+- 1320 - 蓄电池电压
+- 1330 - 蓄电池电压表，应为 ui_gauge 元素类型
+- 1340 - 机油温度表，应为 ui_gauge 元素类型
+- 1350 - 用于瞬时油耗条的 ui_text_bar，文本根据当前值裁剪
+- 1355 - *(1.49 中已废弃)* 定义瞬时油耗条尺寸、方向和范围的 ui::text（典型数据 "H~~0~~5"，水平范围 0 到 5 km/l（11.8mpg））
+- 1360 - 用于平均油耗条的 ui_text_bar，文本根据当前值裁剪
+- 1365 - *(1.49 中已废弃)* 定义平均油耗条尺寸、方向和范围的 ui::text（典型数据 "H~~0~~5"，水平范围 0 到 5 km/l（11.8mpg））
+- 1370 - 气压值（仅 psi）
+- 1380 - 变速箱模式，详细（D/N/R/M）
+- 1390 - 行程时间
+- 1400 - 行程平均速度（行程距离 / 行程时间）
+- 1410 - 若 CC 已接合，则为智能巡航控制容差，否则隐藏该元素
+- 1420 - 损坏停车图标，可以是 ui::group 或 ui::text 或任何其他可显示/隐藏的元素
+- 1430 - 速度表，应为 ui_gauge 元素类型
+- 1440 - 每分钟转数（rpm）表，应为 ui_gauge 元素类型
+- 1450 - 巡航控制速度表，应为 ui_gauge 元素类型
+- 1460 - 水温表，应为 ui_gauge 元素类型
+- 1470 - 驻车灯图标，可以是 ui::group 或 ui::text 或任何其他可显示/隐藏的元素
+- 1480 - 近光灯图标，可以是 ui::group 或 ui::text 或任何其他可显示/隐藏的元素
+- 1490 - 差速锁图标，可以是 ui::group 或 ui::text 或任何其他可显示/隐藏的元素
+- 1500 - 自上次行车电脑重置以来消耗的燃油
+- 1510 - 油箱内剩余燃油百分比（范围 0-100）
+- 1520 - 油箱内剩余 AdBlue 百分比（范围 0-100）
+- 1530 - ETA（预计到达时间），时间不可用时隐藏（无送货任务、无导航等）
+- 1540 - 距需要休息的时间，g_fatigue 为 0 时隐藏（疲劳选项已禁用）
+- 1550 - 用于差速器温度条的 ui_text_bar，文本根据当前值裁剪
+- 1555 - *(1.49 中已废弃)* 定义差速器温度条尺寸、方向和范围的 ui::text（典型数据 "H~~0~~130"，水平范围 0°C 到 130°C（32°F 到 266°F））
+- 1560 - 用于悬架载荷条的 ui_text_bar，文本根据当前值裁剪
+- 1565 - *(1.49 中已废弃)* 定义悬架载荷条尺寸、方向和范围的 ui::text（典型数据 "H~~0~~100000"，水平范围 0 到 100kN）
+- 1570 - 左转向灯图标
+- 1580 - 右转向灯图标
+- 1590 - 远光灯图标
+- 1600 - 用于机油温度条的 ui_text_bar，文本根据当前值裁剪
+- 1605 - *(1.49 中已废弃)* 定义机油温度条尺寸、方向和范围的 ui::text（典型数据 "H~~0~~130"，水平范围 0°C 到 130°C（32°F 到 266°F））
+- 1610 - 限速
+- 1620 - 数字主后视镜，可以是任何可显示/隐藏的元素（当主后视镜通过摄像头单元前缀检测到数字主后视镜时显示）
+- 1630 - 数字侧后视镜，可以是任何可显示/隐藏的元素（当侧后视镜通过摄像头单元前缀检测到数字侧后视镜时显示）
+- 1640 - 数字前视镜，可以是任何可显示/隐藏的元素（当前视镜通过摄像头单元前缀检测到数字前视镜时显示）
+- 1650 - 数字引擎盖后视镜，可以是任何可显示/隐藏的元素（当引擎盖后视镜通过摄像头单元前缀检测到数字引擎盖后视镜时显示）
+- 1660 - 近距盲区指示灯（哪一侧取决于 `left_hand_traffic` 内饰数据属性），可以是任何可显示/隐藏的元素（当车辆左侧检测到障碍物时显示）
+- 1670 - 远距盲区指示灯（哪一侧取决于 `left_hand_traffic` 内饰数据属性），可以是任何可显示/隐藏的元素（当车辆右侧检测到障碍物时显示）
+- 1680 - 行程能量回收（回收的能量）
+- 1690 - 用于功率消耗的 ui_text_bar，文本根据当前值裁剪（具体行为基于 Renaut E-Tech）
+- 1700 - 用于 rpm 的 ui_text_bar，文本根据当前值裁剪（值为 RPM）
+- 1710 - 用于速度的 ui_text_bar，文本根据当前值裁剪（值为 km/h）
+- 1720 - 功率消耗表，应为 ui_gauge 元素类型（最大回收：-1，怠速：0，最大功率：1）
+- 1730 - 发动机 RPM 除以 1000（四舍五入到一位小数）
+- 1740 - 燃油表，应为 ui_gauge 元素类型（空油：0，满油：1）
+- 1750 - 平均（行程）消耗表，应为 ui_gauge 元素类型（值为 l/100km）
+- 1760 - 机油压力值
 
-> **Note:** In 1.49 text bars were changed to ui_text_bar element. No additional data is needed now, all is kept in regular members (vertical, min_size, max_size, min_value, max_value).
+> **注意：** 在 1.49 中，文本条改为 ui_text_bar 元素。现在不需要额外数据，全部保存在常规成员中（vertical、min_size、max_size、min_value、max_value）。
 >
-> Old system (pre 1.49) used secondary text fields. Data for bars were entered in format "H~~0~~130", H means the bar is horizontal (or V for vertical), leftmost position represents value 0, rightmost position represents value 130. Empty text defaults to "H~~0~~1".
+> 旧系统（1.49 之前）使用次级文本字段。文本条的数据按 "H~~0~~130" 格式填写，H 表示文本条为水平方向（V 表示垂直方向），最左位置代表值 0，最右位置代表值 130。空文本默认为 "H~~0~~1"。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Truck_Interior_Animations_and_IDs | revision: 5808 | captured: 2026-10-21 23:56:14 -->

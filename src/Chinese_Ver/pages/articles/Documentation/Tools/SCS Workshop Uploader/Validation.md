@@ -1,25 +1,25 @@
-# Documentation/Tools/SCS Workshop Uploader/Validation
+# 文档/工具/SCS Workshop Uploader/验证
 
-Each mod before entering workshop must pass validation process - it is because we do not want to have mods that may cause problem for players due to some trival problems which we can easily prevent.
+每个模组在进入创意工坊前都必须通过验证流程 - 这是因为我们不希望模组因一些我们本可轻易避免的琐碎问题而给玩家带来麻烦。
 
-In case validation finished with any warning or error at the end of the validation process you will see the log window so you can easily inspect what is broken and what to fix - also the log is written to the `validation.log.txt` file placed by default in:
+如果验证结束时出现任何警告或错误，你会看到日志窗口，以便轻松查看哪里出了问题、需要修复什么 - 同时日志也会写入 `validation.log.txt` 文件，该文件默认位于：
 
-**On Windows:**
+**在 Windows 上：**
 
 `C:/Users/<your_user_name>/My Documents/SCS Workshop Uploader/validation.log.txt`
 
-> **Note:** In case of Windows 10 and OneDrive usage the path will be `C:/Users/<your_user_name>/OneDrive/Documents/SCS Workshop Uploader/validation.log.txt`
+> **注意：** 在 Windows 10 且使用 OneDrive 的情况下，路径为 `C:/Users/<your_user_name>/OneDrive/Documents/SCS Workshop Uploader/validation.log.txt`
 
-**On Linux:**
+**在 Linux 上：**
 
 `~/.local/share/SCS Workshop Uploader/validation.log.txt`
 
-**On Mac OS X:**
+**在 Mac OS X 上：**
 
 `/Users/<your_user_name>/Library/Application Support/SCS Workshop Uploader/validation.log.txt`
 
-Where `<your_user_name>` is your user name.
+其中 `<your_user_name>` 是你的用户名。
 
-On the [Validation warning and error codes](Warning%20and%20error%20codes.md) page you can find error and warning codes that may be helpful in finding why the validation failed.
+在 [验证警告与错误代码](Warning%20and%20error%20codes.md) 页面中，你可以找到错误与警告代码，它们有助于查明验证失败的原因。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/SCS_Workshop_Uploader/Validation | revision: 2909 | captured: 2026-10-21 23:56:14 -->

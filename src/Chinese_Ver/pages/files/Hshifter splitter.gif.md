@@ -1,4 +1,4 @@
-# File:Hshifter splitter.gif
+# 文件:Hshifter splitter.gif
 
 ![Hshifter splitter.gif](../../../images/files/Hshifter%20splitter.gif/Hshifter_splitter.gif)
 

@@ -1,51 +1,51 @@
 # Documentation/Engine/Sound/Modding
 
-### Modding Sound
+### 制作声音模组
 
-FMOD requires each sound bank to have its own globally unique identifier (GUID). It also requires that the main mix buses of the master bank of each sound have the same GUIDs.<br> FMOD Studio does not provide a user interface to edit GUIDs, so to make it easier to create a correctly authored third party sounds, we are providing our Master Bank as a template for the new sound projects.<br> <br> All modded sounds must be a part of new FMOD bank to be usable for the game.<br> You need install FMOD Studio software to authoring new sound for the game.<br> Always use template (for the specific game version) of the sound bank to create your sound project.<br> Visit the [Downloads](Downloads.md) section to get template project or sound examples.
+FMOD 要求每个声音 bank 拥有自己的全局唯一标识符（GUID）。它还要求每个声音的 master bank 中的主混音总线具有相同的 GUID。<br> FMOD Studio 不提供用于编辑 GUID 的用户界面，因此为便于创建正确编写的第三方声音，我们提供 Master Bank 作为新声音项目的模板。<br> <br> 所有模组声音必须属于新的 FMOD bank，才能在游戏中使用。<br> 你需要安装 FMOD Studio 软件来为游戏创作新声音。<br> 始终使用（对应特定游戏版本的）声音 bank 模板来创建你的声音项目。<br> 访问 [Downloads](Downloads.md) 部分获取模板项目或声音示例。
 
-## Create own bank - Step by step
+## 创建自己的 bank - 分步操作
 
-1. Download template.bank project.
-2. Unzip project to the 'your new sound project' folder.
-3. Rename "template.fspro" file (in project root folder) to "[my project name].fspro".<br>(*Not necessary but recommended.*)
-4. Open your project (simply open [my project name].fspro file) in FMOD Studio software.
-5. There are three browsers that can appear in an event editor window: the events browser, the banks browser, and the assets browser.<br>To create a new bank, right click in an empty space in the banks browser and select "New Bank".
-6. Set the **name** of the new bank.<br>*The bank name determines the name of the bank file so it is strongly recommended to use system independent names (lowercase chars, no spaces,...).*
-7. That is it!<br>New GUID is automatically created by FMOD for the new bank, so you have your own independent bank which can be used in the game for modded sounds.
+1. 下载 template.bank 项目。
+2. 将项目解压到 'your new sound project' 文件夹。
+3. 将 "template.fspro" 文件（位于项目根文件夹）重命名为 "[my project name].fspro"。<br>（*并非必需，但推荐。*）
+4. 在 FMOD Studio 软件中打开你的项目（直接打开 [my project name].fspro 文件即可）。
+5. 事件编辑器窗口中可能出现三种浏览器：事件浏览器、bank 浏览器和资源浏览器。<br>要创建新的 bank，请在 bank 浏览器的空白处右键单击，然后选择 "New Bank"。
+6. 设置新 bank 的**名称**。<br>*bank 名称决定 bank 文件的名称，因此强烈建议使用与系统无关的名称（小写字符、不含空格等）。*
+7. 就这样！<br>FMOD 会为新 bank 自动创建新的 GUID，因此你就拥有了自己的独立 bank，可用于游戏中的模组声音。
 
-*Notes:*<br> - *Always create new bank because creating new GUID for the bank is necessary!*<br> - *If you create new project from other templates (for ex. from your older project) also always create new bank. The GUIDs have to be unique!*<br> - *Never rename 'master' bank to other bank!*<br> - *Never delete the standard buses that come with the template project! If you delete them and create your own, they will not work even if the names are the same!*
+*说明：*<br> - *务必创建新的 bank，因为为 bank 创建新的 GUID 是必需的！*<br> - *如果你从其他模板（例如从你较早的项目）创建新项目，也始终要创建新的 bank。GUID 必须唯一！*<br> - *永远不要将 'master' bank 重命名为其他 bank！*<br> - *永远不要删除模板项目自带的标准总线！如果你删除它们并创建自己的总线，即使名称相同也无法正常工作！*
 
-## Create own sound - Step by step
+## 创建自己的声音 - 分步操作
 
-It is very easy if you are familiar with FMOD Studio.
+如果你熟悉 FMOD Studio，这会非常简单。
 
-1. Open your project in FMOD Studio to edit it.<br>The events browser displays your project's events and event folders.
-2. To create an event in this browser, right click on an empty space and select "New Event" from the context menu.<br>This opens a sub-menu, in which you have the option to make a 3D Event or a 2D Event (or a custom default event).
-3. Select 2D or 3D option in dependency which sound you want to modding.
-4. Set name for the new event. (*System independent names are strongly recommended.*)
-5. Assign the event to your bank.<br>Right click on the "new event", select "Assign to Bank" menu and select target bank in submenu.
-6. Assign the event to the audio bus.<br>Open window "Mixer Routing" and drag the "new event" to the target audio bus.
-7. Edit your sound...
+1. 在 FMOD Studio 中打开你的项目进行编辑。<br>事件浏览器会显示项目的事件和事件文件夹。
+2. 要在此浏览器中创建事件，请在空白处右键单击，然后从上下文菜单中选择 "New Event"。<br>这会打开一个子菜单，你可以在其中创建 3D 事件或 2D 事件（或自定义的默认事件）。
+3. 根据你想要制作模组的声音选择 2D 或 3D 选项。
+4. 为新事件设置名称。（*强烈建议使用与系统无关的名称。*）
+5. 将事件分配到你的 bank。<br>右键单击 "new event"，选择 "Assign to Bank" 菜单，然后在子菜单中选择目标 bank。
+6. 将事件分配到音频总线。<br>打开 "Mixer Routing" 窗口，将 "new event" 拖到目标音频总线。
+7. 编辑你的声音……
 
-*Notes:*<br> - *Always create new events!*<br> - *If you create new project from other templates (for ex. from your older project) also always create new event with unique GUID!*<br> - *The 'copy-paste' process create new GUID for the event so it is recomended way to duplicate or move sound events.*<br> - *Take a care for abilities of sound - 2D/3D, loop, controlling parameters. Sound features are dependent on sound type you modding. Some abilities of the sound are necessary for the correct sound playing.*
+*说明：*<br> - *务必创建新事件！*<br> - *如果你从其他模板（例如从你较早的项目）创建新项目，也始终要创建具有唯一 GUID 的新事件！*<br> - *'copy-paste' 过程会为事件创建新的 GUID，因此这是复制或移动声音事件的推荐方式。*<br> - *注意声音的各项能力——2D/3D、循环、控制参数。声音的特性取决于你所制作模组的声音类型。声音的某些能力对于正确播放声音是必需的。*
 
-## Prepare bank to the game - Step by step
+## 为游戏准备 bank - 分步操作
 
-When you finished work on new sounds you should prepare the sound bank to the game.
+完成新声音的制作后，你应当为游戏准备声音 bank。
 
-1. Build the bank.<br>Simply select menu File / Build... in the FMOD Studio.<br>The file "[bank name].bank" should be created in the "build" subfolder of your project.<br>*The "master.bank" and "master.strings.bank" files will probably also be created, but ignore them.*
-2. Export GUIDs.<br>Select menu File / Export GUIDs... in the FMOD Studio.<br>The file "GUIDs.txt" should be created in the same subfolder.<br>(*You should see your new events in the object list in the GUIDs.txt file content.*)
-3. Rename file "GUIDs.txt" to "[bank name].bank.guids".
-4. You can optimize the contents of the guids file by leaving only those objects you created yourself and remain part of the new bank. But it is not absolutely necessary.
-5. The both files ("[bank name].bank" and "[bank name].bank.guids") is the only one content you should use in your sound mod.
-6. Edit the game's configuration files to include a link to your audio events.
-7. Enjoy new sounds.
+1. 构建 bank。<br>只需在 FMOD Studio 中选择菜单 File / Build...。<br>文件 "[bank name].bank" 应创建在项目的 "build" 子文件夹中。<br>*"master.bank" 和 "master.strings.bank" 文件可能也会被创建，请忽略它们。*
+2. 导出 GUID。<br>在 FMOD Studio 中选择菜单 File / Export GUIDs...。<br>文件 "GUIDs.txt" 应创建在同一子文件夹中。<br>（*你应当能在 GUIDs.txt 文件内容的对象列表中看到你的新事件。*）
+3. 将文件 "GUIDs.txt" 重命名为 "[bank name].bank.guids"。
+4. 你可以通过只保留自己创建且仍属于新 bank 的对象来优化 guids 文件的内容。但这并非绝对必要。
+5. 这两个文件（"[bank name].bank" 和 "[bank name].bank.guids"）就是你应在声音模组中使用的全部内容。
+6. 编辑游戏的配置文件，加入指向你的音频事件的链接。
+7. 享受新声音吧。
 
-*Notes:*<br> - *Please, take a care what do you want to change in game and minimize overwriting files. You should provide space for the other modders.*<br> - *If you want to change all sound in the bank create new bank with the same name on overwrite it.*<br> - *If you want to change global or default sound create new bank with new event. Then overwrite only the .soundref file to redirect sound event to your new bank and event.*<br> - *If you want to change specific sound create new bank with new event. Then overwrite configuration file of the specified component or accessory to redirect sound to your event.*
+*说明：*<br> - *请注意你想在游戏中更改什么，并尽量减少文件覆盖。你应当为其他模组作者留出空间。*<br> - *如果你想更改 bank 中的所有声音，请创建同名的新 bank 并将其覆盖。*<br> - *如果你想更改全局或默认声音，请创建包含新事件的新 bank。然后仅覆盖 .soundref 文件，将声音事件重定向到你的新 bank 和事件。*<br> - *如果你想更改特定声音，请创建包含新事件的新 bank。然后覆盖指定部件或配件的配置文件，将声音重定向到你的事件。*
 
-## Fan-created video tutorials and info
+## 玩家制作的视频教程与信息
 
-Here you can see various approaches or variants of basic process as stored in first post of FMOD thread on our forum (rest of thread are learning and discussions from open beta period). It might be easier to understand for someone as it was created by people that did not knew the system at first - [https://forum.scssoft.com/viewtopic.php?f=178&t=281124](https://forum.scssoft.com/viewtopic.php?f=178&t=281124)
+在这里你可以看到基本流程的各种方法或变体，相关内容保存在我们论坛 FMOD 主题帖的首帖中（帖子的其余部分是公测期间的学习与讨论）。对于某些人来说可能更容易理解，因为它是由最初不了解该系统的人创建的 - [https://forum.scssoft.com/viewtopic.php?f=178&t=281124](https://forum.scssoft.com/viewtopic.php?f=178&t=281124)
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Sound/Modding | revision: 5311 | captured: 2026-10-21 23:56:14 -->

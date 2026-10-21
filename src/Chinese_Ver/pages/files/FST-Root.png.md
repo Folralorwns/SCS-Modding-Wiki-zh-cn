@@ -1,4 +1,4 @@
-# File:FST-Root.png
+# 文件:FST-Root.png
 
 ![FST-Root.png](../../../images/files/FST-Root.png/FST-Root.png)
 

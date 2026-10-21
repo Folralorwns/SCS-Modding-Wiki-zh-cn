@@ -1,4 +1,4 @@
-# File:Spam blocker.png
+# 文件:Spam blocker.png
 
 ![Spam blocker.png](../../../images/files/Spam%20blocker.png/Spam_blocker.png)
 

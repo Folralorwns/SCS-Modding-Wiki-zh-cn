@@ -1,17 +1,17 @@
-# Documentation/Engine/Units/vehicle accessory
+# 文档/引擎/单元/车辆配件
 
-The **vehicle_accessory** unit class is used to 'attach' certain types of accessories and their data to vehicle and trailer configurations. Units of this type are typically nameless and declared within the same context as the configuration that owns/uses them.
+**vehicle_accessory** 单元类用于将某些类型的配件及其数据“附加”到车辆和挂车配置上。此类型的单元通常为无名单元，并在拥有/使用它们的配置所在的同一上下文中声明。
 
-## Attributes
+## 属性
 
-| Name | [Type](../Units.md#Attribute_types) | Default Value | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| wear | float | 0.0 | This attribute is used to track damage and wear to the accessory. 0 corresponds to an unworn state and 1 corresponds to a completely worn state. |
-| **data_path** | string |  | Full path to the SII file containing a suitable accessory data unit. |
+| wear | float | 0.0 | 此属性用于跟踪配件的损坏和磨损情况。0 对应未磨损状态，1 对应完全磨损状态。 |
+| **data_path** | string |  | 包含合适配件数据单元的 SII 文件的完整路径。 |
 
-## Suitable Accessory Data Types
+## 适用的配件数据类型
 
-These accessory data types can be used by **vehicle_accessory**:
+以下配件数据类型可用于 **vehicle_accessory**：
 
 - [accessory_cabin_data](accessory%20cabin%20data.md)
 - [accessory_cargo_data](accessory%20cargo%20data.md)
@@ -24,7 +24,7 @@ These accessory data types can be used by **vehicle_accessory**:
 - [accessory_transmission_data](accessory%20transmission%20data.md)
 - [accessory_truck_data](accessory%20truck%20data.md)
 
-## Related Units
+## 相关单元
 
 - [traffic_trailer](https://modding.scssoft.com/index.php?title=Documentation/Engine/Units/traffic_trailer&action=edit&redlink=1)
 - [traffic_vehicle](https://modding.scssoft.com/index.php?title=Documentation/Engine/Units/traffic_vehicle&action=edit&redlink=1)

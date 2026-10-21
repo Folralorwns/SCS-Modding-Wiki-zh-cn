@@ -1,4 +1,4 @@
-# File:Truck accessory create empty.jpg
+# 文件:Truck accessory create empty.jpg
 
 ![Truck accessory create empty.jpg](../../../images/files/Truck%20accessory%20create%20empty.jpg/Truck_accessory_create_empty.jpg)
 

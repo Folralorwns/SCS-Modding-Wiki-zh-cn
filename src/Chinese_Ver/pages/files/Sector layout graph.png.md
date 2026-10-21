@@ -1,4 +1,4 @@
-# File:Sector layout graph.png
+# 文件:Sector layout graph.png
 
 ![Sector layout graph.png](../../../images/files/Sector%20layout%20graph.png/Sector_layout_graph.png)
 

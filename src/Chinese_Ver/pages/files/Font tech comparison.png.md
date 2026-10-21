@@ -1,4 +1,4 @@
-# File:Font tech comparison.png
+# 文件:Font tech comparison.png
 
 ![Font tech comparison.png](../../../images/files/Font%20tech%20comparison.png/Font_tech_comparison.png)
 

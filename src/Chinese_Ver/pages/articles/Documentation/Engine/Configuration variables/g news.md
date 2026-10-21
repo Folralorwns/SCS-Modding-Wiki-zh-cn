@@ -1,18 +1,18 @@
-# Documentation/Engine/Configuration variables/g news
+# 文档/引擎/配置变量/g news
 
 |  |  |
 | --- | --- |
-| **Name:** | g_news |
-| **Purpose:** | Are online news enabled? |
-| **Config:** | global |
-| **Value:** | integer - online_news_state |
+| **名称：** | g_news |
+| **用途：** | 是否启用在线新闻？ |
+| **配置：** | global |
+| **值：** | integer - online_news_state |
 
-## online_news_state values:
+## online_news_state 取值：
 
-| Value | Description |
+| 值 | 说明 |
 | --- | --- |
-| -1 | to be decided by user |
-| 0 | disabled |
-| 1 | enabled |
+| -1 | 由用户决定 |
+| 0 | 已禁用 |
+| 1 | 已启用 |
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Configuration_variables/g_news | revision: 1505 | captured: 2026-10-21 23:56:14 -->

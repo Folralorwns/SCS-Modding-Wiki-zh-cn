@@ -1,4 +1,4 @@
-# File:Truck accessory select custom grill.jpg
+# 文件:Truck accessory select custom grill.jpg
 
 ![Truck accessory select custom grill.jpg](../../../images/files/Truck%20accessory%20select%20custom%20grill.jpg/Truck_accessory_select_custom_grill.jpg)
 

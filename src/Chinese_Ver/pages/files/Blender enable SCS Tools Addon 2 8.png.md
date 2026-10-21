@@ -1,4 +1,4 @@
-# File:Blender enable SCS Tools Addon 2 8.png
+# 文件:Blender enable SCS Tools Addon 2 8.png
 
 ![Blender enable SCS Tools Addon 2 8.png](../../../images/files/Blender%20enable%20SCS%20Tools%20Addon%202%208.png/Blender_enable_SCS_Tools_Addon_2_8.png)
 

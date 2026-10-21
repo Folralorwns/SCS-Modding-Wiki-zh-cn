@@ -1,15 +1,15 @@
 # Documentation/Engine/Units/company def
 
-The **company_def** unit class is used to assign a prefab to a [company_permanent](company%20permanent.md) unit. Units of this type are usually defined in **/def/company/<company_name>/editor/<city_name>.sii**.
+**company_def** 单元类用于将预制件分配给 [company_permanent](company%20permanent.md) 单元。此类型的单元通常定义在 **/def/company/<company_name>/editor/<city_name>.sii** 中。
 
-## Attributes
+## 属性
 
-| Name | [Type](../Units.md#Attribute_types) | Default Value | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| **city** | token |  | The tokenized name of the city in which the prefab is located. In the case of *city.san_francisc*, this would appear as `city: san_francisc` |
-| **prefab** | token |  | The tokenized name of the prefab to be linked. In the case of *prefab.d_port_sf*, this would appear as `prefab: d_port_sf` **Note:** This implementation requires that each depot prefab may only appear once per city. |
+| **city** | token |  | 预制件所在城市的 token 名称。以 *city.san_francisc* 为例，它应写作 `city: san_francisc` |
+| **prefab** | token |  | 要链接的预制件的 token 名称。以 *prefab.d_port_sf* 为例，它应写作 `prefab: d_port_sf` **注意：** 此实现要求每个货场预制件在每个城市中只能出现一次。 |
 
-## Related Units
+## 相关单元
 
 - [company_permanent](company%20permanent.md)
 

@@ -2,35 +2,35 @@
 
 ![Engine_detour1.jpg](../../../../../images/articles/Documentation/Engine/Detours/512px-Engine_detour1.jpg)
 
-*Detour preview 1*
+*绕行预览 1*
 
 ![Engine_detour2.jpg](../../../../../images/articles/Documentation/Engine/Detours/512px-Engine_detour2.jpg)
 
-*Detour preview 2*
+*绕行预览 2*
 
-Detours (DE) are dynamically generated situations causing closure of a whole road.
+绕行（DE）是动态生成的情境，会导致整条道路封闭。
 
-DE are procedurally generated and do not need specific data definition for specific detours. Only data you need to provide are cutscenes for road closure, road blocks and for the detour cause event.
+DE 由程序化生成，无需为特定绕行定义专门的数据。你唯一需要提供的数据是用于道路封闭、路障以及绕行起因事件的过场动画。
 
-## How does it work?
+## 工作原理
 
-There are several conditions which must be met to generate detour.
+生成绕行必须满足若干条件。
 
-- Player must take an offline job.
-- There must be enough time passed since the last detour.
-- Job GPS route must contain suitable road for closure.
+- 玩家必须接取离线任务。
+- 距上次绕行必须已过去足够长的时间。
+- 任务的 GPS 路线必须包含适合封闭的道路。
 
-When player take an offline job, the game analyze the found GPS route and if it finds any valid detours, game chooses it. When there are multiple valid detours, the game chooses randomly one of them.
+当玩家接取离线任务时，游戏会分析找到的 GPS 路线，若发现任何有效的绕行，便会选择它。当存在多个有效绕行时，游戏会随机选择其中一个。
 
-You may noticed that there is no mention of cutscenes. It is because the analyzation algorithm do not consider provided cutscenes for closure visualization (because of performance). Cutscene are generated when player approach the closure and only at this time the game search for correct cutscene.
+你可能已经注意到这里没有提到过场动画。这是因为分析算法不会考虑所提供的用于封闭可视化的过场动画（出于性能原因）。过场动画会在玩家接近封闭处时生成，并且只有在这时游戏才会查找合适的过场动画。
 
-## Data units
+## 数据单元
 
-Similar to the road events, detours work with one master unit describing general behaviour of the feature and then with units describing closure and event visualization for different lanes and roads.
+与道路事件类似，绕行使用一个主单元来描述该功能的总体行为，然后使用若干单元来描述不同车道和道路上的封闭与事件可视化。
 
-### Master data unit
+### 主数据单元
 
-There may be only one unit of this type. It is located in **/def/world/journey_detour_master.sii**
+此类型只能有一个单元。它位于 **/def/world/journey_detour_master.sii**
 
 ```
 SiiNunit
@@ -44,19 +44,19 @@ journey_events_detour_data : .master
 }
 ```
 
-Properties:
+属性：
 
-- **min_game_time_delay** Minimal game time from the last detour. If the time from the last detour is lower than this property, detour will not be generated.
-- **max_game_time_delay** Maximal game time from the last detour. If the time from the last detour is larger than this property, detour will be always generated. (if other conditions are also fulfilled)
-- **minimal_level** Minimal level for detour generation.
+- **min_game_time_delay** 距上次绕行的最短游戏时间。若距上次绕行的时间低于此属性，则不会生成绕行。
+- **max_game_time_delay** 距上次绕行的最长游戏时间。若距上次绕行的时间大于此属性，则总会生成绕行。（前提是其他条件也满足）
+- **minimal_level** 生成绕行所需的最低等级。
 
-Remaining case is when the time from the last detour is between **min_game_time_delay** and **max_game_time_delay**. In that case the detour will be generated with the probability corresponding to the uniform distribution of **one** detour between these times.
+其余情况是距上次绕行的时间介于 **min_game_time_delay** 与 **max_game_time_delay** 之间。此时，绕行将按与这些时间之间**一次**绕行的均匀分布相对应的概率生成。
 
-### Detour data unit
+### 绕行数据单元
 
-These unit define which cutscene will be used for which part of detour visualization.
+这些单元定义绕行可视化的各个部分将使用哪个过场动画。
 
-Example of detour data unit located in **/def/world/journey_detours.sii**
+位于 **/def/world/journey_detours.sii** 的绕行数据单元示例
 
 ```
 journey_events_detour : j_dt.1_cl_ri1
@@ -68,19 +68,19 @@ journey_events_detour : j_dt.1_cl_ri1
 }
 ```
 
-Properties:
+属性：
 
-- **cutscene** Used cutscene. See below.
-- **type** Type of visualization.
-  - ***closed_road*** Source of the detour. This cutscene will be generated on the place of detour origin. (**4. car** (vehicles) on the Detour preview 2 image)
-  - ***border_prefab_node*** These cutscenes will be generated between each closing prefab (prefab where the traffic is diverted) and closed road. (**3. car** on the Detour preview 2 image)
-  - ***road_block_right*** These cutscenes will be generated on closed road lanes before the closing prefab. Traffic go round to the left.
-  - ***road_block_left*** These cutscenes will be generated on closed road lanes before the closing prefab. Traffic go round to the right. (**1.** (*lane_idx* = 2) **car** and **2.** (*lane_idx* = 1) **car** on the Detour preview 2 image)
-- **lane_count** Cutscenes will be generated only on the roads with this number of lanes.
-- **lane_idx** Valid only for *road_block_* type. Cutscene will be generated for this road block only if the distance to the closest free lane is the same as this number.
+- **cutscene** 使用的过场动画。见下文。
+- **type** 可视化类型。
+  - ***closed_road*** 绕行的源头。该过场动画将在绕行起点处生成。（绕行预览 2 图中的**第 4 辆车**（车辆））
+  - ***border_prefab_node*** 这些过场动画将生成在每一个封闭预制件（交通被改道的预制件）与封闭道路之间。（绕行预览 2 图中的**第 3 辆车**）
+  - ***road_block_right*** 这些过场动画将生成在封闭预制件之前的封闭车道上。交通从左侧绕行。
+  - ***road_block_left*** 这些过场动画将生成在封闭预制件之前的封闭车道上。交通从右侧绕行。（绕行预览 2 图中的**第 1 辆**（*lane_idx* = 2）**车**和**第 2 辆**（*lane_idx* = 1）**车**）
+- **lane_count** 过场动画只会在车道数为此数值的道路上生成。
+- **lane_idx** 仅对 *road_block_* 类型有效。仅当到最近空闲车道的距离与此数值相同时，才会为该路障生成过场动画。
 
-### Cutscenes data unit
+### 过场动画数据单元
 
-Because DE are part of the journey event framework, they use the same cutscene units as the random road events. You can see detailed description of the cutscene unit here: [Documentation/Engine/Random Road Events#Cutscenes_for_random_events](Random%20Road%20Events.md#Cutscenes_for_random_events)
+由于 DE 属于旅程事件框架的一部分，它们使用与随机道路事件相同的过场动画单元。可在此处查看过场动画单元的详细说明：[Documentation/Engine/Random Road Events#Cutscenes_for_random_events](Random%20Road%20Events.md#Cutscenes_for_random_events)
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Detours | revision: 5312 | captured: 2026-10-21 23:56:14 -->

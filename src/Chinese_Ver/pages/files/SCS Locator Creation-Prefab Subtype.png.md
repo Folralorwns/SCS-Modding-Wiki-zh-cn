@@ -1,4 +1,4 @@
-# File:SCS Locator Creation-Prefab Subtype.png
+# 文件:SCS Locator Creation-Prefab Subtype.png
 
 ![SCS Locator Creation-Prefab Subtype.png](../../../images/files/SCS%20Locator%20Creation-Prefab%20Subtype.png/SCS_Locator_Creation-Prefab_Subtype.png)
 

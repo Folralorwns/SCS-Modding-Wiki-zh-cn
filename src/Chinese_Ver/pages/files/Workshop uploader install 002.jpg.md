@@ -1,4 +1,4 @@
-# File:Workshop uploader install 002.jpg
+# 文件:Workshop uploader install 002.jpg
 
 ![Workshop uploader install 002.jpg](../../../images/files/Workshop%20uploader%20install%20002.jpg/Workshop_uploader_install_002.jpg)
 

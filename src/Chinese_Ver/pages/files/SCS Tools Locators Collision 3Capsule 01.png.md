@@ -1,4 +1,4 @@
-# File:SCS Tools Locators Collision 3Capsule 01.png
+# 文件:SCS Tools Locators Collision 3Capsule 01.png
 
 ![SCS Tools Locators Collision 3Capsule 01.png](../../../images/files/SCS%20Tools%20Locators%20Collision%203Capsule%2001.png/SCS_Tools_Locators_Collision_3Capsule_01.png)
 

@@ -1,4 +1,4 @@
-# File:Open first map 02 6.png
+# 文件:Open first map 02 6.png
 
 ![Open first map 02 6.png](../../../images/files/Open%20first%20map%2002%206.png/Open_first_map_02_6.png)
 

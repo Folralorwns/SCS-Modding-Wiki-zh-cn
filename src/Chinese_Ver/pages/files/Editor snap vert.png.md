@@ -1,4 +1,4 @@
-# File:Editor snap vert.png
+# 文件:Editor snap vert.png
 
 ![Editor snap vert.png](../../../images/files/Editor%20snap%20vert.png/Editor_snap_vert.png)
 

@@ -1,4 +1,4 @@
-# File:SCS Tools Object Specials - Animations Decrease Step.png
+# 文件:SCS Tools Object Specials - Animations Decrease Step.png
 
 ![SCS Tools Object Specials - Animations Decrease Step.png](../../../images/files/SCS%20Tools%20Object%20Specials%20-%20Animations%20Decrease%20Step.png/SCS_Tools_Object_Specials_-_Animations_Decrease_Step.png)
 

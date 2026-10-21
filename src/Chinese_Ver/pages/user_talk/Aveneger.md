@@ -1,10 +1,10 @@
 # User talk:Aveneger
 
-Hi Avenger,
+你好，Avenger，
 
-this page will be dedicated as communication channel for you about your contributions.
+本页面将作为你讨论自身贡献的交流渠道。
 
-2024-04-16 - **suggestion/idea**: I was thinking about writing a script to generate kind of an "API Reference", as complete as both games combined (ATS/ETS2) uses in their def.scs files. That means, say:
+2024-04-16 - **建议/想法**：我一直在考虑编写一个脚本，用来生成某种“API 参考”，其完整程度要涵盖两款游戏（ATS/ETS2）在 def.scs 文件中所用内容的合并总和。也就是说，比如：
 
 ```
 def/vehicle/ai/bus_opalin.sii
@@ -31,13 +31,13 @@ traffic_spawn_condition: .traffic.bus_s.condition.city
 }
 ```
 
-Given the use above, I can infer that the `traffic_spawn_condition` type (shall I call it a "type"?) can take `type` as an `enum` and `num_param[]` as an `integer` and `str_param[]` as `string`.
+根据上面的用法，我可以推断 `traffic_spawn_condition` 类型（我该称它为“类型”吗？）可以接受 `type` 作为 `enum`、`num_param[]` 作为 `integer`、`str_param[]` 作为 `string`。
 
-Then by parsing all files, the script should be able to see other uses, like `type: area` and `type: weather` and "fill in" the enum for that case. It could also tell that `type` is mandatory and the `*_param` optional.
+然后通过解析所有文件，脚本应该能够发现其他用法，例如 `type: area` 和 `type: weather`，并为该情形“补全”枚举。它还能判断出 `type` 是必填项，而 `*_param` 是可选项。
 
-Then descriptions would be another problem. Either sync descriptions with the script to re-generate **API Reference** every release. It'd also be possible to get added/updated descriptions straight from the wiki and feed the script too.
+接下来是描述的问题。要么让描述与脚本保持同步，以便每次发布都重新生成 **API 参考**。也可以直接从 wiki 获取新增或更新的描述，并传给脚本。
 
-And then for ease of maintenability, we could post it all in a single page and enable, for instance, expandable sections with the `details` and `summary` HTML, [The Details disclosure element - MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) to have all searchable in a single page, and not (initially) an endless scroll (hopefully).
+然后为便于维护，我们可以把它全部发布在单个页面中，并例如用 `details` 和 `summary` HTML 启用可展开区块，[details 展开元素 - MDN 文档](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)，让所有内容都能在单个页面中搜索，而不是（至少最初）无休止地滚动（但愿如此）。
 
 ```
 <details>
@@ -46,30 +46,30 @@ And then for ease of maintenability, we could post it all in a single page and e
 </details>
 ```
 
-Well, that may be a little big one, but that'd be something I like doing!
+嗯，这可能是个有点大的工程，但那会是我乐意去做的事！
 
 ---
 
-*> Hmm, how would this work when any unit gets an update/delete?*
+*> 嗯，当任何单元发生更新或删除时，这套东西该如何运作？*
 
-**A: A full rerun, indeed, to regenerate the full "mega page". And, I suppose wiki would just be able to tell what exactly changed in a nice diff as much as any CVS probably does.**
+**A：确实需要完整重跑，以重新生成整个“超大页面”。而且我想，wiki 应该能像任何 CVS 大概能做到的那样，以漂亮的差异对比说明究竟改了什么。**
 
-*> Who would be maintaining the database of the units?*
+*> 谁来维护单元的数据库？*
 
-**A: A volunteer, I'm afraid. Me at first.**
+**A：恐怕得靠志愿者。起初是我自己。**
 
-*> You would regenerate all the used units for each update and upload it?*
+*> 你会为每次更新重新生成所有用到的单元并上传吗？*
 
-**A: That's one point I raised. It would be much easier if the page was a single one, right? Then topics "contracted" via a `<details>` HTML entity of sorts, something to enable units to be collapsed and expanded. At least for the first iterations of the doc. If it works well, then some kind of automation could be made to send to individual pages, not sure how much the wiki is "automatable", but form submission, etc. I think it's pretty possible, just not really viable for the first iterations of the generator.**
+**A：这正是我提出的一个点。如果页面只有一个，事情会容易得多，对吧？然后各主题通过某种 `<details>` HTML 实体“收缩”，用类似的东西让单元可以折叠和展开。至少对文档的初版迭代而言如此。如果效果不错，之后可以做一些自动化，把它分发到各个独立页面，我不确定 wiki 在多大程度上可“自动化”，但表单提交之类的，我觉得相当可行，只是在生成器的初版迭代中并不真正现实。**
 
-*> The point is not everything that is used in our data might still be valid, some attributes might be obsolete or just there and never even loaded by the game. Simply said, if sth like this should be present on official modding wiki, it should be created from the code itself, where units are declared as only code knows what is valid and what shall be there.*
+*> 关键在于，我们数据中用到的并非一切都仍然有效，某些属性可能已经废弃，或者只是留在那里、从未被游戏加载。简单来说，如果要让这样的东西出现在官方 Modding Wiki 上，它就应该从代码本身生成，因为单元在哪里声明、哪些有效、哪些应当存在，只有代码才知道。*
 
-**A: Agreed with the whole point. But what I have access to is the data; and better something close and concise than nothing, I thought when coming up with this idea. The right thing to do would be , yes, to extract from sources. But I don't think anyone in SCS has had the opportunity to work on something like that so far, right?**
+**A：我完全同意这个观点。但我能接触到的是数据；我在构思这个想法时觉得，近似而简洁的东西总比没有好。正确的做法确实是，对，从源码中提取。但我觉得 SCS 里至今还没有人有机会去做类似的事情，对吧？**
 
-So, the proposal really is full of caveats, there will be lots of assumptions and guesses, like the accepted input (float/int/str), acceptable ranges, mostly would come from "educated guesses" over values used throughout the data, or manual documentation input (descriptions, as the community finds out what does what). So, a `spawn_ratio` could report as accepted values an interval from 0.0 up to 1.0 while seems they could go at least as high as 6.0 with some meaning in the game. It would at least be a central reference for the game for modders and maybe even for the developer team, and could also be used to find mistakes in the data (single use popping up, range exceedingly high, unexpected change from previous version, etc).
+所以，这个提案确实充满了限制条件，会有大量假设和猜测，比如可接受的输入（float/int/str）、可接受的范围，主要来自对数据中所用值的“有根据的猜测”，或人工录入的文档（描述，即社区逐渐弄清各属性作用的部分）。因此，`spawn_ratio` 可能会把可接受值报告为 0.0 到 1.0 的区间，而看起来它们在游戏中至少能达到 6.0，并带有某种含义。至少它能成为模组作者乃至开发团队针对该游戏的一个集中参考，也可以用来发现数据中的错误（单次使用冒出来、范围高得离谱、与上一版本相比出现意外变化等）。
 
-(excuse my lack of experience to use this talk channel :})
+（请原谅我不太会使用这个讨论频道 :}）
 
---[50keda](https://modding.scssoft.com/index.php?title=User:50keda&action=edit&redlink=1) ([talk](https://modding.scssoft.com/index.php?title=User_talk:50keda&action=edit&redlink=1)) 16:24, 19 April 2024 (UTC)
+--[50keda](https://modding.scssoft.com/index.php?title=User:50keda&action=edit&redlink=1) ([讨论](https://modding.scssoft.com/index.php?title=User_talk:50keda&action=edit&redlink=1)) 16:24, 19 April 2024 (UTC)
 
 <!-- source: https://modding.scssoft.com/wiki/User_talk%3AAveneger | revision: 5500 | captured: 2026-10-21 23:56:14 -->

@@ -1,4 +1,4 @@
-# File:SCS Tools Import 01.png
+# 文件:SCS Tools Import 01.png
 
 ![SCS Tools Import 01.png](../../../images/files/SCS%20Tools%20Import%2001.png/SCS_Tools_Import_01.png)
 

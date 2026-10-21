@@ -1,50 +1,50 @@
 # Documentation/Engine/Sound/TruckEngine
 
-### Sounds - Truck Engine
+### 声音 - 卡车发动机
 
-The sound of the truck engine is very specific kind of the sounds.<br> Engine sound is very sensitive to be balanced between sound sources.<br> <br> So there are a few rules for the engine sound:
+卡车发动机的声音是一种非常特殊的声音。<br> 发动机声音对声源之间的平衡非常敏感。<br> <br> 因此，发动机声音有以下几条规则：
 
-- The each sound of the truck engine should be in the separate sound bank.
-- There are only the four events and all should be implemented in the same bank.
-- It is not recommended to combine events of different banks for the engine sound.
+- 卡车发动机的每个声音都应位于单独的 bank 中。
+- 只有四个事件，且都应实现在同一个 bank 中。
+- 不建议为发动机声音混合使用不同 bank 的事件。
 
-## Engine Sound Events
+## 发动机声音事件
 
-- All events should be at the folder "engine" in the events browser.
-- These events should exist in the bank:<br>**engine/engine**<br>**engine/exhaust**<br>**engine/turbo** *(from 1.39)*<br>**engine/start_bad**
+- 所有事件都应位于事件浏览器中的 "engine" 文件夹内。
+- 这些事件应存在于该 bank 中：<br>**engine/engine**<br>**engine/exhaust**<br>**engine/turbo** *（自 1.39 起）*<br>**engine/start_bad**
 
-### Event "engine"
+### 事件 "engine"
 
-Event "engine" plays sound of the engine.<br> It has to be a 3D event. The event should be routed to the "truck_engine" audio bus.<br> The event must be looped and its living cycle is controlled by "play" parameter (see bellow).<br> <br> These event parameters must exist:
+事件 "engine" 播放发动机的声音。<br> 它必须是 3D 事件。该事件应路由到 "truck_engine" 音频总线。<br> 事件必须循环播放，其生命周期由 "play" 参数控制（见下文）。<br> <br> 以下事件参数必须存在：
 
-- engine/play<br>The parameter "play" control living cycle of the event:<br>value play = 1 means - sound is playing<br>value play = 0 means - sound should be stopped
-- engine/brake<br>the value is in the range <0 - 1> and represents the action of the motor brake
-- engine/load<br>the value is in the range <0 - 1><br>value represents the motor load<br>value < 0.05 means idle engine sound
-- engine/rpm<br>the value is in the range <0 - 3000><br>the value represents the number of engine revs per second
+- engine/play<br>参数 "play" 控制事件的生命周期：<br>值 play = 1 表示 - 声音正在播放<br>值 play = 0 表示 - 声音应停止
+- engine/brake<br>取值范围为 <0 - 1>，表示发动机制动的动作
+- engine/load<br>取值范围为 <0 - 1><br>该值表示发动机负荷<br>值 < 0.05 表示发动机怠速声音
+- engine/rpm<br>取值范围为 <0 - 3000><br>该值表示发动机每秒的转数
 
-### Event "exhaust"
+### 事件 "exhaust"
 
-Event "exhaust" plays sound of the exhaust.<br> It has to be a 3D event. The event should be routed to the "truck_exhaust" audio bus.<br> The event must be looped and its living cycle is controlled by "play" parameter.<br> <br> These event parameters must exist:
+事件 "exhaust" 播放排气的声音。<br> 它必须是 3D 事件。该事件应路由到 "truck_exhaust" 音频总线。<br> 事件必须循环播放，其生命周期由 "play" 参数控制。<br> <br> 以下事件参数必须存在：
 
 - exhaust/load
 - exhaust/play
 - exhaust/rpm
 
-The purpose of the parameters is the same as for the "engine" event (see Event "engine").
+这些参数的用途与 "engine" 事件相同（参见事件 "engine"）。
 
-### Event "turbo"
+### 事件 "turbo"
 
-Event "turbo" plays sound of the turbo.<br> It has to be 3D event. The event should be routed to the "truck_turbo" audio bus.<br> The event must be looped and its living cycle is controlled by "play" parameter.<br> <br> These event parameters must exist:
+事件 "turbo" 播放涡轮的声音。<br> 它必须是 3D 事件。该事件应路由到 "truck_turbo" 音频总线。<br> 事件必须循环播放，其生命周期由 "play" 参数控制。<br> <br> 以下事件参数必须存在：
 
-- engine/turbo<br>the value is in the range <0 - 1> and represents the action of the turbo system
+- engine/turbo<br>取值范围为 <0 - 1>，表示涡轮系统的动作
 
-### Event "start_bad"
+### 事件 "start_bad"
 
-Event "start_bad" plays sound of unsuccessful starting of the engine.<br> It has to be 3D event. The event should be routed to the "truck_engine" audio bus.<br> The event is one-shot sound (without loop).<br> There are no other parameters for the event.<br> It is possible to use randomization of the assets supported by FMOD Studio.
+事件 "start_bad" 播放发动机启动失败的声音。<br> 它必须是 3D 事件。该事件应路由到 "truck_engine" 音频总线。<br> 该事件是一次性声音（不循环）。<br> 该事件没有其他参数。<br> 可以使用 FMOD Studio 支持的素材随机化功能。
 
-## Engine Sound Configuration
+## 发动机声音配置
 
-The sound configuration of the engine sounds is stored in the "accessory_engine_data" data.<br> There is array "sounds" which contents specification for the mandatory events of the engine.<br> That means that each type of the engine can have assigned its own sound bank.<br> <br> Example:<br> There are configuration files of engines for the "Peterbilt 579" at the folder "\def\vehicle\truck\peterbilt.579\engine".<br> Each engine include *@include "sound.sui"* file which contents indirect definition of the events:
+发动机声音的配置存储在 "accessory_engine_data" 数据中。<br> 数组 "sounds" 包含发动机必需事件的定义。<br> 这意味着每种类型的发动机都可以分配自己的声音 bank。<br> <br> 示例：<br> 在文件夹 "\def\vehicle\truck\peterbilt.579\engine" 中有 "Peterbilt 579" 的发动机配置文件。<br> 每个发动机都包含 *@include "sound.sui"* 文件，其中间接定义了事件：
 
 ```
 	sounds: 4
@@ -54,22 +54,22 @@ The sound configuration of the engine sounds is stored in the "accessory_engine_
 	sounds[]: "turbo|/def/vehicle/truck/peterbilt.579/engine/sound_turbo.soundref"
 ```
 
-There are .soundref file (for each event) to specify bank end FMOD event of the sound.
+每个事件都有一个 .soundref 文件，用于指定声音的 bank 和 FMOD 事件。
 
-Content of the sound_engine.soundref is:
+sound_engine.soundref 的内容为：
 
 ```
 source="/sound/truck/peterbilt_579.bank#engine/engine"
 ```
 
-The record<br>sound: *"/sound/truck/peterbilt_579.bank"*<br>at the any engine configuration file assigns the sound bank to the engine.
+在任意发动机配置文件中写入记录<br>sound: *"/sound/truck/peterbilt_579.bank"*<br>即可将声音 bank 分配给该发动机。
 
-## Engine Sound Position
+## 发动机声音位置
 
-The 3D position of the engine sound is (by default) 1 m above the first axle of the truck.<br> This position could be modified by the .soundref file. (see [Sound reference file](../Sound.md#Sound_reference_file))
+发动机声音的 3D 位置（默认）位于卡车第一根车桥上方 1 米处。<br> 该位置可通过 .soundref 文件修改。（参见 [声音参考文件](../Sound.md#Sound_reference_file)）
 
-## Engine Sound Example
+## 发动机声音示例
 
-Visit the [Downloads](Downloads.md) section to get template project or sound examples.
+访问 [下载](Downloads.md) 页面以获取模板工程或声音示例。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Sound/TruckEngine | revision: 5773 | captured: 2026-10-21 23:56:14 -->

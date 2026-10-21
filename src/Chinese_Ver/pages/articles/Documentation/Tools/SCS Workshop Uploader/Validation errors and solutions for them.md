@@ -1,50 +1,50 @@
-# Documentation/Tools/SCS Workshop Uploader/Validation errors and solutions for them
+# 文档/工具/SCS Workshop Uploader/验证错误及其解决方法
 
-## 00001 - Generic
+## 00001 - 通用
 
-#### Description file has to be put inside the same directory as manifest.sii file.
+#### 描述文件必须放在与 manifest.sii 文件相同的目录中。
 
-The mod description file should be placed next to the manifest.sii file in the version package. You need to move it or create in case you have not done it yet.
+模组描述文件应放在版本包中与 manifest.sii 文件相邻的位置。你需要移动它，或者如果尚未创建，则创建它。
 
-#### Description file must be TXT file (?)
+#### 描述文件必须是 TXT 文件（?）
 
-The mod description must be a .txt file. The solution for this problem is to change the extension of the file to .txt.
+模组描述文件必须是 .txt 文件。解决此问题的方法是将文件扩展名改为 .txt。
 
-#### Icon file has to be put inside the same directory as manifest.sii file.
+#### 图标文件必须放在与 manifest.sii 文件相同的目录中。
 
-The mod icon file should be placed next to the manifest.sii file in the version package. You need to move it or create in case you have not done it yet.
+模组图标文件应放在版本包中与 manifest.sii 文件相邻的位置。你需要移动它，或者如果尚未创建，则创建它。
 
-#### Icon file must be JPG file (?)
+#### 图标文件必须是 JPG 文件（?）
 
-Icon file must be a valid .jpg file. The solution is to resave your icon file to .jpg format.
+图标文件必须是有效的 .jpg 文件。解决方法是将你的图标文件另存为 .jpg 格式。
 
-#### Incorrect icon file dimmensions. Allowed dimmensions are ?x?px (the icon size: ?x?px)
+#### 图标文件尺寸不正确。允许的尺寸为 ?x?px（图标尺寸：?x?px）
 
-Mod icon file has incorrect dimensions. To fix it you need to have image with proper size.
+模组图标文件尺寸不正确。要修复此问题，你需要使用尺寸正确的图像。
 
-For now the limit is: **276px x 162px**
+目前的限制为：**276px x 162px**
 
-#### No animation frames found.
+#### 未找到动画帧。
 
-The .pma file has no animation frames. You should try to run your mod data resource conversion again.
+.pma 文件不包含任何动画帧。你应尝试再次运行模组数据资源转换。
 
-#### No defined bones found.
+#### 未找到已定义的骨骼。
 
-.pma file without any bone defined is incorrect. You should try to run your mod data resource conversion again.
+未定义任何骨骼的 .pma 文件是不正确的。你应尝试再次运行模组数据资源转换。
 
-#### No description file specified!
+#### 未指定描述文件！
 
-All workshop mods data must have description files specified. Please add it.
+所有创意工坊模组数据都必须指定描述文件。请添加描述文件。
 
-#### No icon specified.
+#### 未指定图标。
 
-All workshop mods must have icon specified. Please add it.
+所有创意工坊模组都必须指定图标。请添加图标。
 
-#### No package versions defined.
+#### 未定义包版本。
 
-In **versions.sii** there are no valid version info entries. Please add at least one.
+**versions.sii** 中没有有效的版本信息条目。请至少添加一个。
 
-Example versions.sii file:
+versions.sii 文件示例：
 
 ```
 SiiNunit
@@ -56,141 +56,141 @@ package_version_info : .universal
 }
 ```
 
-#### No vertices defined for piece ?.
+#### 未为部件 ? 定义顶点。
 
-One of the pieces in .pmg file has no vertices defined. Please run resource conversion of your mod data again.
+.pmg 文件中的某个部件未定义顶点。请再次运行模组数据的资源转换。
 
-#### Referenced look (?) does not exists in the model.
+#### 引用的外观（?）在模型中不存在。
 
-look referenced by definition file does not exists in the model. You should make sure that the model has the look - in case it has run again your mod data conversion.
+定义文件引用的外观在模型中不存在。你应确认模型包含该外观 - 如果包含，请再次运行模组数据转换。
 
-#### Referenced variant (?) does not exists in the model.
+#### 引用的变体（?）在模型中不存在。
 
-variant referenced by definition file does not exists in the model. You should make sure that the model has the look - in case it has run again your mod data conversion.
+定义文件引用的变体在模型中不存在。你应确认模型包含该变体 - 如果包含，请再次运行模组数据转换。
 
-#### Unable to load model animation file.
+#### 无法加载模型动画文件。
 
-The load of the animation file failed. Try to run resource converstion for your mod again - in case it won't help check [tool.log.txt](tool.log.txt.md) file for more informations.
+动画文件加载失败。请尝试再次为你的模组运行资源转换 - 如果无济于事，请查看 [tool.log.txt](tool.log.txt.md) 文件以获取更多信息。
 
-#### Unable to load model collision file.
+#### 无法加载模型碰撞文件。
 
-The load of the collision file failed. Try to run resource converstion for your mod again - in case it won't help check [tool.log.txt](tool.log.txt.md) file for more informations.
+碰撞文件加载失败。请尝试再次为你的模组运行资源转换 - 如果无济于事，请查看 [tool.log.txt](tool.log.txt.md) 文件以获取更多信息。
 
-#### Unable to load model descriptor file.
+#### 无法加载模型描述文件。
 
-The load of the descriptor file failed. Try to run resource converstion for your mod again - in case it won't help check [tool.log.txt](tool.log.txt.md) file for more informations.
+描述文件加载失败。请尝试再次为你的模组运行资源转换 - 如果无济于事，请查看 [tool.log.txt](tool.log.txt.md) 文件以获取更多信息。
 
-#### Unable to load model geometry file.
+#### 无法加载模型几何文件。
 
-The load of the geometry file failed. Try to run resource converstion for your mod again - in case it won't help check [tool.log.txt](tool.log.txt.md) file for more informations.
+几何文件加载失败。请尝试再次为你的模组运行资源转换 - 如果无济于事，请查看 [tool.log.txt](tool.log.txt.md) 文件以获取更多信息。
 
-#### Unable to load tobj file.
+#### 无法加载 tobj 文件。
 
-Failed to load .tobj file. Try running again mod data conversion - in case it did not check [tool.log.txt](tool.log.txt.md) if there are no informations about the tobj problem.
+.tobj 文件加载失败。请再次运行模组数据转换 - 如果仍然失败，请查看 [tool.log.txt](tool.log.txt.md)，确认其中是否有关于 tobj 问题的信息。
 
-#### Unable to read units from file.
+#### 无法从文件中读取单元。
 
-Unable to deserialize units from sii file. All the parsing errors are printed out to the [tool.log.txt](tool.log.txt.md) file. Check it for more info.
+无法从 sii 文件中反序列化单元。所有解析错误都会打印到 [tool.log.txt](tool.log.txt.md) 文件中。请查看该文件以获取更多信息。
 
-#### Unable to mount version.
+#### 无法挂载版本。
 
-Unable to mount mod data package. Try compresing mod data again as it may be broken.
+无法挂载模组数据包。该数据包可能已损坏，请尝试重新压缩模组数据。
 
-#### Unable to open description file.
+#### 无法打开描述文件。
 
-Failed to open mod description file. The reason may be invalid path it must be only the file name, also the problem may be not enough memory or some file system problem.
+无法打开模组描述文件。原因可能是路径无效（此处只能使用文件名），也可能是内存不足或某些文件系统问题。
 
-#### Unable to open file.
+#### 无法打开文件。
 
-Failed to open a file. The reason may be invalid path, not enough memory or some problem with file system.
+无法打开文件。原因可能是路径无效、内存不足或某些文件系统问题。
 
-#### Unable to open icon file.
+#### 无法打开图标文件。
 
-Failed to open mod icon file. The reason may be invalid path it must be only the file name, also the problem may be not enough memory or some file system problem.
+无法打开模组图标文件。原因可能是路径无效（此处只能使用文件名），也可能是内存不足或某些文件系统问题。
 
-#### Unable to read content of description file.
+#### 无法读取描述文件的内容。
 
-The reading of the file data failed. The reason may be not enough memory to load the data file.
+读取文件数据失败。原因可能是没有足够的内存来加载该数据文件。
 
-#### Unable to retreive informations about material.
+#### 无法获取有关材质的信息。
 
-Unable to get informations about material resource. Try to run again mod data conversion.
+无法获取材质资源的信息。请再次运行模组数据转换。
 
-## 00002 - File not found
+## 00002 - 文件未找到
 
-#### Description file (?) does not exists.
+#### 描述文件（?）不存在。
 
-Description file for your mod does not exists. Make sure if description file name in **manifest.sii** is correct and the description file exists in the same directory as **manifest.sii**.
+模组的描述文件不存在。请确认 **manifest.sii** 中的描述文件名是否正确，以及描述文件是否与 **manifest.sii** 位于同一目录。
 
-#### File is not present
+#### 文件不存在
 
 ```
 ERROR [00002] (file_name): File is not present
 ```
 
-Make sure that the **file_name** exists.
+请确认 **file_name** 存在。
 
-#### Icon file (?) does not exists
+#### 图标文件（?）不存在
 
-Icon file for your mod does not exists. Make sure if icon file name in **manifest.sii** is correct and the icon file exists in the same directory as **manifest.sii**.
+模组的图标文件不存在。请确认 **manifest.sii** 中的图标文件名是否正确，以及图标文件是否与 **manifest.sii** 位于同一目录。
 
-#### The version package does not exists!
+#### 版本包不存在！
 
-Package specified in version info inside **versions.sii** file does not exists. Make sure you did not make any typo and the package really exists.
+**versions.sii** 文件中版本信息所指定的包不存在。请确认没有输入错误，并且该包确实存在。
 
-#### Unable to find descriptor file for model geometry! (geometry: ?)
+#### 无法找到模型几何的描述文件！（geometry: ?）
 
-There is .pmg file but no .pmd file. If you are using some model from base you have to move both pmg and pmd files into your mod for better compatibility. In case the model is yours you have to run again mod data conversion. Remember .pmd and .pmg files must be in the same directory!
+存在 .pmg 文件但没有 .pmd 文件。如果你使用了基础游戏中的某个模型，为了更好的兼容性，你必须将 pmg 和 pmd 文件都移入你的模组。如果模型是你自己的，则必须再次运行模组数据转换。请记住，.pmd 和 .pmg 文件必须位于同一目录！
 
-#### Unable to find geometry file for model descriptor ?.
+#### 无法找到模型描述 ? 的几何文件。
 
-There is .pmd file but no .pmg file. If you are using some model from base you have to move both pmg and pmd files into your mod for better compatibility. In case the model is yours you have to run again mod data conversion. Remember .pmd and .pmg files must be in the same directory!
+存在 .pmd 文件但没有 .pmg 文件。如果你使用了基础游戏中的某个模型，为了更好的兼容性，你必须将 pmg 和 pmd 文件都移入你的模组。如果模型是你自己的，则必须再次运行模组数据转换。请记住，.pmd 和 .pmg 文件必须位于同一目录！
 
-#### Unable to find manifest file.
+#### 无法找到 manifest 文件。
 
-Unable to find **manifest.sii** in one of the mod data packages.
+在某个模组数据包中无法找到 **manifest.sii**。
 
-#### Unable to find material file referenced by model descriptor ?. The material must be placed in mod folder.
+#### 无法找到模型描述 ? 所引用的材质文件。材质必须放在模组文件夹中。
 
-Unable to find the material file which is referenced by model descriptor. In case you have a model and you are using some materials from the base.scs archive you **have to** copy them to your mod folder to keep compatibility in case we change the material.
+无法找到模型描述所引用的材质文件。如果你有一个模型，并且使用了 base.scs 归档包中的某些材质，为了在我们更改材质时保持兼容性，你**必须**将它们复制到你的模组文件夹中。
 
-#### Unable to find model descriptor file referenced in addon hookup data definition (?).
+#### 无法找到附加挂接数据定义（?）中引用的模型描述文件。
 
-There is no .pmd file with this name in both base.scs or your mod data package - make sure the name is correct and the file exists.
+base.scs 和你的模组数据包中都不存在使用此名称的 .pmd 文件 - 请确认名称正确且文件存在。
 
-#### Unable to find model geometry file for model descriptor (?) referenced by addon hookup data definition (?).
+#### 无法找到附加挂接数据定义（?）所引用的模型描述（?）的模型几何文件。
 
-There is no .pmg file with this name in both base.scs or your mod data package - make sure the name is correct and the file exists.
+base.scs 和你的模组数据包中都不存在使用此名称的 .pmg 文件 - 请确认名称正确且文件存在。
 
-#### Unable to find preview icon for ? defined in ?
+#### 无法找到 ? 的预览图标（在 ? 中定义）
 
-Unable to find preview icon for the accessory. Make sure it exists.
+无法找到该配件的预览图标。请确认它存在。
 
-#### Unable to get material
+#### 无法获取材质
 
-Unable to get material data. The material file is probably malformed. Try converting your mod data again.
+无法获取材质数据。材质文件可能已损坏。请再次转换模组数据。
 
-## 00003 - Not allowed
+## 00003 - 不允许
 
-#### Package name (?..) name is too long. Maximum length is ?.
+#### 包名（?..）过长。最大长度为 ?。
 
-Package name is too long. Maximum length of the name is: **256**.
+包名过长。名称的最大长度为：**256**。
 
-#### Package name is not a valid string
+#### 包名不是有效的字符串
 
-The package name is not valid string. Make sure that you are using of correct characters.
+包名不是有效的字符串。请确认你使用了正确的字符。
 
-#### File with the unsupported extension found in the mod. Please remove it before uploading the mod.
+#### 模组中发现扩展名不受支持的文件。请在上传模组前将其移除。
 
-Steam Workshop Mods supports only specified set of file types. Having file of the type that is not supported is forbidden and you have to remove it.
+Steam 创意工坊模组仅支持指定的文件类型集合。包含不受支持类型的文件是被禁止的，你必须将其移除。
 
-For instance, map files (extensions **.aux**, **.base**, **.data**, **.desc** and **.layer**) are not supported, thus Steam Workshop mods cannot contain map modifications. Although the files are valid mod files, they are intentionally not accepted by the SCS Workshop Uploader.
+例如，地图文件（扩展名 **.aux**、**.base**、**.data**、**.desc** 和 **.layer**）不受支持，因此 Steam 创意工坊模组不能包含地图修改。尽管这些文件是有效的模组文件，但 SCS Workshop Uploader 有意不接受它们。
 
-#### Found second universal version entry. Please use only one.
+#### 发现第二个通用版本条目。请只使用一个。
 
-Universal version entry is an version definition inside **versions.sii** file without any compatible versions defined.
+通用版本条目是 **versions.sii** 文件中未定义任何兼容版本的版本定义。
 
-For example:
+例如：
 
 ```
 package_version_info : .universal
@@ -200,11 +200,11 @@ package_version_info : .universal
 }
 ```
 
-In case there are more than one versions like that inside **versions.sii** file you will get this error. To fix this simply remove one of the definitions.
+如果 **versions.sii** 文件中存在多个此类版本，你就会收到此错误。要修复此问题，只需移除其中一个定义。
 
-#### In the mod root folder there can be only versions.sii file and version packages. Found ? not allowed entries:
+#### 模组根文件夹中只能有 versions.sii 文件和版本包。发现 ? 个不允许的条目：
 
-There must be only **versions.sii** file and version packages. Example workshop mod should be - for example:
+其中只能有 **versions.sii** 文件和版本包。创意工坊模组的示例如下：
 
 ```
 my_mod\
@@ -213,11 +213,11 @@ my_mod\
     my_mod\122_content.zip  <-- Mod package for the 1.22 update. (can be zip archive)
 ```
 
-#### Mod package unit has to be placed inside the manifest.sii files put in version specific mod package. For example: "/latest/manifest.sii". (path: ?, manifest: ?)
+#### 模组包单元必须放在版本专属模组包中的 manifest.sii 文件内。例如："/latest/manifest.sii"。（path: ?，manifest: ?）
 
-The **mod_package** definition must be placed inside manifest.sii file.
+**mod_package** 定义必须放在 manifest.sii 文件内。
 
-Example mod layout:
+模组布局示例：
 
 ```
 my_mod/
@@ -228,33 +228,33 @@ my_mod/
         my_mod/122_content.zip/manifest.sii  <-- mod_package can be defined here.
 ```
 
-#### Path cannot contain '..'. (position: ?)
+#### 路径不能包含 '..'。（position: ?）
 
-Paths used in the mods cannot use two dots ("..").
+模组中使用的路径不能使用两个点（".."）。
 
-**Invalid:** `../other_folder/file.txt`
+**无效：** `../other_folder/file.txt`
 
-**Correct:** `/other_folder/file.txt`
+**正确：** `/other_folder/file.txt`
 
-#### Path cannot contain Windows-style path separator (\\) only Unix-style separators are allowed (/). (position: ?)
+#### 路径不能包含 Windows 风格路径分隔符（\\），只允许使用 Unix 风格分隔符（/）。（position: ?）
 
-All the paths used by mods must use unix-style separators.
+模组使用的所有路径都必须使用 Unix 风格分隔符。
 
-**Invalid:** `\folder\folder2\file.txt`
+**无效：** `\folder\folder2\file.txt`
 
-**Correct:** `/folder/folder2/file.txt`
+**正确：** `/folder/folder2/file.txt`
 
-#### txt/.jpg files that are not referenced by any sii file are not allowed!
+#### 未被任何 sii 文件引用的 txt/.jpg 文件不允许存在！
 
-Any .txt or .jpg file that is not referenced by any definition file is not allowed. You have to remove it.
+任何未被任何定义文件引用的 .txt 或 .jpg 文件都不允许存在。你必须将其移除。
 
-Also it is possible that you are referencing this file but you made a typo either in file name or in the definition that references it. Please check it.
+此外，也可能你确实引用了此文件，但在文件名或引用它的定义中存在拼写错误。请检查。
 
-#### Unable to find universal version defined.
+#### 无法找到已定义的通用版本。
 
-There is no universal version defined inside **versions.sii** file. You have to add one.
+**versions.sii** 文件中未定义通用版本。你必须添加一个。
 
-Universal version is:
+通用版本为：
 
 ```
 package_version_info : .universal  <-- .universal can be any text starting with . (up to 12 characters)
@@ -263,91 +263,91 @@ package_version_info : .universal  <-- .universal can be any text starting with
 }
 ```
 
-#### Units of type ? are not allowed.
+#### 类型为 ? 的单元不允许存在。
 
-This unit is not allowed to be placed inside the file. Please remove it.
+此单元不允许放在该文件内。请将其移除。
 
-#### Units of type ? can be stored only inside the '?' file.
+#### 类型为 ? 的单元只能存储在 '?' 文件中。
 
-This unit definition can be only stored only inside the file written in the error message. Please remove it or move it.
+此单元定义只能存储在错误消息中写明的文件内。请将其移除或移动。
 
-#### Using SCS files is not allowed for Steam Workshop mods - please use normal .zip files or folders.
+#### Steam 创意工坊模组不允许使用 SCS 文件 - 请使用普通的 .zip 文件或文件夹。
 
-With Steam Workshop mods you are not able to use ZIP files renamed to .scs. Please use normal ZIP files with .zip extension or folders.
+对于 Steam 创意工坊模组，你无法使用重命名为 .scs 的 ZIP 文件。请使用扩展名为 .zip 的普通 ZIP 文件或文件夹。
 
-You can however use .scs files if they are in the HashFS v2 format.
+不过，如果 .scs 文件采用 HashFS v2 格式，则可以使用。
 
-#### Package name contains disallowed characters. Allowed [a-z0-9_].
+#### 包名包含不允许的字符。允许的字符为 [a-z0-9_]。
 
-Package name can only contains characters from range a to z, 0 to 9 and underscore characters _.
+包名只能包含 a 到 z、0 到 9 范围内的字符以及下划线字符 _。
 
-Example:
+示例：
 
-| Correct? | Folder/archive name |
+| 正确？ | 文件夹/归档包名称 |
 | --- | --- |
-| yes | universal |
-| yes | 122_content |
-| yes | 122_123_content |
-| no | Universal |
-| no | $FOLDERNAME$$ |
+| 是 | universal |
+| 是 | 122_content |
+| 是 | 122_123_content |
+| 否 | Universal |
+| 否 | $FOLDERNAME$$ |
 
-#### package_name attribute in version definition file must be set.
+#### 版本定义文件中的 package_name 属性必须设置。
 
-The package_name value must be set in all version definitions.
+所有版本定义中都必须设置 package_name 值。
 
-## 00004 - Malformed file
+## 00004 - 文件格式错误
 
-#### Unable to load data from model ? file. (file is probably malformed - please run resource conversion again)
+#### 无法从模型 ? 文件中加载数据。（文件可能已损坏 - 请再次运行资源转换）
 
-Model file is malformed and the validator was unable to load data from it please run resource conversion again to fix this problem.
+模型文件已损坏，验证器无法从中加载数据，请再次运行资源转换以修复此问题。
 
-#### 1D, 2D, 3D and Rect tobj can have only one map set! (map index: ?)
+#### 1D、2D、3D 和 Rect tobj 只能设置一组贴图！（map index: ?）
 
-The .tobj file is likely malformed. Run the conversion of your mod data again.
+.tobj 文件可能已损坏。请再次运行模组数据转换。
 
-#### Count of the parts does not match descriptor file ?. (desc: ?, geom: ?)
+#### 部件数量与描述文件 ? 不匹配。（desc: ?，geom: ?）
 
-There is some problem with the model you are using. Please try running conversion of mod data again.
+你使用的模型存在问题。请尝试再次运行模组数据转换。
 
-#### Count of the parts does not match geometry file ?. (desc: ?, geom: ?)
+#### 部件数量与几何文件 ? 不匹配。（desc: ?，geom: ?）
 
-There is some problem with the model you are using. Please try running conversion of mod data again.
+你使用的模型存在问题。请尝试再次运行模组数据转换。
 
-#### Incorrect map at index ?
+#### 索引 ? 处的贴图不正确
 
-Incorrect map in .tobj file has been detected. Please try running conversion of mod data again
+检测到 .tobj 文件中的贴图不正确。请尝试再次运行模组数据转换
 
-#### Incorrect map type. (?)
+#### 贴图类型不正确。（?）
 
-The .tobj file is likely malformed. Run the conversion of your mod data again.
+.tobj 文件可能已损坏。请再次运行模组数据转换。
 
-#### Incorrect texture sampler_name: "?".
+#### 纹理 sampler_name 不正确："?"。
 
-Material is corrupted. Please try running conversion of mod data again. In case it did not help please check all the paths in the material file.
+材质已损坏。请尝试再次运行模组数据转换。如果无济于事，请检查材质文件中的所有路径。
 
-#### Malformed DDS file!
+#### DDS 文件损坏！
 
-The DDS file is malformed. Save it again using your graphic editor in case it's created by you - in case it's result of mod data conversion run it again.
+DDS 文件已损坏。如果该文件由你创建，请使用图像编辑器重新保存 - 如果它是模组数据转换的结果，请再次运行转换。
 
-#### Malformed description file. The description file should be encoded in UTF-8!
+#### 描述文件格式错误。描述文件应采用 UTF-8 编码！
 
-The description file is not encoded in UTF-8 and contain invalid characters. Please resave it using your text editor using UTF-8 encoding. (In case your text editor is not supporting UTF-8 we recommend using [Notepad++](https://notepad-plus-plus.org/))
+描述文件未采用 UTF-8 编码，并包含无效字符。请使用文本编辑器以 UTF-8 编码重新保存。（如果你的文本编辑器不支持 UTF-8，我们推荐使用 [Notepad++](https://notepad-plus-plus.org/)）
 
-#### Malformed OGG file. Please correct it before uploading the mod.
+#### OGG 文件损坏。请在上传模组前修正它。
 
-The audio OGG file is malformed. Please re-save it.
+音频 OGG 文件已损坏。请重新保存。
 
-#### Malformed tobj file.
+#### tobj 文件损坏。
 
-The .tobj file is malformed. Please run mod data conversion again.
+.tobj 文件已损坏。请再次运行模组数据转换。
 
-#### Unable to load icon likely malformed file.
+#### 无法加载图标，文件可能已损坏。
 
-Unable to load data from the mod package icon. The file is likely broken please save it again using your image editor.
+无法从模组包的图标加载数据。该文件可能已损坏，请使用图像编辑器重新保存。
 
-#### Unable to read magic SII mark from file.
+#### 无法从文件中读取 SII magic 标记。
 
-The .sii file does not contain magic SII mark ("SiiNunit"). The correct .sii file is:
+.sii 文件不包含 SII magic 标记（"SiiNunit"）。正确的 .sii 文件为：
 
 ```
 SiiNunit
@@ -356,54 +356,54 @@ SiiNunit
 }
 ```
 
-## 00005 - Missing required attribute
+## 00005 - 缺少必需属性
 
-#### At least interior_model or exterior_model must be set to valid model descriptor file.
+#### 至少必须将 interior_model 或 exterior_model 设置为有效的模型描述文件。
 
-Make sure all the at least exterior_model or interior_model is set in your accessory definition file.
+请确保你的配件定义文件中至少设置了 exterior_model 或 interior_model。
 
-## 00006 - Access denied
+## 00006 - 访问被拒绝
 
-#### Unable to create validation log file.
+#### 无法创建验证日志文件。
 
-The tool is unable to create validation.log.txt file. The file is probably opened by some application. Make sure you close all applications using the file and restart the tool.
+工具无法创建 validation.log.txt 文件。该文件可能已被某个应用程序打开。请确保关闭所有正在使用该文件的应用程序，并重新启动工具。
 
-## 00007 - Not supported
+## 00007 - 不受支持
 
-#### Cube texture maps must be pot textures. (texture_name: ?)
+#### 立方体纹理的贴图必须是 POT 纹理。（texture_name: ?）
 
-All the maps inside cube texture must have size that is power of two. Correct maps size.
+立方体纹理中的所有贴图尺寸都必须为 2 的幂。请修正贴图尺寸。
 
-#### Mipmapping is not supported for npot texture.
+#### NPOT 纹理不支持 Mipmapping。
 
-Mip maps are not supported in case you have non power of two textures. To use mip maps you must change size of your texture to be power of two (e.g. 64, 128, 256, 512, 1024 etc).
+如果使用非 2 的幂尺寸的纹理，则不支持 Mipmap。要使用 Mipmap，你必须将纹理尺寸改为 2 的幂（例如 64、128、256、512、1024 等）。
 
-#### Unsupported tobj version. (version: ?)
+#### 不支持的 tobj 版本。（version: ?）
 
-This .tobj file version is not supported. Run conversion of your mod data again.
+不支持此 .tobj 文件版本。请再次运行模组数据转换。
 
-## 00008 - Unable to load
+## 00008 - 无法加载
 
-#### Unable to load file.
+#### 无法加载文件。
 
-Unable to load the file. To solve this you should run mod data conversion again.
+无法加载该文件。要解决此问题，你应再次运行模组数据转换。
 
-#### Unable to load model descriptor referenced by accessory addon data definition (?)
+#### 无法加载配件附加数据定义（?）所引用的模型描述
 
-Make sure that the .pmd file exists. In case it exists run again mod data conversion.
+请确认该 .pmd 文件存在。如果存在，请再次运行模组数据转换。
 
-## 00009 - File is too big
+## 00009 - 文件过大
 
-#### Maximum size of description file is ? MB
+#### 描述文件的最大大小为 ? MB
 
-Mod description file is too big. Maximum size is: **1 MB**.
+模组描述文件过大。最大大小为：**1 MB**。
 
-#### Maximum size of icon file is ? MB
+#### 图标文件的最大大小为 ? MB
 
-The mod icon is too big. Maximum allowed size for is: **1 MB**
+模组图标过大。允许的最大大小为：**1 MB**
 
-## 00010 - IO Error
+## 00010 - IO 错误
 
-This kind of error mostly happens when the application is not able to read/write information to the hard disk. Make sure you have enough space on your hard disk. If it happens during reading, it is possible that an anti-virus was blocking the file and application failed to read it - try disabling it for the time of application use.
+此类错误通常发生在应用程序无法向硬盘读取或写入信息时。请确保你的硬盘有足够的空间。如果发生在读取过程中，可能是防病毒软件阻止了该文件，导致应用程序无法读取 - 请尝试在应用程序运行期间禁用该软件。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/SCS_Workshop_Uploader/Validation_errors_and_solutions_for_them | revision: 5757 | captured: 2026-10-21 23:56:14 -->

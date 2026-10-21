@@ -1,50 +1,50 @@
-# Documentation/Tools
+# 文档/工具
 
-## Game Archive Packer
+## 游戏归档包打包器
 
-- [Documentation](Tools/Game%20Archive%20Packer.md)
-- [Download](Tools/Game%20Archive%20Packer.md#Download)
+- [文档](Tools/Game%20Archive%20Packer.md)
+- [下载](Tools/Game%20Archive%20Packer.md#Download)
 
-## Game Archive Extractor
+## 游戏归档包解包器
 
-- [Documentation](Tools/Game%20Archive%20Extractor.md)
-- [Download](Tools/Game%20Archive%20Extractor.md#Download)
+- [文档](Tools/Game%20Archive%20Extractor.md)
+- [下载](Tools/Game%20Archive%20Extractor.md#Download)
 
 ## SCS Blender Tools
 
-- [Documentation](Tools/SCS%20Blender%20Tools.md)
-- [Download](Tools/SCS%20Blender%20Tools/Download.md)
+- [文档](Tools/SCS%20Blender%20Tools.md)
+- [下载](Tools/SCS%20Blender%20Tools/Download.md)
 
 ## Conversion Tools
 
-- [Documentation](Tools/Conversion%20Tools.md)
-- [Download](Tools/Conversion%20Tools.md#Download_.26_Installation)
+- [文档](Tools/Conversion%20Tools.md)
+- [下载](Tools/Conversion%20Tools.md#Download_.26_Installation)
 
 ## SCS Workshop Uploader
 
-This application is Steam-only and to download and use it you need to have Steam-client installed and running on your computer.
+此应用程序仅限 Steam 使用，要下载并使用它，你需要在本机安装并运行 Steam 客户端。
 
-- [Documentation](Tools/SCS%20Workshop%20Uploader.md)
-- [Steam Download](steam://install/421800)
+- [文档](Tools/SCS%20Workshop%20Uploader.md)
+- [Steam 下载](steam://install/421800)
 
-## Map Editor
+## 地图编辑器
 
-- [Documentation](Tools/Map%20Editor.md)
-- Download - Map Editor is integrated part of any SCS game. See the [tutorial](https://modding.scssoft.com/index.php?title=Tutorials/Map_Editor/Map_Editor_Preparation&action=edit&redlink=1) how to launch it.
+- [文档](Tools/Map%20Editor.md)
+- 下载 - 地图编辑器是任何 SCS 游戏的内置组成部分。请参阅[教程](https://modding.scssoft.com/index.php?title=Tutorials/Map_Editor/Map_Editor_Preparation&action=edit&redlink=1)了解如何启动它。
 
-## Telemetry & Input SDK
+## Telemetry 与 Input SDK
 
-- Documentation - Can be found inside download package.
-- [Download](Engine/SDK/Telemetry.md)
+- 文档 - 可在下载包内找到。
+- [下载](Engine/SDK/Telemetry.md)
 
-## Font Generator
+## 字体生成器
 
-- [Documentation](Engine/Fonts.md) - Documentation on fonts and font generator
-- [Download](Tools/Font%20Generator/Download.md)
+- [文档](Engine/Fonts.md) - 关于字体和字体生成器的文档
+- [下载](Tools/Font%20Generator/Download.md)
 
-## Dedicated Server
+## 专用服务器
 
-- [Documentation](Tools/Dedicated%20Server.md)
-- [Download](Tools/Dedicated%20Server.md#How_to_download_a_dedicated_server)
+- [文档](Tools/Dedicated%20Server.md)
+- [下载](Tools/Dedicated%20Server.md#How_to_download_a_dedicated_server)
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools | revision: 5356 | captured: 2026-10-21 23:56:14 -->

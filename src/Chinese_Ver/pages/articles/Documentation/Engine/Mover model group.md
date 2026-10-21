@@ -1,12 +1,12 @@
 # Documentation/Engine/Mover model group
 
-Mover model group is a new mover definition unit. The idea of this new unit is to have a system which can easily combine compatible models and animations. The main use is for characters to remove the need of definition for every combination of models and animations. Moreover these mover groups can use props in separate models and you can easily "skin" them to specific bones.
+Mover model group 是一种新的 mover 定义单元。这个新单元的设计思路是提供一个能够轻松组合兼容模型与动画的系统。其主要用途是为角色省去为每种模型与动画组合单独定义的需要。此外，这些 mover 组可以使用独立模型中的道具，并且你可以轻松地将它们“蒙皮”到特定骨骼。
 
-The whole system consists of four units:
+整个系统由四个单元组成：
 
 ## Mover desc
 
-Unit `mover_desc` represents model and its data. It is located in `/base/def/world/mover_desc.sii`.
+单元 `mover_desc` 表示模型及其数据。它定义在 `/base/def/world/mover_desc.sii` 中。
 
 ```
 mover_desc : mover_desc.worker_3 {
@@ -27,17 +27,17 @@ mover_desc : mover_desc.worker_3 {
 }
 ```
 
-**Properties:**
+**属性：**
 
-- `model_desc` Model descriptor.
-- `model_coll` Model collision.
-- `lods` Model lod descriptors.
-- `lod_distances` Lod distances.
-- `group_tags` Group tags. More about it in **mover_model_group** section.
+- `model_desc` 模型描述符。
+- `model_coll` 模型碰撞。
+- `lods` 模型 LOD 描述符。
+- `lod_distances` LOD 距离。
+- `group_tags` 组标签。更多信息见 **mover_model_group** 一节。
 
 ## Mover anim
 
-Unit `mover_anim` represents animation and its data. It is located in `/base/def/world/mover_anim.sii`.
+单元 `mover_anim` 表示动画及其数据。它定义在 `/base/def/world/mover_anim.sii` 中。
 
 ```
 mover_anim : mover_anim.sweeper {
@@ -51,15 +51,15 @@ mover_anim : mover_anim.sweeper {
 }
 ```
 
-**Properties:**
+**属性：**
 
-- `model_anim` Animation descriptor.
-- `group_tags` Group tags. More about it in **mover_model_group** section.
-- `props` Array of link pointers to animation props.
+- `model_anim` 动画描述符。
+- `group_tags` 组标签。更多信息见 **mover_model_group** 一节。
+- `props` 指向动画道具的链接指针数组。
 
 ## Mover anim props
 
-Unit `mover_anim_props` represents animation props and its settings. It is located in `/base/def/world/mover_anim_props.sii`.
+单元 `mover_anim_props` 表示动画道具及其设置。它定义在 `/base/def/world/mover_anim_props.sii` 中。
 
 ```
 mover_anim_props : mover_props.sweeper.broom {
@@ -73,29 +73,29 @@ mover_anim_props : mover_props.sweeper.broom {
 }
 ```
 
-**Properties:**
+**属性：**
 
-- `bone_a` First bone to "skin" prefix.
-- `bone_b` Second bone to "skin" prefix.
-- `bone_offset_a` Skin offset for the first bone.
-- `bone_offset_b` Skin offset for the second bone.
-- `model` Props model descriptor.
-- `model_animation` Props model animation.
-- `sync_animation` Force time synchronization between props animation and mover animation.
-- `model_offset` Props placement offset.
-- `model_rotation` Props placement rotation.
+- `bone_a` 用于“蒙皮”前缀的第一根骨骼。
+- `bone_b` 用于“蒙皮”前缀的第二根骨骼。
+- `bone_offset_a` 第一根骨骼的蒙皮偏移。
+- `bone_offset_b` 第二根骨骼的蒙皮偏移。
+- `model` 道具模型描述符。
+- `model_animation` 道具模型动画。
+- `sync_animation` 强制道具动画与 mover 动画之间的时间同步。
+- `model_offset` 道具放置偏移。
+- `model_rotation` 道具放置旋转。
 
-**How does it work?**
+**工作原理**
 
-Props is rendered and placed as separate model. Using bone A and bone B we can attach the props to the mover skeleton. There are three possible setups.
+道具作为独立模型渲染和放置。通过骨骼 A 和骨骼 B，我们可以将道具附着到 mover 骨架。共有三种可能的设置方式。
 
-: **1) No bones are set.** Props is placed to the mover origin plus `model_offset` and with zero rotation plus `model_rotation`. For example a bucket on the ground.
-: **2) Bone A is set only.** Props is placed to the bone A placement plus `bone_offset_a` plus `model_offset` with bone A rotation plus `model_rotation`. For example a sponge in one hand.
-: **3) Bone A and bone B are set.** Props is placed to the bone A placement plus `bone_offset_a` plus `model_offset` with rotation given by direction vector (**from** bone B placement plus `bone_offset_b` **to** bone A placement plus `bone_offset_a`) plus `model_rotation` For example a broom in both hands.
+: **1) 未设置骨骼。** 道具放置在 mover 原点加上 `model_offset` 的位置，旋转为零加上 `model_rotation`。例如放在地面上的水桶。
+: **2) 仅设置骨骼 A。** 道具放置在骨骼 A 的位置加上 `bone_offset_a` 再加上 `model_offset` 处，旋转为骨骼 A 的旋转加上 `model_rotation`。例如握在一只手中的海绵。
+: **3) 设置了骨骼 A 和骨骼 B。** 道具放置在骨骼 A 的位置加上 `bone_offset_a` 再加上 `model_offset` 处，旋转由方向向量（**从**骨骼 B 的位置加上 `bone_offset_b` **到**骨骼 A 的位置加上 `bone_offset_a`）加上 `model_rotation` 给出。例如双手握持的扫帚。
 
 ## Mover model group
 
-Unit `mover_model_group` represents all valid combinations between specified mover desc and mover anim. It is located in `/base/def/world/mover.group.sii`. But it can placed in any mover def file.
+单元 `mover_model_group` 表示指定的 mover desc 与 mover anim 之间所有有效的组合。它定义在 `/base/def/world/mover.group.sii` 中。但它可以放置在任意 mover 定义文件中。
 
 ```
 mover_model_group: mover.work_sw_all {
@@ -108,20 +108,20 @@ mover_model_group: mover.work_sw_all {
 }
 ```
 
-**Properties:**
+**属性：**
 
-- `desc_tags` Mover desc tags.
-- `anim_tags` Mover anim tags.
-- `country_specific` If true then only mover desc containing country tag given by mover placement will be generated.
+- `desc_tags` Mover desc 标签。
+- `anim_tags` Mover anim 标签。
+- `country_specific` 若为 true，则只生成包含由 mover 放置位置所指定国家标签的 mover desc。
 
-**How does it work?**
+**工作原理**
 
-When the unit is loaded, it collects all mover desc containing all tags from the `desc_tags` property and all mover anim containing all tags from the `anim_tags` property. When the mover is generated, it randomly chooses one of the collected mover desc and then it tries to choose one of the collected mover anim which use the **same skeleton** as the choosen mover desc model.
+该单元加载时，会收集包含 `desc_tags` 属性中全部标签的所有 mover desc，以及包含 `anim_tags` 属性中全部标签的所有 mover anim。生成 mover 时，它会随机选择一个已收集的 mover desc，然后尝试选择一个已收集的、使用与所选 mover desc 模型**相同骨架**的 mover anim。
 
-This is important because sometimes you want to have group containing models with different skeletons and animations with different skeletons. But you want only valid model-anim combinations. **For example** group of walking men and women where men use different skeleton than women.
+这一点很重要，因为有时你希望组中包含骨架不同的模型和骨架不同的动画。但你只想要有效的模型-动画组合。**例如**由行走的男性和女性组成的组，其中男性使用与女性不同的骨架。
 
-**Optimization**
+**优化**
 
-Because engine ensures that only valid model-anim combinations will be created, it may seem that animation tags should contain only tags describing the animation activity. But because the model-anim combinations are choosen in the moment of mover generation, we want to limit the combination pool as much as possible. Because of that mover anim tags should contain (apart from the activity itself) tags describing compatible mover desc. In `mover_anim` the example above these tags are `human` and `man`. And in the related mover group use these tags in `anim_tags`. In the example it is the tag `man`.
+由于引擎保证只会创建有效的模型-动画组合，因此看起来动画标签只需要包含描述动画活动的标签。但由于模型-动画组合是在生成 mover 的那一刻选择的，我们希望尽可能限制组合池。因此，mover anim 标签应当包含（除活动本身之外）描述兼容 mover desc 的标签。在上面的 `mover_anim` 示例中，这些标签是 `human` 和 `man`。而在相关的 mover 组中，应在 `anim_tags` 里使用这些标签。在示例中即为标签 `man`。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Mover_model_group | revision: 5135 | captured: 2026-10-21 23:56:14 -->

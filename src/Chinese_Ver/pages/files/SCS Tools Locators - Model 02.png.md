@@ -1,4 +1,4 @@
-# File:SCS Tools Locators - Model 02.png
+# 文件:SCS Tools Locators - Model 02.png
 
 ![SCS Tools Locators - Model 02.png](../../../images/files/SCS%20Tools%20Locators%20-%20Model%2002.png/SCS_Tools_Locators_-_Model_02.png)
 

@@ -1,4 +1,4 @@
-# File:Simple cube select no compression.jpg
+# 文件:Simple cube select no compression.jpg
 
 ![Simple cube select no compression.jpg](../../../images/files/Simple%20cube%20select%20no%20compression.jpg/Simple_cube_select_no_compression.jpg)
 

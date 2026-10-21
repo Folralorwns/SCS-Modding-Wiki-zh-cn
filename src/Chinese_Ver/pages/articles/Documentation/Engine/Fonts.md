@@ -1,37 +1,37 @@
-# Documentation/Engine/Fonts
+# 文档/引擎/字体
 
-This post describes changes made to the font generation and rendering system in 1.43.
+本文介绍 1.43 版本中字体生成与渲染系统所做的更改。
 
-## Intro
+## 简介
 
 ![Font_tech_comparison.png](../../../../../images/articles/Documentation/Engine/Fonts/300px-Font_tech_comparison.png)
 
-*SDF fonts (left) vs old raster fonts (right). Font quality on screen (top) vs internal texture representation (bottom).*
+*左侧为 SDF 字体，右侧为旧的栅格字体。上方为屏幕上的字体质量，下方为内部纹理表示。*
 
-Up until now, all of our text rendering was done using plain raster fonts. While this approach could have been considered adequate years ago, in the days of 4K resolutions and high DPIs it no longer does the job fitting the requirements imposed by today's standards for modern games. The solution comes in the form of [signed distance fields](https://steamcdn-a.akamaihd.net/apps/valve/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf). Instead of storing straight raster information like we would in an image, the texture encodes distance to the nearest edge, effectively allowing us to approximate the actual shape of the glyph when rendering. The main benefit of this technique is that the glyph becomes in theory infinitely scalable, while also allowing us to apply consistent anti-aliasing regardless of size on-screen. It also allows allows us to apply a multitude of effe/cts at runtime, such as outlines or glow.
+到目前为止，我们的所有文本渲染都是使用普通栅格字体完成的。这种做法在多年前或许还算够用，但在 4K 分辨率与高 DPI 的时代，它已无法满足当今现代游戏所要求的标准。解决方案是[有向距离场](https://steamcdn-a.akamaihd.net/apps/valve/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf)。纹理不再像图像那样直接存储栅格信息，而是编码与最近边缘的距离，从而在渲染时能够近似出字形的实际形状。这项技术的主要优势在于，字形理论上可以无限缩放，同时无论屏幕上的尺寸如何都能应用一致的抗锯齿效果。它还允许我们在运行时应用多种效果，例如描边或发光。
 
-While the resulting individually generated atlases can be larger in size, we only have to generate them once to cover all the possible font sizes. For example, in cases of ATS/ETS2, we no longer need multiple texture sets for the **normal**, **normal_o**, **title**, **big**, **small** base fonts, since they are all based on the same source TTF file. Additionally, we can also use this to create multiple effect variations of the same font at virtually no additional cost.
+虽然由此单独生成的图集在体积上可能更大，但我们只需生成一次即可覆盖所有可能的字体字号。例如在 ATS/ETS2 中，我们不再需要为 **normal**、**normal_o**、**title**、**big**、**small** 这些基础字体准备多套纹理，因为它们都基于同一个源 TTF 文件。此外，我们还可以借此以几乎零额外成本创建同一字体的多种效果变体。
 
-## Sii Definitions
+## Sii 定义
 
-The new font definition format is based on the old one. While new parameters have been added, old definitions remain mostly compatible with the [new generator](https://modding.scssoft.com/index.php?title=Documentation/Tools/fontgen/Download&action=edit&redlink=1).
+新的字体定义格式基于旧格式。虽然新增了一些参数，但旧定义仍与[新生成器](https://modding.scssoft.com/index.php?title=Documentation/Tools/fontgen/Download&action=edit&redlink=1)基本兼容。
 
-Notable changes:
+主要变更：
 
-- Size of glyphs in the texture itself no longer has any relationship to how big the text is on screen. They should be as big as required to encode enough detail without artifacting at all sizes we expect to see on screen. As such, the **width** and **height** parameters have been replaced with a single **size** parameter, while **scale_width**, **scale_height** remain and are used to add additional per-atlas scaling when rendering. Note that we now store per-atlas sizing information in all generated fonts, so as far as text sizing goes, everything should appear the way you expect it to on-screen.
-- A new optional **texture_size** parameter can be used to directly specify the size of the generated texture to increase/decrease quality of the text. By default, this is chosen automatically by the generator based on the requested size specifications; however, if you feel like the result doesn't look good enough, you can manually use this parameter to force the generator to create a larger texture. You can also make the texture smaller to save storage, provided the impact on visual quality is negligible.
-- The generator now supports OTF fonts as well.
+- 纹理中字形的大小不再与屏幕上文本的大小有任何关系。字形应当足够大，以编码足够的细节，并在我们预期屏幕上会出现的所有尺寸下都不产生伪影。因此，**width** 与 **height** 参数已被单个 **size** 参数取代，而 **scale_width**、**scale_height** 仍然保留，用于在渲染时为每个图集附加缩放。请注意，我们现在会在所有生成的字体中存储每个图集的尺寸信息，因此就文本尺寸而言，一切都应如你在屏幕上所预期的那样显示。
+- 新增的可选 **texture_size** 参数可用于直接指定生成纹理的尺寸，以提高或降低文本质量。默认情况下，该值由生成器根据所请求的尺寸规格自动选择；不过，如果你觉得结果不够理想，可以手动使用该参数强制生成器创建更大的纹理。你也可以在视觉质量影响可忽略的前提下缩小纹理以节省存储空间。
+- 生成器现在还支持 OTF 字体。
 
 ```
 texture_size: (256, 256) # Force the generator to create a 256x256 texture for this atlas.
 ```
 
-> **Note:** Tip: To reach the best size/quality ratio, you should start with a small texture size and increase it until the font reaches the desired quality.
+> **注意：** 提示：为获得最佳的尺寸/质量比，你应从较小的纹理尺寸开始，逐步增大，直到字体达到期望的质量。
 
-- An optional **sdf_range** parameter specifies the size of the distance field, which needs to be big enough to allow us to properly render edge-based effects such as antialiasing, soft shadows, outlines etc. The generator calculates this automatically based on requirements. The only time you may need to specify it yourself is when using atlases shared accross multiple fonts - child font may use effects incompatible with the SDF range provided by the parent font, in which case the generator will tell you the size the minimum SDF range the parent font needs to use to accommodate. Note that increasing SDF range reduces quality as less data can be used to encode fine details, so you may have to specify a larger texture size to compensate.
-- **antialias**/**gradient** parameters have been removed, as they are either no longer needed or weren't used at all.
+- 可选参数 **sdf_range** 用于指定距离场的大小，该值需要足够大，以便我们正确渲染基于边缘的效果，例如抗锯齿、柔和阴影、描边等。生成器会根据需求自动计算该值。你唯一可能需要自行指定它的情况，是使用在多个字体之间共享的图集时——子字体所使用的效果可能不兼容父字体提供的 SDF 范围，此时生成器会告知你父字体为满足需要而必须使用的最小 SDF 范围。请注意，增大 SDF 范围会降低质量，因为可用于编码精细细节的数据变少，因此你可能需要指定更大的纹理尺寸来补偿。
+- **antialias**/**gradient** 参数已被移除，因为它们要么不再需要，要么根本未被使用。
 
-An example of a font definition using a single atlas:
+使用单个图集的字体定义示例：
 
 ```
 SiiNunit
@@ -91,21 +91,21 @@ char_set_config : .cfg0
 }
 ```
 
-#### Cutting corners
+#### 走捷径
 
-By default, we use three colour channels to encode distance field infomation (a method known as MSDF). This allows us to preserve hard corners, at the cost of increased storage requirements.
+默认情况下，我们使用三个颜色通道来编码距离场信息（这种方法称为 MSDF）。这样可以保留锐利的转角，代价是存储需求增加。
 
-If you don't need sharp corners and/or need to cut filesize down, you can use the following parameter in your atlas definition:
+如果你不需要锐利的转角，和/或需要减小文件体积，可以在图集定义中使用以下参数：
 
 ```
 sharp_corners: false
 ```
 
-> **Note:** If you're using a font that's rounded in the first place, you should also consider doing this.
+> **注意：** 如果你使用的字体本身就是圆角的，也应考虑这样做。
 
-This will result in a 66% decrease in memory requirements, at the cost of everything looking a bit more rounded. Note that this also allows you to use a larger texture size while still saving some memory; we currently employ this in CJK fonts where sharp corners aren't a must.
+这会使内存需求降低 66%，代价是所有内容看起来更圆滑一些。请注意，这样做还允许你使用更大的纹理尺寸，同时仍能节省一些内存；我们目前在不需要锐利转角的 CJK 字体中就采用了这一做法。
 
-### Atlas Sharing
+### 图集共享
 
 **normal.sii:**
 

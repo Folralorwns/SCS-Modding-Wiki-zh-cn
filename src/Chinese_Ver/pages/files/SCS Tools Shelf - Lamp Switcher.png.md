@@ -1,4 +1,4 @@
-# File:SCS Tools Shelf - Lamp Switcher.png
+# 文件:SCS Tools Shelf - Lamp Switcher.png
 
 ![SCS Tools Shelf - Lamp Switcher.png](../../../images/files/SCS%20Tools%20Shelf%20-%20Lamp%20Switcher.png/SCS_Tools_Shelf_-_Lamp_Switcher.png)
 

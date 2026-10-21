@@ -1,4 +1,4 @@
-# File:SCS Tools Sidebar - Stats Tool.280.png
+# 文件:SCS Tools Sidebar - Stats Tool.280.png
 
 ![SCS Tools Sidebar - Stats Tool.280.png](../../../images/files/SCS%20Tools%20Sidebar%20-%20Stats%20Tool.280.png/SCS_Tools_Sidebar_-_Stats_Tool.280.png)
 

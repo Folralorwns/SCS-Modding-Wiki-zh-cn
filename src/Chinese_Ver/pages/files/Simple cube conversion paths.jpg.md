@@ -1,4 +1,4 @@
-# File:Simple cube conversion paths.jpg
+# 文件:Simple cube conversion paths.jpg
 
 ![Simple cube conversion paths.jpg](../../../images/files/Simple%20cube%20conversion%20paths.jpg/Simple_cube_conversion_paths.jpg)
 

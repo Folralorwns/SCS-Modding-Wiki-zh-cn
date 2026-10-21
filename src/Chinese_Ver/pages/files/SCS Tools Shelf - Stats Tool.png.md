@@ -1,4 +1,4 @@
-# File:SCS Tools Shelf - Stats Tool.png
+# 文件:SCS Tools Shelf - Stats Tool.png
 
 ![SCS Tools Shelf - Stats Tool.png](../../../images/files/SCS%20Tools%20Shelf%20-%20Stats%20Tool.png/SCS_Tools_Shelf_-_Stats_Tool.png)
 

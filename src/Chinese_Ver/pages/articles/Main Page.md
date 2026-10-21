@@ -1,26 +1,26 @@
-# Main Page
+# 主页
 
-Welcome to the **SCS Software Modding Wiki**!
+欢迎来到 **SCS Software Modding Wiki**！
 
-This wiki is meant for anyone who is interested in modding SCS games. It is the ultimate source for all official SCS modding tools, their documentation and tutorials.
+本 Wiki 面向所有对 SCS 游戏模组制作感兴趣的人。它是所有官方 SCS 模组工具及其文档和教程的最权威来源。
 
-The wiki also provides additional information about the SCS game engine, its possible configuration, and usage of different game features.
+本 Wiki 还提供关于 SCS 游戏引擎、其可能的配置以及不同游戏功能用法的附加信息。
 
-## What are you looking for?
+## 你在寻找什么？
 
 |  |  |
 | --- | --- |
-| [![Documentation.png](../../../images/articles/Main%20Page/50px-Documentation.png)](Documentation.md) [Documentation](Documentation.md) All documentation in one place | [![Tutorials.png](../../../images/articles/Main%20Page/50px-Tutorials.png)](Tutorials.md) [Tutorials](Tutorials.md) Learn how to make mods |
-| [![Tools.png](../../../images/articles/Main%20Page/52px-Tools.png)](https://modding.scssoft.com/wiki/Tools) [Tools](Documentation/Tools.md) Download & docs for all SCS tools | [![Games.png](../../../images/articles/Main%20Page/50px-Games.png)](Games.md) [Games](Games.md) List of currently supported games |
+| [![Documentation.png](../../../images/articles/Main%20Page/50px-Documentation.png)](Documentation.md) [文档](Documentation.md) 所有文档集中于此 | [![Tutorials.png](../../../images/articles/Main%20Page/50px-Tutorials.png)](Tutorials.md) [教程](Tutorials.md) 学习如何制作模组 |
+| [![Tools.png](../../../images/articles/Main%20Page/52px-Tools.png)](https://modding.scssoft.com/wiki/Tools) [工具](Documentation/Tools.md) 所有 SCS 工具的下载与文档 | [![Games.png](../../../images/articles/Main%20Page/50px-Games.png)](Games.md) [游戏](Games.md) 当前支持的游戏列表 |
 
-## Want to contribute?
+## 想要贡献？
 
-No problem, check out the [Contribution](Contribution.md) page.
+没问题，请查看[贡献](Contribution.md)页面。
 
-## Did I miss something?
+## 我错过了什么吗？
 
-Not sure if you have missed something since your last visit?
+不确定自上次访问以来是否错过了什么？
 
-Check out the [Recent Changes](https://modding.scssoft.com/wiki/Special%3ARecentChanges) page and see what we've been up to.
+查看[最近更改](https://modding.scssoft.com/wiki/Special%3ARecentChanges)页面，看看我们最近在做些什么。
 
 <!-- source: https://modding.scssoft.com/wiki/Main_Page | revision: 5169 | captured: 2026-10-21 23:56:14 -->

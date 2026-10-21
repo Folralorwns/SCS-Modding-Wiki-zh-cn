@@ -1,20 +1,20 @@
 # Documentation/Engine/Units/package version info
 
-**Package version info** is a [unit](../Units.md) containing workshop mod package information, such as the name of the folder or archive with content and the array of compatible game versions. It is used in each workshop mod's [versions.sii](../../Tools/SCS%20Workshop%20Uploader/versions.sii.md).
+**Package version info** 是一个[单元](../Units.md)，包含创意工坊模组包的信息，例如内容所在文件夹或归档包的名称，以及兼容游戏版本的数组。它用于每个创意工坊模组的 [versions.sii](../../Tools/SCS%20Workshop%20Uploader/versions.sii.md) 中。
 
-## Special Case: Universal Version
+## 特殊情况：通用版本
 
-Each workshop mod's versions.sii file may have a *single* package version info without any defined compatible_versions, called the “universal version.” The associated package will be used for all game versions that are not defined by another package version info unit inside the versions.sii file.
+每个创意工坊模组的 versions.sii 文件可以有*一个*不含任何已定义 compatible_versions 的包版本信息，称为“通用版本”。关联的包将用于 versions.sii 文件中未被其他包版本信息单元定义的所有游戏版本。
 
-## Attributes
+## 属性
 
-| Name | [Type](../Units.md#Attribute_types) | Required/Optional | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 必需/可选 | 描述 |
 | --- | --- | --- | --- |
-| package_name | string | Required | The name of the folder or archive with the version-specific mod content. For zip archives, package_name is just the file name without the extension. |
-| compatible_versions | string array | Optional | The array containing the set of versions that are compatible with this version definition. If not specified this package will be used for all of the game versions not explicitly defined for other packages. <br>**Important:** Each workshop mod's versions.sii can only contain *one* `package_version_info` unit without this parameter specified. |
-| informational | bool | Optional | When true, it indicates that the package contains information only. If unspecified, it defaults to false. |
+| package_name | string | 必需 | 包含特定版本模组内容的文件夹或归档包的名称。对于 zip 归档包，package_name 仅为不带扩展名的文件名。 |
+| compatible_versions | string array | 可选 | 包含与此版本定义兼容的版本集合的数组。如果未指定，则此包将用于未为其他包显式定义的所有游戏版本。<br>**重要：** 每个创意工坊模组的 versions.sii 中只能包含*一个*未指定此参数的 `package_version_info` 单元。 |
+| informational | bool | 可选 | 当为 true 时，表示该包仅包含信息。如果未指定，则默认为 false。 |
 
-## Raw Unit Definition
+## 原始单元定义
 
 ```
   "package_version_info":{
@@ -32,8 +32,8 @@ Each workshop mod's versions.sii file may have a *single* package version info w
    }
 ```
 
-## See Also
+## 另见
 
-[Tutorial: How to Use Mod Versioning](../../../Tutorials/SCS%20Workshop%20Uploader/How%20to%20use%20mod%20versioning.md)
+[教程：如何使用模组版本控制](../../../Tutorials/SCS%20Workshop%20Uploader/How%20to%20use%20mod%20versioning.md)
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Units/package_version_info | revision: 5191 | captured: 2026-10-21 23:56:14 -->

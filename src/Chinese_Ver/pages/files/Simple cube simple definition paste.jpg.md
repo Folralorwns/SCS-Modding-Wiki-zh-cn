@@ -1,4 +1,4 @@
-# File:Simple cube simple definition paste.jpg
+# 文件:Simple cube simple definition paste.jpg
 
 ![Simple cube simple definition paste.jpg](../../../images/files/Simple%20cube%20simple%20definition%20paste.jpg/Simple_cube_simple_definition_paste.jpg)
 

@@ -1,4 +1,4 @@
-# File:Truck accessory select locator type.jpg
+# 文件:Truck accessory select locator type.jpg
 
 ![Truck accessory select locator type.jpg](../../../images/files/Truck%20accessory%20select%20locator%20type.jpg/Truck_accessory_select_locator_type.jpg)
 

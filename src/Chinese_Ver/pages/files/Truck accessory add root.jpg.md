@@ -1,4 +1,4 @@
-# File:Truck accessory add root.jpg
+# 文件:Truck accessory add root.jpg
 
 ![Truck accessory add root.jpg](../../../images/files/Truck%20accessory%20add%20root.jpg/Truck_accessory_add_root.jpg)
 

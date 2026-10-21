@@ -1,21 +1,21 @@
-# Documentation/Engine/Units/vehicle addon accessory
+# 文档/引擎/单元/车辆附加配件
 
-The **vehicle_addon_accessory** unit class is used to 'attach' addon accessories, their data, and slotted hookups to vehicle and trailer configurations. Units of this type are typically nameless and declared within the same context as the configuration that owns/uses them.
+**vehicle_addon_accessory** 单元类用于将附加配件、其数据以及带槽位的挂接点“附加”到车辆和挂车配置上。此类型的单元通常为无名单元，并在拥有/使用它们的配置所在的同一上下文中声明。
 
-## Attributes
+## 属性
 
-| Name | [Type](../Units.md#Attribute_types) | Default Value | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| wear | float | 0.0 | This attribute is used to track damage and wear to the accessory. 0 corresponds to an unworn state and 1 corresponds to a completely worn state. |
-| **data_path** | string |  | Full path to the SII file containing a suitable accessory data unit. |
-| slot_name | array&lt;token&gt; |  | Name of the model locator in the accessory model for the hookup accessory to be hooked up to. Valid names begin with `slot_`. |
-| slot_hookup | array&lt;string&gt; |  | Unit name of the addon hookup to be hooked up in the corresponding **slot_name**. |
+| wear | float | 0.0 | 此属性用于跟踪配件的损坏和磨损情况。0 对应未磨损状态，1 对应完全磨损状态。 |
+| **data_path** | string |  | 包含合适配件数据单元的 SII 文件的完整路径。 |
+| slot_name | array&lt;token&gt; |  | 配件模型中供挂接配件挂接到其上的模型定位器名称。有效名称以 `slot_` 开头。 |
+| slot_hookup | array&lt;string&gt; |  | 要在对应 **slot_name** 中挂接的附加挂接点的单元名称。 |
 
-> **Note:** The **slot_name** and **slot_hookup** arrays are usually defined as ordered arrays to ensure that their indices correspond. They must always be the same length.
+> **注意：** **slot_name** 和 **slot_hookup** 数组通常定义为有序数组，以确保它们的索引相互对应。它们的长度必须始终相同。
 
-## Slot Usage Example
+## 槽位用法示例
 
-Here is an example of how marker lights are hooked up to slots on a *cabflares* accessory in a truck configuration:
+以下示例展示了在卡车配置中，示廓灯如何挂接到 *cabflares* 配件上的槽位：
 
 ```
 vehicle: .tdealer.peterbilt_4
@@ -45,21 +45,21 @@ vehicle_addon_accessory : .peterbilt_4.lights {
 // ...
 ```
 
-## Suitable Accessory Data Types
+## 适用的配件数据类型
 
-These accessory data types can be used by **vehicle_addon_accessory** in the **data_path** attribute:
+以下配件数据类型可用于 **vehicle_addon_accessory** 的 **data_path** 属性：
 
 - [accessory_addon_data](accessory%20addon%20data.md)
 - [accessory_addon_int_data](accessory%20addon%20int%20data.md)
 - [accessory_addon_patch_data](https://modding.scssoft.com/index.php?title=Documentation/Engine/Units/accessory_addon_patch_data&action=edit&redlink=1)
 
-These accessory data types can be hooked up to the accessory's slots:
+以下配件数据类型可挂接到该配件的槽位：
 
 - [accessory_hookup_data](https://modding.scssoft.com/index.php?title=Documentation/Engine/Units/accessory_hookup_data&action=edit&redlink=1)
 - [accessory_hookup_int_data](https://modding.scssoft.com/index.php?title=Documentation/Engine/Units/accessory_hookup_int_data&action=edit&redlink=1)
 - [accessory_horn_hookup_data](https://modding.scssoft.com/index.php?title=Documentation/Engine/Units/accessory_horn_hookup_data&action=edit&redlink=1)
 
-## Related Units
+## 相关单元
 
 - [traffic_trailer](https://modding.scssoft.com/index.php?title=Documentation/Engine/Units/traffic_trailer&action=edit&redlink=1)
 - [traffic_vehicle](https://modding.scssoft.com/index.php?title=Documentation/Engine/Units/traffic_vehicle&action=edit&redlink=1)

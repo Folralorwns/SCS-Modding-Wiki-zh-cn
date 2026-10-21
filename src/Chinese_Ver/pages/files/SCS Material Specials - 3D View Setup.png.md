@@ -1,4 +1,4 @@
-# File:SCS Material Specials - 3D View Setup.png
+# 文件:SCS Material Specials - 3D View Setup.png
 
 ![SCS Material Specials - 3D View Setup.png](../../../images/files/SCS%20Material%20Specials%20-%203D%20View%20Setup.png/SCS_Material_Specials_-_3D_View_Setup.png)
 

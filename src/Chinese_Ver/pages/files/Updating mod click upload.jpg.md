@@ -1,4 +1,4 @@
-# File:Updating mod click upload.jpg
+# 文件:Updating mod click upload.jpg
 
 ![Updating mod click upload.jpg](../../../images/files/Updating%20mod%20click%20upload.jpg/Updating_mod_click_upload.jpg)
 

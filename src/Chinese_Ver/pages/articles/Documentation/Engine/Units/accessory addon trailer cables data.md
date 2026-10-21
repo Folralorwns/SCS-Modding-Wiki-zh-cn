@@ -1,34 +1,34 @@
-# Documentation/Engine/Units/accessory addon trailer cables data
+# 文档/引擎/单元/配件附加挂车线缆数据
 
-> **Note:** This article is a work in progress and has yet to be reviewed by SCS staff. Some information may be incomplete or inaccurate.
+> **注意：** 本文仍在编写中，尚未经过 SCS 员工审阅。部分信息可能不完整或不准确。
 
-The **accessory_addon_trailer_cables_data** unit class is used for adding dynamic trailer cables between a vehicle and its trailer. For player trucks, units of this type are usually defined in **/def/vehicle/truck/<brand.model>/accessory/trlr_cables/*.sii** and valid unit names end in `.trlr_cables`. For player trailers, units of this type are usually defined in **/def/vehicle/trailer/<trailer_name>/accessory/trlr_cables/*.sii** and valid unit names end in `.trlr_cables`. *This unit type was added in 1.31.*
+**accessory_addon_trailer_cables_data** 单元类用于在车辆与其挂车之间添加动态挂车线缆。对于玩家卡车，此类型的单元通常定义在 **/def/vehicle/truck/<brand.model>/accessory/trlr_cables/*.sii** 中，有效的单元名称以 `.trlr_cables` 结尾。对于玩家挂车，此类型的单元通常定义在 **/def/vehicle/trailer/<trailer_name>/accessory/trlr_cables/*.sii** 中，有效的单元名称以 `.trlr_cables` 结尾。*此单元类型在 1.31 中添加。*
 
-## Attributes
+## 属性
 
-Many common attributes are inherited from [**accessory_data**](accessory%20data.md).
+许多通用属性继承自 [**accessory_data**](accessory%20data.md)。
 
-| Name | [Type](../Units.md#Attribute_types) | Default Value | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| exterior_model | string |  | Path to the model descriptor (.pmd) for the model to be displayed in the exterior view (if applicable). |
-| exterior_model_uk | string |  | Path to the model descriptor (.pmd) for the model to be displayed in the exterior view for right-hand drive vehicles (if applicable). If unset, defaults to **exterior_model**. |
-| coll | string |  | Path to the collision descriptor (.pmc) for the accessory (if applicable). |
-| look | token | default | Name of the look to be used on all descriptors of this accessory. **Note:** All models for an accessory must have the same set of looks. |
-| variant | token | default | Name of the variant to be used on all descriptors of this accessory. **Note:** All models for an accessory must have the same set of variants. |
-| cables | array<owner_ptr> |  | Each member points to a [trailer_cable_data](trailer%20cable%20data.md) unit |
+| exterior_model | string |  | 要在外部视图中显示的模型对应的模型描述符（.pmd）路径（如果适用）。 |
+| exterior_model_uk | string |  | 右舵车辆要在外部视图中显示的模型对应的模型描述符（.pmd）路径（如果适用）。如果未设置，则默认为 **exterior_model**。 |
+| coll | string |  | 配件的碰撞描述符（.pmc）路径（如果适用）。 |
+| look | token | default | 用于此配件所有描述符的 look 名称。**注意：** 一个配件的所有模型必须具有相同的 look 集合。 |
+| variant | token | default | 用于此配件所有描述符的 variant 名称。**注意：** 一个配件的所有模型必须具有相同的 variant 集合。 |
+| cables | array<owner_ptr> |  | 每个成员指向一个 [trailer_cable_data](trailer%20cable%20data.md) 单元 |
 
-## Model
+## 模型
 
-A valid trailer cables accessory model must have the following:
+有效的挂车线缆配件模型必须包含以下内容：
 
-- Some visible geometry (models cannot contain only locators)
-- Attachment locators for each member defined in the *cables* array, where the truck plug model will be placed. The locator names are defined by each **trailer_cable_data** unit's *locator_prefix* attribute.
+- 一些可见几何体（模型不能只包含定位器）
+- 为 *cables* 数组中定义的每个成员提供连接定位器，卡车插头模型将放置在这些定位器处。定位器名称由每个 **trailer_cable_data** 单元的 *locator_prefix* 属性定义。
 
-It may additionally make use of the following:
+它还可以使用以下内容：
 
-- Rest locators for each defined cable where the trailer plug model will be placed when there is no trailer connected (otherwise the cable will not be drawn/simulated when there is no trailer connected). The locator names are defined by each **trailer_cable_data** unit's *rest_locator_prefix* attribute.
-- Special part names are displayed only during particular states:
-  - `cables_off` is displayed only when no trailer is attached
-  - `cables_on` is displayed only when a trailer is attached
+- 为每根已定义的线缆提供静置定位器，在未连接挂车时，挂车插头模型将放置在这些定位器处（否则未连接挂车时线缆将不会被绘制/模拟）。定位器名称由每个 **trailer_cable_data** 单元的 *rest_locator_prefix* 属性定义。
+- 特殊部件名称仅在特定状态下显示：
+  - `cables_off` 仅在未连接挂车时显示
+  - `cables_on` 仅在连接挂车时显示
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Units/accessory_addon_trailer_cables_data | revision: 5348 | captured: 2026-10-21 23:56:14 -->

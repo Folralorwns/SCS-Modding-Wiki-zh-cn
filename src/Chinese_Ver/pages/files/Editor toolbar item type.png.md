@@ -1,4 +1,4 @@
-# File:Editor toolbar item type.png
+# 文件:Editor toolbar item type.png
 
 ![Editor toolbar item type.png](../../../images/files/Editor%20toolbar%20item%20type.png/Editor_toolbar_item_type.png)
 

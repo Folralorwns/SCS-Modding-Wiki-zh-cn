@@ -1,4 +1,4 @@
-# File:Ets2 ats program properties.png
+# 文件:Ets2 ats program properties.png
 
 ![Ets2 ats program properties.png](../../../images/files/Ets2%20ats%20program%20properties.png/Ets2_ats_program_properties.png)
 

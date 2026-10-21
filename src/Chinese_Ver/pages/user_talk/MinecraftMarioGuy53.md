@@ -1,6 +1,6 @@
 # User talk:MinecraftMarioGuy53
 
-Redirect to:
+重定向至：
 
 - [User talk:SimulatorSam](SimulatorSam.md)
 

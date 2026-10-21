@@ -1,4 +1,4 @@
-# File:Simple cube setup mod packing auto settings.jpg
+# 文件:Simple cube setup mod packing auto settings.jpg
 
 ![Simple cube setup mod packing auto settings.jpg](../../../images/files/Simple%20cube%20setup%20mod%20packing%20auto%20settings.jpg/Simple_cube_setup_mod_packing_auto_settings.jpg)
 

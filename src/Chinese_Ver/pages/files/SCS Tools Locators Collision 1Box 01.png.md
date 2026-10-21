@@ -1,4 +1,4 @@
-# File:SCS Tools Locators Collision 1Box 01.png
+# 文件:SCS Tools Locators Collision 1Box 01.png
 
 ![SCS Tools Locators Collision 1Box 01.png](../../../images/files/SCS%20Tools%20Locators%20Collision%201Box%2001.png/SCS_Tools_Locators_Collision_1Box_01.png)
 

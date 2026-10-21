@@ -1,4 +1,4 @@
-# File:0026 upload success.jpg
+# 文件:0026 upload success.jpg
 
 ![0026 upload success.jpg](../../../images/files/0026%20upload%20success.jpg/0026_upload_success.jpg)
 

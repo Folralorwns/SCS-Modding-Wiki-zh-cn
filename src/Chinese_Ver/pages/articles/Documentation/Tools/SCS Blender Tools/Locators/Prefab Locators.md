@@ -1,260 +1,260 @@
-# Documentation/Tools/SCS Blender Tools/Locators/Prefab Locators
+# 文档/工具/SCS Blender Tools/定位器/预制件定位器
 
-Prefab locators are used during the creation of prefab map assets. Examples of this assets are: roads, crosses, docking companies, services, gas stations etc. So purpose of prefab locators in this assets is to store data for AI traffic connection/rules, players interactions and GPS navigation.
+预制件定位器用于创建预制件地图资源。此类资源的示例包括：道路、路口、停靠公司、服务设施、加油站等。因此，预制件定位器在这些资源中的作用是存储用于 AI 交通连接/规则、玩家交互和 GPS 导航的数据。
 
-Because of different usage and data we have multiple types of Prefab Locators with their own set of properties described below.
+由于用途和数据各不相同，我们提供了多种类型的预制件定位器，它们各自拥有下文所述的一组属性。
 
-## Control Node
+## 控制节点
 
-Control Node is used: as prefab control in SCS map editor, as connection to other map assets and also as AI traffic entry/exit point.
+控制节点的用途包括：在 SCS 地图编辑器中作为预制件控制，作为与其他地图资源的连接，以及作为 AI 交通的进入/退出点。
 
-For proper prefab creation this requirements have to be meet:
+要正确创建预制件，必须满足以下要求：
 
-1. Prefab must have from 2 to 6 control nodes;
-2. Each control node has to have unique index, defined by "Node Index" property;
-3. When creating more than 2 nodes, they have to be placed clockwise starting with index 0;
-4. If prefab should be extended with in game generated terrain, then control node has to have terrain points assigned on it's ***right*** side.
+1. 预制件必须拥有 2 到 6 个控制节点；
+2. 每个控制节点都必须具有唯一索引，由 “Node Index” 属性定义；
+3. 创建超过 2 个节点时，必须从索引 0 开始按顺时针方向放置；
+4. 如果预制件需要使用游戏内生成的地形进行延伸，则控制节点必须在***右***侧分配地形点。
 
 [![SCS_Tools_Locators_Prefab_CN.280.png](../../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Locators/Prefab%20Locators/SCS_Tools_Locators_Prefab_CN.280.png)](../../../../../files/SCS%20Tools%20Locators%20Prefab%20CN.280.png.md)
 
-### Node Index
+### 节点索引
 
-Property which defines index of the control node.
+定义控制节点索引的属性。
 
-### Assign Terrain Points
+### 分配地形点
 
-Operator for assigning terrain points from mesh to the control node. For usage please use info icon on the left side of operator button.
+用于将网格中的地形点分配到控制节点的操作符。使用方法请参阅操作符按钮左侧的信息图标。
 
-### Clear All Terrain Points
+### 清除所有地形点
 
-Operator for clearing all terrain points from the control node.
+用于清除控制节点中所有地形点的操作符。
 
-### Preview Terrain Points [Visible|All]
+### 预览地形点 [Visible|All]
 
-Are operators for previewing currently assigned terrain points of the control node. ***Visible*** operator will show only assigned terrain points of currently visible mesh in 3D viewport; as for ***All*** will also preview any assigned terrain points from hidden mesh.
+这些操作符用于预览控制节点当前已分配的地形点。***Visible*** 操作符仅显示 3D 视图中当前可见网格已分配的地形点；而 ***All*** 还会预览隐藏网格中已分配的地形点。
 
-## Sign
+## 标志牌
 
-Sign locator is exactly what names says: locator for placing signs or any kind of static object (lamps, trash bins, etc.) on prefabs. With assigning "Sign Model" property from Sign Library it is decided which sign will appear on the place of locator in the game.
+标志牌定位器正如其名，就是用于在预制件上放置标志牌或任何类型静态对象（路灯、垃圾桶等）的定位器。通过从标志库中指定 “Sign Model” 属性，即可决定游戏中定位器所在位置会出现哪种标志牌。
 
-> > **Note:** If you are not able to assign any sign to "Sign Model" property, make sure your Sign Library path is properly set.
+> > **注意：** 如果你无法为 “Sign Model” 属性指定任何标志牌，请确认标志库路径已正确设置。
 
 [![SCS_Tools_Locators_Prefab_SIGN.280.png](../../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Locators/Prefab%20Locators/SCS_Tools_Locators_Prefab_SIGN.280.png)](../../../../../files/SCS%20Tools%20Locators%20Prefab%20SIGN.280.png.md)
 
-### Sign Model
+### 标志模型
 
-Property defining sign id which shall be used in the game.
+定义游戏中要使用的标志 ID 的属性。
 
-Additionally button **🗘** on the right side gives possibility to reload sign models library on the fly, without need to navigate to global settings panel.
+此外，右侧的 **🗘** 按钮可以即时重新加载标志模型库，无需导航到全局设置面板。
 
-## Spawn Point
+## 生成点
 
-Spawn point locator defines points of different predefined actions or an origin point for a result of an action.
+生成点定位器用于定义各种预定义动作的位置，或某个动作结果的起始点。
 
-Example usage for company dock for Euro Truck Simulator 2 is creating at least two spawn points:
+Euro Truck Simulator 2 中公司停靠站的用法示例是至少创建两个生成点：
 
-1. Spawn point of type "Company Point" which defines, check in point that player uses when he wants to select delivery;
-2. 2nd spawn point of type "Unload (Easy)" which defines, the point to which user has to park trailer.
+1. 类型为 “Company Point” 的生成点，用于定义玩家想要选择送货任务时使用的签到点；
+2. 第二个类型为 “Unload (Easy)” 的生成点，用于定义用户必须停放挂车的位置。
 
 [![SCS_Tools_Locators_Prefab_SP.280.png](../../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Locators/Prefab%20Locators/SCS_Tools_Locators_Prefab_SP.280.png)](../../../../../files/SCS%20Tools%20Locators%20Prefab%20SP.280.png.md)
 
-### Spawn Type
+### 生成类型
 
-Property defining type of spawn point.
+定义生成点类型的属性。
 
-## Traffic Semaphore
+## 交通信号灯
 
-Traffic semaphore locators define stop and go actions for AI traffic. Primarily it's used for traffic lights but it can also be used for any other game defined profile, for example stopping AI car at gas station for fuel filling.
+交通信号灯定位器用于定义 AI 交通的停止与通行动作。它主要用于交通信号灯，但也可用于游戏中定义的任何其他配置档，例如让 AI 车辆在加油站停车加油。
 
-Its behaviour is defined by selected "Profile" and its bind to user specified "ID". Selected "ID" is then used in "Navigation Points" to define affected AI traffic lane of this semaphore (check Navigation Point for details).
+其行为由所选的 “Profile” 以及它与用户指定的 “ID” 的绑定关系决定。随后，选定的 “ID” 会在 “Navigation Points” 中用于定义该信号灯所影响的 AI 交通车道（详情请参阅导航点）。
 
-Additionally user can specify "Type" property for defining of exceptional behaviour (use it only if you know what you are doing).
+此外，用户还可以指定 “Type” 属性以定义特殊行为（仅在明确了解其作用时使用）。
 
 [![SCS_Tools_Locators_Prefab_TS.280.png](../../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Locators/Prefab%20Locators/SCS_Tools_Locators_Prefab_TS.280.png)](../../../../../files/SCS%20Tools%20Locators%20Prefab%20TS.280.png.md)
 
 ### ID
 
-Property defining ID of the semaphore.
+定义信号灯 ID 的属性。
 
-### Profile
+### 配置档
 
-Property defining profile from Traffic Semaphore Library, which defines behaviour of traffic semaphore: intervals/distances and cycle delays.
+用于定义取自交通信号灯库的配置档的属性，该配置档决定交通信号灯的行为：间隔/距离和周期延迟。
 
-Additionally button **🗘** on the right side gives possibility to reload semaphore library on the fly, without need to navigate to global settings panel.
+此外，右侧的 **🗘** 按钮可以即时重新加载信号灯库，无需导航到全局设置面板。
 
-> > **Note:** If you are not able to assign any profile, make sure your Traffic Semaphore Library path is properly set.
+> > **注意：** 如果你无法指定任何配置档，请确认交通信号灯库路径已正确设置。
 
-### Type
+### 类型
 
-Property defining semaphore type. In most cases "(use profile)" should be in use, meaning any intervals/distances and cycle delay will be defined by used profile from Traffic Semaphore Library.
+定义信号灯类型的属性。大多数情况下应使用 “(use profile)”，这意味着所有间隔/距离和周期延迟都将由交通信号灯库中所用的配置档定义。
 
-### Intervals/Distances [G,O,R,O]
+### 间隔/距离 [G,O,R,O]
 
-Properties defining intervals/distances for each state of traffic semaphore. Enabled only if type of traffic semaphore is not "(use profile)".
+定义交通信号灯每种状态间隔/距离的属性。仅当交通信号灯的类型不是 “(use profile)” 时可用。
 
-### Cycle Delay
+### 周期延迟
 
-Property defining delay for which each semaphore cycle will be delayed before starting again. Enabled only if type of traffic semaphore is not "(use profile)".
+定义每个信号灯周期在重新开始前延迟多久的属性。仅当交通信号灯的类型不是 “(use profile)” 时可用。
 
-## Navigation Point
+## 导航点
 
-Navigation Point locators are used for creation of AI traffic lanes with curves. Because AI traffic lanes define driving paths for AI cars inside prefab, navigation point locators have to be properly connected and they have to lead from one control node to another. Moreover navigation points on each ends has to have set boundary lanes from which traffic will come and go to other connected map assets.
+导航点定位器用于创建带曲线的 AI 交通车道。由于 AI 交通车道定义了 AI 车辆在预制件内的行驶路径，因此导航点定位器必须正确连接，并且必须从一个控制节点引导到另一个控制节点。此外，两端的导航点必须设置边界车道，交通将由此往来于其他相连的地图资源。
 
-If prefab shouldn't have any traffic inside, no navigation point locators should be created.
+如果预制件内部不应有任何交通，则不应创建任何导航点定位器。
 
 [![SCS_Tools_Locators_Prefab_NP.280.png](../../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Locators/Prefab%20Locators/SCS_Tools_Locators_Prefab_NP.280.png)](../../../../../files/SCS%20Tools%20Locators%20Prefab%20NP.280.png.md)
 
-### Low Probability
+### 低概率
 
-Property defining smaller visiting probability for AI cars.
+用于为 AI 车辆定义较低通行概率的属性。
 
-### Additive Priority
+### 附加优先级
 
-Property defining that selected value from "Priority Modifier" will be added to already existing priority for this lane.
+定义 “Priority Modifier” 中所选值将累加到该车道现有优先级的属性。
 
-### Limit Displacement
+### 限制位移
 
-Property defining extra limited displacement for AI cars.
+用于为 AI 车辆定义额外受限位移的属性。
 
-### Allowed Vehicles
+### 允许的车辆
 
-Property defining type of vehicles that are suitable to enter AI traffic curves starting at this navigation point. AI cars will try to go into most suitable curve, but if there will be none, they can also use any other even if they are not allowed to.
+定义适合驶入从该导航点开始的 AI 交通曲线的车辆类型的属性。AI 车辆会尝试驶入最合适的曲线，但如果没有合适的曲线，它们也可以使用任何其他曲线，即使并不被允许。
 
-### Blinkers [Left Blinker|No Blinker|No Blinker (forced)|Right Blinker]
+### 转向灯 [Left Blinker|No Blinker|No Blinker (forced)|Right Blinker]
 
-Property defining blinker usage for all incoming AI traffic curves connected to this navigation point.
+定义连接到该导航点的所有进入 AI 交通曲线的转向灯使用方式的属性。
 
-### Priority Modifier
+### 优先级修饰值
 
-Property defining priority of vehicles driving into the next curve. Priority modifier has to be set only on navigation point which next curve is intersecting with opposite lane or next navigation point is merging more curves. Upon that modifier values game will decide order of cars proceeding in the point of intersection.
+定义驶入下一条曲线的车辆优先级的属性。只有当导航点的下一条曲线与对向车道相交，或下一个导航点会汇合多条曲线时，才需要在该导航点上设置优先级修饰值。游戏将根据该修饰值决定车辆在交叉点的通行顺序。
 
-> > **Note:** If property modifiers won't be properly set, game will print out errors about it, so you will be able to fix missing priorities.
+> > **注意：** 如果属性修饰值设置不当，游戏会输出相关错误，以便你修正缺失的优先级。
 
-### Traffic Semaphore
+### 交通信号灯
 
-This property binds Traffic Semaphore to AI traffic lanes by it's "ID" property. If "ID" property from Traffic Semaphore locator matches this property value, then AI will behave by the rules of that semaphore locator.
+此属性通过交通信号灯的 “ID” 属性将其绑定到 AI 交通车道。如果交通信号灯定位器的 “ID” 属性与此属性值匹配，AI 便会按照该信号灯定位器的规则行动。
 
-### Traffic Rule
+### 交通规则
 
-Property defining additional rule for AI cars like city areas, motorways or even stop lines. This property can be set to any rule from Traffic Rules Library.
+用于为 AI 车辆定义附加规则（如城区、高速公路甚至停止线）的属性。此属性可设置为交通规则库中的任意规则。
 
-Additionally button **🗘** on the right side gives possibility to reload traffic rules library on the fly, without need to navigate to global settings panel.
+此外，右侧的 **🗘** 按钮可以即时重新加载交通规则库，无需导航到全局设置面板。
 
-> > **Note:** Speed limit rules should be avoided in this case, because speed limits are now regulated by signs itself.
+> > **注意：** 这种情况下应避免使用限速规则，因为限速现在由标志牌本身来规定。
 
-> > **Note:** If you want to assign rule and list turns out empty, make sure your Traffic Rules Library path is properly set.
+> > **注意：** 如果你想指定规则但列表为空，请确认交通规则库路径已正确设置。
 
-### Boundary
+### 边界
 
-Property defining input/output AI traffic lanes for selected "Boundary Node".
+为选定的 “Boundary Node” 定义输入/输出 AI 交通车道的属性。
 
-> > **Note:** Each control node can have only one unique boundary value of input/output lanes, meaning you can not use same input/output lane on more navigation points for same control node.
+> > **注意：** 每个控制节点只能有一个唯一的输入/输出车道边界值，这意味着不能在同一控制节点的多个导航点上使用相同的输入/输出车道。
 
-### Boundary Node
+### 边界节点
 
-Property binding control node that should use "Boundary" setting from this navigation point. Moreover this property is used only if "Boundary" of this navigation point will be set some input/output lane, otherwise value of this property doesn't matter.
+用于绑定应使用此导航点 “Boundary” 设置的控制节点的属性。此外，只有当此导航点的 “Boundary” 设置了某个输入/输出车道时，该属性才会生效，否则此属性的值无关紧要。
 
-### Connect/Disconect Navigation Points
+### 连接/断开导航点
 
-Operator for connecting/disconnecting two navigation points into a curve for AI traffic paths. In order to use this operator two navigation points have to be selected. Moreover order of selection will tell in which direction curve will be directed.
+用于将两个导航点连接/断开为 AI 交通路径曲线的操作符。使用此操作符需要选中两个导航点。此外，选择顺序将决定曲线的方向。
 
-## Map Point
+## 地图点
 
-Map Point locators are used for visualizing prefab on world map and GPS navigation. To be properly visualized map points have to be properly connected, meaning cross prefabs will future connections from node to node, but company prefabs will future only "Polygon" visualization.
+地图点定位器用于在世界地图和 GPS 导航中可视化预制件。要正确可视化，地图点必须正确连接，这意味着十字型预制件将提供节点到节点的连接，而公司预制件将只提供 “Polygon” 可视化。
 
-Proper connections have to be done depending on selected "Road Size":
+必须根据所选的 “Road Size” 进行正确连接：
 
-1. Polygon - in this case map points have to be connected in closed quads (useful for visualizing buildings on prefabs);
-2. any other option - in this case map points have to lead from one control node to another, the same principle as by Navigation Point locators.
+1. Polygon - 这种情况下地图点必须连接成闭合四边形（适用于可视化预制件上的建筑）；
+2. 任何其他选项 - 这种情况下地图点必须从一个控制节点引导到另一个控制节点，原理与导航点定位器相同。
 
 [![SCS_Tools_Locators_Prefab_MP.280.png](../../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Locators/Prefab%20Locators/SCS_Tools_Locators_Prefab_MP.280.png)](../../../../../files/SCS%20Tools%20Locators%20Prefab%20MP.280.png.md)
 
-### Road Over
+### 道路覆盖
 
-Property marking this map point to be drawn after all the map points without this flag.
+将此地图点标记为在所有未带此标志的地图点之后绘制的属性。
 
-### No Outline
+### 无轮廓
 
-Property marking no outline drawing. This might be useful for buildings drawing.
+标记不绘制轮廓的属性。这在绘制建筑时可能有用。
 
-### No Arrow
+### 无箭头
 
-Property marking no drawing for "green" pointing arrow on GPS navigation. This is useful in the case prefabs are using more that 2 control nodes and paths for navigation are still clear.
+标记在 GPS 导航中不绘制 “绿色” 指示箭头的属性。当预制件使用超过 2 个控制节点且导航路径仍然清晰时，这会很有用。
 
-### Prefab Exit
+### 预制件出口
 
-Property marking this map point as prefab exit stops GPS navigation to be visualized further. This can be used in the case of company dock, as usually we don't need extra navigation inside that company dock.
+将此地图点标记为预制件出口的属性，可阻止 GPS 导航继续可视化。这可用于公司停靠站的情况，因为通常不需要在公司停靠站内部提供额外导航。
 
-### Road Size
+### 道路尺寸
 
-Property defining type of the road this map point should visualize. In the case of "Polygon" this map point will be used for visualizing polygons instead of road and has to be connected with 3 others into a quad. Moreover using "Polygon" option will give user option to select "Custom Color" for visualization of polygon.
+定义此地图点应可视化何种道路类型的属性。在 “Polygon” 的情况下，此地图点将用于可视化多边形而非道路，并且必须与其他 3 个点连接成四边形。此外，使用 “Polygon” 选项会让用户可以选择 “Custom Color” 来可视化多边形。
 
-### Road Offset
+### 道路偏移
 
-Property defining centre offset between road lanes.
+定义道路车道之间中心偏移的属性。
 
-### Custom Color
+### 自定义颜色
 
-Property giving possibility to define custom color type in the case "Road Size" of this map point is set to "Polygon". There are 3 different custom colors each for its own purpose:
+当此地图点的 “Road Size” 设置为 “Polygon” 时，此属性可用于定义自定义颜色类型。共有 3 种不同的自定义颜色，各有其用途：
 
-1. Light - used for accessible prefab areas;
-2. Dark - used for buildings;
-3. Green - used for grass and inaccessible prefab areas.
+1. Light - 用于可通行的预制件区域；
+2. Dark - 用于建筑；
+3. Green - 用于草地和不可通行的预制件区域。
 
-### Assigned Node
+### 指定节点
 
-Property for binding map points to control nodes. Has to be set on map points which should be used as entry/exit GPS navigation points to/from this prefab.
+用于将地图点绑定到控制节点的属性。必须设置在应作为进出此预制件的 GPS 导航点的地图点上。
 
-### Destination Nodes
+### 目标节点
 
-Property defining to which control node GPS can navigate from this map point (some sort of direction giving). This should be used only in the case that any neighbour of this map point has more that 2 neighbours and current map point is not having any "Assigned Node".
+定义 GPS 可从该地图点导航到哪个控制节点的属性（某种指路方式）。仅当地图点的任一相邻点拥有超过 2 个相邻点、且当前地图点没有 “Assigned Node” 时才应使用。
 
-### Connect/Disconnect Map Points
+### 连接/断开地图点
 
-Operator for connecting/disconnecting two map points for connection lines used in world map and GPS navigation. In order to use this operator two map points have to be selected. Selection order this time doesn't matter as connections between map points are undirected.
+用于连接/断开两个地图点的操作符，这些连接线用于世界地图和 GPS 导航。使用此操作符需要选中两个地图点。这次选择顺序无关紧要，因为地图点之间的连接是无向的。
 
-## Trigger Point
+## 触发点
 
-Trigger points are intended to mark area on the prefab where action will be able to take place. Actions are taken from Trigger Action Library and are triggered when player enters area marked with trigger point polygons or sphere alone.
+触发点用于在预制件上标记可以执行动作的区域。动作取自触发动作库，并在玩家进入由触发点多边形标记的区域（或仅由球体标记的区域）时触发。
 
-Example of trigger points usage is marking rest areas on prefabs for Euro Truck Simulator 2 with a polygon.
+触发点用法的示例是：在 Euro Truck Simulator 2 的预制件上用多边形标记休息区。
 
 [![SCS_Tools_Locators_Prefab_TP.280.png](../../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Locators/Prefab%20Locators/SCS_Tools_Locators_Prefab_TP.280.png)](../../../../../files/SCS%20Tools%20Locators%20Prefab%20TP.280.png.md)
 
-### Action
+### 动作
 
-Property defining action which should trigger when player enters area. Available actions are predefined and loaded from Trigger Actions Library.
+定义玩家进入区域时应触发的动作的属性。可用动作是预定义的，并从触发动作库加载。
 
-Additionally button **🗘** on the left side gives possibility to reload trigger actions library on the fly, without need to navigate to global settings panel.
+此外，左侧的 **🗘** 按钮可以即时重新加载触发动作库，无需导航到全局设置面板。
 
-> > **Note:** If you are not able to assign any action, make sure your Trigger Actions Library path is properly set.
+> > **注意：** 如果你无法指定任何动作，请确认触发动作库路径已正确设置。
 
-### Range
+### 范围
 
-Property defining range of trigger point or area of activation. In the case of used "Sphere Trigger" property defines radius of spherical area around trigger point, otherwise this defines vertical range of trigger area.
+定义触发点范围或激活区域的属性。在使用 “Sphere Trigger” 的情况下，该属性定义触发点周围球形区域的半径，否则它定义触发区域的垂直范围。
 
-### Reset Delay
+### 重置延迟
 
-Property defining time in seconds that player have to be outside trigger area until he can activate it again.
+定义玩家必须处于触发区域之外多久（以秒计）才能再次激活该区域的属性。
 
-### Sphere Trigger
+### 球形触发
 
-Property defining this trigger point should behave as sphere trigger. In the case of usage, this trigger point should not be connected to any other trigger point.
+定义此触发点应作为球形触发器工作的属性。若使用该属性，此触发点不应连接到任何其他触发点。
 
-### Partial Activation
+### 部分激活
 
-Property defining that only touching border of trigger area by player is enough to trigger action.
+定义玩家只需触及触发区域边界即可触发动作的属性。
 
-### One Time Activation
+### 一次性激活
 
-Property defining that this trigger point can be activated only once.
+定义此触发点只能激活一次的属性。
 
-### Manual Activation
+### 手动激活
 
-Property which defines that player has to manually activate action once he is inside trigger area.
+定义玩家进入触发区域后必须手动激活动作的属性。
 
-### Connect/Disconnect Trigger Points
+### 连接/断开触发点
 
-Operator for connecting/disconnecting two trigger points into trigger area. Make sure that trigger area is closed n-gon. For usage of this operator two map points have to be selected. Selection order doesn't matter as connections are undirected.
+用于将两个触发点连接/断开为触发区域的操作符。请确保触发区域是闭合的 n 边形。使用此操作符需要选中两个地图点。选择顺序无关紧要，因为连接是无向的。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/SCS_Blender_Tools/Locators/Prefab_Locators | revision: 5702 | captured: 2026-10-21 23:56:14 -->

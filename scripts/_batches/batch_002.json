@@ -1,0 +1,14 @@
+{
+ "id": 2,
+ "chars": 6113,
+ "files": [
+  "pages/articles/Documentation/Engine/Config variables/g currency.md",
+  "pages/articles/Documentation/Engine/Config variables/g force load selector.md",
+  "pages/articles/Documentation/Engine/Config variables/g parking difficulty.md",
+  "pages/articles/Documentation/Engine/Config variables/g pounds.md",
+  "pages/articles/Documentation/Engine/Config variables/r deferred debug.md",
+  "pages/articles/Documentation/Engine/Config variables/r multimon mode.md",
+  "pages/articles/Documentation/Engine/Configuration variables/g cam steering reverse.md",
+  "pages/articles/Documentation/Engine/Configuration variables/g cargo sort.md"
+ ]
+}

@@ -1,4 +1,4 @@
-# File:Mod layout explanation.jpg
+# 文件:Mod layout explanation.jpg
 
 ![Mod layout explanation.jpg](../../../images/files/Mod%20layout%20explanation.jpg/Mod_layout_explanation.jpg)
 

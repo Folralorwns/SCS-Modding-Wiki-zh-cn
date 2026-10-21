@@ -1,4 +1,4 @@
-# Template:TutorialEntry
+# 模板:TutorialEntry
 
 |  |
 | --- |

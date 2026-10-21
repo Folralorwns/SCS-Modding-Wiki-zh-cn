@@ -1,4 +1,4 @@
-# File:Ext shadow 3b.jpg
+# 文件:Ext shadow 3b.jpg
 
 ![Ext shadow 3b.jpg](../../../images/files/Ext%20shadow%203b.jpg/Ext_shadow_3b.jpg)
 

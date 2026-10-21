@@ -1,4 +1,4 @@
-# File:Cmd admin.jpg
+# 文件:Cmd admin.jpg
 
 ![Cmd admin.jpg](../../../images/files/Cmd%20admin.jpg/Cmd_admin.jpg)
 

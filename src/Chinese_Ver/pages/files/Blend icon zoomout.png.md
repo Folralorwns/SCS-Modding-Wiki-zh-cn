@@ -1,4 +1,4 @@
-# File:Blend icon zoomout.png
+# 文件:Blend icon zoomout.png
 
 ![Blend icon zoomout.png](../../../images/files/Blend%20icon%20zoomout.png/Blend_icon_zoomout.png)
 

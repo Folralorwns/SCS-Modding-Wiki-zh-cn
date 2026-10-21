@@ -1,4 +1,4 @@
-# File:Symbolic link.jpg
+# 文件:Symbolic link.jpg
 
 ![Symbolic link.jpg](../../../images/files/Symbolic%20link.jpg/Symbolic_link.jpg)
 

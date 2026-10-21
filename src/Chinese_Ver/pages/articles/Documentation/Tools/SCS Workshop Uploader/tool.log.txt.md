@@ -1,8 +1,8 @@
-# Documentation/Tools/SCS Workshop Uploader/tool.log.txt
+# 文档/工具/SCS Workshop Uploader/tool.log.txt
 
-The engine log for the SCS Workshop Uploader contains more information about errors and warnings.
+SCS Workshop Uploader 的引擎日志包含有关错误和警告的更多信息。
 
-## Location
+## 位置
 
 #### Windows
 
@@ -10,7 +10,7 @@ The engine log for the SCS Workshop Uploader contains more information about err
 C:/Users/<your_user_name>/Documents/SCS Workshop Uploader/tool.log.txt
 ```
 
-> **Note:** In case of Windows 10 and OneDrive usage the path will be `C:/Users/<your_user_name>/OneDrive/Documents/SCS Workshop Uploader/tool.log.txt`
+> **注意：** 在 Windows 10 且使用 OneDrive 的情况下，路径为 `C:/Users/<your_user_name>/OneDrive/Documents/SCS Workshop Uploader/tool.log.txt`
 
 #### Linux
 

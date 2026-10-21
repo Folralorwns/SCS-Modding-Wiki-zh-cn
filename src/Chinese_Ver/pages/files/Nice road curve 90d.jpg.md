@@ -1,4 +1,4 @@
-# File:Nice road curve 90d.jpg
+# 文件:Nice road curve 90d.jpg
 
 ![Nice road curve 90d.jpg](../../../images/files/Nice%20road%20curve%2090d.jpg/Nice_road_curve_90d.jpg)
 

@@ -1,4 +1,4 @@
-# File:Simple cube create root.jpg
+# 文件:Simple cube create root.jpg
 
 ![Simple cube create root.jpg](../../../images/files/Simple%20cube%20create%20root.jpg/Simple_cube_create_root.jpg)
 

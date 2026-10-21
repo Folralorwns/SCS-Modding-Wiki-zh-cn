@@ -1,4 +1,4 @@
-# File:Editor node properties.png
+# 文件:Editor node properties.png
 
 ![Editor node properties.png](../../../images/files/Editor%20node%20properties.png/Editor_node_properties.png)
 

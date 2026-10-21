@@ -1,4 +1,4 @@
-# File:Editor content browser.png
+# 文件:Editor content browser.png
 
 ![Editor content browser.png](../../../images/files/Editor%20content%20browser.png/Editor_content_browser.png)
 

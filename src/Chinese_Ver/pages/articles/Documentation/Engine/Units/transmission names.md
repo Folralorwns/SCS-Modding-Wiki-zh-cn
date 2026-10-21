@@ -1,20 +1,20 @@
-# Documentation/Engine/Units/transmission names
+# 文档/引擎/单元/变速箱名称
 
-The **transmission_names** unit class is used to define custom names for the gears of a transmission which are displayed in the UI and dashboard. Units of this type are usually defined in **/def/vehicle/truck/<make.model>/transmission/*.sii** or included from a Serialized Unit Includes (.sui) file and are usually nameless (the unit name is prefixed by a dot like `.names` or `.foo.bar.names`). They are assigned to a transmission accessory via the likewise-named *transmission_names* attribute of the [accessory_transmission_data](accessory%20transmission%20data.md) unit class.
+**transmission_names** 单元类用于为变速箱的挡位定义自定义名称，这些名称会显示在 UI 和仪表盘中。此类型的单元通常定义在 **/def/vehicle/truck/<make.model>/transmission/*.sii** 中，或通过 Serialized Unit Includes（.sui）文件包含，并且通常为无名单元（单元名称以点号开头，如 `.names` 或 `.foo.bar.names`）。它们通过 [accessory_transmission_data](accessory%20transmission%20data.md) 单元类中同名的 *transmission_names* 属性分配给变速箱配件。
 
-## Attributes
+## 属性
 
-| Name | [Type](../Units.md#Attribute_types) | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 描述 |
 | --- | --- | --- |
-| neutral | string | The gear name to be displayed when the transmission is in neutral. |
-| reverse | array&lt;string&gt; | The gear names to be displayed for reverse gears. The array indices correspond to those in the *ratios_reverse* attribute of the parent *accessory_transmission_data* unit. |
-| forward | array&lt;string&gt; | The gear names to be displayed for reverse gears. The array indices correspond to those in the *ratios_forward* attribute of the parent *accessory_transmission_data* unit. |
+| neutral | string | 变速箱处于空挡时显示的挡位名称。 |
+| reverse | array&lt;string&gt; | 倒挡要显示的挡位名称。数组索引与父级 *accessory_transmission_data* 单元的 *ratios_reverse* 属性中的索引相对应。 |
+| forward | array&lt;string&gt; | 前进挡要显示的挡位名称。数组索引与父级 *accessory_transmission_data* 单元的 *ratios_forward* 属性中的索引相对应。 |
 
-> **Note:** While not a hard limit, it is advisable to keep the length of the gear names within three characters to avoid truncation, etc when displayed.
+> **注意：** 尽管并非硬性限制，但建议将挡位名称的长度控制在三个字符以内，以避免显示时出现截断等情况。
 
-## Example of an Embedded *transmission_names* Unit
+## 内嵌 *transmission_names* 单元示例
 
-The most typical usage is to embed the **transmission_names** within the same file as the **accessory_transmission_data** unit it belongs to. Here's an example of an *8LL* (8 + 2 crawler gears) using custom gear names within the same SiiNunit.
+最常见的用法是将 **transmission_names** 嵌入到其所属 **accessory_transmission_data** 单元的同一文件中。以下是一个 *8LL*（8 + 2 个爬行挡）在同一 SiiNunit 内使用自定义挡位名称的示例。
 
 **/vehicle/truck/<foo.bar>/transmission/rt8ll.sii:**
 
@@ -70,9 +70,9 @@ transmission_names: .names
 }
 ```
 
-## Example of an Included *transmission_names* Unit
+## 包含的 *transmission_names* 单元示例
 
-If a project is going to have a large number of transmissions using custom gear names and many will use the same custom gear names, it may be convenient to instead write a single .sui file with all unique instances of *transmission_names* and [include](../Units.md#Includes) it in the transmission definitions as needed. Let's say the earlier, embedded example is part of a larger set of transmissions using a handful of custom gear name sets.
+如果某个项目将有大量使用自定义挡位名称的变速箱，并且其中许多会使用相同的自定义挡位名称，那么更方便的做法可能是：编写一个包含所有唯一 *transmission_names* 实例的 .sui 文件，并按需将其[包含](../Units.md#Includes)到变速箱定义中。假设前面那个内嵌示例属于一个使用少量自定义挡位名称集的更大变速箱集合。
 
 **/vehicle/truck/<foo.bar>/transmission/rt8ll.sii:**
 
@@ -111,9 +111,9 @@ accessory_transmission_data : rt8ll.foo.bar.transmission
 }
 ```
 
-> **Note:** Observe that the include occurs *outside* the scope of the *accessory_transmission_data* unit, but *within* the scope of the SiiNunit.
+> **注意：** 请注意，包含操作发生在 *accessory_transmission_data* 单元的作用域*之外*，但位于 SiiNunit 的作用域*之内*。
 
-> **TIP:** It is helpful in this case to use more descriptive (but still nameless) unit names for the *transmission_names* units so that it's still possible to intuit which unit is being assigned to the transmission definition without needing to open the included file.
+> **提示：** 在这种情况下，为 *transmission_names* 单元使用更具描述性（但仍为无名）的单元名称会很有帮助，这样无需打开被包含的文件，也能直观看出哪个单元被分配给了变速箱定义。
 
 **/vehicle/truck/<foo.bar>/transmission/gear_names.sui:**
 
@@ -143,6 +143,6 @@ transmission_names: .other.names
 }
 ```
 
-> **Note:** Because the *transmission_names* units are nameless, the "gear_names.sui" file can be included in many transmission definitions without fear of namespace collisions because nameless units only exist within the scope of the SiiNunit in which they are declared. However, nameless units *within* an SiiNunit **must** have unique names within that scope.
+> **注意：** 由于 *transmission_names* 单元是无名单元，因此可以把“gear_names.sui”文件包含到许多变速箱定义中，而不必担心命名空间冲突，因为无名单元仅存在于声明它们的 SiiNunit 的作用域内。但是，同一 SiiNunit *内部*的无名单元**必须**在该作用域内具有唯一的名称。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Units/transmission_names | revision: 3176 | captured: 2026-10-21 23:56:14 -->

@@ -1,4 +1,4 @@
-# File:Hookup intro 02 props.jpg
+# 文件:Hookup intro 02 props.jpg
 
 ![Hookup intro 02 props.jpg](../../../images/files/Hookup%20intro%2002%20props.jpg/Hookup_intro_02_props.jpg)
 

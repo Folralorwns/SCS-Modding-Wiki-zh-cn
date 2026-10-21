@@ -1,4 +1,4 @@
-# File:SCS Tools Globals Display.280.png
+# 文件:SCS Tools Globals Display.280.png
 
 ![SCS Tools Globals Display.280.png](../../../images/files/SCS%20Tools%20Globals%20Display.280.png/SCS_Tools_Globals_Display.280.png)
 

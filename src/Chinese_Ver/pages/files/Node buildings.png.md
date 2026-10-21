@@ -1,4 +1,4 @@
-# File:Node buildings.png
+# 文件:Node buildings.png
 
 ![Node buildings.png](../../../images/files/Node%20buildings.png/Node_buildings.png)
 

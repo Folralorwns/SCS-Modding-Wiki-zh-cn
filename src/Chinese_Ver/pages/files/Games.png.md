@@ -1,4 +1,4 @@
-# File:Games.png
+# 文件:Games.png
 
 ![Games.png](../../../images/files/Games.png/Games.png)
 

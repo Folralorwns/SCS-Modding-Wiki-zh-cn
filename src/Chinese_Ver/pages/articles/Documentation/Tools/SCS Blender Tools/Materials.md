@@ -1,85 +1,85 @@
-# Documentation/Tools/SCS Blender Tools/Materials
+# 文档/工具/SCS Blender Tools/材质
 
-SCS Blender Tools uses its own material settings, so every material in Blender contains a panel called **SCS Material** in *Material* tab of Blender properties window. It is essential to use settings here exclusively to set up any available material properties. If you'll be changing the material's settings in Blender's standard panels, the appearance of the material will change in 3D View, but the SCS material settings will not change and exported material may look very different when viewed in SCS Game Engine.
+SCS Blender Tools 使用自己的材质设置，因此 Blender 中的每个材质都会在 Blender 属性窗口的 *Material* 选项卡中包含一个名为 **SCS Material** 的面板。设置任何可用的材质属性时，务必只使用此处的设置。如果你在 Blender 的标准面板中更改材质设置，材质的外观会在 3D 视图中发生变化，但 SCS 材质设置不会改变，导出的材质在 SCS 游戏引擎中查看时可能看起来截然不同。
 
-## Render and 3D View Setup
+## 渲染与 3D 视图设置
 
-To get closest result to the one in SCS Game Engine you should use EEVEE render engine:
+为获得最接近 SCS 游戏引擎中的效果，你应使用 EEVEE 渲染引擎：
 
 [![SCS_Material_Specials_-_EEVEE.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Materials/SCS_Material_Specials_-_EEVEE.280.png)](../../../../files/SCS%20Material%20Specials%20-%20EEVEE.280.png.md)
 
-and switch *Viewport Shading* to *Rendered* to see models rendered properly.
+并将 *Viewport Shading* 切换为 *Rendered*，以便正确查看渲染后的模型。
 
 [![SCS_Material_Specials_-_Rendered_Viewport.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Materials/SCS_Material_Specials_-_Rendered_Viewport.280.png)](../../../../files/SCS%20Material%20Specials%20-%20Rendered%20Viewport.280.png.md)
 
-> > **Note:** By default fully fledged reference lighting will be used, but if you want to create specific in-game time of the day like lighting, please refer to: [Scene Lighting](Scene%20Lighting.md)
+> > **注意：** 默认将使用完整的参考光照，但如果你想创建游戏中特定时段那样的光照，请参阅：[场景光照](Scene%20Lighting.md)
 
-## Merge Materials
+## 合并材质
 
-SCS Material panel also features one well hidden powerfull operator: **Merge Materials** located in panel header on the right side:
+SCS Material 面板还提供了一个颇为隐蔽但功能强大的操作符：**Merge Materials**，它位于面板标题栏右侧：
 
 [![SCS_Material_Specials_-_Merge_Materials.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Materials/SCS_Material_Specials_-_Merge_Materials.280.png)](../../../../files/SCS%20Material%20Specials%20-%20Merge%20Materials.280.png.md)
 
-This operator is able to merge materials depending on selected criteria from the newly appearing dialog when operator button is pressed.
+按下该操作符按钮后，可在新出现的对话框中根据所选条件合并材质。
 
-## Shader Usage
+## 着色器用法
 
-SCS Materials are created on the base of shader presets. When user is creating and using SCS Materials he can use any shader preset found in the list and switch/edit material flavors, attributes and textures. However second type of shader usage is imported shader, which is exclusively created only on import when model is using material effect that can not be found inside shader presets.
+SCS 材质基于着色器预设创建。用户在创建和使用 SCS 材质时，可以使用列表中的任意着色器预设，并切换或编辑材质的 flavor、属性和纹理。不过，着色器的第二种用法是导入着色器，它仅在导入时创建，且只当模型使用的材质效果无法在着色器预设中找到时才会创建。
 
-### Shader Preset
+### 着色器预设
 
 [![SCS_Material_Specials_-_Shader_Preset.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Materials/SCS_Material_Specials_-_Shader_Preset.280.png)](../../../../files/SCS%20Material%20Specials%20-%20Shader%20Preset.280.png.md)
 
-SCS Materials panel features the list of *Shader Presets*, where you can choose from materials with its own predefined values and change some of them to your liking. Moreover each shader preset now also features flavors, which are common extensions to many shaders.
+SCS Material 面板提供 *Shader Presets* 列表，你可以从中选择带有各自预定义值的材质，并按喜好更改其中一些值。此外，每个着色器预设现在还带有 flavor，它们是许多着色器的通用扩展。
 
-Flavors are changing behaviour of shader it's full effect name and in some cases adding or removing some material attributes or textures. Some flavors may not change mesh visually as they are used for different purposes. For example "shadow" flavor will tell shader to use this material also as shadow caster and thus there is nothing that should visually change on the mesh.
+Flavor 会改变着色器的完整效果名称及其行为，并在某些情况下添加或移除一些材质属性或纹理。有些 flavor 可能不会在视觉上改变网格，因为它们用于不同目的。例如，“shadow” flavor 会告诉着色器将此材质同时用作阴影投射体，因此网格上不应有任何视觉变化。
 
-### Imported Shader
+### 导入着色器
 
 [![SCS_Material_Specials_-_Imported_Shader.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Materials/SCS_Material_Specials_-_Imported_Shader.280.png)](../../../../files/SCS%20Material%20Specials%20-%20Imported%20Shader.280.png.md)
 
-When you import any existing game model and some of the materials cannot be found in existing shader presets, "Imported Shader" is created. Attributes cannot be edited, but it will still export correctly as it was in original file. Though textures and their mappings can be changed for visual preview.
+当你导入任何现有的游戏模型，且其中某些材质无法在现有着色器预设中找到时，就会创建“Imported Shader”。其属性无法编辑，但它仍会按原始文件中的状态正确导出。不过，为了视觉预览，可以更改纹理及其映射。
 
-Additionally there is "Mappings" field inside "Textures" for this type of shader, where "tex_coord_X" entries specify which UV layer will be exported for this alias.
+此外，此类型的着色器在“Textures”中还有一个“Mappings”字段，其中的“tex_coord_X”条目指定将为该别名导出哪个 UV 层。
 
-## Properties and usage
+## 属性与用法
 
-Properties in material are shader type dependent. So each type of shader may have different attributes and textures.
+材质中的属性取决于着色器类型，因此每种着色器可能有不同的属性和纹理。
 
 ### Substance
 
-Substance property is item from list of physical materials, which is loaded from Material Substance Library file (see [Global Settings#Path Settings](Global%20Settings.md#Path_Settings)). These can for example set up the physical type of the road surface.
+Substance 属性是物理材质列表中的一项，该列表从 Material Substance Library 文件加载（参见[全局设置#路径设置](Global%20Settings.md#Path_Settings)）。例如，它们可用于设置路面的物理类型。
 
-### Material Attributes
+### 材质属性
 
-In this section you can find various visual shader attributes, that you can alter. Most important ones are interactively reflected on your model in 3D View.
+在此部分中，你可以找到各种可更改的着色器视觉属性。最重要的属性会以交互方式反映在 3D 视图中的模型上。
 
-### Material Textures
+### 材质纹理
 
-This section provides an interface for specifying texture images for different shader's texture channels. Most prominent textures are automatically loaded and displayed in the 3D View.
+此部分提供了为不同着色器纹理通道指定纹理图像的界面。最常用的纹理会自动加载并显示在 3D 视图中。
 
-#### Texture
+#### 纹理
 
-Property defining path to texture or texture object file (TOBJ - pointers to texture images). Using map icon on the side of this property will open file browser where you will be able to select image or any TOBJ for using it as texture. After selecting, the image will be automatically applied to material. Beside currently selected shader preset search button can be found, which enables you to quickly search trough available presets.
+该属性定义纹理或纹理对象文件（TOBJ - 指向纹理图像的指针）的路径。使用此属性侧边的地图图标会打开文件浏览器，你可以在其中选择图像或任意 TOBJ 作为纹理。选择后，图像会自动应用到材质上。在当前选定的着色器预设旁边还可以找到搜索按钮，它让你可以快速搜索可用的预设。
 
-> > **Note:** Usage of texture which is not from SCS project directory (see [Global Settings#Path Settings](Global%20Settings.md#Path_Settings)) and it's sub-directories may cause errors and warnings on export!
+> > **注意：** 使用不来自 SCS 项目目录（参见[全局设置#路径设置](Global%20Settings.md#Path_Settings)）及其子目录的纹理，可能会导致导出时出现错误和警告！
 
-#### Settings
+#### 设置
 
-Each texture also features extra row of controls for TOBJ file and it's settings. TOBJ's are by default created upon export if they don't exist yet. However create button will appear if TOBJ file doesn't exist yet and pressing it will create TOBJ file for this texture with default settings. In case this texture already has TOBJ file then reload button, with which you can load currently saved settings of this TOBJ, will be shown. Sometimes reload button may appear in red color which indicates that current settings are outdated and you should press reload button to reload them. As soon as TOBJ file exist you will also have access to change any value in settings itself. Changing any of the setting in settings list will rewrite TOBJ file with updated values right away.
+每个纹理还带有额外的 TOBJ 文件及其设置控件行。如果 TOBJ 尚不存在，默认会在导出时创建。不过，如果 TOBJ 文件尚不存在，会出现创建按钮，按下它会使用默认设置为该纹理创建 TOBJ 文件。如果该纹理已有 TOBJ 文件，则会显示重新加载按钮，你可以用它加载该 TOBJ 当前保存的设置。有时重新加载按钮会显示为红色，表示当前设置已过期，你应按下重新加载按钮重新加载它们。一旦 TOBJ 文件存在，你也可以更改设置中的任何值。更改设置列表中的任何设置都会立即用更新后的值重写 TOBJ 文件。
 
-- ***U Repeat*** - repeat texture in U direction.
-- ***V Repeat*** - repeat texture in V direction.
-- ***TS Normal*** - tangent space normal for the texture.
-- ***Color Space Linear*** - texture is in linear color space (this option should be used on occlusion type of shaders in combination with grayscale occlusion texture).
+- ***U Repeat*** - 在 U 方向重复纹理。
+- ***V Repeat*** - 在 V 方向重复纹理。
+- ***TS Normal*** - 纹理的切线空间法线。
+- ***Color Space Linear*** - 纹理处于线性色彩空间（此选项应在遮挡类着色器上配合灰度遮挡纹理使用）。
 
-#### Mapping
+#### 映射
 
-This property specifies which UV layer will be used for this texture. For some textures you may need to specify more then one UV layer, depends on which shader preset is used.
+该属性指定此纹理将使用哪个 UV 层。对于某些纹理，你可能需要指定多个 UV 层，具体取决于所使用的着色器预设。
 
-### Material Item Extras Menu
+### 材质项额外菜单
 
-Additionally there is *More Options* menu button ( **𐩒** ) for most of the material attributes. Some can be written through (more about write trough: [Look system#Write Through](Look%20system.md#Write_Through)) and some can be even copied as or pasted from linear color space.
+此外，大多数材质属性都有一个 *More Options* 菜单按钮（ **𐩒** ）。其中一些可以写入全部外观（关于写入全部外观的更多内容：[外观系统#写入全部外观](Look%20system.md#Write_Through)），还有一些甚至可以按线性色彩空间复制，或从线性色彩空间粘贴。
 
 [![SCS_Material_Specials_-_Extras_Menu.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Materials/SCS_Material_Specials_-_Extras_Menu.280.png)](../../../../files/SCS%20Material%20Specials%20-%20Extras%20Menu.280.png.md)
 

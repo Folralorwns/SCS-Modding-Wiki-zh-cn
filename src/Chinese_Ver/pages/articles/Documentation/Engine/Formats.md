@@ -1,27 +1,27 @@
-# Documentation/Engine/Formats
+# 文档/引擎/格式
 
-## Formats used by SCS games
+## SCS 游戏使用的格式
 
-List of the file formats you will work with while modding our games.
+在为我们游戏制作模组时你会接触到的文件格式列表。
 
-| Format | Full name | Purpose | Type |
+| 格式 | 全名 | 用途 | 类型 |
 | --- | --- | --- | --- |
-| .pmd | Prism model descriptor | Storage of the model descriptor data | Binary |
-| .pmg | Prism model geometry | Storage of the model geometry data | Binary |
-| .pmc | Prism model collision | Storage of the model dynamic collision data | Binary |
-| .pma | Prism model animation | Storage of the model animation data | Binary |
-| .ppd | Prism prefab descriptor | Storage of the prefab data | Binary |
-| .pit | Prism intermediate trait | Storage of the model traits | Text |
-| .pim | Prism intermediate model | Storage of the model geometry data | Text |
-| .pic | Prism intermediate collision | Storage of the model dynamic collision data | Text |
-| .pia | Prism intermediate animation | Storage of the model animation data | Text |
-| .pip | Prism intermediate prefab | Storage of the prefab data | Text |
-| .sii | Unit serialized file | File storing serialized units | Text and Binary |
-| .sui | Serialized unit include | The SII-include file without magic mark SiiNUnit | Text |
-| .tobj | Texture object | Texture detailed informations | Text and Binary |
-| .mat | Material | Material definition | Text |
-| .soundref | Sound reference | Used for the indirect definition of the specified sound. | Text |
-| .zip | ZIP archive | Storage for the mods | Binary |
-| .scs | SCS archive | Storage for the game data | Binary |
+| .pmd | Prism 模型描述符 | 存储模型描述符数据 | 二进制 |
+| .pmg | Prism 模型几何体 | 存储模型几何体数据 | 二进制 |
+| .pmc | Prism 模型碰撞 | 存储模型动态碰撞数据 | 二进制 |
+| .pma | Prism 模型动画 | 存储模型动画数据 | 二进制 |
+| .ppd | Prism 预制件描述符 | 存储预制件数据 | 二进制 |
+| .pit | Prism 中间特性 | 存储模型特性 | 文本 |
+| .pim | Prism 中间模型 | 存储模型几何体数据 | 文本 |
+| .pic | Prism 中间碰撞 | 存储模型动态碰撞数据 | 文本 |
+| .pia | Prism 中间动画 | 存储模型动画数据 | 文本 |
+| .pip | Prism 中间预制件 | 存储预制件数据 | 文本 |
+| .sii | 单元序列化文件 | 存储序列化单元的文件 | 文本和二进制 |
+| .sui | 序列化单元包含文件 | 不含 SiiNunit 魔术标记的 SII 包含文件 | 文本 |
+| .tobj | 纹理对象 | 纹理详细信息 | 文本和二进制 |
+| .mat | 材质 | 材质定义 | 文本 |
+| .soundref | 声音引用 | 用于间接定义指定的声音。 | 文本 |
+| .zip | ZIP 归档包 | 存储模组 | 二进制 |
+| .scs | SCS 归档包 | 存储游戏数据 | 二进制 |
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Formats | revision: 5175 | captured: 2026-10-21 23:56:14 -->

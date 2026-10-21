@@ -1,4 +1,4 @@
-# File:Simple cube export success.jpg
+# 文件:Simple cube export success.jpg
 
 ![Simple cube export success.jpg](../../../images/files/Simple%20cube%20export%20success.jpg/Simple_cube_export_success.jpg)
 

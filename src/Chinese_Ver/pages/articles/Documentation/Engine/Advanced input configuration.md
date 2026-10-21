@@ -1,46 +1,46 @@
-# Documentation/Engine/Advanced input configuration
+# 文档/引擎/高级输入配置
 
-## Basics
+## 基础
 
-The H-shifter support is intended to be used with Logitech G27 and compatible wheels. It will not work with normal buttons! The shifters that are part of common commercial racing wheels are designed to mimic the layout of the manual shifters in cars that usually have up to six gears for forward movement. The trucks on the other hand tend to have much more gears. Having separate position for each gear would be not practical so an additional control is used to select an active gear set. Then a single gear from the set is selected by standard H-shifter pattern. For more information about available patterns see [Wikipedia](http://en.wikipedia.org/wiki/Manual_transmission#Truck_transmissions).
+H 挡换挡器支持旨在配合 Logitech G27 及兼容方向盘使用。它无法通过普通按钮工作！常见商用赛车方向盘附带的换挡器，其设计模仿的是汽车手动换挡器的布局，而汽车通常最多只有六个前进挡。相比之下，卡车往往拥有多得多的挡位。为每个挡位设置独立位置并不实用，因此需要使用一个额外的控制来选择当前挡位组，然后再按标准 H 挡模式选择该组中的某个挡位。有关可用模式的更多信息，请参见 [Wikipedia](http://en.wikipedia.org/wiki/Manual_transmission#Truck_transmissions)。
 
-The gearbox simulated in the game has twelve forward gears and one reverse gear. In the default configuration the in-game H-shifter gearbox behaves as a "Range transmission" (see link above) where the "Shifter Toggle 1" button switches between gear set 1-6 and gear set 7-12. (see Controller options in the game, on the G27 it is mapped to the leftmost red button on the H-shifter by default).
+游戏中模拟的变速箱有十二个前进挡和一个倒挡。在默认配置下，游戏内的 H 挡变速箱表现为“区段式变速箱”（见上文链接），其中 “Shifter Toggle 1” 按钮在 1-6 挡组与 7-12 挡组之间切换。（参见游戏中的控制器选项；在 G27 上，该按钮默认映射到 H 挡换挡器最左侧的红色按钮。）
 
-### Gear Shifting Example
+### 换挡示例
 
-You have a gear 6 selected and you want to shift up to the gear 7 - you need to press the "Shifter Toggle 1" button to switch to gear set 7-12 and then move the H-shifter stick to the position 1. In similar way, to shift down from gear 7 to gear 6, press the "Shifter Toggle 1" to switch to gear set 1-6 and move the H-shifter stick to the position 6.
+你当前选中 6 挡，想要升到 7 挡——需要按下 “Shifter Toggle 1” 按钮切换到 7-12 挡组，然后将 H 挡换挡杆移到位置 1。同样地，要从 7 挡降到 6 挡，按下 “Shifter Toggle 1” 切换到 1-6 挡组，并将 H 挡换挡杆移到位置 6。
 
-## Prepared layouts
+## 预设布局
 
-The game provides three layouts which can be selected from the the Controllers in-game option screen using the "Shifter layout" option.
+游戏提供三种布局，可在游戏内的控制器选项界面中通过 “Shifter layout” 选项选择。
 
-### Range transmission
+### 区段式变速箱
 
-This is the default configuration used by the game. The "Shifter Toggle: 1" selects between gears set 1-6 and gear set 7-12.
+这是游戏使用的默认配置。“Shifter Toggle: 1” 在 1-6 挡组与 7-12 挡组之间切换。
 
 [![Hshifter_range.gif](../../../../../images/articles/Documentation/Engine/Advanced%20input%20configuration/Hshifter_range.gif)](../../../files/Hshifter%20range.gif.md)
 
-### Splitter Transmission
+### 半挡式变速箱
 
-The "Shifter Toggle: 1" selects between odd-numbered gears (1,3,5,7,9,11) and even-numbered (2,4,6,8,10,12) gears.
+“Shifter Toggle: 1” 在奇数挡（1、3、5、7、9、11）与偶数挡（2、4、6、8、10、12）之间切换。
 
 [![Hshifter_splitter.gif](../../../../../images/articles/Documentation/Engine/Advanced%20input%20configuration/Hshifter_splitter.gif)](../../../files/Hshifter%20splitter.gif.md)
 
-### Range-splitter Transmission
+### 区段-半挡式变速箱
 
-This configuration tries to emulate a layout of a real Scania H-shifter. Note that the game does not simulate the second reverse gear nor the two crawling gears so corresponding positions are not used. This case is a combination of both preceding transmission types where the "Shifter Toggle: 1" switches between gear ranges and "Shifter Toggle: 2" switches between splitted gears.
+此配置试图模拟真实 Scania H 挡换挡器的布局。请注意，游戏并不模拟第二个倒挡，也不模拟两个爬行挡，因此相应位置未被使用。此布局是前述两种变速箱类型的组合：其中 “Shifter Toggle: 1” 在挡位区段之间切换，“Shifter Toggle: 2” 在经半挡分割的挡位之间切换。
 
 [![Hshifter_rangesplitter.gif](../../../../../images/articles/Documentation/Engine/Advanced%20input%20configuration/Hshifter_rangesplitter.gif)](../../../files/Hshifter%20rangesplitter.gif.md)
 
-## Advanced configuration
+## 高级配置
 
-The default H-shifter layout was selected to fit the most players, however with some tweaking of the gearbox configuration file it is possible to create a different layouts. The gearbox configuration files for individual predefined layouts can be found in your profile directory (remember to replace the PROFILE_ID with your real profile identifier):
+默认的 H 挡布局是为了适配大多数玩家而选择的，不过通过对变速箱配置文件做一些调整，可以创建不同的布局。各个预定义布局的变速箱配置文件位于你的玩家档案目录中（记得将 PROFILE_ID 替换为你真实的档案标识符）：
 
 ```
 My Documents\Euro Truck Simulator 2\profile\PROFILE_ID\gearbox*.sii
 ```
 
-The files contain a list of entries that map the condition triplet (h shifter position, selector 1 state, selector 2 state) to the concrete gear to use.
+这些文件包含一组条目，它们将条件三元组（H 挡换挡器位置、选择器 1 状态、选择器 2 状态）映射到要使用的具体挡位。
 
 ```
 direct_gearbox_gear : _nameless.0F5B.B220 {
@@ -51,150 +51,150 @@ direct_gearbox_gear : _nameless.0F5B.B220 {
 }
 ```
 
-| Name | Description |
+| 名称 | 描述 |
 | --- | --- |
-| gear_impulse_index | Defines which position should the H-shifter be in: 0 - neutral 1 - "Shifter Position: Reverse" 2 - "Shifter Position: 1" 3 - "Shifter Position: 2" ... N - "Shifter Position: N" Take care when editing the input configuration (see below). The game does not check if your H-shifter hardware supports the position you've entered. |
-| selector_1 | Defines the state of the first selector: -1 - ignore the selector state 0 - the selector should be off 1 - the selector should be on |
-| selector_2 | Defines the state of the second selector. See selector_1 for list of possible values. |
-| gear | The gear to shift in when the three conditions above are met. |
+| gear_impulse_index | 定义 H 挡换挡器应处于哪个位置：0 - 空挡 1 - “Shifter Position: Reverse” 2 - “Shifter Position: 1” 3 - “Shifter Position: 2” …… N - “Shifter Position: N” 编辑输入配置时要当心（见下文）。游戏不会检查你的 H 挡换挡器硬件是否支持你输入的位置。 |
+| selector_1 | 定义第一个选择器的状态：-1 - 忽略选择器状态 0 - 选择器应为关闭 1 - 选择器应为开启 |
+| selector_2 | 定义第二个选择器的状态。可能取值列表请参见 selector_1。 |
+| gear | 满足上述三个条件时要挂入的挡位。 |
 
-## Custom hardware
+## 自定义硬件
 
-It is possible to use a custom H-shifter hardware provided that it reports the position as continuous press of some button. With more complex custom configuration of the input a position reported as axis value (e.g. aircraft throttle) can be also supported.
+可以使用自定义的 H 挡换挡器硬件，前提是它将位置报告为某个按钮的持续按下状态。通过更复杂的自定义输入配置，还可以支持将位置报告为轴值（例如飞机油门）的硬件。
 
-If the hardware has the ability to differentiate both positions of the range or splitter toggles, an additional inputs *gearsel1on* / *gearsel2on* and *gearsel1off* / *gearsel2off*, which are not accessible through the UI, can be configured instead of the toggling one.
+如果该硬件能够区分区段或半挡切换开关的两个位置，则可以改为配置额外的输入 *gearsel1on* / *gearsel2on* 和 *gearsel1off* / *gearsel2off*（这些输入无法通过 UI 访问），而不使用切换式输入。
 
-### Advanced Input Configuration
+### 高级输入配置
 
-The game UI supports use of up to five controllers. The game itself is able to simultaneously use of more than five controllers, however such setup can not be configured through the game user interface and manual tweaking of the game's configuration files is required.
+游戏 UI 最多支持使用五个控制器。游戏本身能够同时使用五个以上的控制器，但此类设置无法通过游戏用户界面进行配置，需要手动调整游戏的配置文件。
 
-This section describes how an advanced user can manually tweak the configuration file to be able to use more than three controllers or create even more complex. By manual tweaking of the configuration it is possible to add some features not directly supported by the game UI such as
+本节介绍高级用户如何手动调整配置文件，以便使用三个以上的控制器，或构建更复杂的配置。通过手动调整配置，可以添加一些游戏 UI 不直接支持的功能，例如
 
-- Use a flight yoke throttle instead of h-shifter.
-- Use a shift button selecting between two sets of functionalities assigned to other buttons for use with controllers which have limited number of buttons.
-- Use single button to toggle between various pages in the adviser.
-- Provide independent sensitivity for vertical and horizontal look control.
-- Use a TrackIR compatible head tracker to control movement of the truck for people with some disabilities.
+- 用飞行摇杆的油门替代 H 挡换挡器。
+- 使用一个换挡按钮在其他按钮所分配的两组功能之间切换，以适用于按钮数量有限的控制器。
+- 使用单个按钮在顾问的各个页面之间切换。
+- 为垂直和水平视角控制提供独立的灵敏度。
+- 让行动不便的人士使用兼容 TrackIR 的头部追踪器来控制卡车的移动。
 
-## Configuration file
+## 配置文件
 
-The controller configuration is stored in profile directory (remember to replace the PROFILE_ID with your real profile identifier):
+控制器配置存储在玩家档案目录中（记得将 PROFILE_ID 替换为你真实的档案标识符）：
 
 ```
 My Documents\Euro Truck Simulator 2\profile\PROFILE_ID\controls.sii
 ```
 
-The file gets created when the controller or keyboard option screen is opened for the first time and contains a set of configuration lines which describe various components of the configuration.
+首次打开控制器或键盘选项界面时会创建该文件，其中包含一组配置行，用于描述配置的各个组成部分。
 
-## Example
+## 示例
 
-1. This is an example how to use accelerator and brake pedal from a secondary controller and a horn button from a third controller without using the in-game UI. The same mechanism can be used if more than three controllers should be used.
-2. Using the steps described in the Input identification section determine the identification of the accelerator input on the secondary controller. Example identification: di8.'{C0002222-0000-0000-0000-000000000000}|{00000000-0000-0000-0000-000000000000}'.y
-3. Determine the identification of the brake pedal input on the secondary controller. Example identification: di8.'{C0002222-0000-0000-0000-000000000000}|{00000000-0000-0000-0000-000000000000}'.rz
-4. Determine the identification of the button input on the third device. Example identification: di8.'{C0003333-0000-0000-0000-000000000000}|{00000000-0000-0000-0000-000000000000}'.b4
-5. Restore the default configuration on both keyboard and controller options pages in the game (not strictly necessary, just for purpose of this example) and configure the primary device in a normal way using UI.
-6. To connect the accelerator pedal from the secondary controller to the in-game throttle input: Find the text "input j_throttle `joy.y`" in the configuration file and change the input identification so in our example it so it reads "input j_throttle `di8.'{C0002222-0000-0000-0000-000000000000}|{00000000-0000-0000-0000-000000000000}'.y`"
-7. To connect the brake pedal from the secondary controller to the in-game brake input: Find the text "input j_brake `joy.y`" in the configuration file and change the input identification to the secondary controller brake pedal identification so in our example it reads "input j_brake `di8.'{C0002222-0000-0000-0000-000000000000}|{00000000-0000-0000-0000-000000000000}'.rz`".
-8. In this case the pedals are reported as two separate axes so you need to turn off the combined axis by changing the value in "constant c_jcombined 1.000000" to "constant c_jcombined 0.000000"
-9. Depending on the device you might want to configure the deadzone for those inputs by changing values in "constant c_throt_dz 0.000000" and "constant c_brake_dz 0.000000"
-10. To connect the button from the third controller to the in-game horn input: Find the text "mix horn `keyboard.h?0`" in the configuration file and change the input identification so in our example it reads "mix horn `di8.'{C0003333-0000-0000-0000-000000000000}|{00000000-0000-0000-0000-000000000000}'.b4`".
+1. 本示例演示如何在不使用游戏内 UI 的情况下，使用第二控制器上的油门踏板和制动踏板以及第三控制器上的喇叭按钮。若需要使用三个以上的控制器，也可采用相同的机制。
+2. 按照“输入标识”一节所述的步骤，确定第二控制器上油门输入的标识。示例标识：di8.'{C0002222-0000-0000-0000-000000000000}|{00000000-0000-0000-0000-000000000000}'.y
+3. 确定第二控制器上制动踏板输入的标识。示例标识：di8.'{C0002222-0000-0000-0000-000000000000}|{00000000-0000-0000-0000-000000000000}'.rz
+4. 确定第三设备上按钮输入的标识。示例标识：di8.'{C0003333-0000-0000-0000-000000000000}|{00000000-0000-0000-0000-000000000000}'.b4
+5. 在游戏的键盘和控制器选项页面中恢复默认配置（并非严格必要，仅为本例目的），并使用 UI 以常规方式配置主设备。
+6. 要连接第二控制器的油门踏板到游戏内油门输入：在配置文件中找到文本 “input j_throttle `joy.y`” 并修改输入标识，使其在本例中为 “input j_throttle `di8.'{C0002222-0000-0000-0000-000000000000}|{00000000-0000-0000-0000-000000000000}'.y`”
+7. 要连接第二控制器的制动踏板到游戏内制动输入：在配置文件中找到文本 “input j_brake `joy.y`” 并将输入标识修改为第二控制器制动踏板的标识，使其在本例中为 “input j_brake `di8.'{C0002222-0000-0000-0000-000000000000}|{00000000-0000-0000-0000-000000000000}'.rz`”。
+8. 在本例中，踏板被报告为两个独立的轴，因此需要将 “constant c_jcombined 1.000000” 中的值改为 “constant c_jcombined 0.000000”，以关闭合并轴。
+9. 视设备而定，你可能需要修改 “constant c_throt_dz 0.000000” 和 “constant c_brake_dz 0.000000” 中的值，为这些输入配置死区。
+10. 要连接第三控制器的按钮到游戏内喇叭输入：在配置文件中找到文本 “mix horn `keyboard.h?0`” 并修改输入标识，使其在本例中为 “mix horn `di8.'{C0003333-0000-0000-0000-000000000000}|{00000000-0000-0000-0000-000000000000}'.b4`”。
 
-## Input identification
+## 输入标识
 
-The game identifies individual inputs on the controllers using a name composed from several parts in following format:
+游戏使用由若干部分按以下格式组成的名称来标识控制器上的各个输入：
 
 ```
 SYSTEM_ID.'DEVICE_ID'.INPUT_ID
 ```
 
-On Windows OS the SYSTEM_ID will be almost always set to di8 indicating that DirectInput8 is used. The DEVICE_ID is a string identifying the specific controller device. There are two ways to determine identification of the desired device. You can select the device as active in the UI and check what the game has stored in the "joy" device alias (find line containing text device joy) in configuration file. Alternatively you can look inside the game.log file for lines with following format:
+在 Windows 操作系统上，SYSTEM_ID 几乎总是设为 di8，表示使用了 DirectInput8。DEVICE_ID 是标识特定控制器设备的字符串。有两种方法可以确定目标设备的标识。你可以在 UI 中将该设备选为活动设备，然后查看游戏在配置文件的 “joy” 设备别名中存储了什么（查找包含 device joy 文本的行）。或者，你可以在 game.log 文件中查找符合以下格式的行：
 
 ```
 [di8] Initializing device 'DEVICE_NAME' as 'DEVICE_ID'
 ```
 
-The corresponding identification to use in the configuration file is then **di8.'DEVICE_ID'** The INPUT_ID identifies a concrete input (e.g. axis, button) on the device. The best way to determine it is to use the game UI to create binding using that input and to check what the game has stored in the configuration file. For controllers it is usually **b1 - b128** for buttons, **x, y, z, rx, ry, rz** for axes, **sl1** or **sl2** for sliders and **pov_(1|2|3|4)_(up|down|left|right)** for POVs
+那么在配置文件中使用的对应标识为 **di8.'DEVICE_ID'**。INPUT_ID 标识设备上的具体输入（例如轴、按钮）。确定它的最佳方式是使用游戏 UI 为该输入创建绑定，然后查看游戏在配置文件中存储了什么。对于控制器，按钮通常是 **b1 - b128**，轴是 **x, y, z, rx, ry, rz**，滑块是 **sl1** 或 **sl2**，POV 则是 **pov_(1|2|3|4)_(up|down|left|right)**
 
-Sometimes the input identification is followed by an additional specification of the component of the input (e.g. "di8.rel_position.x" which represents X component of the mouse position delta). At other times a defined alias might be used to shorten part of the input name.
+有时输入标识后面还会附加对输入组成部分的说明（例如 “di8.rel_position.x” 表示鼠标位置增量的 X 分量）。另一些时候，可能会使用已定义的别名来缩短部分输入名称。
 
-## Component types
+## 组件类型
 
-### Device alias
+### 设备别名
 
-**Example format:** device joy `di8.'{A76B60D0-A8FD-11E1-8002-444553540000}|{C29B046D-0000-0000-0000-504944564944}'`
+**示例格式：** device joy `di8.'{A76B60D0-A8FD-11E1-8002-444553540000}|{C29B046D-0000-0000-0000-504944564944}'`
 
-**User-creatable:** Yes
+**用户可创建：** 是
 
-The device alias defines a new name ("joy") which can be used in other parts of the configuration file as a shortcut to reference a specific input device without having to always use its full identification. Defining and using the device alias also allows simple switch to a different compatible device by changing the alias target without having to update the rest of the configuration. By default the game creates aliases for keyboard, mouse and joy1-6 to identify keyboard, mouse and joystick device supported by the UI. Five joysticks can be directly selected in the UI, the sixth one is supported by binding UI if manually set in the config file.
+设备别名定义了一个新名称（“joy”），可在配置文件的其他部分用作快捷方式，以引用特定输入设备，而无需始终使用其完整标识。定义并使用设备别名还便于通过更改别名目标来简单切换到另一个兼容设备，而无需更新配置的其他部分。默认情况下，游戏会为 keyboard、mouse 和 joy1-6 创建别名，用于标识 UI 支持的键盘、鼠标和操纵杆设备。UI 中可以直接选择五个操纵杆，若在配置文件中手动设置，绑定 UI 支持第六个。
 
-### Input alias
+### 输入别名
 
-**Example format:** input j_steer `joy.x`
+**示例格式：** input j_steer `joy.x`
 
-**User-creatable:** Yes
+**用户可创建：** 是
 
-The input alias defines a new name ("j_steer") which can be used in other parts of the configuration file as a shortcut to reference a specific input (axis, button) from input device without having to specify the longer name. Same as with the device aliases case, input aliases also allow easy configuration changes. The game axis configuration UI works by changing input aliases to point to the selected axes.
+输入别名定义了一个新名称（“j_steer”），可在配置文件的其他部分用作快捷方式，以引用来自输入设备的特定输入（轴、按钮），而无需指定更长的名称。与设备别名的情况相同，输入别名也便于轻松更改配置。游戏的轴配置 UI 的工作原理就是修改输入别名，使其指向所选的轴。
 
-### Constant
+### 常量
 
-**Example format:** constant c_steer_dz 0.000000
+**示例格式：** constant c_steer_dz 0.000000
 
-**User-creatable:** Yes
+**用户可创建：** 是
 
-The constant defines a named ("c_steer_dz") numeric value which might be used by calculations in other parts of the configuration file or directly by the game itself (e.g. FF strength).
+常量定义了一个具名数值（“c_steer_dz”），可供配置文件其他部分的计算使用，或直接由游戏本身使用（例如力反馈强度）。
 
-### Mix
+### 混合
 
-**Example format:** mix dsteerleft `keyboard.larrow?0 | keyboard.a?0`
+**示例格式：** mix dsteerleft `keyboard.larrow?0 | keyboard.a?0`
 
-**User-creatable:** No
+**用户可创建：** 否
 
-The mix defines an expression which is used to calculate value of a single game input. The game can use this value as an analog input (e.g. fraction of the rotation of the steering wheel) or as a logical value (e.g. wipers toggle). The interpretation and additional configuration of the individual mixes (in what situations they are evaluated) is hardcoded in the game and it is currently not possible to create additional mixes in the configuration file. In the simplest form the expression returns value of a single input. The more complex forms can use several mathematical and logical functions (see below) to derive the results from more than one input. Note that the UI input configuration screens directly supports only a very limited subset of the expressions and will display "Complex" message if they can not handle the expression. Generally there are two types of mix evaluation.
+混合定义了一个表达式，用于计算单个游戏输入的值。游戏可以将该值用作模拟输入（例如方向盘的转动比例），或用作逻辑值（例如雨刷开关）。各个混合的解释和附加配置（在哪些情况下对其求值）硬编码在游戏中，目前无法在配置文件里创建新的混合。在最简单的形式中，表达式返回单个输入的值。更复杂的形式可以使用若干数学和逻辑函数（见下文）从多个输入推导结果。请注意，UI 输入配置界面仅直接支持非常有限的表达式子集，若无法处理某个表达式，会显示 “Complex” 消息。混合的求值一般有两种类型。
 
-- Event based - this mix evaluates whenever there is change in any input (or other mix) it depends on. Mixes which read to individual presses (e.g. gear change, any_cmd) are usually of this type. As of 1.3.1. those mixes get duplicate evaluations whenever they react to button which generates characters (e.g. character key in keyboard). While usually not issue, this might be important when using the mix in loopback mode (e.g. it references old value of itself).
-- Frame based - this mix evaluates at end of the frame. Mixes which react to hold (e.g. horn) or provide analog values (e.g. steering) are usually of this type.
+- 基于事件——只要它依赖的任一输入（或其他混合）发生变化，该混合就会求值。响应单次按压的混合（例如换挡、any_cmd）通常属于此类型。自 1.3.1 起，当这些混合响应会产生字符的按钮（例如键盘上的字符键）时，会出现重复求值。这通常不成问题，但在回环模式下使用该混合时可能比较重要（例如它引用了自身的旧值）。
+- 基于帧——该混合在帧末求值。响应按住状态的混合（例如喇叭）或提供模拟值的混合（例如转向）通常属于此类型。
 
-## User-created components
+## 用户创建的组件
 
-For some component types it is possible to create additional components simply by using additional component definition line in the configuration file. Names of such components must meet following requirements:
+对于某些组件类型，只需在配置文件中添加额外的组件定义行，即可创建额外的组件。此类组件的名称必须满足以下要求：
 
-- Must be unique within the configuration file.
-- Must have at most 12 characters.
-- Only alphanumeric characters and underscore character are allowed.
+- 在配置文件中必须唯一。
+- 最多 12 个字符。
+- 只允许字母数字字符和下划线字符。
 
-## Expressions
+## 表达式
 
-The expressions are used to combine device inputs and apply deadzones or a non-linear functions to them. Several types of values can be used in the expression:
+表达式用于组合设备输入，并对它们应用死区或非线性函数。表达式中可以使用几种类型的值：
 
-- A reference to a constant value (e.g. 2.0)
-- A reference to a named constant (e.g. c_steer_dz).
-- A reference to a controller inputs using its full (e.g. di8.keyboard.space) or aliased form (e.g. keyboard.space). In cases of some special inputs an additional component selector (.x, .y, .z, .yaw, .pitch, .roll) might be needed. In the default configuration file you will see that alternative keyboard.space?0 syntax is used. That syntax indicates that if the input can not be found, the sub-expression should behave as if a constant 0 was returned from the device instead of reporting error and failing entire expression.
-- A reference to some other mix (e.g. dforward). Note that circular references are not allowed, however it is possible to reference the mix this expression belongs to. In that case a previous value is returned. Note that there are no guarantees on frequency or time between calls however it might be used to implement simple counters or toggles when used with the event-based mixes.
-- A special name unbound which resolves to constant zero. It is used to preserve information if no key is assigned to the primary binding slot.
+- 对常量值的引用（例如 2.0）
+- 对具名常量的引用（例如 c_steer_dz）。
+- 对控制器输入的引用，可使用其完整形式（例如 di8.keyboard.space）或别名形式（例如 keyboard.space）。对于某些特殊输入，可能还需要额外的分量选择器（.x、.y、.z、.yaw、.pitch、.roll）。在默认配置文件中，你会看到使用了另一种 keyboard.space?0 语法。该语法表示，如果找不到该输入，则子表达式的行为应如同设备返回了常量 0，而不是报告错误并使整个表达式失败。
+- 对其他混合的引用（例如 dforward）。请注意不允许循环引用，但可以引用此表达式所属的混合本身。在这种情况下，会返回之前的值。请注意，两次调用之间的频率或时间间隔没有保证，但配合基于事件的混合使用时，可用于实现简单的计数器或开关。
+- 特殊名称 unbound，其值为常量零。它用于在未为主绑定槽分配按键时保留信息。
 
-The values can be combined using arithmetical (+, -, *, /) and logical (&, |, !) operators. Note that operator precedence rules are very simple so use of the brackets is highly recommended. When a value is interpreted in a logical context (e.g. during logical OR or AND operations or when it is used as logical value by the game), values greater than or equal to 0.5 evaluate to true and other values evaluate to false. Logical operators return 1.0 for true and 0.0 for false and have a short-circuit evaluation. Since 1.35 the expression also supports logical operators with a full evaluation (&&, ||). While the short-circuit variants are preferred for most uses, the full evaluation variants should typically be used when using memory based functions. Memory based functions preserve some state between evaluations as long the mix expression (i.e. the expression string, not the result of the evaluation) does not change. Changing the expression (e.g. because of config load) will reset the memory to default state.
+这些值可以使用算术运算符（+、-、*、/）和逻辑运算符（&、|、!）组合。请注意，运算符优先级规则非常简单，因此强烈建议使用括号。当某个值在逻辑上下文中被解释时（例如在逻辑或、逻辑与运算期间，或游戏将其用作逻辑值时），大于或等于 0.5 的值求值为真，其他值求值为假。逻辑运算符对真返回 1.0，对假返回 0.0，并采用短路求值。自 1.35 起，表达式还支持完整求值的逻辑运算符（&&、||）。虽然大多数情况下首选短路变体，但在使用基于记忆的函数时通常应使用完整求值变体。只要混合表达式（即表达式字符串，而不是求值结果）不变，基于记忆的函数就会在两次求值之间保留某些状态。更改表达式（例如由于配置加载）会将记忆重置为默认状态。
 
-Following set of functions is also available. The range in brackets indicate allowed number of parameters to the function:
+还提供以下函数集。括号中的范围表示该函数允许的参数数量：
 
-| Function | Version | Description |
+| 函数 | 版本 | 描述 |
 | --- | --- | --- |
-| max(1..) |  | Returns biggest from the parameters. |
-| min(1..) |  | Returns smallest from the parameters. |
+| max(1..) |  | 返回参数中的最大值。 |
+| min(1..) |  | 返回参数中的最小值。 |
 | pow(2..) |  | (p0^p1)^p2)... |
-| abs(1) |  | Absolute value of the parameter. |
-| abs_max(1..) | 1.43+ | Returns value of parameter with the biggest absolute value from all parameters. (e.g. abs_max(2, -5, -1, 4) returns -5). If there are multiple values with the same absolute value and a different sign, the value of the parameter with the lower index is returned. |
-| sign(1) |  | Returns -1 if parameter is negative number, 1 if the parameter is positive number and 0 for zero. |
-| gt(2) |  | Returns 1.0 if the first parameter is greater than the second one. |
-| gte(2) |  | Returns 1.0 if the first parameter is greater than or equal to the second one. |
-| lt(2) |  | Returns 1.0 if the first parameter is lower than the second one. |
-| lte(2) |  | Returns 1.0 if the first parameter is lower than or equal to the second one. |
-| sel(3) |  | Returns the second parameter if the first parameter evaluates to true (see above), for false returns the third parameter. |
-| bool(1) |  | Returns 1.0 if the first parameter evaluates to true (see above) and zero otherwise. |
-| normalize(2-3) |  | Returns normalized position of the first parameter in the range formed by <second parameter, third parameter>. If the value is outside of the range, it will be clamped to it. If third parameter is not provided, 1.0 will be used. If the second and third parameter do not form valid non-empty range, zero will be returned. |
-| deadzone(2-3) |  | Applies a zero-symmetrical deadzone. Similar to the normalize, however it applies symmetrically to the negative values as well. If the second parameter is negative, it is set to zero. |
-| memory(2) | 1.35+ | Simple single-value memory. The memory starts at zero. If the first parameter evaluates to true, the second parameter is evaluated and its value is stored in the memory. Otherwise the second parameter is not evaluated and the memory is unchanged. The function returns the current value of the memory after the processing (i.e. the new value if the memory was updated). |
-| modifier(2) | 1.35+ | Supports implementation of modifier-like keys. The first parameter represents "modifier" expression and the second parameter represents "button" expression. The function starts with returning 0.0. If it detects false to true transition on the "button" parameter while the "modifier" parameter is true, it will start returning 1.0 until the "button" parameter reverts to false after which it returns back to 0.0. Please note that the function detects changes only while it is being evaluated. If something, such as short-circuit logical operator, prevents the call, the function might miss some changes. Function evaluates the "modifier" parameter only during the leading edge (false => true) on the "button" parameter. Because of this, avoid using memory based elements within the "modifier" parameter to avoid risk of unexpected behavior. |
-| short_press(1-2) | 1.41+ | Supports detection of short press. If the first input is temporarily >= 0.5 for interval shorter than a threshold, the function will return 1.0 until end of the frame it detected that in. The value of the threshold in milliseconds is configured by the second parameter and uses default value (200ms as of 1.46) if the second parameter is not provided. The detection only happens if the function is being evaluated (i.e. do not use it with short-circuit logical operators). |
-| long_press(1-2) | 1.41+ | Supports detection of long press. If the first input is >= 0.5 for interval longer than a threshold, the function will return 1.0 until the input goes back to < 0.5. The value of the threshold in milliseconds is configured by the second parameter and uses default value (200ms as of 1.46) if the second parameter is not provided. The detection only happens if the function is being evaluated (i.e. do not use it with short-circuit logical operators). |
+| abs(1) |  | 参数的绝对值。 |
+| abs_max(1..) | 1.43+ | 返回所有参数中绝对值最大的参数的值。（例如 abs_max(2, -5, -1, 4) 返回 -5）。如果有多个值具有相同的绝对值但符号不同，则返回索引较小的参数的值。 |
+| sign(1) |  | 如果参数为负数则返回 -1，为正数则返回 1，为零则返回 0。 |
+| gt(2) |  | 如果第一个参数大于第二个参数，返回 1.0。 |
+| gte(2) |  | 如果第一个参数大于或等于第二个参数，返回 1.0。 |
+| lt(2) |  | 如果第一个参数小于第二个参数，返回 1.0。 |
+| lte(2) |  | 如果第一个参数小于或等于第二个参数，返回 1.0。 |
+| sel(3) |  | 如果第一个参数求值为真（见上文），返回第二个参数；为假时返回第三个参数。 |
+| bool(1) |  | 如果第一个参数求值为真（见上文），返回 1.0，否则返回零。 |
+| normalize(2-3) |  | 返回第一个参数在由 <第二个参数, 第三个参数> 构成的区间内的归一化位置。如果该值超出区间，将被钳制到区间内。如果未提供第三个参数，将使用 1.0。如果第二个和第三个参数不能构成有效的非空区间，将返回零。 |
+| deadzone(2-3) |  | 应用零对称死区。与 normalize 类似，但它同样对称地应用于负值。如果第二个参数为负，则将其设为零。 |
+| memory(2) | 1.35+ | 简单的单值记忆。记忆初始为零。如果第一个参数求值为真，则对第二个参数求值并将其值存入记忆。否则不对第二个参数求值，记忆保持不变。该函数返回处理后的记忆当前值（即记忆被更新后的新值）。 |
+| modifier(2) | 1.35+ | 支持实现类似修饰键的按键。第一个参数表示“修饰符”表达式，第二个参数表示“按钮”表达式。函数初始返回 0.0。如果在“修饰符”参数为真时检测到“按钮”参数从假到真的跳变，它将开始返回 1.0，直到“按钮”参数恢复为假，之后重新返回 0.0。请注意，该函数仅在求值时检测变化。如果有某种因素（例如短路逻辑运算符）阻止了调用，函数可能会漏掉某些变化。函数仅在“按钮”参数的前沿（假 => 真）期间对“修饰符”参数求值。因此，请避免在“修饰符”参数中使用基于记忆的元素，以免出现意外行为。 |
+| short_press(1-2) | 1.41+ | 支持检测短按。如果第一个输入在短于阈值的区间内临时 >= 0.5，函数将返回 1.0，直到检测到该情况的帧结束。阈值的毫秒数由第二个参数配置；如果未提供第二个参数，则使用默认值（截至 1.46 为 200ms）。仅当函数正在被求值时才会执行检测（即不要将其与短路逻辑运算符一起使用）。 |
+| long_press(1-2) | 1.41+ | 支持检测长按。如果第一个输入在长于阈值的区间内 >= 0.5，函数将返回 1.0，直到输入回到 < 0.5。阈值的毫秒数由第二个参数配置；如果未提供第二个参数，则使用默认值（截至 1.46 为 200ms）。仅当函数正在被求值时才会执行检测（即不要将其与短路逻辑运算符一起使用）。 |
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Advanced_input_configuration | revision: 5183 | captured: 2026-10-21 23:56:14 -->

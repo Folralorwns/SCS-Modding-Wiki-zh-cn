@@ -1,4 +1,4 @@
-# File:Active selection example.jpg
+# 文件:Active selection example.jpg
 
 ![Active selection example.jpg](../../../images/files/Active%20selection%20example.jpg/Active_selection_example.jpg)
 

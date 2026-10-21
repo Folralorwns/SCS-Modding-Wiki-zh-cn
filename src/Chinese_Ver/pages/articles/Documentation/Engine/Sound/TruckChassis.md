@@ -1,46 +1,46 @@
 # Documentation/Engine/Sound/TruckChassis
 
-## Sounds - The truck chassis
+## 声音 - 卡车底盘
 
-Another group of truck sounds are sounds tied to the truck chassis.
+另一组卡车声音是与卡车底盘相关的声音。
 
-### Air Brake
+### 空气制动
 
-Brake discharge air sound effect. Sounds are played randomly when the service brake is released. It has to be 3D event. The event should be routed to the "truck_effects" audio bus. This is a simple ("one shot") event. It is recommended to use randomization of the assets supported by FMOD Studio.
+制动排气音效。松开行车制动时会随机播放。它必须是 3D 事件。该事件应路由到 "truck_effects" 音频总线。这是一个简单的（"one shot"）事件。建议使用 FMOD Studio 支持的素材随机化功能。
 
-The following event parameter must exists:
+以下事件参数必须存在：
 
-- air_pressure - the value is in the range <0 - 1> and represents the relative pressure of the air system
+- air_pressure - 取值范围为 <0 - 1>，表示空气系统的相对压力
 
-### Air CutOff
+### 空气切断
 
-Cutoff air sound effect. Sound to be played when the air compressor is unloaded by the governor. It has to be 3D event. The event should be routed to the "truck_effects" audio bus. This is a simple ("one shot") event. It is recommended to use randomization of the assets supported by FMOD Studio.
+空气切断音效。当调压器使空气压缩机卸载时播放的声音。它必须是 3D 事件。该事件应路由到 "truck_effects" 音频总线。这是一个简单的（"one shot"）事件。建议使用 FMOD Studio 支持的素材随机化功能。
 
-### Reverse
+### 倒车
 
-Back-up beeper sound. It has to be 3D event. The event should be routed to the "truck_effects" audio bus. The event must be looped.
+倒车提示音。它必须是 3D 事件。该事件应路由到 "truck_effects" 音频总线。事件必须循环播放。
 
-### Lift Axle
+### 提升桥
 
-Sound effect of lifting axle. It has to be 3D event. The event should be routed to the "truck_effects" audio bus. The event must be looped or can be "one shot" sound but long enough.
+提升桥的音效。它必须是 3D 事件。该事件应路由到 "truck_effects" 音频总线。事件必须循环播放，也可以是 "one shot" 声音，但长度要足够。
 
-### Hook Attach
+### 挂钩连接
 
-Sound effect of attaching hook. It has to be 3D event. The event should be routed to the "truck_effects" audio bus. This is a simple ("one shot") event.
+连接挂钩的音效。它必须是 3D 事件。该事件应路由到 "truck_effects" 音频总线。这是一个简单的（"one shot"）事件。
 
-### Hook Detach
+### 挂钩分离
 
-Sound effect of detaching hook. It has to be 3D event. The event should be routed to the "truck_effects" audio bus. This is a simple ("one shot") event.
+分离挂钩的音效。它必须是 3D 事件。该事件应路由到 "truck_effects" 音频总线。这是一个简单的（"one shot"）事件。
 
-### Trailer Cables
+### 挂车线缆
 
-Sound effect of the trailer cables connection. It has to be 3D event. The event should be routed to the "truck_effects" audio bus. This is a simple ("one shot") event.
+连接挂车线缆的音效。它必须是 3D 事件。该事件应路由到 "truck_effects" 音频总线。这是一个简单的（"one shot"）事件。
 
-## Sound Configuration
+## 声音配置
 
-The group of sounds configuration is stored in the "accessory_chassis_data" data.
+该组声音的配置存储在 "accessory_chassis_data" 数据中。
 
-There are no mandatory events but there are no default events either. Only the defined sounds will be played. There is array "sounds" which contents specification for the events:
+没有强制事件，但也没有默认事件。只会播放已定义的声音。数组 "sounds" 包含事件的定义：
 
 - air_brake
 - air_cutoff
@@ -50,11 +50,11 @@ There are no mandatory events but there are no default events either. Only the d
 - hook_detach
 - trailer_cables
 
-### Example
+### 示例
 
-There are configuration files for chassis for the "Peterbilt 579" inside folder "/def/vehicle/truck/peterbilt.579/chassis".
+在文件夹 "/def/vehicle/truck/peterbilt.579/chassis" 中有 "Peterbilt 579" 的底盘配置文件。
 
-Each accessory include *@include "sound.sui"* file which contents indirect definition of the events:
+每个配件都包含 *@include "sound.sui"* 文件，该文件间接定义了事件：
 
 ```
 	sounds[]: "air_brake|/sound/truck/default/effects_air_brake.soundref"
@@ -66,8 +66,8 @@ Each accessory include *@include "sound.sui"* file which contents indirect defin
 	sounds[]: "trailer_cables|/sound/truck/default/effects_trailer_cables.soundref"
 ```
 
-### Sound Position
+### 声音位置
 
-The 3D position of this sounds is (by default) the same position as the engine.<br> This position could be modified by the .soundref file. (see [Sound reference file](../Sound.md#Sound_reference_file))
+此声音的 3D 位置（默认）与发动机相同。<br> 该位置可通过 .soundref 文件修改。（参见 [声音参考文件](../Sound.md#Sound_reference_file)）
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Sound/TruckChassis | revision: 5613 | captured: 2026-10-21 23:56:14 -->

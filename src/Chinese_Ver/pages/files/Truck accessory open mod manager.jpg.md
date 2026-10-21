@@ -1,4 +1,4 @@
-# File:Truck accessory open mod manager.jpg
+# 文件:Truck accessory open mod manager.jpg
 
 ![Truck accessory open mod manager.jpg](../../../images/files/Truck%20accessory%20open%20mod%20manager.jpg/Truck_accessory_open_mod_manager.jpg)
 

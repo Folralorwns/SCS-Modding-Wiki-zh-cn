@@ -1,29 +1,29 @@
-# Tutorials/Map Editor/Roads/Creating a Simple Road
+# 教程/地图编辑器/道路/创建简单道路
 
-> [← Previous part](Road%20Item%20Properties%20Dialog.md)[Next part →](Road%20Node%20Manipulation.md)
+> [← 上一部分](Road%20Item%20Properties%20Dialog.md)[下一部分 →](Road%20Node%20Manipulation.md)
 >
-> [All steps](../Roads.md)
+> [所有步骤](../Roads.md)
 
-In this tutorial, we will create a simple set of roads with some vegetation, and some small decoration provided by the Road item properties dialog. Before we do, however, we must explain about Node Snapping. <br> <br> Every Item type that can be connected has 2 ends. Each end has either, a green circle/square node, or a red circle/square node(prefabs have more but we will cover that later) Nodes can be connected together but not always - the colors that go together are important. Here is the general rule of thumb regarding snapping: **Green and Red nodes can connect to each other; same colored nodes cannot connect.**
+在本教程中，我们将创建一组简单的道路，并添加一些植被，以及由道路项属性对话框提供的一些小型装饰。不过在开始之前，我们必须解释一下节点吸附。 <br> <br> 每种可连接的项类型都有 2 个端点。每个端点要么是绿色圆形/方形节点，要么是红色圆形/方形节点（预制件有更多节点，但我们稍后再介绍）。节点之间可以相互连接，但并非总是如此——搭配的颜色很重要。以下是关于吸附的一般经验法则：**绿色节点和红色节点可以相互连接；相同颜色的节点不能连接。**
 
 ![Road_node_red.png](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Creating%20a%20Simple%20Road/Road_node_red.png)
 
-*Red Node*
+*红色节点*
 
 ![Road_node_green.png](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Creating%20a%20Simple%20Road/Road_node_green.png)
 
-*Green Node*
+*绿色节点*
 
 |  |  |  |
 | --- | --- | --- |
-| **1** | [![Basic_road.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Creating%20a%20Simple%20Road/712px-Basic_road.jpg)](../../../../files/Basic%20road.jpg.md) | Select 'Road' then select New item (*E Key*) Click on Road type and pick `ger road 1 tmpl` Click at the base of the pink starter car and drag up to just under the main toolbar and click again Hit *Esc* - we should have a nicely placed road <br> <br> **TIP:** Make sure you are in top down camera view when placing roads! <br> |
-| **2** | [![Road_item_properties.png](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Creating%20a%20Simple%20Road/712px-Road_item_properties.png)](../../../../files/Road%20item%20properties.png.md) | Go to Item properties (*P Key*) and click on one of the nodes |
-| **3** | [![Basic_road_decor.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Creating%20a%20Simple%20Road/712px-Basic_road_decor.jpg)](../../../../files/Basic%20road%20decor.jpg.md) | In the dialog box, adjust options to your liking Play around with all the potential settings to get your first stretch of road looking nice When you are done click the 'Set as default' button <br> <br> **TIP:** You might find it easier at first to set your Terrain size to something small like 5 - 25 meters to make placing multiple roads easier <br> |
-| **4** | [![2_basic_roads.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Creating%20a%20Simple%20Road/712px-2_basic_roads.jpg)](../../../../files/2%20basic%20roads.jpg.md) | Now, zoom your camera out a bit and repeat step # 1 this time placing the road just above the road you have just made |
-| **5** | [![Basic_road_connected.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Creating%20a%20Simple%20Road/712px-Basic_road_connected.jpg)](../../../../files/Basic%20road%20connected.jpg.md) | Click the Move tool (*M Key*) and click on the red node of the 2nd road piece you just placed and drag this node over to the green node of the first road <br> <br> **TIP:** Ensure Snap to nodes is enabled in the main toolbar <br> **Note:** You will notice the 2 road pieces snapped together and are now connected. Additionally, the editor automatically curved the roads based on the different angle between nodes. Snapping subsequent road pieces together will continue bending roads yielding smooth curves, however, these simple roads aren't good for more tighter or precise turns |
+| **1** | [![Basic_road.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Creating%20a%20Simple%20Road/712px-Basic_road.jpg)](../../../../files/Basic%20road.jpg.md) | 选择“Road”，然后选择新建项（*E 键*） 点击道路类型并选择 `ger road 1 tmpl` 在粉色起始车辆的底部点击，向上拖动到主工具栏正下方，然后再次点击 按下 *Esc*——此时我们应该已经放置好了一条道路 <br> <br> **提示：** 放置道路时请确保处于俯视相机视角！ <br> |
+| **2** | [![Road_item_properties.png](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Creating%20a%20Simple%20Road/712px-Road_item_properties.png)](../../../../files/Road%20item%20properties.png.md) | 转到项属性（*P 键*）并点击其中一个节点 |
+| **3** | [![Basic_road_decor.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Creating%20a%20Simple%20Road/712px-Basic_road_decor.jpg)](../../../../files/Basic%20road%20decor.jpg.md) | 在对话框中，按你的喜好调整选项 尝试所有可能的设置，让你的第一段道路看起来美观 完成后点击“Set as default”按钮 <br> <br> **提示：** 一开始你可能会发现将地形尺寸设为 5 - 25 米这样较小的值，会更便于放置多条道路 <br> |
+| **4** | [![2_basic_roads.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Creating%20a%20Simple%20Road/712px-2_basic_roads.jpg)](../../../../files/2%20basic%20roads.jpg.md) | 现在，将相机稍微拉远，重复步骤 # 1，这次将道路放置在你刚制作的道路正上方 |
+| **5** | [![Basic_road_connected.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Roads/Creating%20a%20Simple%20Road/712px-Basic_road_connected.jpg)](../../../../files/Basic%20road%20connected.jpg.md) | 点击移动工具（*M 键*），点击你刚放置的第 2 个道路部件的红色节点，并将该节点拖到第一条道路的绿色节点上 <br> <br> **提示：** 确保主工具栏中的吸附到节点已启用 <br> **注意：** 你会注意到两个道路部件已经吸附在一起，现在已连接。此外，编辑器会根据节点之间的不同角度自动弯曲道路。继续将后续道路部件吸附在一起会不断弯曲道路，形成平滑的曲线，但这些简单道路不适合更紧或更精确的转弯 |
 
-> [← Previous part](Road%20Item%20Properties%20Dialog.md)[Next part →](Road%20Node%20Manipulation.md)
+> [← 上一部分](Road%20Item%20Properties%20Dialog.md)[下一部分 →](Road%20Node%20Manipulation.md)
 >
-> [All steps](../Roads.md)
+> [所有步骤](../Roads.md)
 
 <!-- source: https://modding.scssoft.com/wiki/Tutorials/Map_Editor/Roads/Creating_a_Simple_Road | revision: 5449 | captured: 2026-10-21 23:56:14 -->

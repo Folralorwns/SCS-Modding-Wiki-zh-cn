@@ -1,4 +1,4 @@
-# File:Scs workshop uploader tutorial preview.jpg
+# 文件:Scs workshop uploader tutorial preview.jpg
 
 ![Scs workshop uploader tutorial preview.jpg](../../../images/files/Scs%20workshop%20uploader%20tutorial%20preview.jpg/Scs_workshop_uploader_tutorial_preview.jpg)
 

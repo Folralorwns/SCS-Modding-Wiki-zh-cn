@@ -1,4 +1,4 @@
-# File:Road bridge settings.jpg
+# 文件:Road bridge settings.jpg
 
 ![Road bridge settings.jpg](../../../images/files/Road%20bridge%20settings.jpg/Road_bridge_settings.jpg)
 

@@ -1,4 +1,4 @@
-# File:Simple cube install scstools.jpg
+# 文件:Simple cube install scstools.jpg
 
 ![Simple cube install scstools.jpg](../../../images/files/Simple%20cube%20install%20scstools.jpg/Simple_cube_install_scstools.jpg)
 

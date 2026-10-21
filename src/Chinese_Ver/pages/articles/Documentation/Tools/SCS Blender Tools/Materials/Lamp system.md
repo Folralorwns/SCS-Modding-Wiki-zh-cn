@@ -1,20 +1,20 @@
-# Documentation/Tools/SCS Blender Tools/Materials/Lamp system
+# 文档/工具/SCS Blender Tools/材质/灯光系统
 
-Lamp system uses "lamp" material effect to visualize extra lit surfaces by second mask texture or by alpha channel of base texture. This system is used on vehicle lights, vehicle auxiliary lights and traffic lights.
+灯光系统使用“lamp”材质效果，通过第二张遮罩纹理或基础纹理的 alpha 通道来表现额外的受光表面。该系统用于车辆灯光、车辆辅助灯和交通信号灯。
 
-For easy usage of lamp system Blender Tools has included [Lamp Switcher & UV Tool](../SCS%20Tools%20in%20Tool%20Shelf/Lamp%20Switcher%20&%20UV%20Tool.md) which will help you with UV mappings tiling and previewing of lit surfaces directly in Blender 3D viewport.
+为便于使用灯光系统，SCS Blender Tools 内置了 [Lamp Switcher & UV Tool](../SCS%20Tools%20in%20Tool%20Shelf/Lamp%20Switcher%20&%20UV%20Tool.md)，它可帮助你进行 UV 映射平铺，并直接在 Blender 3D 视口中预览受光表面。
 
-## Vehicle lights
+## 车辆灯光
 
 <table class="wikitable" style="text-align:center;float:right;">
-<caption>Vehicle Lights Quick-Reference
+<caption>车辆灯光速查表
 </caption>
 <tbody><tr>
-<th rowspan="2">UV Tile
+<th rowspan="2">UV 平铺
 </th>
-<th rowspan="2">Corresponding<br/>Position
+<th rowspan="2">对应<br/>位置
 </th>
-<th colspan="4">Color Channel
+<th colspan="4">颜色通道
 </th></tr>
 <tr>
 <td style="background-color:#FF2222;"><b>R</b>
@@ -28,47 +28,47 @@ For easy usage of lamp system Blender Tools has included [Lamp Switcher & UV Too
 <tr>
 <td>0
 </td>
-<td>Front Left
+<td>左前
 </td>
-<td style="background-color:#ffb44a;">Left Blinker
+<td style="background-color:#ffb44a;">左转向灯
 </td>
-<td rowspan="2">High Beam
+<td rowspan="2">远光灯
 </td>
-<td rowspan="2">Low Beam
+<td rowspan="2">近光灯
 </td>
-<td rowspan="2" style="background-image:linear-gradient(to right,#ffb44a,rgba(255,255,255,0));">Positional*
+<td rowspan="2" style="background-image:linear-gradient(to right,#ffb44a,rgba(255,255,255,0));">位置灯*
 </td></tr>
 <tr>
 <td>1
 </td>
-<td>Front Right
+<td>右前
 </td>
-<td style="background-color:#ffb44a;">Right Blinker
+<td style="background-color:#ffb44a;">右转向灯
 </td></tr>
 <tr>
 <td>2
 </td>
-<td>Rear Left
+<td>左后
 </td>
-<td style="background-image:linear-gradient(to right,#ff4a4a,#ffb44a);">Left Blinker**
+<td style="background-image:linear-gradient(to right,#ff4a4a,#ffb44a);">左转向灯**
 </td>
-<td rowspan="2" style="background-color:#ff4a4a;">Brake
+<td rowspan="2" style="background-color:#ff4a4a;">刹车灯
 </td>
-<td rowspan="2">Reverse
+<td rowspan="2">倒车灯
 </td>
-<td rowspan="2" style="background-color:#ff4a4a;">Positional
+<td rowspan="2" style="background-color:#ff4a4a;">位置灯
 </td></tr>
 <tr>
 <td>3
 </td>
-<td>Rear Right
+<td>右后
 </td>
-<td style="background-image:linear-gradient(to right,#ff4a4a,#ffb44a);">Right Blinker**
+<td style="background-image:linear-gradient(to right,#ff4a4a,#ffb44a);">右转向灯**
 </td></tr>
 <tr>
 <td>4
 </td>
-<td>Middle or DRL
+<td>中部或 DRL
 </td>
 <td>
 </td>
@@ -76,47 +76,47 @@ For easy usage of lamp system Blender Tools has included [Lamp Switcher & UV Too
 </td>
 <td>DRL
 </td>
-<td style="background-color:#ffb44a;">Positional
+<td style="background-color:#ffb44a;">位置灯
 </td></tr>
 <tr>
-<td colspan="6"><i>*Front positional lights are white in ETS2, and orange in ATS by default as of 1.39. <br/>**Rear blinkers are orange in ETS2, and red in ATS by default.</i>
+<td colspan="6"><i>*自 1.39 起，ETS2 中前位置灯默认为白色，ATS 中默认为橙色。 <br/>**ETS2 中后转向灯默认为橙色，ATS 中默认为红色。</i>
 </td></tr></tbody></table>
 
-Vehicle lights use a second RGBA mask texture from which each channel defines a luminance mask for a particular type of light:
+车辆灯光使用第二张 RGBA 遮罩纹理，其中每个通道为特定类型的灯光定义亮度遮罩：
 
-- R - left blinker, right blinker
-- G - high beam, brake
-- B - low beam, reverse, daytime running (DRL)
-- A - positional
+- R - 左转向灯、右转向灯
+- G - 远光灯、刹车灯
+- B - 近光灯、倒车灯、日间行车灯（DRL）
+- A - 位置灯
 
-The second requirement for vehicle lights to work correctly is to use a separate UV layer for the lamp mask texture and proper tile offset of the mappings. Tiling is applied on the right side of the texture in the following order:
+车辆灯光正常工作的第二项要求是：为灯光遮罩纹理使用单独的 UV 层，并为映射设置正确的平铺偏移。平铺按以下顺序应用在纹理右侧：
 
-0. original texture - front left side of vehicle
-1. first texture tile - front right side of vehicle
-2. second texture tile - rear left side of vehicle
-3. third texture tile - rear right side of vehicle
-4. fourth texture tile - middle of vehicle and DRL
+0. 原始纹理 - 车辆左前侧
+1. 第一块纹理 - 车辆右前侧
+2. 第二块纹理 - 车辆左后侧
+3. 第三块纹理 - 车辆右后侧
+4. 第四块纹理 - 车辆中部和 DRL
 
-## Auxiliary lights
+## 辅助灯
 
-Auxiliary lights on vehicles can also have separate second mask texture but they use only two channels from light mask texture:
+车辆上的辅助灯也可以使用单独的第二张遮罩纹理，但它们只使用灯光遮罩纹理中的两个通道：
 
-- R - dimmed beam
-- G - full beam
-- B - not used and must be zero (black)
-- A - not used and must be zero (black)
+- R - 低亮度光束
+- G - 全亮度光束
+- B - 未使用，必须为零（黑色）
+- A - 未使用，必须为零（黑色）
 
-There is also possible to use two different colors for auxiliary lights with offsetting UV mappings for second mask texture. Tile offset here is also done on the right side of the texture:
+辅助灯还可以使用两种不同颜色，为此需要为第二张遮罩纹理偏移 UV 映射。此处的平铺偏移同样位于纹理右侧：
 
-0. original texture - white color
-1. first texture tile - orange color
+0. 原始纹理 - 白色
+1. 第一块纹理 - 橙色
 
-## Traffic lights
+## 交通信号灯
 
-Traffic lights don't use extra second mask texture as they are using alpha channel of base texture for proper lit of traffic lights. But they still use tile offset on UV mappings to properly lit up different color in traffic light. Tile offset here is done on right up side of the texture in the following order:
+交通信号灯不使用额外的第二张遮罩纹理，而是使用基础纹理的 alpha 通道来正确点亮信号灯。但它们仍会在 UV 映射上使用平铺偏移，以正确点亮信号灯中的不同颜色。此处的平铺偏移位于纹理右上方，顺序如下：
 
-0. first texture tile - red color of traffic light
-1. second texture tile - yellow color of traffic light
-2. third texture tile - green color of traffic light
+0. 第一块纹理 - 信号灯红色
+1. 第二块纹理 - 信号灯黄色
+2. 第三块纹理 - 信号灯绿色
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/SCS_Blender_Tools/Materials/Lamp_system | revision: 4815 | captured: 2026-10-21 23:56:14 -->

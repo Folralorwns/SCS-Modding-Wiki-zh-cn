@@ -1,4 +1,4 @@
-# File:Truck accessory set default export path.jpg
+# 文件:Truck accessory set default export path.jpg
 
 ![Truck accessory set default export path.jpg](../../../images/files/Truck%20accessory%20set%20default%20export%20path.jpg/Truck_accessory_set_default_export_path.jpg)
 

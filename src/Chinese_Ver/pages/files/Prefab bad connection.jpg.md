@@ -1,4 +1,4 @@
-# File:Prefab bad connection.jpg
+# 文件:Prefab bad connection.jpg
 
 ![Prefab bad connection.jpg](../../../images/files/Prefab%20bad%20connection.jpg/Prefab_bad_connection.jpg)
 

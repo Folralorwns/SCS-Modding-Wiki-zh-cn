@@ -1,10 +1,10 @@
-# Documentation/Engine/Game Radio
+# 文档/引擎/游戏电台
 
-## File structure
+## 文件结构
 
-Basic structure of game radio.
+游戏电台的基本结构。
 
-This doesn't show station graphics files as they are optional.
+此处未展示电台图形文件，因为它们是可选的。
 
 ```
 ├─ manifest.sii                 <typical mod metadata file>
@@ -25,13 +25,13 @@ This doesn't show station graphics files as they are optional.
       └─ ...
 ```
 
-Supported audio formats: `ogg`, `mp3`
+支持的音频格式：`ogg`、`mp3`
 
-For organizational purposes a separate subfolder `offline_radio/stationid/music` is recommended; note, however, that for the tracks you're specifying the full game file system path, so this organizational structure is optional; in principle the audio files could be anywhere and even be shared among stations.
+出于组织管理的考虑，建议使用单独的子文件夹 `offline_radio/stationid/music`；但请注意，对于曲目，你指定的是完整的游戏文件系统路径，因此这种组织结构是可选的；原则上音频文件可以位于任意位置，甚至可以在多个电台之间共享。
 
-## Unit descriptions
+## 单元说明
 
-### Definition of station(s)
+### 电台的定义
 
 `offline_radio/offline_radio.<my_mod_id>.sii`
 
@@ -100,20 +100,20 @@ offline_radio_station : _nameless.1
 }
 ```
 
-#### Track selection & playback history
+#### 曲目选择与播放历史
 
-Because we don't want the same track to play too often, radio track selection is influenced by the playback history.
+由于我们不希望同一首曲目播放得过于频繁，电台的曲目选择会受到播放历史的影响。
 
-This process is governed by 2 values in station definition:
+该过程由电台定义中的 2 个值控制：
 
-- `recently_played_history_size_fraction` determines the size of a "history window", any tracks that have been played within it are not eligible for being played as the next track. So if the value is `0.5` and the station has 20 tracks, at least 10 other songs must play before the current song can be played again.
-- `min_num_tracks_between_same_artist` acts on top of this by preventing the same artist being played too often. Note that this is just a simple comparison of `artist` values between tracks so `"Artist"` and `"Artist feat. Someone else"` are different, as are `"Artist"` and `"ARTIST"`.
+- `recently_played_history_size_fraction` 决定“历史窗口”的大小，在该窗口内已经播放过的曲目不能作为下一首曲目播放。因此，如果该值为 `0.5` 且电台有 20 首曲目，那么当前歌曲再次播放之前，至少要播放 10 首其他歌曲。
+- `min_num_tracks_between_same_artist` 在此基础上进一步防止同一艺人播放得过于频繁。请注意，这仅是对曲目之间 `artist` 值的简单比较，因此 `"Artist"` 与 `"Artist feat. Someone else"` 是不同的，`"Artist"` 与 `"ARTIST"` 也是不同的。
 
-Please use reason when selecting these values: them being too restrictive will cause the track selection process to not function properly.
+选择这些值时请保持合理：限制过于严格会导致曲目选择过程无法正常工作。
 
-### Per-station definitions
+### 各电台的定义
 
-`offline_radio/<my_station_id>/tracks.sii` - provides data about individual tracks for the radio.
+`offline_radio/<my_station_id>/tracks.sii` - 提供电台各个曲目的数据。
 
 ```
 SiiNunit
@@ -136,8 +136,8 @@ offline_radio_track : _nameless.1
 }
 ```
 
-## Known limitations
+## 已知限制
 
-Currently there are issues with compressed audio assets, so using the `.zip` mod format is not supported. Please use `.scs` packs or regular folders.
+目前压缩音频资源存在问题，因此不支持使用 `.zip` 模组格式。请使用 `.scs` 包或普通文件夹。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Game_Radio | revision: 5769 | captured: 2026-10-21 23:56:14 -->

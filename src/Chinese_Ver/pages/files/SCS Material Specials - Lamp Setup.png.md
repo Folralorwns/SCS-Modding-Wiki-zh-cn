@@ -1,4 +1,4 @@
-# File:SCS Material Specials - Lamp Setup.png
+# 文件:SCS Material Specials - Lamp Setup.png
 
 ![SCS Material Specials - Lamp Setup.png](../../../images/files/SCS%20Material%20Specials%20-%20Lamp%20Setup.png/SCS_Material_Specials_-_Lamp_Setup.png)
 

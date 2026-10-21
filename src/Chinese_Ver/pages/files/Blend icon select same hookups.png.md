@@ -1,4 +1,4 @@
-# File:Blend icon select same hookups.png
+# 文件:Blend icon select same hookups.png
 
 ![Blend icon select same hookups.png](../../../images/files/Blend%20icon%20select%20same%20hookups.png/Blend_icon_select_same_hookups.png)
 

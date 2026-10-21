@@ -1,258 +1,258 @@
-# Documentation/Tools/Map Editor/Shortcuts
-
-## Editor Shortcuts
-
-Legend:
-
-- **LMB** = Left Mouse Button
-- **RMB** = Right Mouse Button
-- **MMB** = Middle Mouse Button
-- **MW** = Mouse Wheel
-
-### Modes
-
-There can be only one mode selected. A different mode can be selected by clicking a toolbar button or by pressing a key:
-
-- **Esc** – *None* mode.
-- **E** – *Create new item* mode.
-- **P** – *Item properties* mode. Clicking on a node opens properties of the selected items.
-- **N** – *Node properties* mode. Clicking on a node opens properties of the selected nodes.
-- **D** – *Delete item* mode. Clicking on a node deletes the item.
-- **M** – *Move item* mode.
-- **H** – *Height* mode. Dragging with a node moves the selected items along the Y axis.
-- **R** – *Rotation* mode.
-- **S** – S*cale item* mode.
-- **B** – *Brush* mode. Allows manipulation with stamps on items. Opens Stamp dialog and shows current stamps on hovered items.
-- **I** – *Import map* mode. **LMB** click imports to the same place as clicked. **MMB** click imports to the same coordinates as exported.
-- **Q** – *Quick Edit Mode* **TOGGLE**.
-- **O**– *Traffic preview* mode.
-- **V**– *Vertex tool* mode.
-- **U** – *Scene preview* mode.
-
-### Item Types
-
-There can be only one item type selected. A different type can be selected in the toolbar combo or by pressing a key:
-
-- **1** – Road
-- **2** – Prefab
-- **3** – Building
-- **4** – Model
-- **5** – Sign
-- **6** – Bezier Patch
-- **7** – Cut Plane
-- **8** – Mover
-- **9** – Terrain
-
-### Selection
-
-- **LMB** – Standard selection on click including deselection when click into void. Box selection when mouse dragged.
-- **RMB** - Open the item properties.
-- **Ctrl+RMB** - Open the node properties.
-- **Ctrl+LMB** – Adds items into the selection.
-- **Alt+LMB** – Removes items from selection.
-- **.** – Grows selection by one step in both directions from the currently selected nodes. That means selecting nodes nearest to the ones already selected (direct neighbours).
-- **Shift+. / Ctrl+A** – Grows selection as much as possible in both direction from the currently selected nodes. This is supported only for buildings and terrains.
-- **Shift+LMB** – In None mode selects by geometry.
-- **ALT + S** - set selected item's scale to default 1:1:1
-- **ALT + O** - reset curve offsets *(atm only for curve items, but will work also for building items)*
-- **CTRL+SHIFT+P** - search compatible prefabs - based on the selected nodes of roads and prefabs the Content Browser searches for Prefabs that are compatible with all of them
-
-### Manipulation
-
-- **Ctrl+C** – Copies the selected item to clipboard.
-- **Ctrl+V** – Pastes the clipboard content at position of cursor click.
-- **Ctrl+Z** – Undos last world map change, that means movement, rotation, adding, deleting etc. Changing values in properties dialog is not undoable!
-- **Ctrl+Y** – Redos change.
-- **Up, Down, Left, Right** – Moves the selected items in X, Z axis.
-- **Delete** – Deletes the selected items.
-- **Ctrl+G** – Groups the selected items into a coumpound item for optimization purposes. Works for up to 16 models/buildings.
-- **MMB** – Inserts a new node in the middle of the segment when performed over a road, building or mover node.
-- **Ctrl+MMB** – Decimates a node when performed over a building or mover node. That means the following two buildings are automatically merged into one piece.
-- **F6** – Drops the selected items to the ground. With **Alt** it also aligns rotation.
-- **Alt+R** – Opens Random rotation/scale dialog.
-- **Insert** – In free camera rotates the selected items in Z-axis (with **Shift** in opposite direction).
-- **Delete** – In free camera rotates the selected items in Y-axis rotation.
-- **End** – In free camera rotates the selected items in X-axis rotation.
-- **Page Up/Down** – In free camera moves the selected items up or down in Y axis.
-- **Alt+X** – Toggles *Free rotation* flag.
-- **Home** – Rotates the selected items 90 degrees clockwise.
+# 文档/工具/地图编辑器/快捷键
+
+## 编辑器快捷键
+
+图例：
+
+- **LMB** = 鼠标左键
+- **RMB** = 鼠标右键
+- **MMB** = 鼠标中键
+- **MW** = 鼠标滚轮
+
+### 模式
+
+只能选择一种模式。可通过单击工具栏按钮或按下按键来选择其他模式：
+
+- **Esc** – *无*模式。
+- **E** – *新建项*模式。
+- **P** – *项属性*模式。单击节点会打开选定项的属性。
+- **N** – *节点属性*模式。单击节点会打开选定节点的属性。
+- **D** – *删除项*模式。单击节点会删除该项。
+- **M** – *移动项*模式。
+- **H** – *高度*模式。拖动节点会沿 Y 轴移动选定项。
+- **R** – *旋转*模式。
+- **S** – *缩放项*模式。
+- **B** – *笔刷*模式。允许使用图章对项进行操作。打开图章对话框，并在悬停的项上显示当前图章。
+- **I** – *导入地图*模式。**LMB** 单击会导入到所单击的相同位置。**MMB** 单击会导入到与导出时相同的坐标。
+- **Q** – *快速编辑模式* **切换**。
+- **O**– *交通预览*模式。
+- **V**– *顶点工具*模式。
+- **U** – *场景预览*模式。
+
+### 项类型
+
+只能选择一种项类型。可在工具栏下拉框中选择其他类型，或按下按键：
+
+- **1** – 道路
+- **2** – 预制件
+- **3** – 建筑
+- **4** – 模型
+- **5** – 标志牌
+- **6** – 贝塞尔面片
+- **7** – 切割平面
+- **8** – 移动对象
+- **9** – 地形
+
+### 选择
+
+- **LMB** – 单击时进行标准选择，包括在空白处单击时取消选择。拖动鼠标时进行框选。
+- **RMB** - 打开项属性。
+- **Ctrl+RMB** - 打开节点属性。
+- **Ctrl+LMB** – 将项添加到选择中。
+- **Alt+LMB** – 将项从选择中移除。
+- **.** – 从当前选定的节点向两个方向各扩展一步选择。即选择与已选定节点最近的节点（直接相邻节点）。
+- **Shift+. / Ctrl+A** – 从当前选定的节点向两个方向尽可能扩展选择。仅建筑和地形支持此功能。
+- **Shift+LMB** – 在“无”模式中按几何形状选择。
+- **ALT + S** - 将选定项的缩放设为默认值 1:1:1
+- **ALT + O** - 重置曲线偏移 *(目前仅适用于曲线项，但也将适用于建筑项)*
+- **CTRL+SHIFT+P** - 搜索兼容的预制件 - 根据道路和预制件的选定节点，内容浏览器会搜索与所有这些节点兼容的预制件
+
+### 操作
+
+- **Ctrl+C** – 将选定项复制到剪贴板。
+- **Ctrl+V** – 将剪贴板内容粘贴到光标单击的位置。
+- **Ctrl+Z** – 撤销上一次世界地图更改，即移动、旋转、添加、删除等。在属性对话框中更改值不可撤销！
+- **Ctrl+Y** – 重做更改。
+- **Up, Down, Left, Right** – 沿 X、Z 轴移动选定项。
+- **Delete** – 删除选定项。
+- **Ctrl+G** – 为优化目的将选定项组合为复合项。最多支持 16 个模型/建筑。
+- **MMB** – 在道路、建筑或移动对象节点上执行时，在该段中间插入新节点。
+- **Ctrl+MMB** – 在建筑或移动对象节点上执行时精简节点。即后续两个建筑会自动合并为一块。
+- **F6** – 将选定项放置到地面。配合 **Alt** 时还会对齐旋转。
+- **Alt+R** – 打开随机旋转/缩放对话框。
+- **Insert** – 在自由相机中沿 Z 轴旋转选定项（按住 **Shift** 时反向）。
+- **Delete** – 在自由相机中沿 Y 轴旋转选定项。
+- **End** – 在自由相机中沿 X 轴旋转选定项。
+- **Page Up/Down** – 在自由相机中沿 Y 轴向上或向下移动选定项。
+- **Alt+X** – 切换 *自由旋转* 标记。
+- **Home** – 将选定项顺时针旋转 90 度。
 
-### Camera
+### 相机
 
-- **C** – Toggles between the top down and free move cameras.
-- **F** – Focus camera on selection.
+- **C** – 在俯视相机和自由移动相机之间切换。
+- **F** – 将相机聚焦于选定项。
 
-###### Top camera
+###### 俯视相机
 
-- **RMB** – Moves the camera in X, Z axis.
-- **Page Up/Down, MW** – In top camera moves the camera up/down.
+- **RMB** – 沿 X、Z 轴移动相机。
+- **Page Up/Down, MW** – 在俯视相机中向上/向下移动相机。
 
-###### Free camera
+###### 自由相机
 
-- **RMB** – Rotates the camera.
-- **MMB** – Moves the camera on view plane.
-- **Space** – Cycles between editation and non-editation modes.
-- **W,S,A,D** – Moves the camera forward, backward, left or right. The speed can be doubled by holding **Shift** .
-- **Q,E** – Moves the camera in top or down.
-- **Space** – Toggles editation mode. In editation mode the nodes are visible.
-- **MW** – In editation mode moves the camera forward or backward. In non-editation mode changes the speed of camera movement.
-- **Ctrl+NumPlus** – Decreases the camera's FOV (field of view).
-- **Ctrl+NumMinus** – Increases the camera's FOV.
-- **Ctrl+NumAsterisk** – Resets the camera's FOV.
+- **RMB** – 旋转相机。
+- **MMB** – 在视图平面上移动相机。
+- **Space** – 在编辑模式和非编辑模式之间循环切换。
+- **W,S,A,D** – 向前、向后、向左或向右移动相机。按住 **Shift** 可将速度加倍。
+- **Q,E** – 向上或向下移动相机。
+- **Space** – 切换编辑模式。编辑模式下节点可见。
+- **MW** – 在编辑模式下向前或向后移动相机。在非编辑模式下更改相机移动速度。
+- **Ctrl+NumPlus** – 减小相机的 FOV（视场角）。
+- **Ctrl+NumMinus** – 增大相机的 FOV。
+- **Ctrl+NumAsterisk** – 重置相机的 FOV。
 
-### Isolated Selection
+### 隔离选择
 
-- **Ctrl+I**- Isolate selection
-- **Alt+I** - Hide selection
-- **Ctrl+Shift+I** - Exit isolation
+- **Ctrl+I**- 隔离选择
+- **Alt+I** - 隐藏选择
+- **Ctrl+Shift+I** - 退出隔离
 
-### Locked Selection
+### 锁定选择
 
-- **Cltr+L** – Lock Vertex/Node Selection
-- **Ctrl+Alt+L** – Reset Vertex/Node Lock
+- **Cltr+L** – 锁定顶点/节点选择
+- **Ctrl+Alt+L** – 重置顶点/节点锁定
 
-### Move Mode
+### 移动模式
 
-LMB dragging with a node moves with the selected items. Whole multiselection is moved when dragged with one node (must be from the multiselection).
+用节点拖动 LMB 会连同选定项一起移动。拖动一个节点（必须来自多选）时会移动整个多选内容。
 
-- **Tab** – Changes gizmo orientation.
-- **Shift+Tab** – Changes gizmo orientation (backward direction).
-- **X** – During move locks to X axis.
-- **Y** – During move locks to Y axis.
-- **Z** – During move locks to Z axis.
-- **Shift+X** – During move locks to YZ plane.
-- **Shift+Y** – During move locks to XZ plane.
-- **Shift+Z** – During move locks to XY plane.
-- **Shift+LMB** – During move disconnects the dragged node from the chain. Useful for roads, buildings and prefabs.
-- **Alt** – During move snaps also Y axis (height). The standard snap leaves Y be.
-- **Ctrl+Shift** – Before pressing LMB duplicates and moves current selection.
-- **X** – Toggle between circle/curve mode.
+- **Tab** – 更改操纵器方向。
+- **Shift+Tab** – 更改操纵器方向（反向）。
+- **X** – 移动过程中锁定到 X 轴。
+- **Y** – 移动过程中锁定到 Y 轴。
+- **Z** – 移动过程中锁定到 Z 轴。
+- **Shift+X** – 移动过程中锁定到 YZ 平面。
+- **Shift+Y** – 移动过程中锁定到 XZ 平面。
+- **Shift+Z** – 移动过程中锁定到 XY 平面。
+- **Shift+LMB** – 移动过程中将拖动的节点与链断开。适用于道路、建筑和预制件。
+- **Alt** – 移动过程中也吸附 Y 轴（高度）。标准吸附会保持 Y 不变。
+- **Ctrl+Shift** – 在按下 LMB 之前复制并移动当前选择。
+- **X** – 在圆形/曲线模式之间切换。
 
-If you are locked to single axis, you can use numpad to control movement or rotation.
+如果已锁定到单轴，可以使用小键盘控制移动或旋转。
 
-- **Numpad number keys** - Enter value.
-- **Numpad plus/minus** - Make value positive/negative.
-- **Backspace** - Delete last digit.
-- **Delete** - Throw away the value and get back to control move or rotation with mouse.
+- **Numpad number keys** - 输入数值。
+- **Numpad plus/minus** - 将数值设为正/负。
+- **Backspace** - 删除最后一位数字。
+- **Delete** - 放弃该数值，恢复用鼠标控制移动或旋转。
 
-Vertex move:
+顶点移动：
 
-- **Ctrl+Q** – Average selection.
-- **Shift+Q** – Explode selection.
-- **Ctrl+W** – Bridge selection.
-- **Shift+W** – Weld selection.
+- **Ctrl+Q** – 平均化选择。
+- **Shift+Q** – 炸开选择。
+- **Ctrl+W** – 桥接选择。
+- **Shift+W** – 焊接选择。
 
-### Rotation Mode
+### 旋转模式
 
-LMB dragging rotates the selected node in the selected axis. This does not work for multiselection.
+拖动 LMB 会沿所选轴旋转选定节点。此操作不适用于多选。
 
-###### Single selection
+###### 单选
 
-- **R** – Cycles between the axes X, Y, Z and LMB dragging with .
+- **R** – 在 X、Y、Z 轴之间循环切换，并配合 LMB 拖动。
 
-###### Multiselection
+###### 多选
 
-- **R** – Rotates the selected items clockwise by 90 degrees around their center in Y axis. With **Shift** it rotates only by 1 degree. With **Ctrl** it rotates counter-clockwise.
+- **R** – 将选定项绕其中心沿 Y 轴顺时针旋转 90 度。按住 **Shift** 时仅旋转 1 度。按住 **Ctrl** 时逆时针旋转。
 
-###### Free Node Rotation
+###### 自由节点旋转
 
-Works for buildings, walkers and roads. In their node properties there is Free Rotation checkbox. With this turned on the node direction is not updated during internal computations but stays as it was set up by user. It could be useful when you want to set a specific rotation for road or building nodes to tweak the geometry shape.
+适用于建筑、行人路径和道路。其节点属性中有 Free Rotation 复选框。启用后，节点方向在内部计算过程中不会更新，而是保持用户设置时的状态。当你想要为道路或建筑节点设置特定旋转以调整几何形状时，这会很有用。
 
-### Brush Mode
+### 笔刷模式
 
-- **Ctrl+LMB** – Removes a stamp.
-- **Shift+LMB** – Picks a stamp settings (shows it in the stamp dialog).
-- **Alt+LMB** – Draw color only.
+- **Ctrl+LMB** – 移除图章。
+- **Shift+LMB** – 拾取图章设置（在图章对话框中显示）。
+- **Alt+LMB** – 仅绘制颜色。
 
-### Vertex Move Mode
+### 顶点移动模式
 
-- **V** = vertex move tool
-- **Ctrl+H** = sculptor LMB = up
-- **Ctrl+LMB** = down
-- **Shift+LMB** = revert to previous position
-- **Alt+LMB** = smooth
+- **V** = 顶点移动工具
+- **Ctrl+H** = 雕刻器 LMB = 向上
+- **Ctrl+LMB** = 向下
+- **Shift+LMB** = 恢复到上一位置
+- **Alt+LMB** = 平滑
 
-*Just a warning - sculpting with CTRL + H can't be undone via CTRL + Z!*
+*提醒 - 使用 CTRL + H 雕刻无法通过 CTRL + Z 撤销！*
 
-### New item Mode
+### 新建项模式
 
-- **LMB** – Creates a new item of the selected type. Some items like roads or buildings need several clicks to define their shape.
-- **Num+/-** – Selects previous or next preview (during the prefab of model item creation).
+- **LMB** – 创建所选类型的新项。道路或建筑等某些项需要多次单击才能确定其形状。
+- **Num+/-** – 选择上一个或下一个预览（在预制件或模型项创建过程中）。
 
-### Place Start Mode
+### 放置起点模式
 
-- **LMB** – Put placement of the start truck position on the world map.
-- **Num+/-** – Rotate start placement orientation.
+- **LMB** – 在世界地图上放置起始卡车位置。
+- **Num+/-** – 旋转起始放置方向。
 
-### Terrain Picker Mode
+### 地形拾取器模式
 
-This mode allows picking "terrain patterns" from roads, terrains and prefabs and reapplying them to other items (it is similar to Format Painter known in office software). The tool does live preview of terrain properties change when hovering over an item.
+此模式允许从道路、地形和预制件中拾取“地形图案”，并将其重新应用到其他项（类似于办公软件中的格式刷）。当悬停在项上时，该工具会实时预览地形属性的更改。
 
-- **LMB** – Apply last picked terrain pattern to a hovered item.
-- **Ctrl+LMB** – Pick terrain pattern of a hovered item.
+- **LMB** – 将最后拾取的地形图案应用到悬停的项。
+- **Ctrl+LMB** – 拾取悬停项的地形图案。
 
-### Traffic Mode
+### 交通模式
 
-This mode provides debug information related to the in game traffic.
+此模式提供与游戏内交通相关的调试信息。
 
-- **Num-** – Change mode of the tool.
-- **Num*/** – Change vehicle type in the accessibility tool mode.
-- **Ctrl+MW** – Change speed in the speed limits tool mode.
-- **Home** – Remove all vehicles.
+- **Num-** – 更改工具模式。
+- **Num*/** – 在可达性工具模式中更改车辆类型。
+- **Ctrl+MW** – 在限速工具模式中更改速度。
+- **Home** – 移除所有车辆。
 
-### Trajectory Item
+### 轨迹项
 
-Trajectory item shortcuts.
+轨迹项快捷键。
 
-- **MMB** – Add a new node before of the clicked node.
-- **MMB + Ctrl** – Remove the node before the clicked node.
-- **MMB + Shift** – Split the item into the two by the clicked node.
-- **MMB + Shift + Alt** – Split the item into the separate nodes.
+- **MMB** – 在所单击节点之前添加新节点。
+- **MMB + Ctrl** – 移除所单击节点之前的节点。
+- **MMB + Shift** – 按所单击的节点将项拆分为两个。
+- **MMB + Shift + Alt** – 将项拆分为独立节点。
 
-Useful shortcuts when working with trajectory items.
+处理轨迹项时有用的快捷键。
 
-- **F6** – Drop to ground.
-- **Alt + F6** – Drop to ground with rotation.
-- **Ctrl + Alt** – Node snap with rotation.
+- **F6** – 放置到地面。
+- **Alt + F6** – 带旋转放置到地面。
+- **Ctrl + Alt** – 带旋转的节点吸附。
 
-### Bug reporting
+### 报告 Bug
 
-- **F11** – Goes to the next bug.
-- **Shift+F11** – Go to the previous bug.
-- **Alt+F11** – Reports a bug (shows Report bug dialog).
-- **Shift+Alt+F11** – Reports a bug with a screenshot (shows Report bug dialog).
+- **F11** – 转到下一个 bug。
+- **Shift+F11** – 转到上一个 bug。
+- **Alt+F11** – 报告 bug（显示“报告 bug”对话框）。
+- **Shift+Alt+F11** – 带截图报告 bug（显示“报告 bug”对话框）。
 
-### ﻿View
+### ﻿视图
 
-- **Alt+W** – Toggle visibility of wireframe.
-- **Alt+C** – Toggle visibility of collision boxes.
+- **Alt+W** – 切换线框可见性。
+- **Alt+C** – 切换碰撞盒可见性。
 
-### Find References
+### 查找引用
 
-- **Ctrl+C** – Copy selected rows into clipboard in CSV format.
-- **F5** – Refresh the results.
+- **Ctrl+C** – 将选定行以 CSV 格式复制到剪贴板。
+- **F5** – 刷新结果。
 
-### Misc
+### 其他
 
-- **A** – Toggles backgound map. The background texture is located here: /material/editor/bcgmap.png. The size of the background map is hardcoded in the editor code.
-- **G** – Toggles snap to ground mode.
-- **Ctrl+F** – Opens find dialog. Finds item and node by their index and City and Road by their names.
-- **F1** – Opens Help dialog with the list of shortcuts.
-- **F2** – Opens Content browser.
-- **F3** – Opens attribute replacement dialog.
-- **F5** – Toggles minimap.
-- **F7** – Toggles mirrors.
-- **F8** – Opens UI map.
-- **F9** – Opens weather dialog.
-- **Ctrl+MW** – Changes grid step (1 cm, 10 cm etc).
-- **Ctrl+E** – Exports the selected items to a file. Supports internal .sbd format, that can be imported by Import tool and .obj format, that can be imported in Maya or Blender.
-- **Ctrl+S** – Saves the current map.
-- **Ctrl+Shift+S** – Opens Saves As dialog that allows saving map to a different location.
-- **Ctrl+O** – Opens dialog where another map can be selected and loaded.
-- **Ctrl+N** – Opens a new empty map.
-- **Ctrl+Tab** – Toggle drop free camera modes.
-- **Ctrl+Tab (in Prefab Item Properties)** - skip between same property fields of each node
-- **Ctrl+T** - Open traffic tool
-- **Alt+V** - toggle instanced geometry on and off---
+- **A** – 切换背景地图。背景纹理位于：/material/editor/bcgmap.png。背景地图的尺寸在编辑器代码中硬编码。
+- **G** – 切换吸附到地面模式。
+- **Ctrl+F** – 打开查找对话框。按索引查找项和节点，按名称查找城市和道路。
+- **F1** – 打开包含快捷键列表的帮助对话框。
+- **F2** – 打开内容浏览器。
+- **F3** – 打开属性替换对话框。
+- **F5** – 切换小地图。
+- **F7** – 切换后视镜。
+- **F8** – 打开 UI 地图。
+- **F9** – 打开天气对话框。
+- **Ctrl+MW** – 更改网格步长（1 cm、10 cm 等）。
+- **Ctrl+E** – 将选定项导出到文件。支持可由导入工具导入的内部 .sbd 格式，以及可在 Maya 或 Blender 中导入的 .obj 格式。
+- **Ctrl+S** – 保存当前地图。
+- **Ctrl+Shift+S** – 打开“另存为”对话框，可将地图保存到其他位置。
+- **Ctrl+O** – 打开可选择并加载其他地图的对话框。
+- **Ctrl+N** – 打开新的空地图。
+- **Ctrl+Tab** – 切换自由相机放置模式。
+- **Ctrl+Tab（在预制件项属性中）** - 在每个节点的相同属性字段之间跳转
+- **Ctrl+T** - 打开交通工具
+- **Alt+V** - 切换实例化几何体的开启和关闭---
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/Map_Editor/Shortcuts | revision: 5709 | captured: 2026-10-21 23:56:14 -->

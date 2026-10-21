@@ -1,4 +1,4 @@
-# File:Simple cube select place tool and select model.jpg
+# 文件:Simple cube select place tool and select model.jpg
 
 ![Simple cube select place tool and select model.jpg](../../../images/files/Simple%20cube%20select%20place%20tool%20and%20select%20model.jpg/Simple_cube_select_place_tool_and_select_model.jpg)
 

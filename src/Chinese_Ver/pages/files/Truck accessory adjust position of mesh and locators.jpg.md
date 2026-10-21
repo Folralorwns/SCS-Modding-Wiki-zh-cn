@@ -1,4 +1,4 @@
-# File:Truck accessory adjust position of mesh and locators.jpg
+# 文件:Truck accessory adjust position of mesh and locators.jpg
 
 ![Truck accessory adjust position of mesh and locators.jpg](../../../images/files/Truck%20accessory%20adjust%20position%20of%20mesh%20and%20locators.jpg/Truck_accessory_adjust_position_of_mesh_and_locators.jpg)
 

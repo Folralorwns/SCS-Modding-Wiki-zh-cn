@@ -1,4 +1,4 @@
-# Template:NavigationTile
+# 模板:NavigationTile
 
 [[[File:{{{name}}}.png|50px|link=](https://modding.scssoft.com/wiki/%7B%7B%7Bname%7D%7D%7D)]]
 

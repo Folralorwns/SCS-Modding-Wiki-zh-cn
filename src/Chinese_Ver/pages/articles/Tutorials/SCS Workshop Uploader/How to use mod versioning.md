@@ -1,12 +1,12 @@
-# Tutorials/SCS Workshop Uploader/How to use mod versioning
+# 教程/SCS Workshop Uploader/如何使用模组版本控制
 
-> **TIP:** The game and tool is now in public beta. To use informational packages switch to public_beta branches on steam
+> **提示：** 游戏和工具目前处于公开测试阶段。要使用信息包，请切换到 Steam 上的 public_beta 分支
 
-With Steam Workshop mods you have better more flexible way to make your mod compatible with specified set of game versions. From ETS2 update 1.24, ATS update 1.3 and SCS Workshop Uploader 1.0.4 you can use new package option - informational package.
+通过 Steam Workshop 模组，你可以更灵活地让模组兼容指定的游戏版本。自 ETS2 1.24 更新、ATS 1.3 更新和 SCS Workshop Uploader 1.0.4 起，你可以使用新的包选项——信息包。
 
-Informational package is a package that is used just for informational purpose - it means it does not affect gameplay in any way and is simply here to let mod user know what he has to do to use your mod - for example upgrade to the latest patch or downgrade to the currently supported patch (useful for map authors which needs some time to update mod to work with the latest patch).
+信息包是仅用于信息告知的包——这意味着它不会以任何方式影响玩法，它存在的目的只是让模组用户知道要使用你的模组需要做什么——例如升级到最新补丁，或降级到当前受支持的补丁（对需要一些时间才能更新模组以适配最新补丁的地图作者很有用）。
 
-Let's assume your **versions.sii** file looks like this:
+假设你的 **versions.sii** 文件如下所示：
 
 ```
 SiiNunit
@@ -21,15 +21,15 @@ package_version_info : .content
 }
 ```
 
-Which means your mod is only compatible with **1.25** update.
+这意味着你的模组仅兼容 **1.25** 更新。
 
-The incompatible package should contain **manifest.sii**, mod icon and mod description file. The manifest can be the same as for normal package - icon may indicate that this is just informational version without any functionality however mod user will see red "Incompatible" label next to the mod in mod manager so it can be the same as for different versions. The description *should* let mod user know how to adjust his game to make your mod working for example:
+不兼容包应包含 **manifest.sii**、模组图标和模组描述文件。manifest 可以与普通包的 manifest 相同——图标可以表明这只是一个不含任何功能的信息版本，但模组用户会在模组管理器中看到模组旁红色的“Incompatible”标签，因此图标也可以与用于不同版本时相同。描述*应当*让模组用户知道如何调整游戏以使你的模组正常工作，例如：
 
 ```
 To make super mod 1000 work you must downgrade your game to patch 1.25. To do that go to your steam game library, select Euro Truck Simulator 2 click right mouse button on it select Preferences go to Beta tab and select temporary_1_25 - 1.25 for incompatible mods beta and close the dialog. Steam will downgrade your game version and on next launch of the game super mod 1000 will be useable again!
 ```
 
-In **versions.sii** this version will look like this:
+在 **versions.sii** 中，该版本将如下所示：
 
 ```
 package_version_info : .info.any
@@ -39,11 +39,11 @@ package_version_info : .info.any
 }
 ```
 
-This version will be used even for the older and for newer versions than **1.25**. At the moment there is no way to specify different informational package for older game version so for example if your mod will target **1.25** game patch you will be able to specify different informational version for 1.24 and older patches and different for 1.26 and newer. However you can specify version of informational package so it will be only used for specified version. Let's say you have two informational versions - one informing about downgrade (folder is called **downgrade_info_package**) and one informing about update of the game (folder is called **upgrade_info_package**).
+该版本甚至会被用于比 **1.25** 更旧和更新的版本。目前无法为更旧的游戏版本指定不同的信息包，因此，举例来说，如果你的模组面向 **1.25** 游戏补丁，你可以为 1.24 及更旧补丁指定不同的信息版本，并为 1.26 及更新版本指定另一个。不过，你可以指定信息包的版本，使其仅用于指定的版本。假设你有两个信息版本——一个提示降级（文件夹名为 **downgrade_info_package**），另一个提示游戏更新（文件夹名为 **upgrade_info_package**）。
 
-You have nice description in both packages with advices how to do upgrade and downgrade all you need to do now is to just add the packages to **versions.sii**.
+两个包中都有清晰的描述，并附有如何进行升级和降级的建议，你现在只需将这些包添加到 **versions.sii** 中。
 
-The version for older game versions will look like that: *(We use 1.24 and older versions only to demonstrate the functionality - this will start working starting from 1.24 patch of ETS2 and 1.3 of ATS)*
+更旧游戏版本所用的版本将如下所示：*（我们仅使用 1.24 及更旧版本演示该功能——该功能将从 ETS2 的 1.24 补丁和 ATS 的 1.3 开始生效）*
 
 ```
 package_version_info : .info.upgrade.older.game.versions
@@ -56,7 +56,7 @@ package_version_info : .info.upgrade.older.game.versions
 }
 ```
 
-The version for newer game versions will look like that.
+更新游戏版本所用的版本将如下所示。
 
 ```
 package_version_info : .info.downgrade.newer.game.versions
@@ -66,7 +66,7 @@ package_version_info : .info.downgrade.newer.game.versions
 }
 ```
 
-You may notice in newer package there are no compatible versions specified. As your content package looks like that:
+你可能注意到，较新的包中没有指定兼容版本。因为你的内容包如下所示：
 
 ```
 package_version_info : .content
@@ -76,6 +76,6 @@ package_version_info : .content
 }
 ```
 
-All the older game versions are listed in the upgrade package - downgrade package will be selected ONLY for the patches newer than 1.25.
+所有更旧的游戏版本都列在升级包中——只有高于 1.25 的补丁才会选中降级包。
 
 <!-- source: https://modding.scssoft.com/wiki/Tutorials/SCS_Workshop_Uploader/How_to_use_mod_versioning | revision: 2702 | captured: 2026-10-21 23:56:14 -->

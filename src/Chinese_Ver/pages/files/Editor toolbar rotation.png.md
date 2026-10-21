@@ -1,4 +1,4 @@
-# File:Editor toolbar rotation.png
+# 文件:Editor toolbar rotation.png
 
 ![Editor toolbar rotation.png](../../../images/files/Editor%20toolbar%20rotation.png/Editor_toolbar_rotation.png)
 

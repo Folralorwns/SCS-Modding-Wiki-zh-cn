@@ -1,25 +1,25 @@
 # Documentation/Tools/Dedicated Server
 
-## How to download a dedicated server
+## 如何下载专用服务器
 
-##### Game owner, using Steam client
+##### 游戏所有者，使用 Steam 客户端
 
-Dedicated server can be downloaded via the Steam client. You can either search directly for application ID in your library tab
+专用服务器可以通过 Steam 客户端下载。你既可以在库标签页中直接搜索应用程序 ID
 
 ```
 Euro Truck Simulator 2 Dedicated Server ID = 1948160
 American Truck Simulator Dedicated Server ID = 2239530
 ```
 
-or you can find it among listed tools. To show tools in the Steam library, you have to adjust steam filters (combo box above search field in library tab).
+也可以在列出的工具中找到它。要在 Steam 库中显示工具，你必须调整 Steam 筛选器（库标签页搜索框上方的组合框）。
 
-##### Anonymous, without game ownership, or without Steam Client
+##### 匿名，无游戏所有权，或未安装 Steam 客户端
 
-If you are not game owner or you don't have the Steam client installed, you have to use [SteamCMD](https://developer.valvesoftware.com/wiki/SteamCMD) to download server. **Remember that SteamCMD does not auto-update your server.**
+如果你不是游戏所有者，或未安装 Steam 客户端，则必须使用 [SteamCMD](https://developer.valvesoftware.com/wiki/SteamCMD) 下载服务器。**请记住，SteamCMD 不会自动更新你的服务器。**
 
-## How to launch a dedicated server
+## 如何启动专用服务器
 
-You can launch the dedicated server either from the Steam client's library tab, or directly by starting its executable. Game ownership is not required. If you want to launch a server with different configuration, you can use the following startup parameters:
+你可以从 Steam 客户端的库标签页启动专用服务器，也可以直接启动其可执行文件。无需游戏所有权。如果你想以不同的配置启动服务器，可以使用以下启动参数：
 
 ```
 -server "server packages file name" (loads non default server game setup)
@@ -28,87 +28,87 @@ You can launch the dedicated server either from the Steam client's library tab, 
 -nosingle (enables multiple instances of server, will be default in next patch)
 ```
 
-If you have redirected home directory for the game (location where server_config, server.log, game.log, server_packages are stored), you have to redirect server home directory as well (this is done with -homedir parameter).
+如果你已重定向游戏的主目录（即存储 server_config、server.log、game.log、server_packages 的位置），那么你也必须重定向服务器的主目录（通过 -homedir 参数完成）。
 
-### How to launch a dedicated server on Linux without Steam client installed
+### 如何在未安装 Steam 客户端的情况下在 Linux 上启动专用服务器
 
-You may get the following error when starting a server with Linux: `[S_API FAIL] SteamAPI_Init() failed; unable to locate a running instance of Steam, or a local steamclient.dll.` To launch server on Linux `steamclient.so` library is required. You can either use provided server_launch.sh script (located in folder next to the server executable) or create a link to this library using `ln -s steamcmd/linux64/steamclient.so ~/.steam/sdk64/steamclient.so`
+在 Linux 上启动服务器时，你可能会遇到以下错误：`[S_API FAIL] SteamAPI_Init() failed; unable to locate a running instance of Steam, or a local steamclient.dll.` 在 Linux 上启动服务器需要 `steamclient.so` 库。你可以使用提供的 server_launch.sh 脚本（位于服务器可执行文件旁边的文件夹中），或使用 `ln -s steamcmd/linux64/steamclient.so ~/.steam/sdk64/steamclient.so` 创建指向该库的链接。
 
-## First launch
+## 首次启动
 
-First launch will create server home folder and default server_config.sii.
+首次启动会创建服务器主文件夹与默认的 server_config.sii。
 
-By default server home directory is configured to point at the [Game User Path](../Engine/Game%20user%20path.md).
+默认情况下，服务器主目录被配置为指向[游戏用户路径](../Engine/Game%20user%20path.md)。
 
-This location can be changed with -homedir start up parameter, however it must be changed for both game and server.
+此位置可以通过 -homedir 启动参数更改，但必须为游戏和服务器同时更改。
 
-Next you will receive following error: "&lt;ERROR&gt; [MP] Error: Server packages file not found. This is required to load proper map, DLCs and mods". This means, you have to provide additional server configuration according to following steps.
+接下来你会收到以下错误：“&lt;ERROR&gt; [MP] Error: Server packages file not found. This is required to load proper map, DLCs and mods”。这意味着你必须按照以下步骤提供额外的服务器配置。
 
-## Required files to run dedicated server
+## 运行专用服务器所需的文件
 
-In the server/game home folder the following files are used to set up a dedicated server session:
+在服务器/游戏主文件夹中，以下文件用于设置专用服务器会话：
 
 **server_config.sii**
 
-- contains session description and configuration, connections ports info, logon token and list of moderators
-- ports and logon token must be different for each session instance running at the same time
-- default configuration, which is generated automatically on first launch
+- 包含会话描述与配置、连接端口信息、登录令牌以及管理员列表
+- 端口与登录令牌对于同时运行的每个会话实例必须不同
+- 默认配置，在首次启动时自动生成
 
 **server_packages.sii**
 
-- contains map details, dlc and mods configuration
+- 包含地图详情、DLC 与模组配置
 
 **server_packages.dat**
 
-- contains internal map data
+- 包含内部地图数据
 
-server_packages.sii and server_packages.dat must be generated manually via calling the `export_server_packages` command while normal game is running. Generated configuration will mirror your game configuration. These files are necessary for a dedicated server to start. If you are running a server without the base game installed on it, you have to manually copy these files to the server home directory.
+server_packages.sii 与 server_packages.dat 必须在正常游戏运行时通过调用 `export_server_packages` 命令手动生成。生成的配置会与你的游戏配置保持一致。这些文件是专用服务器启动所必需的。如果你在未安装基础游戏的机器上运行服务器，则必须手动将这些文件复制到服务器主目录。
 
-These files are NOT linked to your account in any way.
+这些文件与你的账户没有任何关联。
 
-## How to export server_packages
+## 如何导出 server_packages
 
-In config.cfg (found in game home directory) enable game console - uset g_console "1". When game is running press `~` to open game console and run `export_server_packages` or `export_server_packages destination file` command. server_packages.sii will be generated in the game home folder. It is necessary for map to be loaded when this command is called. This will generate server_packages.sii and server_packages.dat. These files carry dlc and mod configuration based on your current game setup.
+在 config.cfg（位于游戏主目录）中启用游戏控制台：uset g_console "1"。游戏运行时按 `~` 打开游戏控制台，并运行 `export_server_packages` 或 `export_server_packages destination file` 命令。server_packages.sii 会生成在游戏主文件夹中。调用此命令时必须已加载地图。这将生成 server_packages.sii 与 server_packages.dat。这些文件会根据你当前的游戏设置携带 DLC 与模组配置。
 
-## Running server without game installed
+## 在未安装游戏的情况下运行服务器
 
-After first launch server home directory will be created. It will contain server.log.txt and server_config.sii. You have to provide generated server_packages.sii and server_packages.dat to this location.
+首次启动后会创建服务器主目录。其中会包含 server.log.txt 与 server_config.sii。你必须将生成的 server_packages.sii 与 server_packages.dat 放到此位置。
 
-## Data requirements
+## 数据要求
 
-Dedicated server does not require any additional DLC or mod data. Everything needed is handled via server_packages.sii and server_packages.dat files. It is not required to copy any additional files. As the dedicated server does not use the Steam Client, it cannot access the workshop.
+专用服务器不需要任何额外的 DLC 或模组数据。所有需要的内容都通过 server_packages.sii 与 server_packages.dat 文件处理。无需复制任何额外文件。由于专用服务器不使用 Steam 客户端，因此无法访问创意工坊。
 
-## Network address translation (NAT)
+## 网络地址转换（NAT）
 
-Dedicated server does not handle NAT punching and public IP or port forwarding is required to show server in session browser. However, session direct search works even for server that is behind NAT and it is possible to connect to such server.
+专用服务器不处理 NAT 穿透，要在会话浏览器中显示服务器，需要公网 IP 或端口转发。不过，即使服务器位于 NAT 之后，会话直接搜索也能工作，并且可以连接到这样的服务器。
 
-Search id is listed when dedicated server starts or in convoy info screen for hosted sessions. To search for a server use search field in game server browser.
+搜索 ID 会在专用服务器启动时列出，托管会话时也会显示在车队信息界面中。要搜索服务器，请使用游戏服务器浏览器中的搜索字段。
 
-## Ports setup
+## 端口设置
 
-**connection_virtual_port** and **query_virtual_port** are virtual ports used for connection to server. Allowed range is <100,200>.
+**connection_virtual_port** 与 **query_virtual_port** 是用于连接服务器的虚拟端口。允许范围为 <100,200>。
 
-**connection_dedicated_portand** and **query_dedicated_port** are physical ports used by the Steam game server api to fill sessions browser. For LAN games query_dedicated_port has be in range of <27015,27020>.
+**connection_dedicated_portand** 与 **query_dedicated_port** 是 Steam 游戏服务器 API 用于填充会话浏览器的物理端口。对于局域网游戏，query_dedicated_port 必须在 <27015,27020> 范围内。
 
-For port forwarding both TPP/IP and UPD rules are required. Virtual ports do not need forwarding.
+端口转发需要同时具备 TPP/IP 与 UPD 规则。虚拟端口无需转发。
 
-## Server logon token
+## 服务器登录令牌
 
-By default, whenever a dedicated server is launched it is using an anonymous account. For such an account non-persistent server id is generated (used for direct search). To avoid this you can acquire a logon token on [https://steamcommunity.com/dev/managegameservers](https://steamcommunity.com/dev/managegameservers) (game ownership is required). This token has to be placed into server_config.
+默认情况下，专用服务器每次启动时都使用匿名账户。对此类账户会生成非持久化的服务器 ID（用于直接搜索）。要避免这种情况，你可以在 [https://steamcommunity.com/dev/managegameservers](https://steamcommunity.com/dev/managegameservers) 获取登录令牌（需要游戏所有权）。该令牌必须放入 server_config。
 
-Use the game appID to generate token, not the server appID!
+请使用游戏 appID 生成令牌，而不是服务器 appID！
 
-Example:
+示例：
 
 ```
 server_logon_token: 6544F7E034119F113526E96474F
 ```
 
-## Session moderators
+## 会话管理员
 
-As the dedicated server does not have any form or user interface, it is not possible to promote any player to a moderator while the session is running. You can register moderators in server_config using their steam_id to automatically promote them once they join the session.
+由于专用服务器没有任何形式的用户界面，因此无法在会话运行期间将任何玩家提升为管理员。你可以在 server_config 中使用玩家的 steam_id 注册管理员，以便他们在加入会话时自动提升为管理员。
 
-Example for two moderators:
+两个管理员的示例：
 
 ```
 moderator_list: 2
@@ -116,11 +116,11 @@ moderator_list[0]: 123456789
 moderator_list[1]: 234567891
 ```
 
-where 123456789 is the moderator's Steam id
+其中 123456789 是管理员的 Steam id
 
-## Quality of life
+## 便利功能
 
-Any player who is a moderator can now change the game time or disable rain. This can be done via chat message box by sending a message containing an admin command. Available admin commands are
+任何作为管理员的玩家现在都可以更改游戏时间或禁用降雨。这可以通过聊天消息框发送包含管理命令的消息来完成。可用的管理命令如下：
 
 ```
 /set_time <HH:MM>
@@ -128,17 +128,17 @@ Any player who is a moderator can now change the game time or disable rain. This
 /help
 ```
 
-## How to close server
+## 如何关闭服务器
 
-Press Ctrl + C.
+按 Ctrl + C。
 
-## Troubleshooting
+## 故障排查
 
-In server home folder server.log.txt and server.crash.txt (when server crashes) files can be found to help solve any issue with a dedicated server.
+在服务器主文件夹中可以找到 server.log.txt 与 server.crash.txt（在服务器崩溃时生成）文件，有助于解决专用服务器的任何问题。
 
-## Known issues
+## 已知问题
 
-When server is closed with message:
+当服务器关闭并显示以下消息时：
 
 ```
 [MP] Steam disconnected
@@ -146,9 +146,9 @@ When server is closed with message:
 [MP] Session closing
 ```
 
-It is caused by Steam losing connection. This can happen when internet connection is lost, or when the computer switches to sleep mode. Will be fixed in next patch.
+这是由 Steam 断开连接导致的。当互联网连接丢失，或计算机进入睡眠模式时可能发生。将在下一个补丁中修复。
 
-## Server config paramaters
+## 服务器配置参数
 
 ```
  lobby_name: "Euro Truck Simulator 2 server"            // Session name, limited to 63 characters.

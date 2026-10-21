@@ -2,20 +2,20 @@
 
 |  |  |
 | --- | --- |
-| **Name:** | g_currency |
-| **Purpose:** | Currency used in game. |
-| **Config:** | profile |
-| **Value:** | integer - currency_index |
+| **名称：** | g_currency |
+| **用途：** | 游戏中使用的货币。 |
+| **配置：** | profile |
+| **取值：** | 整数 - currency_index |
 
-## Values correct for vanilla game
+## 适用于原版游戏的取值
 
-*in case you are using some mod that changes /def/economy_data.sii file those values may change*
+*如果你使用了会修改 /def/economy_data.sii 文件的模组，这些取值可能会发生变化*
 
 <table class="wikitable" style="text-align: center;">
 <tbody><tr>
-<th rowspan="2">Value
+<th rowspan="2">取值
 </th>
-<th colspan="2">Currency Name
+<th colspan="2">货币名称
 </th></tr>
 <tr>
 <th>Euro Truck Simulator 2

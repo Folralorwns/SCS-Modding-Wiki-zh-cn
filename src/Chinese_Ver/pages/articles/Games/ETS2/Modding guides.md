@@ -1,56 +1,56 @@
-# Games/ETS2/Modding guides
+# 游戏/ETS2/模组指南
 
-With each new game update we are also shipping modding guides for users to be able to get their existing mods up-to-date.
+每次游戏更新时，我们也会随附模组指南，使用户能够将现有模组更新到最新状态。
 
-Page is organizing modding guides by update version numbers.
+本页面按更新版本号整理模组指南。
 
-## Misc useful commands
+## 其他实用命令
 
-- Running the game with **-unlimitedlog** command line parameter will disable the standard 1MB limit on size of game log file. This might be useful during update if you want to focus on some bugs first.
-- Running the game with **-validate** command line parameter or executing **validate** command on the console will run special game mode which will load all defined models, prefabs, vehicles and other objects to detect missing textures and similar errors. By examining the game log you can determine what the game was trying to do when error appeared. Note that there is still lot of things which might be wrong which are not checked in this mode.
-- Running the game with **-error_overlay** command line parameter will show overlay with number of error and warning messages printed to the log once at least one such message is printed.
+- 使用 **-unlimitedlog** 命令行参数运行游戏，将取消游戏日志文件 1MB 的标准大小上限。如果你在更新期间想先专注于某些缺陷，这可能会很有用。
+- 使用 **-validate** 命令行参数运行游戏，或在控制台执行 **validate** 命令，将运行特殊的游戏模式，加载所有已定义的模型、预制件、车辆和其他对象，以检测缺失的纹理及类似错误。通过查看游戏日志，你可以确定出现错误时游戏正在尝试做什么。请注意，仍有许多可能出错的地方不会在此模式下检查。
+- 使用 **-error_overlay** 命令行参数运行游戏，将在日志中至少打印一条错误或警告消息后，显示包含已打印错误和警告消息数量的覆盖层。
 
-## Updates
+## 更新
 
-- [Games/ETS2/Modding guides/1.54](Modding%20guides/1.54.md)
-- Games/ETS2/Modding guides/1.53
-- Games/ETS2/Modding guides/1.52
-- [Games/ETS2/Modding guides/1.51](Modding%20guides/1.51.md)
-- [Games/ETS2/Modding guides/1.50](Modding%20guides/1.50.md)
-- [Games/ETS2/Modding guides/1.49](Modding%20guides/1.49.md)
-- Games/ETS2/Modding guides/1.48.5
-- Games/ETS2/Modding guides/1.48
-- [Games/ETS2/Modding guides/1.47](Modding%20guides/1.47.md)
-- [Games/ETS2/Modding guides/1.46](Modding%20guides/1.46.md)
-- [Games/ETS2/Modding guides/1.44](Modding%20guides/1.44.md)
-- [Games/ETS2/Modding guides/1.43](Modding%20guides/1.43.md)
-- [Games/ETS2/Modding guides/1.42](Modding%20guides/1.42.md)
-- [Games/ETS2/Modding guides/1.40](Modding%20guides/1.40.md)
-- [Games/ETS2/Modding guides/1.39](Modding%20guides/1.39.md)
-- [Games/ETS2/Modding guides/1.38](Modding%20guides/1.38.md)
-- [Games/ETS2/Modding guides/1.37](Modding%20guides/1.37.md)
-- [Games/ETS2/Modding guides/1.36](Modding%20guides/1.36.md)
-- [Games/ETS2/Modding guides/1.35](Modding%20guides/1.35.md)
-- [Games/ETS2/Modding guides/1.33](Modding%20guides/1.33.md)
-- [Games/ETS2/Modding guides/1.32](Modding%20guides/1.32.md)
-- [Games/ETS2/Modding guides/1.31](Modding%20guides/1.31.md)
-- [Games/ETS2/Modding guides/1.30](Modding%20guides/1.30.md)
-- [Games/ETS2/Modding guides/1.28](Modding%20guides/1.28.md)
-- [Games/ETS2/Modding guides/1.27.2](Modding%20guides/1.27.2.md)
-- [Games/ETS2/Modding guides/1.27](Modding%20guides/1.27.md)
-- [Games/ETS2/Modding guides/1.26](Modding%20guides/1.26.md)
-- [Games/ETS2/Modding guides/1.25](Modding%20guides/1.25.md)
-- [Games/ETS2/Modding guides/1.24](Modding%20guides/1.24.md)
-- [Games/ETS2/Modding guides/1.23](Modding%20guides/1.23.md)
-- [Games/ETS2/Modding guides/1.22](Modding%20guides/1.22.md)
-- [Games/ETS2/Modding guides/1.20](Modding%20guides/1.20.md)
-- [Games/ETS2/Modding guides/1.19](Modding%20guides/1.19.md)
-- [Games/ETS2/Modding guides/1.17](Modding%20guides/1.17.md)
-- [Games/ETS2/Modding guides/1.16](Modding%20guides/1.16.md)
-- [Games/ETS2/Modding guides/1.15](Modding%20guides/1.15.md)
-- [Games/ETS2/Modding guides/1.14](Modding%20guides/1.14.md)
-- [Games/ETS2/Modding guides/1.11](Modding%20guides/1.11.md)
-- [Games/ETS2/Modding guides/1.9](Modding%20guides/1.9.md)
-- [Games/ETS2/Modding guides/1.4.1](Modding%20guides/1.4.1.md)
+- [ETS2 1.54 模组指南](Modding%20guides/1.54.md)
+- ETS2 1.53 模组指南
+- ETS2 1.52 模组指南
+- [ETS2 1.51 模组指南](Modding%20guides/1.51.md)
+- [ETS2 1.50 模组指南](Modding%20guides/1.50.md)
+- [ETS2 1.49 模组指南](Modding%20guides/1.49.md)
+- ETS2 1.48.5 模组指南
+- ETS2 1.48 模组指南
+- [ETS2 1.47 模组指南](Modding%20guides/1.47.md)
+- [ETS2 1.46 模组指南](Modding%20guides/1.46.md)
+- [ETS2 1.44 模组指南](Modding%20guides/1.44.md)
+- [ETS2 1.43 模组指南](Modding%20guides/1.43.md)
+- [ETS2 1.42 模组指南](Modding%20guides/1.42.md)
+- [ETS2 1.40 模组指南](Modding%20guides/1.40.md)
+- [ETS2 1.39 模组指南](Modding%20guides/1.39.md)
+- [ETS2 1.38 模组指南](Modding%20guides/1.38.md)
+- [ETS2 1.37 模组指南](Modding%20guides/1.37.md)
+- [ETS2 1.36 模组指南](Modding%20guides/1.36.md)
+- [ETS2 1.35 模组指南](Modding%20guides/1.35.md)
+- [ETS2 1.33 模组指南](Modding%20guides/1.33.md)
+- [ETS2 1.32 模组指南](Modding%20guides/1.32.md)
+- [ETS2 1.31 模组指南](Modding%20guides/1.31.md)
+- [ETS2 1.30 模组指南](Modding%20guides/1.30.md)
+- [ETS2 1.28 模组指南](Modding%20guides/1.28.md)
+- [ETS2 1.27.2 模组指南](Modding%20guides/1.27.2.md)
+- [ETS2 1.27 模组指南](Modding%20guides/1.27.md)
+- [ETS2 1.26 模组指南](Modding%20guides/1.26.md)
+- [ETS2 1.25 模组指南](Modding%20guides/1.25.md)
+- [ETS2 1.24 模组指南](Modding%20guides/1.24.md)
+- [ETS2 1.23 模组指南](Modding%20guides/1.23.md)
+- [ETS2 1.22 模组指南](Modding%20guides/1.22.md)
+- [ETS2 1.20 模组指南](Modding%20guides/1.20.md)
+- [ETS2 1.19 模组指南](Modding%20guides/1.19.md)
+- [ETS2 1.17 模组指南](Modding%20guides/1.17.md)
+- [ETS2 1.16 模组指南](Modding%20guides/1.16.md)
+- [ETS2 1.15 模组指南](Modding%20guides/1.15.md)
+- [ETS2 1.14 模组指南](Modding%20guides/1.14.md)
+- [ETS2 1.11 模组指南](Modding%20guides/1.11.md)
+- [ETS2 1.9 模组指南](Modding%20guides/1.9.md)
+- [ETS2 1.4.1 模组指南](Modding%20guides/1.4.1.md)
 
 <!-- source: https://modding.scssoft.com/wiki/Games/ETS2/Modding_guides | revision: 5658 | captured: 2026-10-21 23:56:14 -->

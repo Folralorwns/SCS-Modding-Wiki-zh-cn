@@ -1,52 +1,52 @@
 # Documentation/Engine/Sound/TruckTransmission
 
-## Sounds - The truck transmission and the retarder
+## 声音 - 卡车变速箱与缓速器
 
-The next group of the sounds of the truck are sounds of the transmission and the retarder.
+卡车的下一组声音是变速箱与缓速器的声音。
 
-### Retarder
+### 缓速器
 
-Event "retarder" plays sound of the retarder. It has to be 3D event. The event should be routed to the "truck_effects" audio bus.
+"retarder" 事件播放缓速器的声音。它必须是 3D 事件。该事件应路由到 "truck_effects" 音频总线。
 
-The event must be looped and following event parameters must exist:
+该事件必须循环播放，且必须存在以下事件参数：
 
-- retarder - the value is in the range <0 - 1> and represents the retarder activity
-- trans_rpm - the value is in the range <0 - 3000> and represents the rpm of the transmission
+- retarder - 取值范围为 <0 - 1>，表示缓速器的活动程度
+- trans_rpm - 取值范围为 <0 - 3000>，表示变速箱的转速
 
-### Air gear (noise)
+### 气动换挡（噪声）
 
-Air discharge sound effect of the gearbox. This is noise played when gearbox is shifting. Eg european electro-pneumatic ATM transmissions make their typical sound in that moment. It has to be 3D event. The event should be routed to the "truck_effects" audio bus. It is possible to use randomization of the assets supported by FMOD Studio.
+变速箱的排气声效果。这是变速箱换挡时播放的噪声。例如欧洲电控气动 ATM 变速箱在该时刻会发出其典型声音。它必须是 3D 事件。该事件应路由到 "truck_effects" 音频总线。可以使用 FMOD Studio 支持的资源随机化。
 
-This is a simple ("one shot") event.
+这是一个简单（"one shot"）事件。
 
-### Gear grind
+### 齿轮打齿
 
-Sound of grinding of the transmission gears. Used mainly as sign of wrong rpm during fully manual shifting. It has to be 3D event. The event should be routed to the "truck_effects" audio bus.
+变速箱齿轮打齿的声音。主要用作全手动换挡时转速错误的提示。它必须是 3D 事件。该事件应路由到 "truck_effects" 音频总线。
 
-The event must be looped. There are no parameters.
+该事件必须循环播放。没有参数。
 
-### Gear wrong
+### 挡位错误
 
-Sound effect of incorrect gearbox engagement. Used as sign of damaged gearbox even when using automatic shifting. It has to be 3D event. The event should be routed to the "truck_effects" audio bus.
+变速箱挂挡不正确的声音效果。即使在自动换挡时，也用作变速箱损坏的提示。它必须是 3D 事件。该事件应路由到 "truck_effects" 音频总线。
 
-This is a simple ("one shot") event.
+这是一个简单（"one shot"）事件。
 
-## Sound Configuration
+## 声音配置
 
-The group of sounds configuration is stored in the "accessory_transmission_data" data.
+该组声音配置存储在 "accessory_transmission_data" 数据中。
 
-There is no mandatory events but there is no default events either. Only the defined sounds will be played. There is array "sounds" which contents specification for the events:
+没有强制事件，但也没有默认事件。只有已定义的声音会被播放。存在数组 "sounds"，其内容为事件的规格说明：
 
 - retarder
 - air_gear
 - gear_grind
 - gear_wrong
 
-### Example
+### 示例
 
-There are configuration files for transmissions for the "Peterbilt 579" inside folder "/def/vehicle/truck/peterbilt.579/transmission".
+"Peterbilt 579" 的变速箱配置文件位于文件夹 "/def/vehicle/truck/peterbilt.579/transmission" 中。
 
-Each accessory include *@include "sound.sui"* file which contents indirect definition of the events:
+每个配件都包含 *@include "sound.sui"* 文件，其中包含事件的间接定义：
 
 ```
 	sounds[]: "retarder|/sound/truck/default/retarder.soundref"
@@ -55,8 +55,8 @@ Each accessory include *@include "sound.sui"* file which contents indirect defin
 	sounds[]: "gear_wrong|/sound/truck/default/effects_gear_wrong.soundref"
 ```
 
-### Sound Position
+### 声音位置
 
-The 3D position of this sounds is (by default) the same position as the engine.<br> This position could be modified by the .soundref file. (see [Sound reference file](../Sound.md#Sound_reference_file))
+这些声音的 3D 位置（默认）与发动机相同。<br> 该位置可由 .soundref 文件修改。（见 [声音引用文件](../Sound.md#Sound_reference_file)）
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Sound/TruckTransmission | revision: 4799 | captured: 2026-10-21 23:56:14 -->

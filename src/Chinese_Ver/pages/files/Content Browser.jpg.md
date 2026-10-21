@@ -1,4 +1,4 @@
-# File:Content Browser.jpg
+# 文件:Content Browser.jpg
 
 ![Content Browser.jpg](../../../images/files/Content%20Browser.jpg/Content_Browser.jpg)
 

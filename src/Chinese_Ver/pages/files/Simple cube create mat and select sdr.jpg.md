@@ -1,4 +1,4 @@
-# File:Simple cube create mat and select sdr.jpg
+# 文件:Simple cube create mat and select sdr.jpg
 
 ![Simple cube create mat and select sdr.jpg](../../../images/files/Simple%20cube%20create%20mat%20and%20select%20sdr.jpg/Simple_cube_create_mat_and_select_sdr.jpg)
 

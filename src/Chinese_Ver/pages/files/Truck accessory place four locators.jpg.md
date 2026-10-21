@@ -1,4 +1,4 @@
-# File:Truck accessory place four locators.jpg
+# 文件:Truck accessory place four locators.jpg
 
 ![Truck accessory place four locators.jpg](../../../images/files/Truck%20accessory%20place%20four%20locators.jpg/Truck_accessory_place_four_locators.jpg)
 

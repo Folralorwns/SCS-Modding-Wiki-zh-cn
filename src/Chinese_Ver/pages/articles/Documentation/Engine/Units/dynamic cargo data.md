@@ -1,47 +1,47 @@
 # Documentation/Engine/Units/dynamic cargo data
 
-The **dynamic cargo data** unit class includes all needed data related to dynamic cargo loading feature. Units of this type are found in **/def/vehicle/cargo/<cargo_name>/**, typically in the same file as [accessory cargo data](accessory%20cargo%20data.md). Such accessory cargo data then contains a pointer to its dynamic cargo data.
+**dynamic cargo data** 单元类包含与动态货物装载功能相关的所有必需数据。此类型的单元位于 **/def/vehicle/cargo/<cargo_name>/** 中，通常与 [accessory cargo data](accessory%20cargo%20data.md) 位于同一文件。这样的配件货物数据随后包含一个指向其动态货物数据的指针。
 
-For debugging purposes, it is better to not leave this unit nameless. But choose the name carefully to avoid conflicts! The naming convention for SCS cargoes is *dyn.cargo.data.<cargo_name>*, where you substitute <cargo_name> for the cargo that you're adding. For example *dyn.cargo.data.potatoes_b*.
+出于调试目的，最好不要让此单元保持无名。但请谨慎选择名称以避免冲突！SCS 货物的命名约定为 *dyn.cargo.data.<cargo_name>*，其中将 <cargo_name> 替换为你所添加的货物。例如 *dyn.cargo.data.potatoes_b*。
 
-## Attributes
+## 属性
 
-Many attributes can be omitted. From 1.56 there are now three types of dynamic cargo (un)loading:
+许多属性可以省略。从 1.56 起，动态货物装载/卸载共有三种类型：
 
-- **Particles** - the dynamic cargo (un)loading of grainhoppers added in 1.51. For this type the other required attributes are **trailer_particle**, **world_particle**, and **material_path**. For dynamic cargo data to be considered correct, you must be able to load it (world_particle), unload it (trailer_particle), and display a material on the cargo pile mesh inside the trailer (material_path).
-- **Mover** - the dynamic cargo (un)loading of logger trailers added in 1.52. This type ignores all the particle attributes and as of 1.54 it uses the cargo model from [accessory cargo data](accessory%20cargo%20data.md) if the loading_method: cylinder is supported.
-- **Mover_bulk** - the dynamic cargo (un)loading of scrap metal added in 1.56. This type uses a mover to load the cargo, but inside the trailer there is a mesh that grows as in the particle-based loading, albeit in increments.
+- **Particles** - 1.51 中新增的谷物漏斗车动态货物装载/卸载。对此类型，其他必需属性为 **trailer_particle**、**world_particle** 和 **material_path**。要使动态货物数据被视为正确，你必须能够装载它（world_particle）、卸载它（trailer_particle），并在挂车内的货堆网格上显示材质（material_path）。
+- **Mover** - 1.52 中新增的原木挂车动态货物装载/卸载。此类型忽略所有粒子属性，并且自 1.54 起，如果支持 loading_method: cylinder，它会使用来自 [accessory cargo data](accessory%20cargo%20data.md) 的货物模型。
+- **Mover_bulk** - 1.56 中新增的废金属动态货物装载/卸载。此类型使用 mover 装载货物，但挂车内部有一个网格，其增长方式与基于粒子的装载相同，只是以增量方式进行。
 
-Entries marking legend:
+条目标记说明：
 
-- p - required for particles-based bulk (un)loading.
-- m - required for mover-based cylinder (un)loading.
-- b - required for mover-based bulk loading.
+- p - 基于粒子的散货装载/卸载所必需。
+- m - 基于 mover 的圆柱体装载/卸载所必需。
+- b - 基于 mover 的散货装载所必需。
 
-If no letter is marked, this signifies that the attribute is optional.
+如果未标注字母，则表示该属性为可选项。
 
-| Name | [Type](../Units.md#Attribute_types) | Required | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 必需 | 描述 |
 | --- | --- | --- | --- |
-| type | enum | pmb | The type of the dynamic cargo data, currently three exist (see above). particles mover mover_bulk |
-| trailer_particle | string | p | [Unit name](../Units.md) of the particle effect (particle_set) that is emitted from the trailer during dynamic cargo UNLOADING. |
-| trailer_particle_night | string |  | Unit name of the particle effect that is emitted from the trailer during dynamic cargo UNLOADING. (Night variant) |
-| impact_particle | string |  | Unit name of the particle effect that is emitted at the place where the loading particle effect (world_particle) touches the trailer. |
-| impact_particle_night | string |  | Unit name of the particle effect that is emitted at the place where the loading particle effect (world_particle) touches the trailer. (Night variant) |
-| world_particle | string | p | Unit name of the particle effect that is emitted from a cargo particle hookup in the map during dynamic cargo LOADING. |
-| world_particle_night | string |  | Unit name of the particle effect that is emitted from a cargo particle hookup in the map during dynamic cargo LOADING. (Night variant) |
-| material_path | string | pb | Path to the material used for the mesh representing the pile of cargo inside the trailer. |
-| cargo_slope_angle | float |  | The [angle of repose](https://en.wikipedia.org/wiki/Angle_of_repose) of the cargo when it is loaded into the trailer. In other words how steep the pile of cargo will be when loading. *Default value:* 25.0. |
-| loading_sound | string |  | Path to the sound emitted from the trailer at the spot where the stream of cargo touches the pile of cargo during loading phase/when the loader mover places a pile of cargo inside the trailer. |
-| unloading_sound_default | string |  | Path to the sound emitted from the trailer at the spot where the stream of cargo exits the trailer during unloading phase/when the loader mover takes out a pile of cargo from the trailer. |
-| pile_model | string | b | Path to the static model serving as the pile inside the grab handle. |
-| grab_types | array&lt;token&gt; | mb | Array of tokens of the names of grab handles that can (un)load this cargo. Can repeat, which is used for defining the *variants* attribute. |
-| variants | array&lt;token&gt; | b | Array of tokens of the names of the variants of the *pile_model*. You must define the same number of variants as *grab_types*, effectively matching them to the grab handles. |
-| variant_radius | array&lt;float&gt; | b | Array of "fake radii" of the variants of the *pile_model*. You must define the same number of variants as *grab_types*, effectively matching them to the grab handles. This radius serves to control how much the grab handle will close around the cargo and must be fiddled with before a perfect fit is created. |
+| type | enum | pmb | 动态货物数据的类型，目前存在三种（见上文）。particles mover mover_bulk |
+| trailer_particle | string | p | 动态货物卸载期间从挂车发出的粒子效果（particle_set）的[单元名称](../Units.md)。 |
+| trailer_particle_night | string |  | 动态货物卸载期间从挂车发出的粒子效果的单元名称。（夜间变体） |
+| impact_particle | string |  | 在装载粒子效果（world_particle）接触挂车处发出的粒子效果的单元名称。 |
+| impact_particle_night | string |  | 在装载粒子效果（world_particle）接触挂车处发出的粒子效果的单元名称。（夜间变体） |
+| world_particle | string | p | 动态货物装载期间从地图中的货物粒子挂接点发出的粒子效果的单元名称。 |
+| world_particle_night | string |  | 动态货物装载期间从地图中的货物粒子挂接点发出的粒子效果的单元名称。（夜间变体） |
+| material_path | string | pb | 用于表示挂车内货堆的网格所用材质的路径。 |
+| cargo_slope_angle | float |  | 货物装入挂车时的[休止角](https://en.wikipedia.org/wiki/Angle_of_repose)。换言之，即装载时货堆的陡峭程度。*默认值：* 25.0。 |
+| loading_sound | string |  | 在装载阶段/当装载机将货堆放入挂车内时，挂车在货物流触及货堆处发出的声音的路径。 |
+| unloading_sound_default | string |  | 在卸载阶段/当装载机从挂车中取出货堆时，挂车在货物流离开挂车处发出的声音的路径。 |
+| pile_model | string | b | 抓斗内部用作货堆的静态模型的路径。 |
+| grab_types | array&lt;token&gt; | mb | 可装载/卸载此货物的抓斗名称的 token 数组。可以重复，用于定义 *variants* 属性。 |
+| variants | array&lt;token&gt; | b | *pile_model* 的变体名称的 token 数组。你必须定义与 *grab_types* 数量相同的变体，从而将它们与抓斗一一对应。 |
+| variant_radius | array&lt;float&gt; | b | *pile_model* 各变体的“假半径”数组。你必须定义与 *grab_types* 数量相同的变体，从而将它们与抓斗一一对应。此半径用于控制抓斗围绕货物闭合的程度，必须反复调整才能获得完美贴合。 |
 
-##### Note on optional attributes
+##### 关于可选属性的说明
 
-If night variants of particles are not defined, the normal (day) variant is used.
+如果未定义粒子的夜间变体，则使用普通（日间）变体。
 
-Sounds can be defined for any loading type, but they behave slightly differently. For particles-based loading, the sound is played continuously during the trailer (un)loading. For mover-based loading, the sound is played once when the cargo 'pops' from the grab handle into the trailer or vice versa.
+可为任何装载类型定义声音，但其行为略有不同。对于基于粒子的装载，声音会在挂车装载/卸载期间持续播放。对于基于 mover 的装载，当货物从抓斗“弹入”挂车或反向弹出时，声音只播放一次。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Units/dynamic_cargo_data | revision: 5732 | captured: 2026-10-21 23:56:14 -->

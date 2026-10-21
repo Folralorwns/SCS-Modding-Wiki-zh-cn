@@ -1,4 +1,4 @@
-# File:Simple cube apply uvmap.jpg
+# 文件:Simple cube apply uvmap.jpg
 
 ![Simple cube apply uvmap.jpg](../../../images/files/Simple%20cube%20apply%20uvmap.jpg/Simple_cube_apply_uvmap.jpg)
 

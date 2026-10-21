@@ -1,4 +1,4 @@
-# File:Simple cube blender enable addon.jpg
+# 文件:Simple cube blender enable addon.jpg
 
 ![Simple cube blender enable addon.jpg](../../../images/files/Simple%20cube%20blender%20enable%20addon.jpg/Simple_cube_blender_enable_addon.jpg)
 

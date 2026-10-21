@@ -1,77 +1,77 @@
-# Documentation/Tools/Map Editor/New Editor Features 1.49
+# 文档/工具/地图编辑器/编辑器新功能 1.49
 
-## Top Menu changes
+## 顶部菜单更改
 
-The top menu **File - Edit - View - Map - Tools - Debug - Help** had changes in the content of each section and also the names of some sections.
+顶部菜单 **File - Edit - View - Map - Tools - Debug - Help** 中各分区的内容发生了变化，部分分区的名称也有所更改。
 
-The new setup is:
+新的结构为：
 
-- **File** - stay the same
-- **Edit** - represents the Edit functions and expanded with the various Edit modes, the isolation functions moved to next section
-- **Selection** - represents the actions you can do with a selection in map
+- **File** - 保持不变
+- **Edit** - 表示编辑功能，并通过各种编辑模式进行了扩展，隔离功能已移至下一分区
+- **Selection** - 表示可以在地图中对选区执行的操作
 
-> **Note:** With the exception of Cut/Copy/Paste - those stay in Edit due to inter-software habits
+> **注意：** 除剪切/复制/粘贴之外 - 由于跨软件的使用习惯，这些仍保留在 Edit 中
 
-- **View** - represents visualization options and dialogues that are supposed to show you some information
+- **View** - 表示可视化选项以及用于向你显示某些信息的对话框
 
-> **Note:** The View Distance Debug Tool was renamed to View Distance Display Range as it more precisely describes the function of this dialogue
+> **注意：** View Distance Debug Tool 已重命名为 View Distance Display Range，因为后者更准确地描述了该对话框的功能
 
-- **Map** - represents the interactions you can do with the whole map file
-- **Debug** - all debug views, validation and the traffic tool
-- **Editor** - remaining software documentation and help, as well as the Editor/Map Settings
+- **Map** - 表示可以对整个地图文件执行的操作
+- **Debug** - 所有调试视图、验证和交通工具
+- **Editor** - 其余软件文档和帮助，以及编辑器/地图设置
 
-## Compound update
+## 组合更新
 
-- **RMB click** on item in compound now opens the Properties of the Compound - you don't need to search for the Compound node
-- **CTRL+RMB click** on item in compound now opens the Properties of that item - without need for you to break the Compound to access it
+- 现在**单击鼠标右键**组合中的项会打开组合的属性 - 你无需再寻找组合节点
+- 现在 **CTRL+右键单击**组合中的项会打开该项的属性 - 你无需先拆分组合即可访问
 
-## Find Reference search in Find dialogue
+## 查找对话框中的查找引用搜索
 
-You now can select option to search for Specific item by
+现在你可以选择按以下方式搜索特定项的选项
 
-- item index
-- node index
+- 项索引
+- 节点索引
 - UID
 
-If you do this instead of camera teleporting to the said item *(risking crash if there is a problem with the item)* the Found dialogue window opens and you can use it to remotely
+这样操作时，相机不会传送到所述项 *(如果该项存在问题，会有崩溃风险)*，而是会打开 Found 对话框窗口，你可以用它远程
 
-- open the item's properties
-- delete the item
+- 打开该项的属性
+- 删除该项
 
-> **Note:** *(previously you could only use "go to" function of the Find dialogue and/or console or delete such item using the console)*
+> **注意：** *(此前你只能使用 Find 对话框和/或控制台的 “go to” 功能，或使用控制台删除此类项)*
 
-## Changes in Errors&Warnings
+## 错误与警告的变更
 
-- The small error popup informing you of too small item no longer appears!
-- Instead ALL ERRORS now appear in the Found window where you can directly interact with the relevant items
-- ADDITIONALLY you now can use **Debug -> Validate errors** button to display the error list whenever you need, not only on map save!
+- 提示项过小的错误弹窗不再出现！
+- 取而代之，所有错误现在都出现在 Found 窗口中，你可以在其中直接与相关项交互
+- 此外，你现在可以使用 **Debug -> Validate errors** 按钮随时显示错误列表，而不仅是在保存地图时！
 
-You can now delete items in Validate errors dialog using g_delete_by_uid via right-click menu on item.
+现在你可以在 Validate errors 对话框中通过项的右键菜单使用 g_delete_by_uid 删除项。
 
-- This only works if the selected items are both unlocked and invalid. :exclamation:
-- This process is irreversible.
+- 仅当选中的项既未锁定又无效时才有效。 :exclamation:
+- 此过程不可逆。
 
-## Far Model Item & Visibility Area - interaction tools
+## 远景模型项与可见性区域 - 交互工具
 
-A button for fmi&va **Find Parents** function added:
+新增了一个用于 fmi&va **Find Parents** 功能的按钮：
 
 - **Selection -> Find Parents**
 
-### Usage
+### 用法
 
-- Select item (or items)
+- 选择项（或多个项）
 - Selection -> Find Parents
 
-### Result
+### 结果
 
-Found items dialogue containing list of Far Models Items / Visibility Areas the selected item(s) is assigned to.
+Found items 对话框，其中包含所选一项或多项所分配到远景模型项/可见性区域的列表。
 
-*You can use this to check whether item you want to interact with (fe. add to compound) is a child of some FMI or VA or whether you can afford to break a compound (you should not if it is a part of FMI or VA)*
+*你可以用它来检查想要操作的项（例如添加到组合中）是否是某个 FMI 或 VA 的子项，或者是否可以承担拆分组合的代价（如果它是 FMI 或 VA 的一部分，则不应拆分）*
 
-## Other changes and new features:
+## 其他更改和新功能：
 
-- When dropping items to the ground by F6 key you now can use the CTRL+F6 key combination to drop any item node to other item's geometry. *This should make placing lamps and other models on sidewalks much easier.*
-- F8 map window now no longer switches to focus if you move your mouse cursor over it.
-- Brush Tool material list now displays the "editor name" of the material
+- 使用 F6 键将项放置到地面时，你现在可以使用 CTRL+F6 组合键将任意项的节点放置到其他项的几何体上。*这应能使在人行道上放置路灯和其他模型变得容易得多。*
+- 现在将鼠标光标移到 F8 地图窗口上时，该窗口不再切换为焦点。
+- 笔刷工具的材质列表现在显示材质的 “editor name”
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/Map_Editor/New_Editor_Features_1.49 | revision: 5339 | captured: 2026-10-21 23:56:14 -->

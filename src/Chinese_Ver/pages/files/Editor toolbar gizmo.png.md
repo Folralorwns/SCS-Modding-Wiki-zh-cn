@@ -1,4 +1,4 @@
-# File:Editor toolbar gizmo.png
+# 文件:Editor toolbar gizmo.png
 
 ![Editor toolbar gizmo.png](../../../images/files/Editor%20toolbar%20gizmo.png/Editor_toolbar_gizmo.png)
 

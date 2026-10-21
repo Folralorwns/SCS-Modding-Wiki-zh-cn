@@ -1,4 +1,4 @@
-# File:Map Editor.jpg
+# 文件:Map Editor.jpg
 
 ![Map Editor.jpg](../../../images/files/Map%20Editor.jpg/Map_Editor.jpg)
 

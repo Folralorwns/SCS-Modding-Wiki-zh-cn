@@ -1,4 +1,4 @@
-# File:Truck cabin sound.png
+# 文件:Truck cabin sound.png
 
 ![Truck cabin sound.png](../../../images/files/Truck%20cabin%20sound.png/Truck_cabin_sound.png)
 

@@ -1,4 +1,4 @@
-# File:Asafew spec remap curves.zip
+# 文件:Asafew spec remap curves.zip
 
 ![Asafew spec remap curves.zip](../../../images/files/Asafew%20spec%20remap%20curves.zip/Asafew_spec_remap_curves.zip)
 

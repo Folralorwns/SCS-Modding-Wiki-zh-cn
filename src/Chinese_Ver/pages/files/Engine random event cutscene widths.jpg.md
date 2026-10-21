@@ -1,4 +1,4 @@
-# File:Engine random event cutscene widths.jpg
+# 文件:Engine random event cutscene widths.jpg
 
 ![Engine random event cutscene widths.jpg](../../../images/files/Engine%20random%20event%20cutscene%20widths.jpg/Engine_random_event_cutscene_widths.jpg)
 

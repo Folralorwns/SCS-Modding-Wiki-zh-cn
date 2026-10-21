@@ -1,21 +1,21 @@
 # Documentation/Engine/Units/sound noise data
 
-The **sound_noise_data** unit class is used to define speed-dependent sounds. This unit is typically used in an array, with *min_speed* and *max_speed* ranges overlapping between members to allow crossfading.
+**sound_noise_data** 单元类用于定义与速度相关的声音。此单元通常用于数组中，各成员之间的 *min_speed* 和 *max_speed* 范围相互重叠，以实现交叉淡化。
 
-## Uses
+## 用途
 
-- [accessory_sound_data](accessory%20sound%20data.md) (wheel_*, aero_noise, gear_noise)
+- [accessory_sound_data](accessory%20sound%20data.md)（wheel_*、aero_noise、gear_noise）
 
-## Attributes
+## 属性
 
-| Name | [Type](../Units.md#Attribute_types) | Default Value | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| name | string |  | Path to the sound clip (e.g. `name: "/sound/truck/noises/wind_inside_int_1.ogg"`) |
-| looped | bool | false | When true, the sound clip will be looped while active. When false, it will play once when triggered. Should always be true for noise sounds. |
+| name | string |  | 声音片段的路径（例如 `name: "/sound/truck/noises/wind_inside_int_1.ogg"`） |
+| looped | bool | false | 当为 true 时，声音片段将在激活期间循环播放。当为 false 时，它将在触发时播放一次。对于噪声声音应始终为 true。 |
 | is_2d | bool | false |  |
-| volume | float | 1.0 | Playback volume relative to recorded level (0.0 is full attenuation, 1.0 is straight through, 2.0 is twice as loud) |
-| pitch_reference | float | 0.0 | The reference vehicle speed of the recording. |
-| min_rpm | float | 0.0 | The lowest vehicle speed the clip will be played at. |
-| max_rpm | float | 0.0 | The highest vehicle speed the clip will be played at. |
+| volume | float | 1.0 | 相对于录制电平的播放音量（0.0 为完全衰减，1.0 为原样输出，2.0 为两倍响度） |
+| pitch_reference | float | 0.0 | 录音的参考车辆速度。 |
+| min_rpm | float | 0.0 | 播放此片段的最低车辆速度。 |
+| max_rpm | float | 0.0 | 播放此片段的最高车辆速度。 |
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Units/sound_noise_data | revision: 3267 | captured: 2026-10-21 23:56:14 -->

@@ -1,8 +1,8 @@
-# Documentation/Tools/Map Editor/Editor online data
+# 文档/工具/地图编辑器/编辑器在线数据
 
-The **editor_online_data** class is used to define the API urls and extra data for editor online services. When loading it, the editor first tries to load it from your home directory at `/home/editor_online_data.sii`. When it can't load from your home directory it tries to load it from `/def/editor_online_data.sii`.
+**editor_online_data** 类用于定义编辑器在线服务的 API URL 和额外数据。加载时，编辑器首先尝试从主目录的 `/home/editor_online_data.sii` 加载。无法从主目录加载时，会尝试从 `/def/editor_online_data.sii` 加载。
 
-An example definition of `editor_online_data.sii` with comments explaining the purpose of each field:
+`editor_online_data.sii` 的定义示例，其中注释说明了各字段的用途：
 
 ```
 SiiNunit
@@ -40,7 +40,7 @@ editor_online_data : .edit_online
 }
 ```
 
-The structure of the json at `note_username_url` looks like this:
+`note_username_url` 中 json 的结构如下：
 
 ```
 {
@@ -50,6 +50,6 @@ The structure of the json at `note_username_url` looks like this:
 }
 ```
 
-The id corresponds to `g_map_note_user_id`
+该 id 对应 `g_map_note_user_id`
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/Map_Editor/Editor_online_data | revision: 5705 | captured: 2026-10-21 23:56:14 -->

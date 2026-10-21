@@ -1,4 +1,4 @@
-# File:Simple cube box in world.jpg
+# 文件:Simple cube box in world.jpg
 
 ![Simple cube box in world.jpg](../../../images/files/Simple%20cube%20box%20in%20world.jpg/Simple_cube_box_in_world.jpg)
 

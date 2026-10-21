@@ -1,46 +1,46 @@
-# Tutorials/Map Editor/Prefabs
+# 教程/地图编辑器/预制件
 
 <table class="wikitable tutorial_infobox" style="float: right" width="300px">
 <tbody><tr>
-<td colspan="2">Prefabs
+<td colspan="2">预制件
 </td></tr>
 <tr>
 <td colspan="2"><span typeof="mw:File"><a class="mw-file-description" href="../../../files/Prefab%20final%20look.jpg.md"><img class="mw-file-element" data-file-height="1941" data-file-width="3824" decoding="async" height="152" src="../../../../images/thumb/7/77/Prefab_final_look.jpg/300px-Prefab_final_look.jpg" srcset="../../../../images/thumb/7/77/Prefab_final_look.jpg/450px-Prefab_final_look.jpg 1.5x, ../../../../images/thumb/7/77/Prefab_final_look.jpg/600px-Prefab_final_look.jpg 2x" width="300"/></a></span>
 </td></tr>
 <tr class="info">
-<td class="row_name" width="50px"><b>Topic:</b>
+<td class="row_name" width="50px"><b>主题：</b>
 </td>
-<td>Prefabs
+<td>预制件
 </td></tr>
 <tr class="info">
-<td class="row_name" width="50px"><b>Difficulty:</b>
+<td class="row_name" width="50px"><b>难度：</b>
 </td>
-<td>Medium
+<td>中等
 </td></tr>
 <tr class="info">
-<td class="row_name" width="50px"><b>Tools:</b>
+<td class="row_name" width="50px"><b>工具：</b>
 </td>
-<td><a href="../../Documentation/Tools/Map%20Editor.md" title="Documentation/Tools/Map Editor">Map Editor</a>
+<td><a href="../../Documentation/Tools/Map%20Editor.md" title="Documentation/Tools/Map Editor">地图编辑器</a>
 </td></tr></tbody></table>
 
-So far we have learned how to use the map editor, and how to conect road pieces. Now it is time to cover the 2nd most important item type: prefabs. Prefabs are esentially models that can be setup for a variety of different things. Prefabs are made in a modeling program, such as Blender, and then rigged with different game objects and locators to perform specific functions or to draw objects (hookups). Some examples of prefabs are fuel stations, toll booths, border crossings, companies, road junctions, rail crossings, roundabouts, etc. This particular set of tutorials will cover the map editor portion of prefabs.
+到目前为止，我们已经学习了如何使用地图编辑器，以及如何连接道路部件。现在是时候介绍第二重要的项类型：预制件。预制件本质上是可为各种不同用途进行设置的模型。预制件在建模程序（例如 Blender）中制作，然后用不同的游戏对象和定位器进行装配，以执行特定功能或绘制对象（挂接）。预制件的一些示例包括加油站、收费站、边境口岸、公司、道路交叉口、铁路道口、环岛等。这组教程将介绍预制件在地图编辑器中的部分。
 
-> **Note:** Prefabs are defined in `/def/world/prefab.sii`
+> **注意：** 预制件定义在 `/def/world/prefab.sii` 中
 
-## Prefab default properties
+## 预制件默认属性
 
-- User Guide: **[Tutorials/Map Editor/Prefabs/Prefab default properties](https://modding.scssoft.com/index.php?title=Tutorials/Map_Editor/Prefabs/Prefab_default_properties&action=edit&redlink=1)**
+- 用户指南：**[教程/地图编辑器/预制件/预制件默认属性](https://modding.scssoft.com/index.php?title=Tutorials/Map_Editor/Prefabs/Prefab_default_properties&action=edit&redlink=1)**
 
-## Prefab Properties
+## 预制件属性
 
-- User Guide: **[Tutorials/Map Editor/Prefabs/Prefab Properties](https://modding.scssoft.com/index.php?title=Tutorials/Map_Editor/Prefabs/Prefab_Properties&action=edit&redlink=1)**
+- 用户指南：**[教程/地图编辑器/预制件/预制件属性](https://modding.scssoft.com/index.php?title=Tutorials/Map_Editor/Prefabs/Prefab_Properties&action=edit&redlink=1)**
 
-## Prefab Nodes
+## 预制件节点
 
-- User Guide: **[Tutorials/Map Editor/Prefabs/Prefab Nodes](Prefabs/Prefab%20Nodes.md)**
+- 用户指南：**[教程/地图编辑器/预制件/预制件节点](Prefabs/Prefab%20Nodes.md)**
 
-## Connecting your first Prefab
+## 连接你的第一个预制件
 
-- User Guide: **[Tutorials/Map Editor/Prefabs/Connecting your first Prefab](Prefabs/Connecting%20your%20first%20Prefab.md)**
+- 用户指南：**[教程/地图编辑器/预制件/连接你的第一个预制件](Prefabs/Connecting%20your%20first%20Prefab.md)**
 
 <!-- source: https://modding.scssoft.com/wiki/Tutorials/Map_Editor/Prefabs | revision: 5474 | captured: 2026-10-21 23:56:14 -->

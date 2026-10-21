@@ -1,24 +1,24 @@
-# Documentation/Tools/SCS Blender Tools/Installation
+# 文档/工具/SCS Blender Tools/安装
 
-SCS Blender Tools v2.0 introduces easier download & installation!
+SCS Blender Tools v2.0 带来了更简便的下载与安装！
 
-> **Note:** For legacy SCS Blender Tools versions (< 2.0), please refer to old installation page: [here](https://modding.scssoft.com/wiki/Special%3APermanentLink/4074).
+> **注意：** 对于旧版 SCS Blender Tools（< 2.0），请参阅旧的安装页面：[此处](https://modding.scssoft.com/wiki/Special%3APermanentLink/4074)。
 
-### 1. Download SCS Blender Tools add-on
+### 1. 下载 SCS Blender Tools 插件
 
-Before installation download latest add-on: [scs_blender_tools_addon.zip](https://github.com/SCSSoftware/BlenderTools/releases/latest/download/scs_blender_tools_addon.zip)
+安装之前，请下载最新的插件：[scs_blender_tools_addon.zip](https://github.com/SCSSoftware/BlenderTools/releases/latest/download/scs_blender_tools_addon.zip)
 
-> **Note:** Above link provides latest version, legacy versions and sample data can be found on [Download](Download.md) page.
+> **注意：** 上述链接提供最新版本，旧版本与示例数据可在 [下载](Download.md) 页面找到。
 
-### 2. Install...
+### 2. 安装...
 
-Run Blender, access it's preferences (*Edit -> Preferences*) and switch to *Add-ons* tab. Then use  Install... button and search for **scs_blender_tools_addon.zip** you downloaded in step one.
+运行 Blender，打开其偏好设置（*Edit -> Preferences*）并切换到 *Add-ons* 选项卡。然后使用 Install... 按钮并选择你在第一步中下载的 **scs_blender_tools_addon.zip**。
 
-### 3. Add-on Activation
+### 3. 插件激活
 
-Now it is necessary to activate the SCS Blender Tools add-on. While still on *Add-ons* preferences tab, search for add-on by typing 'SCS' into search bar and look for "Import-Export: SCS Tools". Now activate the checkbox on the left side of SCS Tools entry.
+现在需要激活 SCS Blender Tools 插件。仍停留在 *Add-ons* 偏好设置选项卡中，在搜索栏输入 'SCS' 以搜索该插件，然后找到 “Import-Export: SCS Tools”。现在勾选 SCS Tools 条目左侧的复选框。
 
-If the item is missing in your list, try to pressing F8 to reload add-ons.
+如果列表中缺少该项，可以尝试按 F8 重新加载插件。
 
 [![Blender_enable_SCS_Tools_Addon_2_8.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Installation/Blender_enable_SCS_Tools_Addon_2_8.png)](../../../../files/Blender%20enable%20SCS%20Tools%20Addon%202%208.png.md)
 

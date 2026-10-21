@@ -1,4 +1,4 @@
-# File:Truck accessory change empty type 0.jpg
+# 文件:Truck accessory change empty type 0.jpg
 
 ![Truck accessory change empty type 0.jpg](../../../images/files/Truck%20accessory%20change%20empty%20type%200.jpg/Truck_accessory_change_empty_type_0.jpg)
 

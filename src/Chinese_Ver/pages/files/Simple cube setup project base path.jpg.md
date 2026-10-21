@@ -1,4 +1,4 @@
-# File:Simple cube setup project base path.jpg
+# 文件:Simple cube setup project base path.jpg
 
 ![Simple cube setup project base path.jpg](../../../images/files/Simple%20cube%20setup%20project%20base%20path.jpg/Simple_cube_setup_project_base_path.jpg)
 

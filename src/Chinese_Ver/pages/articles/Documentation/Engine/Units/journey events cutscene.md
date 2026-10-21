@@ -1,18 +1,18 @@
 # Documentation/Engine/Units/journey events cutscene
 
-The **journey events cutscene** unit class is used to define cutscenes for [Random Road Events](../Random%20Road%20Events.md).
+**journey events cutscene** 单元类用于为[随机道路事件](../Random%20Road%20Events.md)定义过场动画。
 
-This unit gathers multiple cutscenes and binds them with the attributes of this unit. So cutscenes with same auxiliary data can be defined in one journey event cutscene unit, which enables usage of more graphical variants wrapped under one journey event cutscene.
+此单元汇集多个过场动画，并将它们与本单元的属性绑定。因此，具有相同辅助数据的过场动画可以定义在一个 journey events cutscene 单元中，这使得更多图形变体能够包装在同一个 journey events cutscene 之下。
 
-## Attributes
+## 属性
 
-| Name | [Type](../Units.md#Attribute_types) | Default Value | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| cutscene_tokens | array&lt;token&gt; |  | Array of token names of all cutscenes that this unit should gather (token name is matching cutscenes defined in "**/def/camera/cutscene.sii**" by last token of unit names). |
-| left_width | float | -1.0 | The width of left side of the cutscenes gathered by given token names. More info: [Documentation/Engine/Random_Road_Events#Cutscene_width](../Random%20Road%20Events.md#Cutscene_width). |
-| right_width | float | -1.0 | The width of right side of the cutscenes gathered by given token names. More info: [Documentation/Engine/Random_Road_Events#Cutscene_width](../Random%20Road%20Events.md#Cutscene_width). |
-| sequence_mode | int | simple | How will game choose cutscene token if this cutscene data gathers more than one cutscene. **simple** - Each cutscene in sequence (when more layer_cutscenes are placed after one another) is selected randomly and independently. **pseudo** - Each cutscene in sequence (when more layer_cutscenes are placed after one another) is selected in the way, that each N-tuple (where N is the number of cutscenes gathered by token names) contains all cutscenes in random order. **fixed** - One random cutscene is used for the whole sequence. |
-| lane_height | float | -1.0 | Height of the cutscenes gathered by token names. Value >= 0.0 means that we could apply random offset in the perpendicular direction to lane direction (if there is enough space) |
-| align_buildings | bool | false | Should buildings be aligned to the drivable curve? When true all building nodes are placed in the same distance from the curve as is the X-axis distance from the cutscene origin. |
+| cutscene_tokens | array&lt;token&gt; |  | 此单元应汇集的所有过场动画的 token 名称数组（token 名称通过单元名称的最后一个 token 与“**/def/camera/cutscene.sii**”中定义的过场动画相匹配）。 |
+| left_width | float | -1.0 | 由给定 token 名称汇集的过场动画左侧的宽度。更多信息：[Documentation/Engine/Random_Road_Events#Cutscene_width](../Random%20Road%20Events.md#Cutscene_width)。 |
+| right_width | float | -1.0 | 由给定 token 名称汇集的过场动画右侧的宽度。更多信息：[Documentation/Engine/Random_Road_Events#Cutscene_width](../Random%20Road%20Events.md#Cutscene_width)。 |
+| sequence_mode | int | simple | 如果此过场动画数据汇集了多个过场动画，游戏将如何选择过场动画 token。**simple** - 序列中的每个过场动画（当多个 layer_cutscenes 前后放置时）均被随机且独立地选择。**pseudo** - 序列中的每个过场动画（当多个 layer_cutscenes 前后放置时）按如下方式选择：每个 N 元组（其中 N 为 token 名称汇集的过场动画数量）以随机顺序包含所有过场动画。**fixed** - 整个序列只使用一个随机的过场动画。 |
+| lane_height | float | -1.0 | 由 token 名称汇集的过场动画的高度。值 >= 0.0 表示可以在与车道方向垂直的方向上应用随机偏移（如果有足够空间） |
+| align_buildings | bool | false | 建筑物是否应与可行驶曲线对齐？为 true 时，所有建筑节点与曲线的距离都等于其与过场动画原点的 X 轴距离。 |
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Units/journey_events_cutscene | revision: 3880 | captured: 2026-10-21 23:56:14 -->

@@ -1,4 +1,4 @@
-# File:Node sound.png
+# 文件:Node sound.png
 
 ![Node sound.png](../../../images/files/Node%20sound.png/Node_sound.png)
 

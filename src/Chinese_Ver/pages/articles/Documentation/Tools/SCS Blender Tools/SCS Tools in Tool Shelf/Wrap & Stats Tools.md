@@ -1,24 +1,24 @@
-# Documentation/Tools/SCS Blender Tools/SCS Tools in Tool Shelf/Wrap & Stats Tools
+# 文档/工具/SCS Blender Tools/SCS Tools 工具架/包裹与统计工具
 
-Almost all shaders inside SCS Game engine are using vertex colors. That's why it's very important how you set them.
+SCS 游戏引擎中几乎所有着色器都使用顶点颜色。因此如何设置它们非常重要。
 
-If shader explicitly doesn't specify otherwise, then vertex colors with values 0.5 are actually neutral colors and won't change the look of resulting mesh inside game. If vertex colors are below 0.5 it will "darken" the model and what will be above 0.5 will result in "brighter" mesh.
+如果着色器没有明确指定其他方式，那么值为 0.5 的顶点颜色实际上是中性色，不会改变网格在游戏中的最终外观。如果顶点颜色低于 0.5，则会使模型“变暗”；高于 0.5 则会使网格“变亮”。
 
-## Wrap Tool
+## 包裹工具
 
-In addition to this there is Wrap Tool which helps you wrap vertex colors of active vertex color layer on specified interval. So if you baked or painted your model on the range from 0 to 1 you can easily use this tools to scale this interval to the one you define in operator properties (advised interval is from 0.4 to 0.6). Tool can be found in SCS Tools shelf if current object is in "Vertex Paint" mode.
+除此之外还有包裹工具，它可帮助你将活动顶点颜色层的顶点颜色包裹到指定区间。因此，如果你在 0 到 1 的范围内烘焙或绘制了模型，就可以轻松使用此工具将该区间缩放到操作符属性中定义的区间（建议区间为 0.4 到 0.6）。如果当前对象处于 “Vertex Paint” 模式，该工具可在 SCS Tools 工具架中找到。
 
 [![SCS_Tools_Shelf_-_Wrap_Tool.png](../../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/SCS%20Tools%20in%20Tool%20Shelf/Wrap%20&%20Stats%20Tools/SCS_Tools_Shelf_-_Wrap_Tool.png)](../../../../../files/SCS%20Tools%20Shelf%20-%20Wrap%20Tool.png.md)
 
-- **Wrap All** - wrap vertex colors on all vertices.
-- **Wrap Selected** - wrap vertex colors only on selected vertices.
+- **Wrap All** - 包裹所有顶点的顶点颜色。
+- **Wrap Selected** - 仅包裹选中顶点的顶点颜色。
 
-## Stats Tool
+## 统计工具
 
-As Blender doesn't have any proper number statistics over currently set vertex colors, this tool enables you to print out minimum, maximum and average vertex colors values for the mesh.
+由于 Blender 没有针对当前所设顶点颜色的合适数值统计，此工具可让你输出网格的顶点颜色最小值、最大值和平均值。
 
 [![SCS_Tools_Shelf_-_Stats_Tool.png](../../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/SCS%20Tools%20in%20Tool%20Shelf/Wrap%20&%20Stats%20Tools/SCS_Tools_Shelf_-_Stats_Tool.png)](../../../../../files/SCS%20Tools%20Shelf%20-%20Stats%20Tool.png.md)
 
-- **Get Statistics** - output statistic to console and Blender menu bar.
+- **Get Statistics** - 将统计信息输出到控制台和 Blender 菜单栏。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/SCS_Blender_Tools/SCS_Tools_in_Tool_Shelf/Wrap_%26_Stats_Tools | revision: 1660 | captured: 2026-10-21 23:56:14 -->

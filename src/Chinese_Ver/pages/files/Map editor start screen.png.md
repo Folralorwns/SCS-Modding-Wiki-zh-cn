@@ -1,4 +1,4 @@
-# File:Map editor start screen.png
+# 文件:Map editor start screen.png
 
 ![Map editor start screen.png](../../../images/files/Map%20editor%20start%20screen.png/Map_editor_start_screen.png)
 

@@ -1,4 +1,4 @@
-# File:SCS Tools Object Specials - Animations Delete Anim.png
+# 文件:SCS Tools Object Specials - Animations Delete Anim.png
 
 ![SCS Tools Object Specials - Animations Delete Anim.png](../../../images/files/SCS%20Tools%20Object%20Specials%20-%20Animations%20Delete%20Anim.png/SCS_Tools_Object_Specials_-_Animations_Delete_Anim.png)
 

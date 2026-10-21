@@ -1,47 +1,47 @@
-# Documentation/Engine/Units/accessory truck data
+# 文档/引擎/单元/配件卡车数据
 
-The **accessory_truck_data** unit class defines basic information, cameras, fallback rules, and required accessories for the [player's truck](../Game%20data/Player%20trucks%20definitions.md). Units of this type are defined in **/def/vehicle/truck/<brand.model>/data.sii**.
+**accessory_truck_data** 单元类定义[玩家卡车](../Game%20data/Player%20trucks%20definitions.md)的基本信息、摄像机、回退规则以及必需配件。此类型的单元定义在 **/def/vehicle/truck/<brand.model>/data.sii** 中。
 
-## Attributes
+## 属性
 
-Many common attributes are inherited from [**accessory_data**](accessory%20data.md). Required attributes are **bolded**.
+许多通用属性继承自 [**accessory_data**](accessory%20data.md)。必需属性以**粗体**表示。
 
-| Name | [Type](../Units.md#Attribute_types) | Default Value | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| **info** | array&lt;string&gt; |  | This member is attribute of accessory data. Theese items are typically defined for **accessory_truck_data**: info[]: "@@brand_peterbilt@@" // The truck brand info[]: "@@series_peterbilt_579@@" // The truck model info[]: "" // Optional description (used by cars) info[]: "" // Optional short brand name (used eg by Mercedes) info[]: "" // Optional series/cabin name (used eg by Iveco Hiway) *Tweaked in 1.61, added description as 3rd element and two alernative names moved from 3rd and 4th to 4th and 5th elements respectively.* |
-| require | array&lt;token&gt; |  | Accessory types which should be required, regardless of the vehicle configuration, should be defined in **accessory_truck_data**. For more information, see [accessory_data](accessory%20data.md). |
-| **behind_camera** | link_ptr |  | The unit name of the camera to use for the orbit (2) view. Typically `camera.behind.basic`. |
-| **interior_camera** | link_ptr |  | The unit name of the camera to use for the interior (1) view. Typically `camera.interior.<brand>.<model>`. |
-| **interior_camera_oculus** | link_ptr |  | The unit name of the camera to use for the interior (1) view when using a head-mounted display. Typically `camera.interior.<brand>.<model>.oculus`. |
-| **window_camera** | link_ptr |  | The unit name of the camera to use in the lean-out (5) view. Typically `camera.window.basic`. |
-| **bumper_camera** | link_ptr |  | The unit name of the camera to use in the bumper (6) view. Typically `camera.bumper.basic`. |
-| **cabin_camera** | link_ptr |  | The unit name of the camera to use for the cabin-top (4) view. Typically `camera.cabin.basic`, placed at the *cam_cabin** locator of the active cabin accessory variant. |
-| **wheel_camera** | link_ptr |  | The unit name of the camera to use in the wheel (7) view. Typically `camera.wheel.basic`. |
-| **top_camera** | link_ptr |  | The unit name of the camera to use for the overhead (3) view. Typically `camera.top.basic`. |
-| top_fixed_camera | link_ptr |  | Typically unused. |
-| **tv_camera** | link_ptr |  | The unit name of the camera to use in TV (8) view. Typically `camera.tv.basic`. |
-| predefined_tv_camera | link_ptr |  | Typically unused. |
-| side_camera | link_ptr |  | Typically unused. |
-| wander_camera | link_ptr |  | The unit name of the camera to use in wander mode. Typically `camera.wander`. The player typically won't encounter this mode as it is primarily used for testing. |
-| **debug_camera** | link_ptr |  | The unit name of the camera to use for the developer/fly camera (0). Typically `camera.debug`. |
-| **fallback** | array&lt;string&gt; |  | Each member contains a specially-formatted string which defines an accessory type (token) and the relative path to an SII file with a safe fallback accessory defined. So a fallback rule for `chassis` may look like `fallback[]: "chassis\|4x2.sii"` which would call on */def/vehicle/truck/<make.model>/chassis/4x2.sii* if there is ever a problem with the vehicle's currently assigned chassis accessory that makes it invalid or unloadable. Accessories in the accessory folder are handled somewhat specially. For example, a rule for `steering_w` looks like `fallback[]: "accessory\|steering_w/shape1.sii"`. **Note:** There are 15 *required* fallback rules: chassis, cabin, engine, transmission, f_tire, f_disc, f_hub, f_nuts, r_tire, r_disc, r_hub, r_nuts, head_light, paint_job, interior. It is generally advisable to include a rule for steering_w if the truck has interchangeable steering wheels. |
-| use_non_wheel_pin_placement_from_model | bool |  | If true, then all pins (except wheel pins) will take their position and orientation directly from their locators in vehicle models. Only the **double_sided** flag is always taken from ui_truck_scene_config. *Added in 1.61.* |
-| trims | array<owner_ptr> |  | List of rules (*trim_rule* unit) for optional part of vehicle name. Each element defines set of accessories (by file name) that are required for given name part. First matched element defines the name part. *Added in 1.61.* |
+| **info** | array&lt;string&gt; |  | 此成员是 accessory data 的属性。这些条目通常为 **accessory_truck_data** 定义：info[]: "@@brand_peterbilt@@" // 卡车品牌 info[]: "@@series_peterbilt_579@@" // 卡车型号 info[]: "" // 可选描述（用于轿车） info[]: "" // 可选短品牌名（例如 Mercedes 使用） info[]: "" // 可选系列/驾驶室名称（例如 Iveco Hiway 使用） *在 1.61 中调整：新增描述作为第 3 个元素，两个备用名称分别从第 3、4 个元素移到第 4、5 个元素。* |
+| require | array&lt;token&gt; |  | 无论车辆配置如何都应设为必需的配件类型，应在 **accessory_truck_data** 中定义。更多信息请参见 [accessory_data](accessory%20data.md)。 |
+| **behind_camera** | link_ptr |  | 用于环绕（2）视图的摄像机单元名称。通常为 `camera.behind.basic`。 |
+| **interior_camera** | link_ptr |  | 用于内饰（1）视图的摄像机单元名称。通常为 `camera.interior.<brand>.<model>`。 |
+| **interior_camera_oculus** | link_ptr |  | 使用头戴式显示器时，用于内饰（1）视图的摄像机单元名称。通常为 `camera.interior.<brand>.<model>.oculus`。 |
+| **window_camera** | link_ptr |  | 用于车窗（5）视图的摄像机单元名称。通常为 `camera.window.basic`。 |
+| **bumper_camera** | link_ptr |  | 用于保险杠（6）视图的摄像机单元名称。通常为 `camera.bumper.basic`。 |
+| **cabin_camera** | link_ptr |  | 用于驾驶室顶部（4）视图的摄像机单元名称。通常为 `camera.cabin.basic`，位于当前驾驶室配件 variant 的 *cam_cabin** 定位器处。 |
+| **wheel_camera** | link_ptr |  | 用于车轮（7）视图的摄像机单元名称。通常为 `camera.wheel.basic`。 |
+| **top_camera** | link_ptr |  | 用于俯视（3）视图的摄像机单元名称。通常为 `camera.top.basic`。 |
+| top_fixed_camera | link_ptr |  | 通常未使用。 |
+| **tv_camera** | link_ptr |  | 用于电视（8）视图的摄像机单元名称。通常为 `camera.tv.basic`。 |
+| predefined_tv_camera | link_ptr |  | 通常未使用。 |
+| side_camera | link_ptr |  | 通常未使用。 |
+| wander_camera | link_ptr |  | 用于漫游模式的摄像机单元名称。通常为 `camera.wander`。玩家通常不会遇到此模式，因为它主要用于测试。 |
+| **debug_camera** | link_ptr |  | 用于开发者/飞行摄像机（0）的摄像机单元名称。通常为 `camera.debug`。 |
+| **fallback** | array&lt;string&gt; |  | 每个成员包含一个特殊格式的字符串，用于定义一种配件类型（token）以及指向已定义安全回退配件的 SII 文件的相对路径。因此，`chassis` 的回退规则可能如下所示：`fallback[]: "chassis\|4x2.sii"`；如果车辆当前分配的底盘配件出现问题而变得无效或无法加载，就会调用 */def/vehicle/truck/<make.model>/chassis/4x2.sii*。accessory 文件夹中的配件处理方式有些特殊。例如，`steering_w` 的规则如下所示：`fallback[]: "accessory\|steering_w/shape1.sii"`。**注意：** 共有 15 条*必需*的回退规则：chassis、cabin、engine、transmission、f_tire、f_disc、f_hub、f_nuts、r_tire、r_disc、r_hub、r_nuts、head_light、paint_job、interior。如果卡车配有可互换的方向盘，通常建议为 steering_w 添加一条规则。 |
+| use_non_wheel_pin_placement_from_model | bool |  | 若为 true，则所有定位点（车轮定位点除外）的位置和朝向直接取自车辆模型中的定位器。只有 **double_sided** 标志始终取自 ui_truck_scene_config。*在 1.61 中添加。* |
+| trims | array<owner_ptr> |  | 用于车辆名称可选部分的规则列表（*trim_rule* 单元）。每个元素定义一组配件（按文件名），这些配件是给定名称部分所必需的。第一个匹配的元素决定该名称部分。*在 1.61 中添加。* |
 
-### Pin Overrides *(Added in 1.40)*
+### 定位点覆盖 *(在 1.40 中添加)*
 
-The following array attributes are used to override the location, appearance, and orientation of accessory pins in the truck configuration scene or in vehicle models (defined via use_non_wheel_pin_placement_from_model). Their usage is the same as the identically named attributes in the ui_truck_scene_config unit, such that one member of each array is used to override the behavior of each pin. Pin overrides defined in accessory_truck_data will supersede the data in ui_truck_scene_config for the associated truck.
+以下数组属性用于覆盖卡车配置场景或车辆模型（通过 use_non_wheel_pin_placement_from_model 定义）中配件定位点的位置、外观和朝向。它们的用法与 ui_truck_scene_config 单元中同名的属性相同，即每个数组的一个成员用于覆盖每个定位点的行为。在 accessory_truck_data 中定义的定位点覆盖将取代 ui_truck_scene_config 中针对相应卡车的数据。
 
-| Name | [Type](../Units.md#Attribute_types) | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 描述 |
 | --- | --- | --- |
-| pin_group | array&lt;token&gt; | The name of the accessory group for each pin override |
-| pin_look | array&lt;token&gt; | The appearance of the accessory pin to use – typically `custom_acc` |
-| pin_offset | array&lt;float3&gt; | Vector to offset the accessory pin from the locator |
-| pin_dir | array&lt;float3&gt; | Vector to set the direction of the pin (independent of locator orientation) |
-| pin_dir_uk | array&lt;float3&gt; | Vector to set the direction of the pin for right-hand drive (independent of locator orientation). This attribute is typically omitted in ATS. |
-| double_sided | array&lt;bool&gt; | When true, the pin will be duplicated and mirrored across the truck's X-axis. |
+| pin_group | array&lt;token&gt; | 每个定位点覆盖所用的配件组名称 |
+| pin_look | array&lt;token&gt; | 要使用的配件定位点外观——通常为 `custom_acc` |
+| pin_offset | array&lt;float3&gt; | 将配件定位点从定位器偏移的向量 |
+| pin_dir | array&lt;float3&gt; | 设置定位点方向的向量（与定位器朝向无关） |
+| pin_dir_uk | array&lt;float3&gt; | 设置右舵车辆定位点方向的向量（与定位器朝向无关）。此属性在 ATS 中通常省略。 |
+| double_sided | array&lt;bool&gt; | 为 true 时，定位点将沿卡车的 X 轴复制并镜像。 |
 
-In this first example, the pin for the *sideskirt* accessory is offset 1 m to the left of the locator (-X), and pointed to the left as well (-X). It will also be drawn 1 m to the right of the locator, pointed to the right.
+在第一个示例中，*sideskirt* 配件的定位点向定位器左侧偏移 1 米（-X），并同样指向左侧（-X）。它还会绘制在定位器右侧 1 米处，并指向右侧。
 
 ```
 	pin_group[]: 	sideskirt
@@ -52,7 +52,7 @@ In this first example, the pin for the *sideskirt* accessory is offset 1 m to th
 	double_sided[]:	true
 ```
 
-In this example, the pin for the *exhaust* accessory will be drawn at the locator (no offset), and will be pointed 45° to the rear left of the truck. It will also be drawn 45° to the rear right of the truck. This has the effect of making the pin completely visible from both sides and the rear of the vehicle.
+在此示例中，*exhaust* 配件的定位点将绘制在定位器处（无偏移），并指向卡车左后方 45°。它还会绘制在卡车右后方 45°。这样可以使定位点从车辆两侧和后部都完全可见。
 
 ```
 	pin_group[]: 	exhaust

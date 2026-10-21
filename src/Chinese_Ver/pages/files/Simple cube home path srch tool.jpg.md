@@ -1,4 +1,4 @@
-# File:Simple cube home path srch tool.jpg
+# 文件:Simple cube home path srch tool.jpg
 
 ![Simple cube home path srch tool.jpg](../../../images/files/Simple%20cube%20home%20path%20srch%20tool.jpg/Simple_cube_home_path_srch_tool.jpg)
 

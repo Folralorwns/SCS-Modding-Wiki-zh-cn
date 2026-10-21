@@ -1,75 +1,75 @@
 # Documentation/Engine/Sound/TruckCabinFiltering
 
-## The truck cabin filtering
+## 卡车驾驶室的滤波
 
-There is the possibility of individual (per truck) sound filtering for the truck cabin. *(Added in 1.43 version)*<br> (*Hard-coded equalizer settings (automation) in the master bank has been removed since version 1.43.*)
+卡车驾驶室可以按卡车单独进行声音滤波。*（1.43 版本新增）*<br> （*自 1.43 版本起，主 bank 中硬编码的均衡器设置（自动化）已被移除。*）
 
-## Sound processing
+## 声音处理
 
-The following features are important when processing cabin sound:
+处理驾驶室声音时，以下特性很重要：
 
-**Listener position (inside / outside)**
+**听者位置（内部 / 外部）**
 
-- This state is controlled by the global parameter *cabin_out* (0 means inside, 1 means outside).
+- 该状态由全局参数 *cabin_out* 控制（0 表示内部，1 表示外部）。
 
-**Window opening status (closed / open)**
+**车窗开闭状态（关闭 / 打开）**
 
-- This state is controlled by the global parameters *wnd_left*, *wnd_right* (0 means closed, 1 means opened).
+- 该状态由全局参数 *wnd_left*、*wnd_right* 控制（0 表示关闭，1 表示打开）。
 
-**Sound processing**
+**声音处理**
 
-- 1. The sound is processed as external generally with respect to the position of the listener. The result of processing is in the audio bus [**Grp outside**].
-- 2. Subsequently, this channel is redirected (divided) into three audio buses:
-  - [**Rtn window_out**] Central sound overhang in the cab.
-  - [**Rtn window_left**] Pass the sound through the left window.
-  - [**Rtn window_right**] Pass the sound through the right window.
-- 3. Finally, all three buses are mixed into the resulting sound.
+- 1. 通常，声音会相对于听者的位置按外部声音处理。处理结果位于音频总线 [**Grp outside**] 中。
+- 2. 随后，该通道被重定向（分割）到三个音频总线：
+  - [**Rtn window_out**] 驾驶室内中央的声音溢出。
+  - [**Rtn window_left**] 使声音穿过左侧车窗。
+  - [**Rtn window_right**] 使声音穿过右侧车窗。
+- 3. 最后，这三个总线被混合为最终声音。
 
 ![Truck_cabin_sound.png](../../../../../../images/articles/Documentation/Engine/Sound/TruckCabinFiltering/Truck_cabin_sound.png)
 
-## Adjust the volume
+## 调节音量
 
-The volume setting is hard-coded to the FMOD master bank, but its understanding is necessary for further processing.
+音量设置硬编码在 FMOD 主 bank 中，但理解它对于后续处理是必要的。
 
-The volume is controlled according to the position of the listener and affects the resulting mixing of the processed audio buses:
+音量根据听者的位置进行控制，并影响已处理音频总线的最终混合结果：
 
-| Audio bus | Listener inside | Listener outside |
+| 音频总线 | 听者在内部 | 听者在外部 |
 | --- | --- | --- |
 | [**Rtn window_out**] | -6 dB | +4 dB |
-| [**Rtn window_left**] | -7 dB | *muted* |
-| [**Rtn window_right**] | -7 dB | *muted* |
+| [**Rtn window_left**] | -7 dB | *静音* |
+| [**Rtn window_right**] | -7 dB | *静音* |
 
-## Sound attenuation when the window is open/closed
+## 车窗打开/关闭时的声音衰减
 
-Sound attenuation is controlled by an equalizer (3-EQ), which is located on each sound bus that processes the passage of sound through the window. The equalizer setting is individual for each truck (from version 1.43) and is part of the interior sound settings.
+声音衰减由均衡器（3-EQ）控制，该均衡器位于每个处理声音通过车窗的声音总线上。均衡器设置按卡车单独配置（自 1.43 版本起），并且是内饰声音设置的一部分。
 
-| Window | Audio bus | opened | closed |
+| 车窗 | 音频总线 | 打开 | 关闭 |
 | --- | --- | --- | --- |
-| Left | [**Rtn window_left**] | .effect.add.window_eq.opened | .effect.add.window_eq.closed |
-| Right | [**Rtn window_right**] | .effect.add.window_eq.opened | .effect.add.window_eq.closed |
+| 左侧 | [**Rtn window_left**] | .effect.add.window_eq.opened | .effect.add.window_eq.closed |
+| 右侧 | [**Rtn window_right**] | .effect.add.window_eq.opened | .effect.add.window_eq.closed |
 
-The transition between the equalizer limit parameters is linearly approximated by the application. Please be very careful when setting a large difference boundaries for the low_crossover, high_crossover parameters on the same equalizer. Large differences can generate unwanted sound patterns.
+均衡器极限参数之间的过渡由应用程序进行线性近似。在同一均衡器上为 low_crossover、high_crossover 参数设置差异很大的边界时请务必小心。较大的差异可能产生不期望的声音模式。
 
-## Sound attenuation depending on the position of the listener
+## 取决于听者位置的声音衰减
 
-Sound attenuation is controlled by an equalizer (3-EQ) , which is located on the [**Rtn window_out**] audio bus. The equalizer setting is individual for each truck (from version 1.43) and is part of the interior sound settings.
+声音衰减由均衡器（3-EQ）控制，该均衡器位于 [**Rtn window_out**] 音频总线上。均衡器设置按卡车单独配置（自 1.43 版本起），并且是内饰声音设置的一部分。
 
-| Listener | Audio bus | inside | outside |
+| 听者 | 音频总线 | 内部 | 外部 |
 | --- | --- | --- | --- |
-| Listener | [**Rtn window_out**] | .effect.equalizer.cabin.inside | .effect.equalizer.cabin.outside |
+| 听者 | [**Rtn window_out**] | .effect.equalizer.cabin.inside | .effect.equalizer.cabin.outside |
 
-The transition between the equalizer limit parameters is linearly approximated by the application. Please be very careful when setting a large difference boundaries for the low_crossover, high_crossover parameters on the same equalizer. Large differences can generate unwanted sound patterns.
+均衡器极限参数之间的过渡由应用程序进行线性近似。在同一均衡器上为 low_crossover、high_crossover 参数设置差异很大的边界时请务必小心。较大的差异可能产生不期望的声音模式。
 
-## Reverb in the cabin
+## 驾驶室内的混响
 
-Reverb in the cabin depends on both the position of the listener and the state of opening / closing the windows. The reverb setting is processed only on the final mix of all three audio buses. (*Within the sound bank, the Reverb effect is placed on the [Grp cabin] audio bus.*)
+驾驶室内的混响同时取决于听者的位置以及车窗打开/关闭的状态。混响设置仅在所有三个音频总线的最终混音上处理。（*在声音 bank 内，Reverb 效果位于 [Grp cabin] 音频总线上。*）
 
-The reverb setting is individual for each truck (from version 1.43) and is part of the interior sound settings.
+混响设置按卡车单独配置（自 1.43 版本起），并且是内饰声音设置的一部分。
 
-| Reverb | Audio bus | inside | outside |
+| 混响 | 音频总线 | 内部 | 外部 |
 | --- | --- | --- | --- |
-| reverb effect | [**Grp cabin**] | .effect.reverb.window.closed | .effect.reverb.window.opened |
+| 混响效果 | [**Grp cabin**] | .effect.reverb.window.closed | .effect.reverb.window.opened |
 
-The transition between the reverb limit parameters is linearly approximated by the application. The external reverb should correspond approximately to the external (open) environment. Therefore, we recommend a setting that does not change the echo too much.
+混响极限参数之间的过渡由应用程序进行线性近似。外部混响应大致对应外部（开阔）环境。因此，我们建议采用不会使回声变化过大的设置。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Sound/TruckCabinFiltering | revision: 5163 | captured: 2026-10-21 23:56:14 -->

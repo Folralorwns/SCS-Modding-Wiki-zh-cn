@@ -1,40 +1,40 @@
-# Tutorials/Map Editor/Introduction to the Map Editor
+# 教程/地图编辑器/地图编辑器入门
 
 <table class="wikitable tutorial_infobox" style="float: right" width="300px">
 <tbody><tr>
-<td colspan="2">Introduction to the Map Editor
+<td colspan="2">地图编辑器入门
 </td></tr>
 <tr>
 <td colspan="2"><span typeof="mw:File"><a class="mw-file-description" href="../../../files/Map%20editor%20start%20screen.png.md"><img class="mw-file-element" data-file-height="1516" data-file-width="2617" decoding="async" height="174" src="../../../../images/thumb/e/e2/Map_editor_start_screen.png/300px-Map_editor_start_screen.png" srcset="../../../../images/thumb/e/e2/Map_editor_start_screen.png/450px-Map_editor_start_screen.png 1.5x, ../../../../images/thumb/e/e2/Map_editor_start_screen.png/600px-Map_editor_start_screen.png 2x" width="300"/></a></span>
 </td></tr>
 <tr class="info">
-<td class="row_name" width="50px"><b>Topic:</b>
+<td class="row_name" width="50px"><b>主题：</b>
 </td>
-<td>Map Editor
+<td>地图编辑器
 </td></tr>
 <tr class="info">
-<td class="row_name" width="50px"><b>Difficulty:</b>
+<td class="row_name" width="50px"><b>难度：</b>
 </td>
-<td>Easy
+<td>简单
 </td></tr>
 <tr class="info">
-<td class="row_name" width="50px"><b>Tools:</b>
+<td class="row_name" width="50px"><b>工具：</b>
 </td>
-<td><a href="../../Documentation/Tools/Map%20Editor.md" title="Documentation/Tools/Map Editor">Map Editor</a>
+<td><a href="../../Documentation/Tools/Map%20Editor.md" title="Documentation/Tools/Map Editor">地图编辑器</a>
 </td></tr></tbody></table>
 
-These tutorials will familiarize you with the basics of the map editor and creating your very first map.
+这些教程将让你熟悉地图编辑器的基础知识，并帮助你制作第一张地图。
 
-## Launching the Map Editor
+## 启动地图编辑器
 
-- User Guide: **[Tutorials/Map Editor/Introduction to the Map Editor/Launching the Map Editor](Introduction%20to%20the%20Map%20Editor/Launching%20the%20Map%20Editor.md)**
+- 用户指南：**[教程/地图编辑器/地图编辑器入门/启动地图编辑器](Introduction%20to%20the%20Map%20Editor/Launching%20the%20Map%20Editor.md)**
 
-## Basic Editor Functions
+## 编辑器基础功能
 
-- User Guide: **[Tutorials/Map Editor/Introduction to the Map Editor/Basic Editor Functions](Introduction%20to%20the%20Map%20Editor/Basic%20Editor%20Functions.md)**
+- 用户指南：**[教程/地图编辑器/地图编辑器入门/编辑器基础功能](Introduction%20to%20the%20Map%20Editor/Basic%20Editor%20Functions.md)**
 
-## Saving, Loading, Sectors, and Files
+## 保存、加载、扇区与文件
 
-- User Guide: **[Tutorials/Map Editor/Introduction to the Map Editor/Saving, Loading, Sectors, and Files](Introduction%20to%20the%20Map%20Editor/Saving,%20Loading,%20Sectors,%20and%20Files.md)**
+- 用户指南：**[教程/地图编辑器/地图编辑器入门/保存、加载、扇区与文件](Introduction%20to%20the%20Map%20Editor/Saving,%20Loading,%20Sectors,%20and%20Files.md)**
 
 <!-- source: https://modding.scssoft.com/wiki/Tutorials/Map_Editor/Introduction_to_the_Map_Editor | revision: 5501 | captured: 2026-10-21 23:56:14 -->

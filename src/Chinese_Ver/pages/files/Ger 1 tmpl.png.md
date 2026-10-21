@@ -1,4 +1,4 @@
-# File:Ger 1 tmpl.png
+# 文件:Ger 1 tmpl.png
 
 ![Ger 1 tmpl.png](../../../images/files/Ger%201%20tmpl.png/Ger_1_tmpl.png)
 

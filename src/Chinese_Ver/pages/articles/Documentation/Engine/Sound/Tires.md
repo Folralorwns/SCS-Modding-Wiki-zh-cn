@@ -1,29 +1,29 @@
 # Documentation/Engine/Sound/Tires
 
-### Sounds - Tires
+### 声音 - 轮胎
 
-This section is related to the sound of tires on different road substances.
+本节介绍轮胎在不同路面材质上的声音。
 
-## Tire Sound Events
+## 轮胎声音事件
 
-Tire sounds are kept separate for the truck tires and trailer tires, but both have the same events and parameters.<br> Currently there are 4 supported substances each with their own sound event:
+卡车轮胎和挂车轮胎的轮胎声音是分开保存的，但二者具有相同的事件和参数。<br> 目前支持 4 种路面材质，每种都有自己的声音事件：
 
 - asphalt
 - rumble
 - gravel
 - grass<br>
 
-### Tire Sound Parameters
+### 轮胎声音参数
 
-Sound parameters:
+声音参数：
 
-- <name_of_event>/speed<br>The parameter "speed" (km/h) controls the pitch and volume of the substance sound.
-- skid_speed<br>The parameter "skid_speed" (m/s) represents the speed of wheel slip in either direction.
-- note<br>The parameter "note" is present only for the "rumble" substance. <br>It is a frequency multiplier that is applied to the root note G and forms the melody for the singing road.
+- <name_of_event>/speed<br>参数 "speed"（km/h）控制该路面材质声音的音高和音量。
+- skid_speed<br>参数 "skid_speed"（m/s）表示任一方向上车轮打滑的速度。
+- note<br>参数 "note" 仅存在于 "rumble" 路面材质中。<br>它是一个频率乘数，应用于根音 G，并形成“会唱歌的路面”的旋律。
 
-## Engine Sound Configuration
+## 引擎声音配置
 
-The tire sounds paths are stored in these 4 soundrefs for the truck:
+卡车轮胎的声音路径存储在这 4 个 soundref 中：
 
 ```
 	sound/tires/rumble.soundref
@@ -32,7 +32,7 @@ The tire sounds paths are stored in these 4 soundrefs for the truck:
 	sound/tires/asphalt.soundref
 ```
 
-and these 4 for the trailer:
+挂车则为这 4 个：
 
 ```
 	sound/trailer/tires/rumble.soundref
@@ -41,14 +41,14 @@ and these 4 for the trailer:
 	sound/trailer/tires/asphalt.soundref
 ```
 
-Example:
+示例：
 
-Content of the "sound/tires/rumble.soundref" is:
+"sound/tires/rumble.soundref" 的内容为：
 
 ```
 source="/sound/tires/tires.bank#rumble"
 ```
 
-The location of the sound bank for the truck: *"/sound/tires/tires.bank"*<br> and sound bank for the trailer: *"/sound/trailer/tires/tires.bank"*
+卡车的声音 bank 位置：*"/sound/tires/tires.bank"*<br> 挂车的声音 bank 位置：*"/sound/trailer/tires/tires.bank"*
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Sound/Tires | revision: 5294 | captured: 2026-10-21 23:56:14 -->

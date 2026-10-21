@@ -1,4 +1,4 @@
-# File:SCS Locator Creation-Collision Subtype.280.png
+# 文件:SCS Locator Creation-Collision Subtype.280.png
 
 ![SCS Locator Creation-Collision Subtype.280.png](../../../images/files/SCS%20Locator%20Creation-Collision%20Subtype.280.png/SCS_Locator_Creation-Collision_Subtype.280.png)
 

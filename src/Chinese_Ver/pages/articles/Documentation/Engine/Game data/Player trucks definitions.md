@@ -1,22 +1,22 @@
-# Documentation/Engine/Game data/Player trucks definitions
+# 文档/引擎/游戏数据/玩家卡车定义
 
-Player truck definitions can be thought of in two components:
+玩家卡车定义可以分为两个组成部分：
 
-- Vehicle parts definitions describe the characteristics of the truck and its many accessories.
+- 车辆部件定义描述卡车及其众多配件的特性。
 
-: -Think of these as a set of building blocks from which the truck can be built; They don't assemble themselves!
+: -可以将其视为一组用于搭建卡车的积木；它们不会自行组装！
 
-- Vehicle configurations assemble the parts definitions into a vehicle that may be driven or purchased.
+- 车辆配置将部件定义组装成一辆可驾驶或可购买的车辆。
 
-: -Think of them as the instructions for the game to assemble the building blocks (data definitions) into a vehicle when it is first loaded.
+: -可以将其视为给游戏的指令，让它在车辆首次加载时把这些积木（数据定义）组装成一辆车。
 
-## Vehicle Parts Definitions
+## 车辆部件定义
 
-Each truck is configured in its own folder (e.g. "**<brand.truck>**" in tree view below) containing:
+每辆卡车都在各自的文件夹中配置（例如下方树状视图中的 "**<brand.truck>**"），其中包含：
 
-1. SII file: **data.sii** - *defining: truck info, cameras, fallback rules for parts of the truck and required accessories. There are 8 mandatory fallback rules: chassis, cabin, interior, engine, transmission, f_wheel (or f_tire), r_wheel (or r_tire), paint_job and head_light*.
-2. Subfolders: (**chassis**, **cabin**, **interior**, **engine**, **transmission**, **paint_job**, **head_light**, **sound**) - *defining different parts and accessories of the truck. First 7 folders are needed because of mandatory fallback rules and sound folder is needed for truck mandatory sounds definitions.*
-3. Optional folder: **accessory** - *defining all possible accessories for the truck that the user can install in the game Upgrade Shop. This folder holds another level of sub folders for separating different accessory types that the player can install on the truck and will be listed in the Upgrade Shop once the player selects the proper accessory type. Moreover names of subfolders directly correspond to the names of model locators that the truck 3D model has to have for the ability of having those types of accessories enabled in the game.*
+1. SII 文件：**data.sii** - *定义：卡车信息、摄像机、卡车各部件与必需配件的回退规则。共有 8 条强制回退规则：chassis、cabin、interior、engine、transmission、f_wheel（或 f_tire）、r_wheel（或 r_tire）、paint_job 以及 head_light*。
+2. 子文件夹：（**chassis**、**cabin**、**interior**、**engine**、**transmission**、**paint_job**、**head_light**、**sound**）- *定义卡车的不同部件与配件。前 7 个文件夹因强制回退规则而必需，sound 文件夹则用于卡车必需的声音定义。*
+3. 可选文件夹：**accessory** - *定义用户可在游戏内的升级商店中安装的卡车所有可能的配件。该文件夹下还有一级子文件夹，用于区分玩家可安装到卡车上的不同配件类型；玩家选择相应的配件类型后，这些类型就会在升级商店中列出。此外，子文件夹的名称直接对应卡车 3D 模型必须具有的模型定位器名称，只有具备这些定位器，才能在游戏中启用相应类型的配件。*
 
 ```
 Root game folder
@@ -42,13 +42,13 @@ Root game folder
       └fallback.sii                Configuration of fallback truck in the case player loads save with truck that is not in game data any more (may happen when truck mod is removed).
 ```
 
-## Vehicle Configurations
+## 车辆配置
 
-There are three types of player truck configurations, depending on their use in the game:
+根据在游戏中的用途，玩家卡车配置分为三种类型：
 
-1. Dealers inside folder: "**/def/vehicle/truck_dealer/**" (if truck has RHD variant also in UK dealers folder: "**/def/vehicle/truck_dealer_uk/**").
-2. Desktop preview inside folder: "**/def/vehicle/truck_desktop/**" (if truck has RHD variant also in UK dealers folder: "**/def/vehicle/truck_desktop_uk/**").
-3. (Optional) Quick Jobs trucks inside folder: "**/def/vehicle/truck_company/**" (if truck has RHD variant also in UK dealers folder: "**/def/vehicle/truck_company_uk/**").
+1. 经销商：位于文件夹 "**/def/vehicle/truck_dealer/**" 中（如果卡车有右舵版本，则也位于英国经销商文件夹 "**/def/vehicle/truck_dealer_uk/**" 中）。
+2. 桌面预览：位于文件夹 "**/def/vehicle/truck_desktop/**" 中（如果卡车有右舵版本，则也位于英国经销商文件夹 "**/def/vehicle/truck_desktop_uk/**" 中）。
+3. （可选）快速任务卡车：位于文件夹 "**/def/vehicle/truck_company/**" 中（如果卡车有右舵版本，则也位于英国经销商文件夹 "**/def/vehicle/truck_company_uk/**" 中）。
 
 ```
 Root game folder

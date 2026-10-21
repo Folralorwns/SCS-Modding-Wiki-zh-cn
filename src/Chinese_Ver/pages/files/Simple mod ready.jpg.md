@@ -1,4 +1,4 @@
-# File:Simple mod ready.jpg
+# 文件:Simple mod ready.jpg
 
 ![Simple mod ready.jpg](../../../images/files/Simple%20mod%20ready.jpg/Simple_mod_ready.jpg)
 

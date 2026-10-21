@@ -1,22 +1,22 @@
-# Documentation/Tools/Map Editor/Note API
+# 文档/工具/地图编辑器/Note API
 
-The note API allows multiple users to share in-map notes without having to manually share files between each other.
+Note API 允许多名用户共享地图内笔记，而无需在彼此之间手动共享文件。
 
-The `{{url}}` is the `note_server` field as specified in [editor_online_data.sii](Editor%20online%20data.md)
+`{{url}}` 是 [editor_online_data.sii](Editor%20online%20data.md) 中指定的 `note_server` 字段。
 
 #### **GET** `{{url}}/version`
 
-Get server protocol version.
+获取服务器协议版本。
 
-Example response: `2`
+示例响应：`2`
 
-As of writing this the only supported version is 2.
+截至撰写本文时，唯一受支持的版本是 2。
 
 #### **GET** `{{url}}/maps/:map_id`
 
-Fetches map information
+获取地图信息。
 
-Example response:
+示例响应：
 
 ```
 {
@@ -26,13 +26,13 @@ Example response:
 
 #### **POST** `{{url}}/maps/:map_id`
 
-URL parameters:
+URL 参数：
 
-- `v` - protocol version
+- `v` - 协议版本
 
-Updates map info.
+更新地图信息。
 
-Example body:
+示例请求体：
 
 ```
 {
@@ -44,9 +44,9 @@ Example body:
 
 #### **GET** `{{url}}/maps/:map_id/notes`
 
-Fetches notes.
+获取笔记。
 
-Example response:
+示例响应：
 
 ```
 [
@@ -70,7 +70,7 @@ Example response:
 ]
 ```
 
-`data` is base64 encoded binary data:
+`data` 是 base64 编码的二进制数据：
 
 ```
 u32 data_version; // Can be 1 or 2
@@ -94,9 +94,9 @@ if (data_version >= 2) {
 
 #### **GET** `{{url}}/maps/:map_id/changes/:note_id`
 
-Get the last artist that made a change to this note
+获取最后对此笔记做出更改的艺术家。
 
-Example response:
+示例响应：
 
 ```
 {
@@ -106,13 +106,13 @@ Example response:
 
 #### **POST** `{{url}}/maps/:map_id/session/:session_id/notes/batch`
 
-Attempts to create new notes.
+尝试创建新笔记。
 
-URL parameters:
+URL 参数：
 
-- `v` - protocol version
+- `v` - 协议版本
 
-Example body:
+示例请求体：
 
 ```
 [
@@ -135,7 +135,7 @@ Example body:
 ]
 ```
 
-Another example body:
+另一个示例请求体：
 
 ```
 [
@@ -148,7 +148,7 @@ Another example body:
 ]
 ```
 
-Another example body:
+另一个示例请求体：
 
 ```
 [
@@ -158,7 +158,7 @@ Another example body:
 ]
 ```
 
-Example response:
+示例响应：
 
 ```
 [
@@ -174,25 +174,25 @@ Example response:
 ]
 ```
 
-The number of array entries should match the number of notes submitted. The first entry is the http response code for that note, the second entry is information about the note.
+数组中的条目数量应与提交的笔记数量一致。第一个条目是该笔记的 HTTP 响应码，第二个条目是该笔记的相关信息。
 
 #### **POST** `{{url}}/maps/:map_id/session/:session_id/commit`
 
-Attempts to commit current session. Any updates or new notes need to be commited for others to see them.
+尝试提交当前会话。任何更新或新笔记都必须提交后，其他人才能看到。
 
 #### **POST** `{{url}}/maps/:map_id/session/:session_id/abort`
 
-Attempts to abort current session without commiting any updates or new notes.
+尝试中止当前会话，不提交任何更新或新笔记。
 
 #### **GET** `{{url}}/maps/:map_id/notes/:note_id`
 
-Fetches a specific note by id.
+按 id 获取特定笔记。
 
-Refer to `{{url}}/maps/:map_id/notes` for example response. The only difference being that here we expect just the one object, not an array.
+示例响应请参阅 `{{url}}/maps/:map_id/notes`。唯一区别在于此处期望的是单个对象，而非数组。
 
 #### **GET** `{{url}}/maps/:map_id/updates/:timestamp`
 
-Example response:
+示例响应：
 
 ```
 {
@@ -211,11 +211,11 @@ Example response:
 
 #### **POST** `{{url}}/maps`
 
-URL parameters:
+URL 参数：
 
-- `v` - protocol version
+- `v` - 协议版本
 
-Example body:
+示例请求体：
 
 ```
 {
@@ -228,9 +228,9 @@ Example body:
 
 #### **POST** `{{url}}/maps/:map_id/session`
 
-Creates a new session.
+创建新会话。
 
-Example body:
+示例请求体：
 
 ```
 {
@@ -238,7 +238,7 @@ Example body:
 }
 ```
 
-Example response:
+示例响应：
 
 ```
 {

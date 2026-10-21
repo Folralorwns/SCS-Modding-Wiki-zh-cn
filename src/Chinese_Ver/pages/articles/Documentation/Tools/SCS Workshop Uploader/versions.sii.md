@@ -1,10 +1,10 @@
-# Documentation/Tools/SCS Workshop Uploader/versions.sii
+# 文档/工具/SCS Workshop Uploader/versions.sii
 
-In the Steam Workshop mods you need to have unit file "versions.sii" containing definitions which content folder should be used for which game version.
+在 Steam Workshop 模组中，你需要有单元文件 "versions.sii"，其中包含定义：应为哪个游戏版本使用哪个内容文件夹。
 
-This file contains set of [package_version_info](../../Engine/Units/package%20version%20info.md) serialized unit informations with proper set of the attributes.
+此文件包含一组 [package_version_info](../../Engine/Units/package%20version%20info.md) 序列化单元信息，并带有相应的一组属性。
 
-- Example file:
+- 示例文件：
 
 ```
 SiiNunit

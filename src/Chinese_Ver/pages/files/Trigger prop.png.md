@@ -1,4 +1,4 @@
-# File:Trigger prop.png
+# 文件:Trigger prop.png
 
 ![Trigger prop.png](../../../images/files/Trigger%20prop.png/Trigger_prop.png)
 

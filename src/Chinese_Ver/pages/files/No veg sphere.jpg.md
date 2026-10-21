@@ -1,4 +1,4 @@
-# File:No veg sphere.jpg
+# 文件:No veg sphere.jpg
 
 ![No veg sphere.jpg](../../../images/files/No%20veg%20sphere.jpg/No_veg_sphere.jpg)
 

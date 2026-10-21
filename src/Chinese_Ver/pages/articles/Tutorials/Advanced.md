@@ -1,12 +1,12 @@
-# Tutorials/Advanced
+# 教程/高级
 
-The advanced tutorials cover more specific topics, with bigger scope and are organized by the type of content that they are relevant to.
+高级教程涵盖更具体的主题，范围更大，并按其所涉及的内容类型进行组织。
 
-However, note that these tutorials will *not* present the complete mod assembly procedure from start to finished packed mod, as the user should already be familiar with the fundamentals of SCS games and mod packing. So if you are not yet familiar with basic principles of modding SCS games try the [Beginner](Beginners.md) tutorials first.
+但请注意，这些教程*不会*呈现从开始到最终打包完成模组的完整模组组装流程，因为用户应已熟悉 SCS 游戏的基础知识以及模组打包。因此，如果你还不熟悉 SCS 游戏模组制作的基本原理，请先尝试[入门](Beginners.md)教程。
 
-## List of tutorials
+## 教程列表
 
-- [Extended Shadows](Advanced/Extended%20Shadows.md)
-- [First animation model](Advanced/First%20animation%20model.md)
+- [扩展阴影](Advanced/Extended%20Shadows.md)
+- [第一个动画模型](Advanced/First%20animation%20model.md)
 
 <!-- source: https://modding.scssoft.com/wiki/Tutorials/Advanced | revision: 2945 | captured: 2026-10-21 23:56:14 -->

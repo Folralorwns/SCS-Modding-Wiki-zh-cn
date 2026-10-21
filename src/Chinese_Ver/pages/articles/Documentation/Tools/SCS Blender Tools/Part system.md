@@ -1,77 +1,77 @@
-# Documentation/Tools/SCS Blender Tools/Part system
+# 文档/工具/SCS Blender Tools/部件系统
 
 ![SCS_Tools_Object_Specials_-_Parts_05.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Part%20system/SCS_Tools_Object_Specials_-_Parts_05.280.png)
 
-**Parts** can be found in *SCS Parts* sub-panel inside *SCS Object* panel in *Object* tab of Blender properties window and provide a kind of grouping system for Model and [Locator](Locators.md) objects. They are usually used in defining [Variants](Variant%20system.md) but, in special cases, they are also used to define parts of the geometry that will be treated differently than the rest of the model.
+**部件**可在 Blender 属性窗口 *Object* 选项卡的 *SCS Object* 面板内的 *SCS Parts* 子面板中找到，它们为 Model 和[定位器](Locators.md)对象提供了一种分组系统。部件通常用于定义[变体](Variant%20system.md)，但在特殊情况下，也用于定义模型中将以不同于其余部分的方式处理的几何体。
 
-Every object in a scene belongs to some Part. Even in cases when we don't need to use Parts, there is always a Part name assigned to every object in a scene. The default name is “defaultpart”, but it can be changed any time. If the active object is not parented to any [SCS Root Object](Terminology%20and%20basics.md#SCS_Root_Object), then it is not possible to set the Part name for that object and panel won't be visible.
+场景中的每个对象都属于某个部件。即使在我们不需要使用部件的情况下，场景中的每个对象也始终会被分配一个部件名称。默认名称为 “defaultpart”，但可随时更改。如果活动对象未父级关联到任何 [SCS Root Object](Terminology%20and%20basics.md#SCS_Root_Object)，则无法为该对象设置部件名称，并且该面板不会显示。
 
-## Part list
+## 部件列表
 
-There is a **Part List** for each SCS Root Object which contains the Part names used within its respective SCS Game Object.
+每个 SCS Root Object 都有一个 **Part List**，其中包含其对应 SCS Game Object 内使用的部件名称。
 
-### Add, Remove, Order and Rename Parts
+### 添加、移除、排序和重命名部件
 
-You can **+** ***Add*** or **−** ***Remove*** names from the Part list using the buttons on the right side of the list. The middle button here is a **🗘** ***Remove Unused*** button, which will automatically remove any unused Part names. Lower two buttons ⯅ & ⯆ will change order of currently selected part. Lastly to ***Rename*** the existing Part just double click the item in the list and type a new name.
+你可以使用列表右侧的按钮 **+** ***Add*** 或 **−** ***Remove*** 在 **Part List** 中增加或移除名称。中间的按钮是 **🗘** ***Remove Unused***，它会自动移除所有未使用的部件名称。下方两个按钮 ⯅ 和 ⯆ 会改变当前选中部件的顺序。最后，要***重命名***现有部件，只需双击列表中的条目并输入新名称。
 
-### Additional list tools
+### 附加列表工具
 
-There are also some additional tools integrated for each item in the Part list which can be used for easy selection/deselection (arrow icon [![Blend_icon_restrict_select_off.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Part%20system/Blend_icon_restrict_select_off.png)](../../../../files/Blend%20icon%20restrict%20select%20off.png.md)) or hiding/showing (eye icon [![Blend_icon_restrict_view_off.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Part%20system/Blend_icon_restrict_view_off.png)](../../../../files/Blend%20icon%20restrict%20view%20off.png.md)) of particular Parts. It works like a switches, so if it is pressed repeatedly it will select and deselect or hide and show all the Part items. With `⇧ Shift` pressed it will always add to the existing selection or always show the Part items and with `Ctrl` it will always subtract from existing selection or always hide the Part items.
+**Part List** 中的每个条目还集成了一些附加工具，可用于轻松选择/取消选择（箭头图标 [![Blend_icon_restrict_select_off.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Part%20system/Blend_icon_restrict_select_off.png)](../../../../files/Blend%20icon%20restrict%20select%20off.png.md)）或隐藏/显示（眼睛图标 [![Blend_icon_restrict_view_off.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Part%20system/Blend_icon_restrict_view_off.png)](../../../../files/Blend%20icon%20restrict%20view%20off.png.md)）特定部件。它的作用类似于开关，因此反复按下它就会选中和取消选中，或隐藏和显示所有部件条目。按住 `⇧ Shift` 时，它会始终添加到现有选择中或始终显示部件条目；按住 `Ctrl` 时，它会始终从现有选择中减去或始终隐藏部件条目。
 
-### Item-selection tools
+### 条目选择工具
 
-If the active object is Model, Model Locator or Collision Locator object additional buttons appear:
+如果活动对象是 Model、Model Locator 或 Collision Locator 对象，则会出现附加按钮：
 
-- Assign - assigns currently selected Part name to selected object(s). For multiple selections, all selected objects must belong to the same SCS Root Object.
+- Assign - 将当前选中的部件名称分配给选中的对象。对于多选，所有选中对象必须属于同一个 SCS Root Object。
 
-- Select - selects all Models, Model Locators and Collision Locators within active SCS Game Object which uses the same Part name.
+- Select - 选中活动 SCS Game Object 内所有使用相同部件名称的 Model、Model Locator 和 Collision Locator。
 
-- Deselect - deselects all Models, Model Locators and Collision Locators within active SCS Game Object which uses the same Part name.
+- Deselect - 取消选中活动 SCS Game Object 内所有使用相同部件名称的 Model、Model Locator 和 Collision Locator。
 
-## Predefined Part Names
+## 预定义部件名称
 
-Some special behaviors are applied in-game to Parts with certain predefined names, based on the type of object.
+根据对象类型，具有某些预定义名称的部件会在游戏内应用一些特殊行为。
 
-### Trailers
+### 挂车
 
 <table class="wikitable">
 <tbody><tr>
-<th>Name
+<th>名称
 </th>
-<th>Behavior
+<th>行为
 </th>
-<th>Notes
+<th>备注
 </th></tr>
 <tr>
 <td>brace_on
 </td>
-<td>Lowered landing gear (static)<br/>Visible when trailer is detached, and before landing gear is raised when attached.
+<td>降下的支腿（静态）<br/>挂车分离时可见，以及在连接状态下支腿升起之前可见。
 </td>
-<td rowspan="2">The <i>brace_on</i> part should be active for all variants of the trailer model, and the <i>brace_off</i> part should be inactive.
-<p>For trailers with animated landing gear, both <i>brace_on</i> and <i>brace_off</i> are invisible during the landing gear animation. For best results, these parts should visually match the start and end keyframes of the landing gear animation.
+<td rowspan="2">对于挂车模型的所有变体，<i>brace_on</i> 部件都应处于激活状态，而 <i>brace_off</i> 部件应处于非激活状态。
+<p>对于带有动画支腿的挂车，在支腿动画期间 <i>brace_on</i> 和 <i>brace_off</i> 均不可见。为获得最佳效果，这些部件应在视觉上与支腿动画的起始和结束关键帧相匹配。
 </p>
 </td></tr>
 <tr>
 <td>brace_off
 </td>
-<td>Raised landing gear (static)<br/>Visible when trailer is attached, after landing gear is raised.
+<td>升起的支腿（静态）<br/>挂车连接后，在支腿升起之后可见。
 </td></tr>
 <tr>
 <td>cables_off
 </td>
-<td>Visible when dynamic trailer cables are not connected (version 1.31+)
+<td>动态挂车线缆未连接时可见（版本 1.31+）
 </td>
-<td rowspan="2">The <i>cables_off</i> part should be active for all variants of the trailer model, and the <i>cables_on</i> part should be inactive.
+<td rowspan="2">对于挂车模型的所有变体，<i>cables_off</i> 部件都应处于激活状态，而 <i>cables_on</i> 部件应处于非激活状态。
 </td></tr>
 <tr>
 <td>cables_on
 </td>
-<td>Visible when dynamic trailer cables are connected (version 1.31+)
+<td>动态挂车线缆已连接时可见（版本 1.31+）
 </td></tr></tbody></table>
 
-### Map Objects
+### 地图对象
 
-- *vis* - used for the visible part of the model.
-- *coll* - used for the collision geometry.
+- *vis* - 用于模型的可见部分。
+- *coll* - 用于碰撞几何体。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/SCS_Blender_Tools/Part_system | revision: 4296 | captured: 2026-10-21 23:56:14 -->

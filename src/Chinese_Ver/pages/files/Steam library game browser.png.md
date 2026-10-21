@@ -1,4 +1,4 @@
-# File:Steam library game browser.png
+# 文件:Steam library game browser.png
 
 ![Steam library game browser.png](../../../images/files/Steam%20library%20game%20browser.png/Steam_library_game_browser.png)
 

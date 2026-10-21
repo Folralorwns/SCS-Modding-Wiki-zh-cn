@@ -1,4 +1,4 @@
-# File:Truck accessory enter truck browser.jpg
+# 文件:Truck accessory enter truck browser.jpg
 
 ![Truck accessory enter truck browser.jpg](../../../images/files/Truck%20accessory%20enter%20truck%20browser.jpg/Truck_accessory_enter_truck_browser.jpg)
 

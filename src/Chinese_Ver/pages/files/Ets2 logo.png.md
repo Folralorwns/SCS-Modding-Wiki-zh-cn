@@ -1,4 +1,4 @@
-# File:Ets2 logo.png
+# 文件:Ets2 logo.png
 
 ![Ets2 logo.png](../../../images/files/Ets2%20logo.png/Ets2_logo.png)
 

@@ -1,25 +1,25 @@
 # Documentation/Engine/Sound/TruckRemote
 
-### Sounds - Remote Truck
+### 声音 - 远程卡车
 
-The sound of a remote truck is in principle very similar to the sound of a player's truck engine.<br> (Please see the [Sounds - Truck Engine](TruckEngine.md) for a better understanding.)<br> <br> However, there are a few key differences to keep in mind:
+远程卡车的声音原则上与玩家卡车的发动机声音非常相似。<br> （请参阅 [声音 - 卡车发动机](TruckEngine.md) 以更好地理解。）<br> <br> 不过，有几点关键差异需要注意：
 
-- The engine sound is integrated into one event (usually remote / engine), including exhaust and turbo sounds.
-- Due to performance considerations, the sound for the remote truck needs to be significantly simplified.
+- 发动机声音被整合到一个事件中（通常为 remote / engine），包括排气和涡轮声音。
+- 出于性能考虑，远程卡车的声音需要大幅简化。
 
-### Event "(remote/)engine"
+### 事件 "(remote/)engine"
 
-Event "engine" plays sound of the engine of remote truck.<br> It has to be a 3D event. The event should be routed to the "traffic" audio bus.<br> The event must be looped and its living cycle is controlled by "play" parameter (see bellow).<br> <br> These event parameters must exist:
+事件 "engine" 播放远程卡车的发动机声音。<br> 它必须是 3D 事件。该事件应路由到 "traffic" 音频总线。<br> 事件必须循环播放，其生命周期由 "play" 参数控制（见下文）。<br> <br> 以下事件参数必须存在：
 
-- play<br>The parameter "play" controls the living cycle of the event:<br>value play = 1 means - sound is playing<br>value play = 0 means - sound should be stopped
-- brake<br>the value is in the range <0 - 1> and represents the action of the motor brake
-- load<br>the value is in the range <0 - 1><br>value represents the motor load<br>value < 0.05 means idle engine sound
-- rpm<br>the value is in the range <0 - 3000><br>the value represents the number of engine revs per second
-- turbo<br>the value is in the range <0 - 1> and represents the action of the turbo system
+- play<br>参数 "play" 控制事件的生命周期：<br>值 play = 1 表示 - 声音正在播放<br>值 play = 0 表示 - 声音应停止
+- brake<br>取值范围为 <0 - 1>，表示发动机制动的动作
+- load<br>取值范围为 <0 - 1><br>该值表示发动机负荷<br>值 < 0.05 表示发动机怠速声音
+- rpm<br>取值范围为 <0 - 3000><br>该值表示发动机每秒的转数
+- turbo<br>取值范围为 <0 - 1>，表示涡轮系统的动作
 
-## Remote Engine Sound Configuration
+## 远程发动机声音配置
 
-The sound configuration of the engine sounds is stored in the "accessory_engine_data" data.<br> There is array "sounds" which contains the specification for the mandatory events of the engine.<br> That means that each type of engine can be assigned its own sound bank.<br> The item "remote" has been added for the remote engine sound (since version 1.42) <br> Example:<br> There are configuration files of engines for the "Peterbilt 579" at the folder "\def\vehicle\truck\peterbilt.579\engine".<br> Each engine includes *@include "sound.sui"* file which contains the definition of the events:
+发动机声音的配置存储在 "accessory_engine_data" 数据中。<br> 数组 "sounds" 包含发动机必需事件的定义。<br> 这意味着每种类型的发动机都可以分配自己的声音 bank。<br> 已为远程发动机声音添加了 "remote" 项（自 1.42 版本起） <br> 示例：<br> 在文件夹 "\def\vehicle\truck\peterbilt.579\engine" 中有 "Peterbilt 579" 的发动机配置文件。<br> 每个发动机都包含 *@include "sound.sui"* 文件，其中包含事件的定义：
 
 ```
 	sounds: 5
@@ -28,16 +28,16 @@ The sound configuration of the engine sounds is stored in the "accessory_engine_
 	sounds[]: "remote|/def/vehicle/truck/peterbilt.579/engine/sound_engine_rm.soundref"
 ```
 
-There are .soundref file (for each event) to specify the bank and the FMOD event of the sound.
+每个事件都有一个 .soundref 文件，用于指定声音的 bank 和 FMOD 事件。
 
-Content of the sound_engine_rm.soundref is:
+sound_engine_rm.soundref 的内容为：
 
 ```
 source="/sound/truck/peterbilt_579_rm.bank#remote/engine"
 ```
 
-## Engine Sound Example
+## 发动机声音示例
 
-Visit the [Downloads](Downloads.md) section to get template project or sound examples.
+访问 [下载](Downloads.md) 页面以获取模板工程或声音示例。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Sound/TruckRemote | revision: 5761 | captured: 2026-10-21 23:56:14 -->

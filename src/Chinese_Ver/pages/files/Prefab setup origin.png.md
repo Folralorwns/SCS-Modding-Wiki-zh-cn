@@ -1,4 +1,4 @@
-# File:Prefab setup origin.png
+# 文件:Prefab setup origin.png
 
 ![Prefab setup origin.png](../../../images/files/Prefab%20setup%20origin.png/Prefab_setup_origin.png)
 

@@ -1,4 +1,4 @@
-# File:Scs logo.jpg
+# 文件:Scs logo.jpg
 
 ![Scs logo.jpg](../../../images/files/Scs%20logo.jpg/Scs_logo.jpg)
 

@@ -1,4 +1,4 @@
-# File:Trigger example.jpg
+# 文件:Trigger example.jpg
 
 ![Trigger example.jpg](../../../images/files/Trigger%20example.jpg/Trigger_example.jpg)
 

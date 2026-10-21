@@ -1,30 +1,30 @@
 # Documentation/Engine/Sound/SoundWorld
 
-There are several types of sounds and sound effects in the sound system of the world:
+世界的声音系统中有几种类型的声音和声音效果：
 
-- 3d sound (in the world)
-- ambient sound
-- reverb effect
-- 3d sound on the object (prefab)
-- animation (mover)
+- 3d 声音（在世界中）
+- 环境音
+- 混响效果
+- 对象（预制件）上的 3d 声音
+- 动画（mover）
 
-### Sound layer in the Editor
+### 编辑器中的声音图层
 
-We now have a special layer for sounds on the map (up to version 1.40). The sound layer editor is just a special mode of the map editor, which can be activated using the command line:
+现在地图上有专门的声音图层（至 1.40 版本）。声音图层编辑器只是地图编辑器的一种特殊模式，可通过以下命令行激活：
 
 ```
 eurotrucks.exe -nosingle -edit -sound
 ```
 
-There is only one object that can be placed on the map in the sound layer: "sound item". However, this object works in 3 different modes:
+在声音图层中只能在地图上放置一种对象："sound item"。不过，该对象以 3 种不同模式工作：
 
-- **3d sound** - Displays a circular area of sound whose size is determined by the audibility limit.
-- **Ambient area** - Represents a user-defined area that is the source of a specified ambient sound.
-- **Reverb area** - Represents a user-defined area that is the source of the reverb effect.
+- **3d 声音** - 显示一个圆形的声音区域，其大小由可听度限制决定。
+- **环境区域** - 表示用户定义的区域，是指定环境音的来源。
+- **混响区域** - 表示用户定义的区域，是混响效果的来源。
 
-### Sound configuration for the sound layer
+### 声音图层的配置
 
-There are 3 configuration files (in the */base/def/world* folder):
+共有 3 个配置文件（位于 */base/def/world* 文件夹中）：
 
 - sound_item_data.sii
 
@@ -85,41 +85,41 @@ The effect is activated when the actor's camera enters to the defined area. (Now
 But the parameters of the reverb effect are adjusted slidingly over time.
 ```
 
-*Remark: Please do not modify these files if you want to add a new entry. Create in this directory a new file "<base_name>.&lt;idofyourmod&gt;.sii" where <base_name> is name of base file without the extension (e.g. "city" for "/def/city.sii") and &lt;idofyourmod&gt; is some string which is unlikely to conflict with another mod.*
+*备注：如果你想添加新条目，请不要修改这些文件。请在此目录中创建新文件 "<base_name>.&lt;idofyourmod&gt;.sii"，其中 <base_name> 是不含扩展名的基础文件名（例如 "/def/city.sii" 对应的 "city"），而 &lt;idofyourmod&gt; 是某个不太可能与其他模组冲突的字符串。*
 
-### Sound events
+### 声音事件
 
-(See [Sound examples](Downloads.md))
+（参见 [声音示例](Downloads.md)）
 
-## 3d sounds
+## 3d 声音
 
-- This sound event represents a 3d sound coming from a specific sound source statically located on the map.
-- An event is usually an infinite audio loop within a standard FMOD audio 3d event.
-- Audio hearing is controlled by the FMOD spatializer. (This must correspond to the 'max distance' setting in the audio configuration.)
-- Global parameters can be used to modify loop sounds.
-- The sound should be mono (preferred) or stereo sample.
+- 此声音事件表示来自地图上静态放置的特定声源的 3d 声音。
+- 事件通常是标准 FMOD 音频 3d 事件中的无限音频循环。
+- 音频可听度由 FMOD 空间化器控制。（这必须与音频配置中的 'max distance' 设置一致。）
+- 全局参数可用于修改循环声音。
+- 声音应为单声道（首选）或立体声采样。
 
-*Note: In our example, a restaurant sound controlled by the 'daytime' parameter is used. The example demonstrates the use of sound variants at different times of the day.*
+*注意：在我们的示例中，使用了由 'daytime' 参数控制的餐厅声音。该示例演示了在一天中不同时段使用声音变体的方式。*
 
-## Ambient sounds
+## 环境音
 
-- This sound event is used as the sound for ambient areas in the world.
-- An event is usually an infinite audio loop within a standard FMOD audio **2d event**. (Not including 3d spatializer.)
-- Audio hearing is controlled by the game. (The full audibility volume should be set in FMOD.)
-- Global parameters can be used to modify loop sounds.
-- **The preferred format of the loop is 5.1.**
-- The random events can be included in the loop.
-- The event should be routed to the 'outside/unprocessed/ambient' bus.
+- 此声音事件用作世界中环境区域的声音。
+- 事件通常是标准 FMOD 音频 **2d 事件**中的无限音频循环。（不包含 3d 空间化器。）
+- 音频可听度由游戏控制。（完全可听音量应在 FMOD 中设置。）
+- 全局参数可用于修改循环声音。
+- **循环的首选格式为 5.1。**
+- 循环中可以包含随机事件。
+- 事件应路由到 'outside/unprocessed/ambient' 总线。
 
-*Note: In our example (forest_warm_con_2) is the simulation of the day / night sound of a forest including random events.*
+*注意：在我们的示例中，(forest_warm_con_2) 是对森林昼夜声音的模拟，包含随机事件。*
 
-## Other sounds in the world
+## 世界中的其他声音
 
-For completeness: there are other sounds in the game world. All of these sounds are standard 3d FMOD events and can be created just like a '3d sound' event (see above).
+为完整起见：游戏世界中还有其他声音。所有这些声音都是标准的 3d FMOD 事件，可以像 '3d sound' 事件一样创建（见上文）。
 
-They are:
+它们是：
 
-- the sound assigned to a specific game object/prefab (defined in base\unit\hookup\sound_prefab.sii)
-- the sound assigned to the animation / the 'mover' (defined as a part of mover definition in base\def\world\mover.sii)
+- 分配给特定游戏对象/预制件的声音（定义于 base\unit\hookup\sound_prefab.sii）
+- 分配给动画 / 'mover' 的声音（作为 mover 定义的一部分定义在 base\def\world\mover.sii 中）
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Sound/SoundWorld | revision: 5213 | captured: 2026-10-21 23:56:14 -->

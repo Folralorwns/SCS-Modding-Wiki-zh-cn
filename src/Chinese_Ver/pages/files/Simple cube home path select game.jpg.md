@@ -1,4 +1,4 @@
-# File:Simple cube home path select game.jpg
+# 文件:Simple cube home path select game.jpg
 
 ![Simple cube home path select game.jpg](../../../images/files/Simple%20cube%20home%20path%20select%20game.jpg/Simple_cube_home_path_select_game.jpg)
 

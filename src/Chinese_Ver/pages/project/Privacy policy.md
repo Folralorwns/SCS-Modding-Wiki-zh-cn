@@ -1,111 +1,111 @@
-# SCS Modding:Privacy policy
+# SCS Modding:隐私政策
 
 ```
-INFORMATION ON PERSONAL DATA PROCESSING
+关于个人数据处理的信息
 
-1. PREAMBLE
+1. 前言
 
-  1.1. SCS Software s.r.o. with its registered office at Jihlavská 1558/21, Michle, 140 00 Praha 4, Czechia, Identification Number: 28181301, entered into Commercial Register maintained by the Prague City Court, Section C., Insert No. 131111 (“we” or “Company”) provides you with the following information (“Information”) in accordance with the requirements set out in Regulation (EU) 2016/679 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation, “GDPR”).
+  1.1. SCS Software s.r.o.，注册办公地址位于 Jihlavská 1558/21, Michle, 140 00 Praha 4, Czechia，识别号：28181301，登记于布拉格市法院维护的商业登记簿（Section C.，Insert No. 131111）（下称“我们”或“公司”），依照 Regulation (EU) 2016/679（关于自然人个人数据保护及此类数据自由流动、并废止 Directive 95/46/EC 的条例，即《通用数据保护条例》，“GDPR”）所规定的要求，向您提供以下信息（下称“本信息”）。
 
-  1.2 Personal data means any information which can be used to identify you or which is attributable to you as a natural person. Please do not send us any of your personal data if you do not want them to be used in the ways described in this document.
+  1.2 个人数据是指可用于识别您、或可归属于您作为自然人的任何信息。如果您不希望您的个人数据以本文件所述方式被使用，请不要向我们发送您的任何个人数据。
 
-  1.3 Any terms undefined in this Information which are defined in GDPR shall have the same meaning as in GDPR. In this Information, there are also links to special documents concerning personal data processing in certain specific situations (such as in case of job applicants); such special documents shall prevail over this Information in case of a conflict.
+  1.3 本信息中未予定义、但在 GDPR 中已有定义的术语，其含义与 GDPR 中的含义相同。本信息还包含指向特定具体情形（例如求职者情形）下个人数据处理专门文件的链接；如发生冲突，该等专门文件优先于本信息。
 
-2. SCOPE, PURPOSE AND LEGAL BASIS OF DATA PROCESSING
+2. 数据处理的范围、目的和法律依据
 
-  2.1. We collect personal data directly from you, or any third parties acting on your behalf or from publicly available records – databases.
+  2.1. 我们直接从您处、从代表您行事的任何第三方处，或从公开可查的记录——数据库收集个人数据。
 
-  2.2. In case you request information through a contact form on our website or send us a general e-mail inquiry, we process your general identification details and contact details, together with a message/information that you have provided. The legal basis for such processing is namely performance of a contract, or other applicable purpose depending on the nature of your request.
+  2.2. 如您通过我们网站上的联系表单请求获取信息，或向我们发送一般性电子邮件询问，我们会处理您的一般身份识别信息和联系方式，以及您所提供的消息/信息。该等处理的法律依据主要是合同的履行，或根据您请求的性质而适用的其他目的。
 
-  2.3. In relation to the provision of our products and services to you or your products and services to us we primarily process your general identification details, contact details and financial information, any data necessary for the provision of products or services and other information necessary to fulfil the respective contract. The legal basis for this processing is primarily the performance of our contract and compliance with our legal obligations. If you use our World of Trucks platform, please refer to more detailed information at: https://www.worldoftrucks.com/en/privacy.
+  2.3. 就我们向您提供产品或服务、或您向我们提供产品或服务而言，我们主要处理您的一般身份识别信息、联系方式和财务信息、提供产品或服务所必需的任何数据，以及履行相应合同所必需的其他信息。该等处理的法律依据主要是我们合同的履行以及对我们法律义务的遵守。如果您使用我们的 World of Trucks 平台，请访问以下网址参阅更详细的信息：https://www.worldoftrucks.com/en/privacy。
 
-  2.4. In case you are interested to cooperate with us and contact us via our website or via email, we process primarily your general identification details, contact details and in case you are applying for a position with the Company, also a CV, including a list of qualifications and references. For more information concerning personal data processing of job applicants, please visit https://scssoft.com/assets/files/information-to-job-applicants.pdf.
+  2.4. 如您有意与我们合作，并通过我们的网站或电子邮件与我们联系，我们主要处理您的一般身份识别信息和联系方式；如您申请本公司的职位，我们还会处理您的简历，包括资格和推荐人清单。有关求职者个人数据处理的更多信息，请访问 https://scssoft.com/assets/files/information-to-job-applicants.pdf。
 
-  2.5. If you are employee of the Company, please also refer to the information on personal data processing in connection with your employment which was provided to you upon commencement of your employment and at the time of each update thereof.
+  2.5. 如您是本公司的员工，请同时参阅在您入职时以及每次更新时向您提供的、与您的雇佣关系相关的个人数据处理信息。
 
-  2.6. Whenever you visit our website, we may process your personal data collected via cookies, provided you enabled them on your device. For more information about processing your personal data via cookies, please refer to Section 5 below.
+  2.6. 每当您访问我们的网站时，在您已于设备上启用 Cookie 的前提下，我们可能会处理通过 Cookie 收集的您的个人数据。有关通过 Cookie 处理您的个人数据的更多信息，请参阅下文第 5 节。
 
-  2.7.  We may send you our marketing communication, provided you gave us your explicit consent. If you are our customer, we may send you our marketing communication concerning similar products and services and provided you have not declined to receive such communication. Legal basis of such data processing is our legitimate interest. You may opt-out from receiving our marketing communication by clicking on the unsubscribe link within each marketing communication or anytime by sending an email to dataprotectionofficer@scssoft.com.
+  2.7. 在您向我们作出明确同意的情况下，我们可能会向您发送营销通讯。如您是我们的客户，我们可能会向您发送有关类似产品和服务的营销通讯，前提是您未拒绝接收该等通讯。该等数据处理的法律依据是我们的合法利益。您可以点击每份营销通讯中的退订链接，或随时发送电子邮件至 dataprotectionofficer@scssoft.com，选择不再接收我们的营销通讯。
 
-3. RECIPIENTS
+3. 接收方
 
-  3.1. We may share your personal data with third parties, if: (a) you have consented to such disclosure; (b) we are under a legal obligation to do so; (c) it is necessary for the purpose of legal proceedings or in relation thereto, or to exercise or protect our rights; (d) we are required to disclose your personal data to new entities or third parties due to organizational changes within the Company or in connection with the transfer of our business or any part thereof; (e) we disclose anonymous statistical data about our website users' browsing actions and related user information to reliable third parties, including browser providers and analysts. We may also share your personal data with some reliable third parties in accordance with contracts entered into with them. They include, for example:
+  3.1. 我们可能在以下情况下与第三方共享您的个人数据：(a) 您已同意该等披露；(b) 我们负有法律义务进行披露；(c) 为法律程序之目的或与之相关，或为行使或保护我们的权利所必需；(d) 因公司内部的组织变更，或与我们业务或其任何部分的转让相关，我们需要向新的实体或第三方披露您的个人数据；(e) 我们向可靠的第三方披露有关我们网站用户浏览行为及相关用户信息的匿名统计数据，包括浏览器提供商和分析服务商。我们还可能依照与某些可靠第三方签订的合同，与其共享您的个人数据。例如，这些第三方包括：
 
-       a) our professional advisors and auditors;
+       a) 我们的专业顾问和审计师；
 
-       b) suppliers to whom we outsource certain ancillary services, such as word processing, translation, photocopying and review of documents, notary services, registry administration and archiving services;
+       b) 供应商，我们将某些辅助服务外包给其，例如文字处理、翻译、复印和文件审阅、公证服务、登记管理及归档服务；
 
-       c) IT technology providers;
+       c) IT 技术提供商；
 
-       d) third parties involved in hosting or organizing of events or seminars.
+       d) 参与活动或研讨会主办或组织的第三方。
 
-  3.2. In an exceptional case when your personal data are transferred outside of the European Economic Area, we will observe all respective requirements set out in the GDPR in order to ensure protection of such data, in particular, we will transfer them only to countries which were acknowledged by the European Commission as having adequate level of protection or personal data, or to parties who have appropriate safeguards in place (such as standard contractual clauses or binding corporate rules).
+  3.2. 在您的个人数据被传输至欧洲经济区以外的特殊情况下，我们将遵守 GDPR 规定的所有相关要求，以确保该等数据得到保护，特别是，我们仅会将数据传输至经欧盟委员会认定具有充分保护水平的国家，或传输至已采取适当保障措施（例如标准合同条款或有约束力的公司规则）的当事方。
 
-4. DURATION OF PROCESSING
+4. 处理期限
 
-  4.1. The Company processes the personal data only for the time period necessary to fulfill the above purposes of data processing or as required by the applicable laws (such as employment, tax or social security laws). After that all personal data are erased.
+  4.1. 公司仅在实现上述数据处理目的所必需的期间内，或按适用法律（例如劳动、税务或社会保障法律）的要求处理个人数据。此后，所有个人数据均被删除。
 
-5. COOKIES
+5. Cookie
 
-  5.1. Our websites use cookies – small text files that are stored on your web browser or device by web servers when you visit some websites. Cookies are used to distinguish you from other users of our website and to store data about how you use our website (e.g. the number of site visitors, time you spent visiting the website or what content interests you).
+  5.1. 我们的网站使用 Cookie——当您访问某些网站时，由网络服务器存储在您的网络浏览器或设备上的小型文本文件。Cookie 用于将您与我们网站的其他用户区分开来，并存储有关您如何使用我们网站的数据（例如网站访问者数量、您访问网站所花费的时间，或您感兴趣的内容）。
 
-  5.2. This information is not linked to your identity but rather to online identifiers (e.g. the type of browser you're using or the name of your internet provider's domain) and is used to improve our services and ensure the correct operation of our website. We don't identify any individual site visitors, unless they provide their contact details using the form(s) available on the website.
+  5.2. 该等信息不与您的身份相关联，而是与在线标识符（例如您所使用的浏览器类型，或您互联网提供商域的名称）相关联，并用于改进我们的服务、确保我们网站的正常运行。我们不会识别任何单个网站访问者，除非其通过网站上提供的表单提供了联系方式。
 
-  5.3. We use the following types of cookies:
+  5.3. 我们使用以下类型的 Cookie：
 
-       a) Strictly necessary cookies (for example PHPSESSID) – cookies that are required to ensure the correct operation of our website. They include, for example, cookies that enable you to log into secure areas of our website, use a shopping cart or make use of e-billing services; and
+       a) 严格必要的 Cookie（例如 PHPSESSID）——为确保我们网站正常运行所必需的 Cookie。例如，其中包括使您能够登录我们网站的安全区域、使用购物车或使用电子账单服务的 Cookie；以及
 
-       b) Analytical/performance cookies (for example Google Analytics – _ga, _gat_client, _gat_crossDomain, _gid, _utma, _utmb, _ and NID) – They allow us to recognise and count the number of visitors and to see how visitors move around our website when they are using it. This helps us to improve the way our website works, for example, by ensuring that users find what they are looking for easily.
+       b) 分析/性能 Cookie（例如 Google Analytics——_ga、_gat_client、_gat_crossDomain、_gid、_utma、_utmb、_ 和 NID）——它们使我们能够识别并统计访问者数量，并了解访问者在使用网站时如何在网站内浏览。这有助于我们改进网站的运作方式，例如确保用户能够轻松找到所需内容。
 
-       c) Cookies for third-party embedded content or embedded widgets – cookies that are used to display third party content on our websites (such as YouTube videos) or widgets mirroring content of third parties to our websites (such as Steam widget or WelcomeKit widget).
+       c) 用于第三方嵌入内容或嵌入小组件的 Cookie——用于在我们网站上显示第三方内容（例如 YouTube 视频），或将第三方内容镜像至我们网站的小组件（例如 Steam 小组件或 WelcomeKit 小组件）的 Cookie。
 
-  5.4. Whether cookies are classified as "first-party" or "third-party" cookies depends on the domain that placed the cookies on your web browser or device. First-party cookies are stored by the web server you're visiting. Third-party cookies are cookies placed on your device by a domain other than the website you're currently on. We recently use third-party cookies provided by Google, in particular Google Analytics for analysis of our website traffic or YouTube cookies enabling to play videos on our websites. You can find the privacy policy regarding such cookies at: https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage.
+  5.4. Cookie 被归类为“第一方”还是“第三方”Cookie，取决于将 Cookie 放置在您的网络浏览器或设备上的域名。第一方 Cookie 由您所访问的网络服务器存储。第三方 Cookie 是由您当前所在网站以外的域名放置在您设备上的 Cookie。我们目前使用 Google 提供的第三方 Cookie，特别是用于分析我们网站流量的 Google Analytics，以及使我们能够在我们网站上播放视频的 YouTube Cookie。您可以在此处找到有关该等 Cookie 的隐私政策：https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage。
 
-  5.5. Persistent cookies are stored on your device for a pre-defined amount of time. They are activated each time you visit the web server which generated the respective cookie.
+  5.5. 持久性 Cookie 在您的设备上存储预先确定的一段时间。每次您访问生成相应 Cookie 的网络服务器时，它们都会被激活。
 
-  5.6. Session cookies allow website operators to link the actions of a user during a browser session. They are generated when you access the website browser and are deleted when you close the browser.
+  5.6. 会话 Cookie 允许网站运营者在一次浏览器会话期间关联用户的操作。它们在您访问网站浏览器时生成，并在您关闭浏览器时删除。
 
-  5.7. All cookies except strictly necessary cookies may only be stored on your device and processed with your consent. You may grant / reject such consent in the pop-up window which is displayed upon your first visit to the website or anytime by clicking a link “Cookies Setting” at the bottom of each website. You can also change your browser's cookie settings to allow or block cookies from being stored on your device. If you decide to block cookies, you probably may not be able to fully use all functions of our website.
+  5.7. 除严格必要的 Cookie 外，所有 Cookie 只有在您同意的情况下方可存储在您的设备上并进行处理。您可以在首次访问网站时显示的弹窗中授予/拒绝该等同意，或随时点击每个网站底部的“Cookie 设置”链接进行设置。您也可以更改浏览器的 Cookie 设置，以允许或阻止 Cookie 存储在您的设备上。如果您决定阻止 Cookie，您可能无法充分使用我们网站的所有功能。
 
-  5.8. The manner in which you can enable/disable your cookies is different for each browser. Specific instructions are provided under your browser's "Help Menu". More detailed information about cookie administration by the most commonly used web browsers is available here:
+  5.8. 各浏览器启用/禁用 Cookie 的方式有所不同。具体说明见浏览器的“帮助菜单”。有关最常用网络浏览器管理 Cookie 的更详细信息，请参见：
 
-       a) Internet Explorer: https://support.microsoft.com/en-us/help/278835/how-to-delete-cookie-files-in-internet-explorer
+       a) Internet Explorer：https://support.microsoft.com/en-us/help/278835/how-to-delete-cookie-files-in-internet-explorer
 
-       b) Firefox: http://support.mozilla.org/en-US/kb/delete-cookies-remove-info-websites-stored
+       b) Firefox：http://support.mozilla.org/en-US/kb/delete-cookies-remove-info-websites-stored
 
-       c) Chrome: https://support.google.com/chrome/answer/95647?hl=en&co=GENIE.Platform=Desktop
+       c) Chrome：https://support.google.com/chrome/answer/95647?hl=en&co=GENIE.Platform=Desktop
 
-       d) Opera: https://www.allaboutcookies.org/manage-cookies/opera.html
+       d) Opera：https://www.allaboutcookies.org/manage-cookies/opera.html
 
-       e) Safari: https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac
+       e) Safari：https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac
 
-       f) Safari for iPad and iPhone: http://support.apple.com/kb/HT1677
+       f) Safari for iPad and iPhone：http://support.apple.com/kb/HT1677
 
-       g) Microsoft Edge: https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09
+       g) Microsoft Edge：https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09
 
-  5.9. More information about cookies (including the administration and deletion of cookies) is available at: http://www.allaboutcookies.org.
+  5.9. 有关 Cookie（包括管理和删除 Cookie）的更多信息，请访问：http://www.allaboutcookies.org。
 
-6. YOUR RIGHTS
+6. 您的权利
 
-  In relation to the personal data provided to us, you have the following rights:
+  对于向我们提供的个人数据，您享有以下权利：
 
-       a) Right of access: You have the right to obtain from us confirmation as to whether or not your personal data are being processed, and, where that is the case, to access such personal data and the related information, in particular concerning the purpose of personal data processing, its duration, categories of personal data processed and recipients to whom the personal data are disclosed. Such right to access may nevertheless be restricted based on the rights and freedoms of others.
+       a) 访问权：您有权从我们处获得确认，以了解您的个人数据是否正在被处理；如正在处理，则有权访问该等个人数据及相关信息，特别是有关个人数据处理的目的、期限、所处理个人数据的类别，以及个人数据被披露给的接收方的信息。但该等访问权可能会基于他人的权利和自由而受到限制。
 
-       b) Right to rectification: Upon your request we shall correct inaccurate or amend incomplete personal data related to you.
+       b) 更正权：应您的请求，我们将更正不准确的个人数据，或补充与您相关的不完整的个人数据。
 
-       c) Right to erasure (Right to be forgotten): Under the conditions set out in GDPR, we shall, upon your request erase the personal data for example in cases when such data are no longer necessary in relation to the purposes for which they were collected, they were processed based on your consent which was withdrawn, you objected to their further processing or they were processed unlawfully.
+       c) 删除权（被遗忘权）：在 GDPR 规定的条件下，应您的请求，我们将删除个人数据，例如在以下情形：该等数据对于其被收集的目的而言已不再必要；该等数据是基于您已撤回的同意而处理的；您反对继续处理该等数据；或该等数据被非法处理。
 
-       d) Right to restrictions of processing: Under the conditions set out in GDPR (for example when the accuracy of personal data is contested by you or the personal data were unlawfully processed), we shall, upon your request, restrict processing of your personal data; in such case we shall process such personal data only for limited reasons set out in GDPR or other applicable laws.
+       d) 限制处理权：在 GDPR 规定的条件下（例如您对个人数据的准确性提出异议，或个人数据被非法处理），应您的请求，我们将限制对您个人数据的处理；在此情况下，我们仅会为 GDPR 或其他适用法律规定的有限理由处理该等个人数据。
 
-       e) Right to data portability: Under the conditions set out in GDPR and to the extent of our technical capabilities, you shall have right to receive the personal data you provided to us in a structured, commonly used and machine-readable format and to transmit those data to another controller without hindrance from us.
+       e) 数据可携权：在 GDPR 规定的条件下并在我们的技术能力范围内，您有权以结构化、常用且机器可读的格式接收您向我们提供的个人数据，并有权将该等数据传输至另一控制者，我们不得予以妨碍。
 
-       f) Right to object: In certain cases (in particular with respect to personal data processed on the basis of our legitimate interest) you may object to the processing of your personal data. In such case we may be required to cease from further processing of such personal data.
+       f) 反对权：在某些情况下（特别是对于基于我们的合法利益而处理的个人数据），您可以反对处理您的个人数据。在此情况下，我们可能被要求停止对该等个人数据的进一步处理。
 
-       g) Right to withdraw consent: In case that your personal data are processed based on your consent, you shall have the right to withdraw such consent at any time in the same form and manner as the consent was originally given, or contact the Data Protection Officer for such purpose; lawfulness of personal data processing carried out prior to such withdrawal shall remain unaffected.
+       g) 撤回同意权：如您的个人数据是基于您的同意而处理的，您有权随时以最初给予同意相同的形式和方式撤回该等同意，或为此目的联系数据保护官；撤回之前已进行的个人数据处理的合法性不受影响。
 
-       h) Right to contact the Data Protection Officer / Supervisory Authority: You shall have right to contact Data Protection Officer of the Company at dataprotectionofficer@scssoft.com with inquiries and / or complaints regarding personal data processing. You shall also have the right to lodge a complaint with the Supervisory Authority (Czech Office for Protection of Personal Data, with its registered office at Pplk. Sochora 27, 170 00 Prague 7, Czech Republic, E-mail: posta@uoou.cz, website: https://www.uoou.cz).
+       h) 联系数据保护官/监管机构的权利：您有权就个人数据处理相关的问题和/或投诉，通过 dataprotectionofficer@scssoft.com 联系本公司的数据保护官。您还有权向监管机构（捷克个人数据保护办公室，注册办公地址为 Pplk. Sochora 27, 170 00 Prague 7, Czech Republic，电子邮件：posta@uoou.cz，网站：https://www.uoou.cz）提出投诉。
 
-This document was last updated on December 31, 2021.
+本文件最后更新于 2021 年 12 月 31 日。
 ```
 
 <!-- source: https://modding.scssoft.com/wiki/SCS_Modding%3APrivacy_policy | revision: 5019 | captured: 2026-10-21 23:56:14 -->

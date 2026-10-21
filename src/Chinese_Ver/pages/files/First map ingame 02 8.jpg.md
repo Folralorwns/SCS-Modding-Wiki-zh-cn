@@ -1,4 +1,4 @@
-# File:First map ingame 02 8.jpg
+# 文件:First map ingame 02 8.jpg
 
 ![First map ingame 02 8.jpg](../../../images/files/First%20map%20ingame%2002%208.jpg/First_map_ingame_02_8.jpg)
 

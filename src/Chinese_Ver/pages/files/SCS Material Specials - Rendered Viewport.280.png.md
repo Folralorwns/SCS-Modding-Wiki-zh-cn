@@ -1,4 +1,4 @@
-# File:SCS Material Specials - Rendered Viewport.280.png
+# 文件:SCS Material Specials - Rendered Viewport.280.png
 
 ![SCS Material Specials - Rendered Viewport.280.png](../../../images/files/SCS%20Material%20Specials%20-%20Rendered%20Viewport.280.png/SCS_Material_Specials_-_Rendered_Viewport.280.png)
 

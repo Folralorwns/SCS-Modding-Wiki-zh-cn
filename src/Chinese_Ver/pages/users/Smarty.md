@@ -1,41 +1,41 @@
 # User:Smarty
 
-I'm a 13+ year veteran of the North American trucksim modding community, and a firm believer that there should be more hours in a day.
+我是北美卡车模拟模组社区的 13 年以上老手，坚信一天应该有更多小时。
 
-## Wiki Projects
+## Wiki 项目
 
-These are some initiatives for the modding wiki I'm working on, or intend to (soon ...ish). Please feel free to discuss these on my [talk](../user_talk/Smarty.md) page, or the relevant discussion pages as they appear.
+以下是我正在做、或打算（很快……大概）做的一些模组 Wiki 举措。欢迎在我的[讨论](../user_talk/Smarty.md)页面，或在相关讨论页面出现时在其中讨论这些内容。
 
-### [Sii Unit Documentation](../user_talk/Smarty.md#Units_pages)
+### [Sii 单元文档](../user_talk/Smarty.md#Units_pages)
 
-The intent of this initiative is to create technical documentation for all of the unit types that are of interest to modders, indexed by the class name, complete with the -dump_units output for each. I think this will be effective in the long run, in terms of maintainability, because the -dump_units output between game versions can easily be compared with each update. Moreover, because the titles reflect the game's internal data structure, the need for updates to the documentation can be driven directly by the changelog.
+这项举措旨在为模组作者关心的所有单元类型编写技术文档，按类名索引，并为每个类型附上 -dump_units 的输出。我认为从可维护性角度看，这在长期是有效的，因为各游戏版本之间的 -dump_units 输出在每次更新时都很容易对比。此外，由于标题反映游戏的内部数据结构，文档的更新需求可以直接由更新日志驱动。
 
-#### Balancing User-Friendliness
+#### 平衡易用性
 
-Obviously, this structure caters more to the intermediate- to advanced modder, so more generic documentation along the lines of the existing *Player Truck Definitions*, etc are still needed. Moreover, beginners tend to approach things from a more *objective-driven* angle that is better-served by tutorials. My suggestion would be to wiki-link back to the relevant unit class documentation wherever editing of definition files is involved. This way, any time a unit class changes substantially, we have a starting point for keeping the wiki up-to-date via the *[What links here](https://modding.scssoft.com/wiki/Special%3AWhatLinksHere)* tool.
+显然，这种结构更适合中高级模组作者，因此仍然需要按照现有 *Player Truck Definitions* 等文档的思路提供更通用的文档。此外，初学者往往从更偏 *目标驱动* 的角度入手，这类需求用教程来满足更合适。我的建议是，凡涉及编辑定义文件之处，都通过 Wiki 链接指回相关的单元类文档。这样一来，每当某个单元类发生重大变化，我们都能借助 *[链入页面](https://modding.scssoft.com/wiki/Special%3AWhatLinksHere)* 工具找到一个起点，让 Wiki 保持最新。
 
-### [Shader/Effect Documentation](../user_talk/Smarty.md#Shader_documentation)
+### [着色器/效果文档](../user_talk/Smarty.md#Shader_documentation)
 
-I'm planning to start a similar set of documentation for the game's various shader effects, where there is both technical documentation and more general usage guides.
+我计划为游戏中的各种着色器效果启动一套类似的文档，既包含技术文档，也包含更通用的使用指南。
 
-## Modding Portfolio
+## 模组作品集
 
-This is a partial listing of my recent/ongoing creations. The ones under the most active development usually have a thread on the [SCS forum](http://forum.scssoft.com) which I update regularly. If you have any questions about a technique I've used, etc feel free to ask in the related threads. I'm usually happy to discuss such things.
+以下是我近期/当前作品的部分清单。处于最活跃开发阶段的那些，通常在 [SCS 论坛](http://forum.scssoft.com) 上有一个由我定期更新的主题帖。如果你对我用过的某项技术等有疑问，欢迎在相关主题帖中提问。我通常很乐意讨论这些内容。
 
-My eventual goal is to be able to make production-quality assets; perhaps in another 13 years. :P
+我的最终目标是能制作出达到生产质量的资源；也许再过 13 年吧。:P
 
-### Released Mods
+### 已发布的模组
 
-- Scot A2HD (active)
-- Fontaine Phantom (active)
-- Utility 2000R (active)
-- Trailmobile SuperVan 90 (active)
-- Tremcar 3A Sanitary (active)
-- Wheel Pack (active)
-- Improved License Plates (active)
-- Paintable Steel Wheels (maintenance)
+- Scot A2HD（活跃）
+- Fontaine Phantom（活跃）
+- Utility 2000R（活跃）
+- Trailmobile SuperVan 90（活跃）
+- Tremcar 3A Sanitary（活跃）
+- Wheel Pack（活跃）
+- Improved License Plates（活跃）
+- Paintable Steel Wheels（维护中）
 
-### Active Projects
+### 进行中的项目
 
 - Peterbilt 350
 - Freightliner FLB
@@ -44,9 +44,9 @@ My eventual goal is to be able to make production-quality assets; perhaps in ano
 - Eager Beaver 50GSL/BR
 - Alutrec 48ft Flatbed (Corby Redux)
 - Timpte Super Seal 45ft reefer
-- A few more unannounced trailers
+- 另外几款尚未公布的挂车
 
-### Back-Burner Projects
+### 搁置的项目
 
 - GMC Astro 95
 - Dodge Bighorn

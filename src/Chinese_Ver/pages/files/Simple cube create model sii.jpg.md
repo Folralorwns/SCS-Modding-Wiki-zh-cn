@@ -1,4 +1,4 @@
-# File:Simple cube create model sii.jpg
+# 文件:Simple cube create model sii.jpg
 
 ![Simple cube create model sii.jpg](../../../images/files/Simple%20cube%20create%20model%20sii.jpg/Simple_cube_create_model_sii.jpg)
 

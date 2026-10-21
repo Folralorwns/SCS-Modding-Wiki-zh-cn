@@ -1,4 +1,4 @@
-# File:Selected prefab cb.png
+# 文件:Selected prefab cb.png
 
 ![Selected prefab cb.png](../../../images/files/Selected%20prefab%20cb.png/Selected_prefab_cb.png)
 

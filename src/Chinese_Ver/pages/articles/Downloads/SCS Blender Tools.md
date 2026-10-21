@@ -1,6 +1,6 @@
-# Downloads/SCS Blender Tools
+# 下载/SCS Blender Tools
 
-Redirect to:
+重定向到：
 
 - [Documentation/Tools/SCS Blender Tools/Download](../Documentation/Tools/SCS%20Blender%20Tools/Download.md)
 

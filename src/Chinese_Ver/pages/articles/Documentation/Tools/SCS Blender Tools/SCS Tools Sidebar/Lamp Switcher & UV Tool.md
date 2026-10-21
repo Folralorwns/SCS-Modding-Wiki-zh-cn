@@ -1,30 +1,30 @@
-# Documentation/Tools/SCS Blender Tools/SCS Tools Sidebar/Lamp Switcher & UV Tool
+# 文档/工具/SCS Blender Tools/SCS Tools 侧边栏/灯光切换器与 UV 工具
 
-Any material using lamp shader is having specific configuration of textures and UV mappings (see [Lamp system](../Materials/Lamp%20system.md)).
+任何使用灯光着色器的材质都有特定的纹理与 UV 映射配置（参见 [灯光系统](../Materials/Lamp%20system.md)）。
 
-That's why Blender Tools are having this two additional tools to easily map UV mappings to proper texture tiles and also preview desired result.
+因此 Blender Tools 提供了这两个额外工具，以便轻松将 UV 映射对应到正确的纹理区块，并预览预期结果。
 
-## Lamp switcher
+## 灯光切换器
 
-Lamp switcher is preview tool for switching ON and OFF different type of lights in all currently created materials.
+灯光切换器是一种预览工具，用于开启和关闭当前所有已创建材质中的不同类型灯光。
 
-When switching ON any type of the light you will see brighten surfaces on the meshes using lamp material. If you don't see any change in 3D view there is either problem in UV mapping of the meshes or the mask texture is not properly created. Lamp switcher can be found in 3D view under SCS Tools panel and consist of three groups:
+开启任一类型的灯光后，使用灯光材质的网格上会出现变亮的表面。如果在 3D 视图中看不到任何变化，则可能是网格的 UV 映射有问题，或者遮罩纹理未正确创建。灯光切换器位于 3D 视图的 SCS Tools 面板下，包含三个分组：
 
-- **Vehicle** - used for switching vehicle lights
-- **Auxiliary** - used for switching vehicle auxiliary lights
-- **Traffic Lights** - used for switching traffic lights
+- **Vehicle** - 用于切换车辆灯光
+- **Auxiliary** - 用于切换车辆辅助灯光
+- **Traffic Lights** - 用于切换交通信号灯
 
 [![SCS_Tools_Sidebar_-_Lamp_Switcher.280.png](../../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/SCS%20Tools%20Sidebar/Lamp%20Switcher%20&%20UV%20Tool/SCS_Tools_Sidebar_-_Lamp_Switcher.280.png)](../../../../../files/SCS%20Tools%20Sidebar%20-%20Lamp%20Switcher.280.png.md)
 
-## Lamp UV Tool
+## 灯光 UV 工具
 
-Lamp UV Tool is helper tool for positioning UV mappings of selected faces. Tool will reposition mappings on the UV layer used by mask texture in lamp material.
+灯光 UV 工具是用于定位选中面 UV 映射的辅助工具。该工具会在灯光材质中遮罩纹理所使用的 UV 层上重新定位映射。
 
-You can use this tool only in "Edit Mode" of mesh objects. By pressing any of the buttons tool will automatically reposition selected faces UV mappings to proper texture tile depending on selected vehicle side or auxiliary lamp color or traffic light color:
+该工具只能在网格对象的 “Edit Mode” 下使用。按下任一按钮后，工具会根据所选的车辆侧位、辅助灯颜色或交通信号灯颜色，自动将选中面的 UV 映射重新定位到正确的纹理区块：
 
-- **Vehicle** - UV mappings are positioned depending on vehicle side.
-- **Auxiliary** - UV mappings are positioned depending on the lit color of auxiliary.
-- **Traffic Lights** - UV mappings are positioned depending on the color of traffic light.
+- **Vehicle** - UV 映射根据车辆侧位进行定位。
+- **Auxiliary** - UV 映射根据辅助灯的亮起颜色进行定位。
+- **Traffic Lights** - UV 映射根据交通信号灯的颜色进行定位。
 
 [![SCS_Tools_Sidebar_-_Lamp_UV_Tool.280.png](../../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/SCS%20Tools%20Sidebar/Lamp%20Switcher%20&%20UV%20Tool/SCS_Tools_Sidebar_-_Lamp_UV_Tool.280.png)](../../../../../files/SCS%20Tools%20Sidebar%20-%20Lamp%20UV%20Tool.280.png.md)
 

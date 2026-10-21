@@ -1,4 +1,4 @@
-# File:Res com ex.jpg
+# 文件:Res com ex.jpg
 
 ![Res com ex.jpg](../../../images/files/Res%20com%20ex.jpg/Res_com_ex.jpg)
 

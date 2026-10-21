@@ -1,57 +1,57 @@
-# Documentation/Tools/SCS Blender Tools/Variant system
+# 文档/工具/SCS Blender Tools/变体系统
 
 ![SCS_Tools_Object_Specials_-_Variants_05.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Variant%20system/SCS_Tools_Object_Specials_-_Variants_05.280.png)
 
-**Variants** are groups of **Parts**, which allows to set up a different variations of a game model. For example a truck model in its multiple variations, where different variants can use different cabins, chassis or spoilers. Variants provide a sufficient way how to set these “truck versions” in any combinations of the0 parts.
+**变体**是**部件**的分组，可用于为游戏模型设置不同的变化形式。例如同一卡车模型的多种变化，其中不同的变体可以使用不同的驾驶室、底盘或扰流板。变体提供了一种有效方式，可按部件的任意组合来设置这些“卡车版本”。
 
-If you want to set *Variants* in your game model, you have to set some *Parts* and create a *SCS Root Object* (see [Terminology and basics](Terminology%20and%20basics.md) or [Root objects](Root%20objects.md)). Then select *SCS Root Object* and go to *Object* tab of Blender properties window and inside *SCS Object* panel you'll find the *SCS Variants* sub-panel. Here you can find all the settings and tools for work with *Variants*.
+如果你想在游戏模型中设置*变体*，必须先设置一些*部件*并创建一个 *SCS Root Object*（参见 [术语与基础](Terminology%20and%20basics.md) 或 [根对象](Root%20objects.md)）。然后选中 *SCS Root Object*，转到 Blender 属性窗口的 *Object* 选项卡，在 *SCS Object* 面板中即可找到 *SCS Variants* 子面板。在这里你可以找到用于处理*变体*的所有设置与工具。
 
-## Variant list
+## 变体列表
 
-List of variants can contain no variant. The panel has buttons on right side to add/remove variants and arrow buttons for reordering. You can also double-click on any item in the list to rename it.
+变体列表中可以不含任何变体。该面板右侧设有用于添加/移除变体的按钮，以及用于重新排序的箭头按钮。你也可以双击列表中的任何项目来重命名它。
 
-If there is at least one variant created, an *Variant-Part Table* is displayed under the list (or directly within the list in case of Integrated view style; see below). This *Variant-Part Table* always includes complete list of all parts, which are collected from all objects in current *SCS Game Object*. Here any part can be turned ON or OFF for an individual variant.
+如果至少创建了一个变体，列表下方会显示*变体-部件表格*（在“整合”视图样式下则直接显示在列表内；见下文）。该*变体-部件表格*始终包含所有部件的完整列表，这些部件是从当前 *SCS Game Object* 中的所有对象收集而来的。在此可以为单个变体开启或关闭任意部件。
 
-The variant list uses the standard Blender list mechanism, so you can use all the advantages of this system – filtering of items and custom sorting. Just click a small icon in lower left corner of the list to make these available.
+变体列表使用 Blender 标准的列表机制，因此你可以利用该系统的全部优势——项目筛选与自定义排序。只需点击列表左下角的小图标即可启用这些功能。
 
-### Additional list tools
+### 附加列表工具
 
-There are also an additional tools integrated for each item in variant list and can be used for easy selection/deselection (arrow icon) or hiding/showing (eye icon) of particular Variants. It works like a switches, so if it is pressed repeatedly it will select and deselect or hide and show all the Variant items. With `⇧ Shift` pressed it will always add to the existing selection or always show the variant items and with `Ctrl` it will always subtract from existing selection or always hide the variant items.
+变体列表中的每个项目还集成了附加工具，可用于方便地选择/取消选择（箭头图标）或隐藏/显示（眼睛图标）特定变体。它的作用类似开关，因此反复按下时会选择与取消选择或隐藏与显示所有变体项目。按住 `⇧ Shift` 时，它始终向现有选择中添加，或始终显示变体项目；按住 `Ctrl` 时，它始终从现有选择中减去，或始终隐藏变体项目。
 
-## View styles
+## 视图样式
 
-You can choose among four view styles for the *Variant-Part Table*: **Compact**, **Vertical**, **Horizontal** and **Integrated**. The default one is **Horizontal** view style.
+你可以为*变体-部件表格*选择四种视图样式：**紧凑**（Compact）、**垂直**（Vertical）、**水平**（Horizontal）和**整合**（Integrated）。默认为 **水平** 视图样式。
 
-### Compact View style
+### 紧凑视图样式
 
 [![SCS_Tools_Object_Specials_-_Variants_07.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Variant%20system/SCS_Tools_Object_Specials_-_Variants_07.280.png)](../../../../files/SCS%20Tools%20Object%20Specials%20-%20Variants%2007.280.png.md)
 
-The only active variant in the list is displayed. This style is good if you have any amount of parts and variants and you'd like to view and edit a single variant at a time.
+仅显示列表中的当前活动变体。如果你拥有任意数量的部件与变体，并且希望一次查看和编辑单个变体，此样式非常合适。
 
-You can change display order of parts from unsorted (the order in which the items were created) to alphabetical using part alphabetical sorting button.
+你可以使用部件按字母排序按钮，将部件的显示顺序从无序（项目创建的顺序）改为按字母顺序。
 
-### Vertical View style
+### 垂直视图样式
 
 [![SCS_Tools_Object_Specials_-_Variants_08.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Variant%20system/SCS_Tools_Object_Specials_-_Variants_08.280.png)](../../../../files/SCS%20Tools%20Object%20Specials%20-%20Variants%2008.280.png.md)
 
-All the variants are displayed vertically in a column. This style is good if you have large amount of variants and you'd like to go through them one after the other.
+所有变体以列的形式垂直显示。如果你拥有大量变体，并希望逐个浏览它们，此样式非常合适。
 
-You can change display order of parts and/or pariants from unsorted (the order in which the items were created) to alphabetical using part or variants alphabetical sorting buttons respectively.
+你可以使用部件或变体的按字母排序按钮，将部件和/或变体的显示顺序从无序（项目创建的顺序）改为按字母顺序。
 
-### Horizontal View style
+### 水平视图样式
 
 [![SCS_Tools_Object_Specials_-_Variants_06.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Variant%20system/SCS_Tools_Object_Specials_-_Variants_06.280.png)](../../../../files/SCS%20Tools%20Object%20Specials%20-%20Variants%2006.280.png.md)
 
-All the variants are displayed horizontally in a row with all its parts in columns. This style is good if you have rather smaller amount of variants and you'd like to view and edit them in a well-arranged table-like form.
+所有变体以行的形式水平显示，其所有部件分列于各列中。如果你的变体数量较少，并希望以井然有序的表格形式查看和编辑它们，此样式非常合适。
 
-You can change display order of parts and/or variants from unsorted (the order in which the items were created) to alphabetical using part or variants alphabetical sorting buttons respectively.
+你可以使用部件或变体的按字母排序按钮，将部件和/或变体的显示顺序从无序（项目创建的顺序）改为按字母顺序。
 
-### Integrated View style
+### 整合视图样式
 
 [![SCS_Tools_Object_Specials_-_Variants_09.280.png](../../../../../../images/articles/Documentation/Tools/SCS%20Blender%20Tools/Variant%20system/SCS_Tools_Object_Specials_-_Variants_09.280.png)](../../../../files/SCS%20Tools%20Object%20Specials%20-%20Variants%2009.280.png.md)
 
-In this view style there is no “Variant-Part Table” special area where all the parts are exposed, but instead they are displayed directly within the variant list. This style can be beneficial if you have small amount of parts and you'd like to view and edit them in a well-arranged table-like form with no additional UI clutter.
+在这种视图样式下，没有用于展示所有部件的“变体-部件表格”专用区域，而是直接在变体列表中显示它们。如果你的部件数量较少，并希望在不产生额外界面杂乱的情况下，以井然有序的表格形式查看和编辑它们，此样式会很有帮助。
 
-The Additional List Tools (see above) are in this case exposed just under the list box and they have effect always on selected item in the list.
+在这种情况下，附加列表工具（见上文）显示在列表框正下方，并且始终作用于列表中的选中项目。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/SCS_Blender_Tools/Variant_system | revision: 4302 | captured: 2026-10-21 23:56:14 -->

@@ -1,4 +1,4 @@
-# File:Simple cube set export path.jpg
+# 文件:Simple cube set export path.jpg
 
 ![Simple cube set export path.jpg](../../../images/files/Simple%20cube%20set%20export%20path.jpg/Simple_cube_set_export_path.jpg)
 

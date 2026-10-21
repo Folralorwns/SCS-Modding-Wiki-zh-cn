@@ -1,29 +1,29 @@
-# Documentation/Engine/Units/accessory rim data
+# 文档/引擎/单元/配件轮辋数据
 
-The **accessory_rim_data** unit class is used to define wheels (rims), hubs, nuts and covers for the [player's vehicle](../Game%20data/Player%20trucks%20definitions.md). It defines the path to the visible model, the look used, whether it is paintable, and horizontal offset of the tire from its default position. Units of this type are typically found in:
+**accessory_rim_data** 单元类用于为[玩家车辆](../Game%20data/Player%20trucks%20definitions.md)定义车轮（轮辋）、轮毂、螺母和轮罩。它定义可见模型的路径、所使用的 look、是否可涂装，以及轮胎相对于默认位置的水平偏移量。此类型的单元通常位于：
 
-- **/def/vehicle/f_cover/*.sii** (front hub covers for playable trucks) → Valid unit names are `*.fcover`
-- **/def/vehicle/f_disc/*.sii** (front wheels for playable trucks) → Valid unit names are `*.fdisc`
-- **/def/vehicle/f_hub/*.sii** (front hubs for playable trucks) → Valid unit names are `*.fhub`
-- **/def/vehicle/f_nuts/*.sii** (front nuts for playable trucks) → Valid unit names are `*.fnuts`
-- **/def/vehicle/r_cover/*.sii** (rear hub covers for playable trucks) → Valid unit names are `*.rcover`
-- **/def/vehicle/r_disc/*.sii** (rear wheels for playable trucks) → Valid unit names are `*.rdisc`
-- **/def/vehicle/r_hub/*.sii** (rear hubs for playable trucks) → Valid unit names are `*.rhub`
-- **/def/vehicle/r_nuts/*.sii** (rear nuts for playable trucks) → Valid unit names are `*.rnuts`
+- **/def/vehicle/f_cover/*.sii**（可驾驶卡车的前轮毂罩）→ 有效的单元名称为 `*.fcover`
+- **/def/vehicle/f_disc/*.sii**（可驾驶卡车的前轮）→ 有效的单元名称为 `*.fdisc`
+- **/def/vehicle/f_hub/*.sii**（可驾驶卡车的前轮毂）→ 有效的单元名称为 `*.fhub`
+- **/def/vehicle/f_nuts/*.sii**（可驾驶卡车的前螺母）→ 有效的单元名称为 `*.fnuts`
+- **/def/vehicle/r_cover/*.sii**（可驾驶卡车的后轮毂罩）→ 有效的单元名称为 `*.rcover`
+- **/def/vehicle/r_disc/*.sii**（可驾驶卡车的后轮）→ 有效的单元名称为 `*.rdisc`
+- **/def/vehicle/r_hub/*.sii**（可驾驶卡车的后轮毂）→ 有效的单元名称为 `*.rhub`
+- **/def/vehicle/r_nuts/*.sii**（可驾驶卡车的后螺母）→ 有效的单元名称为 `*.rnuts`
 
-## Attributes
+## 属性
 
-Many common attributes are inherited from [**accessory_data**](accessory%20data.md). Required attributes are **bolded**.
+许多通用属性继承自 [**accessory_data**](accessory%20data.md)。必需的属性以**粗体**表示。
 
-| Name | [Type](../Units.md#Attribute_types) | Default Value | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| **model** | string |  | Path to the model descriptor (.pmd) of a valid rim model. Valid rim models have *left* and *right* variants. |
-| look | token | default | Name of the look to be used. |
-| tire_shift | float | 0.0 | The distance in meters the tire model is shifted toward the vehicle centerline. This should only be defined for accessories of the **fdisc** and **rdisc** type. |
-| paintable | boolean | false | When true, enables the color picker on the garage, truck browser, etc screens. The paint color is applied to pieces of the **model** whose materials use the [paint](../../Tools/SCS%20Blender%20Tools/Supported%20shaders.md#paint) flavor. **Note:** Unlike other accessories, rim accessories do not inherit the paint color(s) of the vehicle they belong to. Each instance may have its own paint color. |
-| default_color | float3 | (1.0, 1.0, 1.0) | Sets the default color for the rim accessory. |
+| **model** | string |  | 有效轮辋模型的模型描述符（.pmd）路径。有效的轮辋模型具有 *left* 和 *right* 变体。 |
+| look | token | default | 所用 look 的名称。 |
+| tire_shift | float | 0.0 | 轮胎模型向车辆中心线偏移的距离（米）。仅应为 **fdisc** 和 **rdisc** 类型的配件定义此项。 |
+| paintable | boolean | false | 为 true 时，在车库、卡车浏览器等界面启用颜色选择器。涂装颜色会应用到 **model** 中材质使用 [paint](../../Tools/SCS%20Blender%20Tools/Supported%20shaders.md#paint) 特性的部件上。**注意：** 与其他配件不同，轮辋配件不会继承其所属车辆的涂装颜色。每个实例可以有自己的涂装颜色。 |
+| default_color | float3 | (1.0, 1.0, 1.0) | 设置轮辋配件的默认颜色。 |
 
-## Related Classes
+## 相关类
 
 - [accessory_wheel_data](accessory%20wheel%20data.md)
 

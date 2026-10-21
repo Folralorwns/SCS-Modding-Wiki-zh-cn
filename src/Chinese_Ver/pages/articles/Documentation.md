@@ -1,36 +1,36 @@
-# Documentation
+# 文档
 
-Documentation topics for tools and SCS game engine.
+工具与 SCS 游戏引擎的文档主题。
 
-## [Tools](Documentation/Tools.md)
+## [工具](Documentation/Tools.md)
 
-- [Game Archive Extractor](Documentation/Tools/Game%20Archive%20Extractor.md)
+- [游戏归档包解包器](Documentation/Tools/Game%20Archive%20Extractor.md)
 - [SCS Blender Tools](Documentation/Tools/SCS%20Blender%20Tools.md)
 - [Conversion Tools](Documentation/Tools/Conversion%20Tools.md)
 - [SCS Workshop Uploader](Documentation/Tools/SCS%20Workshop%20Uploader.md)
-- [Map Editor](Documentation/Tools/Map%20Editor.md)
-- [Dedicated Server](Documentation/Tools/Dedicated%20Server.md)
+- [地图编辑器](Documentation/Tools/Map%20Editor.md)
+- [专用服务器](Documentation/Tools/Dedicated%20Server.md)
 
-## [Engine](Documentation/Engine.md)
+## [引擎](Documentation/Engine.md)
 
-- [Advanced input configuration](Documentation/Engine/Advanced%20input%20configuration.md)
-  - [Force feedback LUT](Documentation/Engine/Advanced%20input%20configuration/Force%20feedback%20LUT.md)
-- [Configuration variables](Documentation/Engine/Configuration%20variables.md)
-- [Console](Documentation/Engine/Console.md)
-  - [Commands](Documentation/Engine/Console/Commands.md)
-  - [Editor Commands](Documentation/Engine/Console/Commands/Editor.md)
-- [Detours](Documentation/Engine/Detours.md)
-- [File formats](Documentation/Engine/Formats.md)
-- [Game data](Documentation/Engine/Game%20data.md)
-- [Game radio](Documentation/Engine/Game%20Radio.md)
-- [Game user path](Documentation/Engine/Game%20user%20path.md)
-- [Mod manager](Documentation/Engine/Mod%20manager.md)
-- [Mover model group](Documentation/Engine/Mover%20model%20group.md)
-- [Multi monitor configuration](Documentation/Engine/Multi%20monitor%20configuration.md)
-- [Random Road Events](Documentation/Engine/Random%20Road%20Events.md)
-- [Sound](Documentation/Engine/Sound.md)
+- [高级输入配置](Documentation/Engine/Advanced%20input%20configuration.md)
+  - [力反馈 LUT](Documentation/Engine/Advanced%20input%20configuration/Force%20feedback%20LUT.md)
+- [配置变量](Documentation/Engine/Configuration%20variables.md)
+- [控制台](Documentation/Engine/Console.md)
+  - [命令](Documentation/Engine/Console/Commands.md)
+  - [编辑器命令](Documentation/Engine/Console/Commands/Editor.md)
+- [绕行](Documentation/Engine/Detours.md)
+- [文件格式](Documentation/Engine/Formats.md)
+- [游戏数据](Documentation/Engine/Game%20data.md)
+- [游戏电台](Documentation/Engine/Game%20Radio.md)
+- [游戏用户路径](Documentation/Engine/Game%20user%20path.md)
+- [模组管理器](Documentation/Engine/Mod%20manager.md)
+- [Mover 模型组](Documentation/Engine/Mover%20model%20group.md)
+- [多显示器配置](Documentation/Engine/Multi%20monitor%20configuration.md)
+- [随机道路事件](Documentation/Engine/Random%20Road%20Events.md)
+- [声音](Documentation/Engine/Sound.md)
 - [Telemetry SDK](Documentation/Engine/SDK/Telemetry.md)
-- [Truck Interior Animations and IDs](Documentation/Engine/Truck%20Interior%20Animations%20and%20IDs.md)
-- [Units](Documentation/Engine/Units.md)
+- [卡车内饰动画与 ID](Documentation/Engine/Truck%20Interior%20Animations%20and%20IDs.md)
+- [单元](Documentation/Engine/Units.md)
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation | revision: 5136 | captured: 2026-10-21 23:56:14 -->

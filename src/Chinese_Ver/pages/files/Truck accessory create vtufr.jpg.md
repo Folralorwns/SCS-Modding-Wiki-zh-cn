@@ -1,4 +1,4 @@
-# File:Truck accessory create vtufr.jpg
+# 文件:Truck accessory create vtufr.jpg
 
 ![Truck accessory create vtufr.jpg](../../../images/files/Truck%20accessory%20create%20vtufr.jpg/Truck_accessory_create_vtufr.jpg)
 

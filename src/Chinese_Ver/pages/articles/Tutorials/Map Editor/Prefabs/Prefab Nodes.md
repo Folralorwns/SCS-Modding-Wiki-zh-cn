@@ -1,47 +1,47 @@
-# Tutorials/Map Editor/Prefabs/Prefab Nodes
+# 教程/地图编辑器/预制件/预制件节点
 
-> [← Previous part](https://modding.scssoft.com/index.php?title=Tutorials/Map_Editor/Prefabs/Prefab_Properties&action=edit&redlink=1)[Next part →](Connecting%20your%20first%20Prefab.md)
+> [← 上一部分](https://modding.scssoft.com/index.php?title=Tutorials/Map_Editor/Prefabs/Prefab_Properties&action=edit&redlink=1)[下一部分 →](Connecting%20your%20first%20Prefab.md)
 >
-> [All steps](../Prefabs.md)
+> [所有步骤](../Prefabs.md)
 
-You should be familiar with the settings and dialog options on Prefabs by now. Before we can connect and setup our first prefab we must dive into the types of connections that prefabs can make and some weird quirks with connecting them.
+到现在，你应该已经熟悉预制件的设置和对话框选项了。在连接并设置我们的第一个预制件之前，我们必须先深入了解预制件可以建立的连接类型，以及连接它们时的一些奇怪之处。
 
-Much like road nodes, prefabs have 2 main node types. A red node (*seen as a square in the map editor*), known as the *origin,* and a green node. A prefab will only have one origin (red) node, however, they can have multiple green nodes. Each node on a prefab is a potential point to connect another object, such as a road or prefab. The amount of nodes will vary depending on the prefab. Nodes are defined on the model itself and setup in a modeling program.
+与道路节点非常相似，预制件有 2 种主要节点类型。一种是红色节点（*在地图编辑器中显示为方形*），称为*原点*；另一种是绿色节点。一个预制件只会有一个原点（红色）节点，但可以有多个绿色节点。预制件上的每个节点都是连接其他对象（例如道路或预制件）的潜在位置。节点数量因预制件而异。节点定义在模型自身上，并在建模程序中设置。
 
-> **Note:** You can **never** connect a red node to a prefab red node - it *won't* work!
+> **注意：** 你**绝不能**将红色节点连接到预制件的红色节点——那样*不会*生效！
 
 ![Prefab_green_node.png](../../../../../../images/articles/Tutorials/Map%20Editor/Prefabs/Prefab%20Nodes/Prefab_green_node.png)
 
-*Green Prefab Node*
+*绿色预制件节点*
 
 ![Prefab_red_node.png](../../../../../../images/articles/Tutorials/Map%20Editor/Prefabs/Prefab%20Nodes/Prefab_red_node.png)
 
-*Red Prefab Node*
+*红色预制件节点*
 
-Let's take a look at a few example of different origins on a prefab using this prefab `/prefab2/cross_temp/ger/ger_r1_x_r1_t_narrow_tmpl.ppd`
-
-|  |  |  |
-| --- | --- | --- |
-| **1** | [![Prefab_full.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Prefabs/Prefab%20Nodes/768px-Prefab_full.jpg)](../../../../files/Prefab%20full.jpg.md) | Prefab with an Origin of 0 <br> (Top Side) |
-| **2** | [![Prefab_origin1.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Prefabs/Prefab%20Nodes/768px-Prefab_origin1.jpg)](../../../../files/Prefab%20origin1.jpg.md) | Prefab with an Origin of 1 <br> (Right Side) |
-| **3** | [![Prefab_origin2.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Prefabs/Prefab%20Nodes/768px-Prefab_origin2.jpg)](../../../../files/Prefab%20origin2.jpg.md) | Prefab with an Origin of 2 <br> (Left Side) |
-
-Notice how the red node moved to different sides of the prefab? This is the effect of changing the origin. You may have to change the origin in order to correctly connect items to the prefab. <br> <br> Here are a few examples of good and bad connections:
+让我们用这个预制件 `/prefab2/cross_temp/ger/ger_r1_x_r1_t_narrow_tmpl.ppd` 来看几个预制件上不同原点的示例
 
 |  |  |  |
 | --- | --- | --- |
-| **1** | [![Prefab_bad_connection.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Prefabs/Prefab%20Nodes/768px-Prefab_bad_connection.jpg)](../../../../files/Prefab%20bad%20connection.jpg.md) | Prefab cannot connect to road due to 2 red nodes <br> **Note:** If you try to connect these 2 and Snap to Nodes is on, it will look like it connected, but it did not and the navigation will not work |
-| **2** | [![Prefab_good_connection.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Prefabs/Prefab%20Nodes/768px-Prefab_good_connection.jpg)](../../../../files/Prefab%20good%20connection.jpg.md) | Prefab will connect to road due to 1 green and 1 red node |
-| **3** | [![Prefab_good_connection2.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Prefabs/Prefab%20Nodes/768px-Prefab_good_connection2.jpg)](../../../../files/Prefab%20good%20connection2.jpg.md) | Prefab will connect to road due to 2 green nodes |
+| **1** | [![Prefab_full.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Prefabs/Prefab%20Nodes/768px-Prefab_full.jpg)](../../../../files/Prefab%20full.jpg.md) | 原点为 0 的预制件 <br>（上侧） |
+| **2** | [![Prefab_origin1.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Prefabs/Prefab%20Nodes/768px-Prefab_origin1.jpg)](../../../../files/Prefab%20origin1.jpg.md) | 原点为 1 的预制件 <br>（右侧） |
+| **3** | [![Prefab_origin2.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Prefabs/Prefab%20Nodes/768px-Prefab_origin2.jpg)](../../../../files/Prefab%20origin2.jpg.md) | 原点为 2 的预制件 <br>（左侧） |
 
-You will notice a few older prefabs, such as `/prefab/light_factory/light_factory.ppd` have multiple nodes, however, trying to connect a road to these produces a strange result:
+注意到红色节点是如何移动到预制件不同侧面的吗？这就是更改原点的效果。为了将项正确地连接到预制件，你可能需要更改原点。 <br> <br> 以下是几个连接正确与错误的示例：
+
+|  |  |  |
+| --- | --- | --- |
+| **1** | [![Prefab_bad_connection.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Prefabs/Prefab%20Nodes/768px-Prefab_bad_connection.jpg)](../../../../files/Prefab%20bad%20connection.jpg.md) | 由于有 2 个红色节点，预制件无法连接到道路 <br> **注意：** 如果你尝试连接这两者且已开启吸附到节点，看起来像是连上了，但实际上并没有，导航将无法工作 |
+| **2** | [![Prefab_good_connection.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Prefabs/Prefab%20Nodes/768px-Prefab_good_connection.jpg)](../../../../files/Prefab%20good%20connection.jpg.md) | 由于有 1 个绿色节点和 1 个红色节点，预制件可以连接到道路 |
+| **3** | [![Prefab_good_connection2.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Prefabs/Prefab%20Nodes/768px-Prefab_good_connection2.jpg)](../../../../files/Prefab%20good%20connection2.jpg.md) | 由于有 2 个绿色节点，预制件可以连接到道路 |
+
+你会注意到一些较旧的预制件（例如 `/prefab/light_factory/light_factory.ppd`）有多个节点，但尝试将道路连接到这些节点会产生奇怪的结果：
 
 ![Funny_prefab_connection.jpg](../../../../../../images/articles/Tutorials/Map%20Editor/Prefabs/Prefab%20Nodes/768px-Funny_prefab_connection.jpg)
 
-For these prefabs you simply drag a road/prefab piece to touch the prefabs geometry where you'd expect the entrance to be and the navigation will still work. This is caused by how this particular prefab was setup in Blender
+对于这些预制件，你只需将道路/预制件部件拖到预制件几何体上你预期入口所在的位置并使其接触，导航仍然会正常工作。这是由该特定预制件在 Blender 中的设置方式造成的
 
-> [← Previous part](https://modding.scssoft.com/index.php?title=Tutorials/Map_Editor/Prefabs/Prefab_Properties&action=edit&redlink=1)[Next part →](Connecting%20your%20first%20Prefab.md)
+> [← 上一部分](https://modding.scssoft.com/index.php?title=Tutorials/Map_Editor/Prefabs/Prefab_Properties&action=edit&redlink=1)[下一部分 →](Connecting%20your%20first%20Prefab.md)
 >
-> [All steps](../Prefabs.md)
+> [所有步骤](../Prefabs.md)
 
 <!-- source: https://modding.scssoft.com/wiki/Tutorials/Map_Editor/Prefabs/Prefab_Nodes | revision: 5491 | captured: 2026-10-21 23:56:14 -->

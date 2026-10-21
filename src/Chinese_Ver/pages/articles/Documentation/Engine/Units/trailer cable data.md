@@ -1,31 +1,31 @@
-# Documentation/Engine/Units/trailer cable data
+# 文档/引擎/单元/挂车线缆数据
 
-> **Note:** This article is a work in progress and has yet to be reviewed by SCS staff. Some information may be incomplete or inaccurate.
+> **注意：** 本文仍在编写中，尚未经过 SCS 员工审阅。部分信息可能不完整或不准确。
 
-The **trailer_cable_data** unit class is used for defining a dynamic trailer cable connection between a vehicle and its trailer. Units of this type are typically nameless, and defined in-line with an **[accessory_addon_trailer_cables_data](accessory%20addon%20trailer%20cables%20data.md)** unit. *This unit type was added in 1.31 and was previously named **physics_trailer_cable_data** until 1.32.*
+**trailer_cable_data** 单元类用于定义车辆与其挂车之间的动态挂车线缆连接。此类型的单元通常没有名称，并与 **[accessory_addon_trailer_cables_data](accessory%20addon%20trailer%20cables%20data.md)** 单元内联定义。*此单元类型在 1.31 中添加，在 1.32 之前名为 **physics_trailer_cable_data**。*
 
-## Attributes
+## 属性
 
-| Name | [Type](../Units.md#Attribute_types) | Default Value | Description |
+| 名称 | [类型](../Units.md#Attribute_types) | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| locator_prefix | token |  | The name of the locators on the vehicle and trailer that will be used to connect the cable. |
-| rest_locator_prefix | token |  | The name of the locator on the vehicle that will be used as a rest position for the trailer end of the cable when no trailer is connected. If there is no rest locator, the cable will not be drawn unless there is a cable connected. |
-| vehicle_plug_model | string |  | Path to the descriptor (.pmd) of the model to be used at the vehicle end of the cable. This model will be hooked up at, and oriented to, the locator defined in **locator_prefix**. If no model is defined, the cable will be hooked up directly to the locator on the vehicle. |
-| vehicle_plug_model_variant | token | default | The variant of the **vehicle_plug_model** to be used. |
-| vehicle_plug_model_look | token | default | The look of the **vehicle_plug_model** to be used. |
-| vehicle_plug_model_offset | float3 | (0.0, 0.0, 0.0) | The offset (in local space) from the **vehicle_plug_model** origin at which the vehicle end of the cable will be attached. |
-| trailer_plug_model | string |  | Path to the descriptor (.pmd) of the model to be used at the trailer end of the cable. This model will be hooked up at, and oriented to, the locator defined in **locator_prefix** when there is a trailer attached, or the locator defined in **rest_locator_prefix** when there is not a trailer attached. If no model is defined, the cable will be hooked up directly to the locator on the trailer. |
-| trailer_plug_model_variant | token | default | The variant of the **trailer_plug_model** to be used. |
-| trailer_plug_model_look | token | default | The look of the **trailer_plug_model** to be used. |
-| trailer_plug_model_offset | float3 | (0.0, 0.0, 0.0) | The offset (in local space) from the **trailer_plug_model** origin at which the trailer end of the cable will be attached. |
-| ring_count | int |  | The number of rings in the spiral portion of the cable. (Minimum 2) |
-| ring_resolution | int |  | The number of sides each ring has. (Minimum 3) |
-| diameter | float |  | Diameter of the spiral portion of the cable. (Minimum 0.02) |
-| width | float |  | Diameter of the cable itself. (Minimum 0.001, cannot exceed **diameter**) |
-| straight_cable_length | float | 0 | Length of straight cable, in meters, if greater than zero. Cables are spiral otherwise. |
-| back_faces | boolean | false | When true, the "inside" faces of a straight cable are drawn. This can be useful when using a transparent material on cable, so that inner wall of the cable will also be visible (for example back faces are currently used in the new trailer cables for traffic vehicles). |
-| material | string | "/material/ropes/cable_white.mat" | The material used for rendering the cable. |
-| color | float3 | (0.5, 0.5, 0.5) | The vertex color (in linear colorspace) applied to the cable model. |
-| resolution | int |  | The number of lengthwise segments for the cable simulation. (Minimum 2) |
+| locator_prefix | token |  | 车辆和挂车上用于连接线缆的定位器名称。 |
+| rest_locator_prefix | token |  | 车辆上用作线缆挂车端静置位置的定位器名称，在未连接挂车时使用。如果没有静置定位器，则除非线缆已连接，否则不会绘制线缆。 |
+| vehicle_plug_model | string |  | 线缆车辆端所用模型的描述符（.pmd）路径。此模型将挂接到 **locator_prefix** 中定义的定位器，并朝向该定位器。如果未定义模型，线缆将直接挂接到车辆上的定位器。 |
+| vehicle_plug_model_variant | token | default | 要使用的 **vehicle_plug_model** 的 variant。 |
+| vehicle_plug_model_look | token | default | 要使用的 **vehicle_plug_model** 的 look。 |
+| vehicle_plug_model_offset | float3 | (0.0, 0.0, 0.0) | 线缆车辆端所连接位置相对于 **vehicle_plug_model** 原点的偏移（以局部空间计）。 |
+| trailer_plug_model | string |  | 线缆挂车端所用模型的描述符（.pmd）路径。当连接挂车时，此模型将挂接到 **locator_prefix** 中定义的定位器并朝向该定位器；当未连接挂车时，则挂接到 **rest_locator_prefix** 中定义的定位器。如果未定义模型，线缆将直接挂接到挂车上的定位器。 |
+| trailer_plug_model_variant | token | default | 要使用的 **trailer_plug_model** 的 variant。 |
+| trailer_plug_model_look | token | default | 要使用的 **trailer_plug_model** 的 look。 |
+| trailer_plug_model_offset | float3 | (0.0, 0.0, 0.0) | 线缆挂车端所连接位置相对于 **trailer_plug_model** 原点的偏移（以局部空间计）。 |
+| ring_count | int |  | 线缆螺旋部分的环数。（最小 2） |
+| ring_resolution | int |  | 每个环的边数。（最小 3） |
+| diameter | float |  | 线缆螺旋部分的直径。（最小 0.02） |
+| width | float |  | 线缆本身的直径。（最小 0.001，不能超过 **diameter**） |
+| straight_cable_length | float | 0 | 直线线缆的长度，单位为米，若大于零则使用。否则线缆为螺旋状。 |
+| back_faces | boolean | false | 当为 true 时，会绘制直线线缆的“内侧”面。在线缆上使用透明材质时会很有用，这样线缆内壁也会可见（例如，目前交通车辆的新挂车线缆就使用了背面）。 |
+| material | string | "/material/ropes/cable_white.mat" | 用于渲染线缆的材质。 |
+| color | float3 | (0.5, 0.5, 0.5) | 应用于线缆模型的顶点颜色（在线性色彩空间中）。 |
+| resolution | int |  | 线缆模拟的纵向分段数。（最小 2） |
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Units/trailer_cable_data | revision: 4038 | captured: 2026-10-21 23:56:14 -->

@@ -1,17 +1,17 @@
-# Documentation/Engine/Mod manager
+# 文档/引擎/模组管理器
 
-With the new mod manager we introduce packages. Packages can be:
+新的模组管理器引入了包的概念。包可以是：
 
-- zip archives - exactly the same which you used before with the .scs or .zip extension.
-- normal directories - where each directory represents separate mod.
+- zip 归档包 - 与你之前使用 .scs 或 .zip 扩展名时所用的完全相同。
+- 普通目录 - 其中每个目录代表一个单独的模组。
 
-We recommend using normal directories for development of the mod and using zip archives for mod release, to make mod size smaller and more handy for end-user (one file vs. directory full of files). Inside the package you can define manifest file containing meta data about the mod. Metadata are used by mod manager to display your mod to the user. You can specify the description, the icon image and much more.
+我们建议在模组开发阶段使用普通目录，在模组发布时使用 zip 归档包，以使模组体积更小、对最终用户更方便（一个文件相对于一个充满文件的目录）。在包内你可以定义包含模组元数据的 manifest 文件。元数据由模组管理器使用，用于向用户显示你的模组。你可以指定描述、图标图像以及更多内容。
 
-Since ETS2 & ATS version 1.48 you can use mods that contain subdirectories or files which are mounted only if DLC with the same name is owned. If mod root contains directory "base", zip archive "base.zip", directories or zip archives prefixed with "dlc_", game mounts only parts of the mod that correspond to owned DLCs. "base" part is mounted always (if it’s present). Mod manifest and other metadata are still contained in the mod root.
+自 ETS2 与 ATS 1.48 版本起，你可以使用这样的模组：其中包含仅在拥有同名 DLC 时才会挂载的子目录或文件。如果模组根目录包含目录 “base”、zip 归档包 “base.zip”、以 “dlc_” 为前缀的目录或 zip 归档包，游戏只会挂载模组中与已拥有 DLC 对应的部分。“base” 部分始终会被挂载（如果存在）。模组 manifest 和其他元数据仍保留在模组根目录中。
 
-## Using the manifest
+## 使用 manifest
 
-To set all metadata information you will need to create "manifest.sii" containing "mod_package" unit definition file in your mod package. Example "manifest.sii" file:
+要设置全部元数据信息，你需要在模组包中创建包含 “mod_package” 单元定义的 “manifest.sii” 文件。示例 “manifest.sii” 文件：
 
 ```
 SiiNunit
@@ -48,44 +48,44 @@ mod_package : .package_name
 }
 ```
 
-**NOTE:** We do not limit attributes by length but some places where those meta data are displayed have limited space. To avoid problems we perform cutting of the values to fit the UI. Cutting will simply cut the string at some point and add ".." at the end of the string to mention that there is more content but it does not fit there.
+**注意：** 我们不限制属性的长度，但显示这些元数据的某些位置空间有限。为避免出现问题，我们会截断取值以适配 UI。截断只是在某处截断字符串，并在字符串末尾添加 “..”，以表示还有更多内容但无法容纳。
 
 - **package_version**
-  - Type: string
-  - The version of the mod package.
+  - 类型：string
+  - 模组包的版本。
 - **display_name**
-  - Type: string
-  - Display name of the mod. If none is specified name of the package without extension is used. **Note:** This string is not necessary when you want to create a steam workshop mod. You can specify the name of your mod at the uploading process in the SCS Workshop Uploader.
+  - 类型：string
+  - 模组的显示名称。如果未指定，则使用不含扩展名的包名称。**注意：** 当你想创建 Steam 创意工坊模组时，此字符串不是必需的。你可以在 SCS Workshop Uploader 的上传过程中指定模组名称。
 - **author**
-  - Type: string
-  - Author name.
+  - 类型：string
+  - 作者名称。
 - **category**
-  - Type: array of strings
-  - List of categories. Currently we limit categories up to 2 per mod. If you use more than two only first two will be used. If none is specified mod is assigned to "Others" category. You can use only categories from the set defined in Categories to use
+  - 类型：字符串数组
+  - 类别列表。目前每个模组最多限制 2 个类别。如果使用的类别超过两个，则只会使用前两个。如果未指定，模组会被归入 “Others” 类别。你只能使用“可使用的类别”一节中定义的类别
 - **icon**
-  - Type: string
-  - Name of file inside the root of the mod package directory which contains the icon image. Can be only .jpg file with exact size: 276x162px
+  - 类型：string
+  - 模组包目录根目录下包含图标图像的文件名。只能是尺寸恰好为 276x162px 的 .jpg 文件
 - **description_file**
-  - Type: string
-  - Name of file inside the root of the mod package directory which contains the description text. Description file has to be a simple text file with .txt extension saved in UTF-8 encoding. Content of the description file is shown in mod details window and should include information about usage of your mod, additional credits of included mods etc. For possible text formatting see section Description of your mod > **TIP:** Since ETS 2 1.23 you can specify localized description files for more check: Localized description.
-- **compatible_versions (Not applicable for Steam Workshop mods)**
-  - Type: array of strings
-  - List of compatible game versions. If the list is present and the game version does not match any version from that list, the user will be unable to use the mod and they will have to wait for the author to update it. Shall be used only for mods that are likely to get broken, like a map mod. <br>**Note:** If you want your mod to be compatible with all versions simply skip this parameter. Note also that formatting of the Steam version with "s" suffix (for example: 1.18.1s) does not exist in this versioning so please do not use it. <br>Each item from the list supports wildcards formatting shown below: <br><code>compatible_versions[]: "1.19.*"</code> This means that the mod is compatible with all "1.19.x" versions, e.g. all patches with number starting with 1.19 are compatible. Examples in the table show compatible game versions for the string "1.19.*": | **Version** | **Compatible?** | | --- | --- | | 1.18.1 | no | | 1.19.1 | yes | | 1.19.1.3 | yes | | 1.19.4 | yes | | 1.20.4 | no |You can also specify support for only one revision of the game which is not recommended as we do not change game a lot between minor patches.<br>For example: <br><code>compatible_versions[]: "1.19.1"</code>This usage is not a good idea as your mod will work only with the 1.19.1 version.<br>If we will release some hotfix, your mod will simply be incompatible with it.<br>You can also use more than one compatible version definition, like this: <br><code>compatible_versions[]: "1.19.*"<br>compatible_versions[]: "1.20.*"</code>This way you support both 1.19 and 1.20 patches.<br>**REMEMBER! If you specify a very restricted set of versions, users of your mod may wait for you to release a hot fix for the mod, even if your mod is 100% compatible with the latest release.**
-  - Mod types and configurations for them:
-    - Map mods <br><code>compatible_versions[]: "X.X.*"</code>Just check if major game version part matches. We might break map compatibility between major patches (1.17 > 1.18 for example) so you have to re-export your map mod from the map editor again. Between patches (like 1.18.1 > 1.18.2) there is a very small chance that we will introduce some critical change to map formats and thus break compatibility.
-    - Tuning parts, trucks, model sets and any other <br>The best way is not to use this variable as there is a very small chance that your mod will be broken.
-- **dlc_dependencies (Optional)**
-  - Type: array of strings
-  - From **ETS2 1.26** and **ATS 1.5** you are able to specify list of the DLCs which your mod requires to be installed in manifest file. This feature will block activation of the mod in mod manager when user has one of the required DLCs missing. To specify dependencies you need to edit your mod manifest.sii file and add the following:<br><code>dlc_dependencies[]: "package_name"</code>Where package_name is name of the DLC package - you can find package names in game directory for example if your mod requires DLC Scandinavia - package archive is called dlc_north.scs, the package name is the archive name without extension so in this case it will be dlc_north.
-- **mp_mod_optional (Optional)**
-  - Type: bool
-  - Specifies whether players can join a multiplayer game with this mod installed, even if the server or other players do not have this mod. When set to true, the mod is considered optional for multiplayer compatibility. Such mod must not affect gameplay in a way that would require all participants to have it installed. Map mods will ignore this parameter.
-  - The server must explicitly allow the use of optional mods. If not all mods are considered mandatory.
-  - The client must explicitly allow servers with optional mods in session browser filter.
+  - 类型：string
+  - 模组包目录根目录下包含描述文本的文件名。描述文件必须是扩展名为 .txt 并以 UTF-8 编码保存的简单文本文件。描述文件的内容显示在模组详情窗口中，应包含有关模组用途的信息、所含模组的额外致谢等。关于可能的文本格式，请参见“模组的描述”一节 > **提示：** 自 ETS 2 1.23 起，你可以指定本地化描述文件，更多信息请查看：本地化描述。
+- **compatible_versions（不适用于 Steam 创意工坊模组）**
+  - 类型：字符串数组
+  - 兼容游戏版本列表。如果该列表存在，且游戏版本与该列表中的任何版本都不匹配，用户将无法使用该模组，只能等待作者更新。仅应用于可能会失效的模组，例如地图模组。 <br>**注意：** 如果你希望模组与所有版本兼容，只需跳过此参数。另请注意，带 “s” 后缀的 Steam 版本格式（例如：1.18.1s）在此版本编号中并不存在，因此请勿使用。 <br>列表中的每一项都支持如下所示通配符格式： <br><code>compatible_versions[]: "1.19.*"</code> 这表示该模组与所有 “1.19.x” 版本兼容，即所有编号以 1.19 开头的补丁都兼容。下表中的示例展示了字符串 “1.19.*” 的兼容游戏版本： | **版本** | **兼容？** | | --- | --- | | 1.18.1 | 否 | | 1.19.1 | 是 | | 1.19.1.3 | 是 | | 1.19.4 | 是 | | 1.20.4 | 否 |你还可以只指定支持游戏的某一个修订版本，但不推荐这样做，因为在小版本补丁之间我们不会对游戏做太多改动。<br>例如： <br><code>compatible_versions[]: "1.19.1"</code>这种做法并不可取，因为你的模组只能与 1.19.1 版本配合使用。<br>如果我们发布某些热修复，你的模组就会与之不兼容。<br>你也可以使用多个兼容版本定义，如下所示： <br><code>compatible_versions[]: "1.19.*"<br>compatible_versions[]: "1.20.*"</code>这样你就能同时支持 1.19 和 1.20 补丁。<br>**请记住！如果你指定非常受限的版本集合，即使你的模组与最新版本 100% 兼容，模组用户也可能要等待你发布针对该模组的修复补丁。**
+  - 模组类型及其配置：
+    - 地图模组 <br><code>compatible_versions[]: "X.X.*"</code>只需检查游戏主版本号部分是否匹配。我们可能会在主版本补丁之间破坏地图兼容性（例如 1.17 > 1.18），因此你必须从地图编辑器重新导出地图模组。在补丁之间（例如 1.18.1 > 1.18.2），我们引入会破坏兼容性的关键地图格式改动的可能性非常小。
+    - 调校部件、卡车、模型集以及任何其他内容 <br>最好的做法是不要使用此变量，因为你的模组失效的可能性非常小。
+- **dlc_dependencies（可选）**
+  - 类型：字符串数组
+  - 自 **ETS2 1.26** 和 **ATS 1.5** 起，你可以在 manifest 文件中指定模组需要安装的 DLC 列表。当用户缺少所需 DLC 之一时，此功能会阻止在模组管理器中激活该模组。要指定依赖项，你需要编辑模组的 manifest.sii 文件并添加以下内容：<br><code>dlc_dependencies[]: "package_name"</code>其中 package_name 是 DLC 包的名称 - 你可以在游戏目录中找到包名称，例如，如果你的模组需要 DLC Scandinavia - 其归档包名为 dlc_north.scs，那么包名称就是不含扩展名的归档包名称，因此在本例中为 dlc_north。
+- **mp_mod_optional（可选）**
+  - 类型：bool
+  - 指定在安装了此模组的情况下玩家能否加入多人游戏，即使服务器或其他玩家没有该模组。设为 true 时，该模组在多玩家兼容性方面被视为可选。此类模组不得以要求所有参与者都安装它的方式影响玩法。地图模组将忽略此参数。
+  - 服务器必须显式允许使用可选模组。否则所有模组都被视为必需。
+  - 客户端必须在会话浏览器过滤器中显式允许带有可选模组的服务器。
 
-## Categories to use
+## 可使用的类别
 
-There are 18 valid categories which may be used in the "category" array entries:
+“category” 数组条目中可以使用 18 个有效类别：
 
 - truck
 - trailer
@@ -106,46 +106,46 @@ There are 18 valid categories which may be used in the "category" array entries:
 - prefabs
 - other
 
-## Description of your mod
+## 模组的描述
 
-Description text length is not limited. Moreover there is also additional ability to colorize your mod description with color tags.
+描述文本长度不受限制。此外，你还可以使用颜色标签为模组描述着色。
 
-List of available color tags:
+可用的颜色标签列表：
 
-| Tag | Result color |
+| 标签 | 结果颜色 |
 | --- | --- |
 | [red] | #FF2626 |
 | [green] | #75FF00 |
 | [blue] | #12ABE5 |
-| [normal] | Default font color used in UI |
+| [normal] | UI 中使用的默认字体颜色 |
 | [white] | #FFFFFF |
 | [orange] | #FFAE00 |
 
-**For example:**
+**例如：**
 
 ```
 [red]Hello [green]Wor[orange]ld
 ```
 
-Will result in: **Hello World**
+结果为：**Hello World**
 
-### Localized description
+### 本地化描述
 
-Also from **1.23** version you can localize your mod description. To use it you need to create description file separated for each language - the file name format is `description_file_name.[locale].txt` for example if description_file attribute is set to "description.txt":
+同样从 **1.23** 版本起，你可以本地化模组描述。要使用此功能，你需要为每种语言分别创建描述文件 - 文件名格式为 `description_file_name.[locale].txt`，例如如果 description_file 属性设为 “description.txt”：
 
 - `description.en_gb.txt`
 - `description.cz_cz.txt`
 - `description.ru_ru.txt`
 - `description.pl_pl.txt`
 
-In case game is unable to find proper language file it will use description.txt file.
+如果游戏找不到合适的语言文件，将使用 description.txt 文件。
 
-## Sample mod
+## 示例模组
 
-You can download a sample mod with manifest [here](http://eurotrucksimulator2.com/modding/sample_mod.zip)
+你可以[在此处](http://eurotrucksimulator2.com/modding/sample_mod.zip)下载带有 manifest 的示例模组。
 
-## Other problems not described here
+## 此处未描述的其他问题
 
-If you have any problem with adjusting your mod to the new standards, feel free to write on our forum in the [mods forum section](http://forum.scssoft.com/viewforum.php?f=24).
+如果你在将模组适配新标准时遇到任何问题，欢迎到我们论坛的[模组论坛版块](http://forum.scssoft.com/viewforum.php?f=24)发帖。
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Engine/Mod_manager | revision: 5726 | captured: 2026-10-21 23:56:14 -->

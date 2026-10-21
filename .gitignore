@@ -1,0 +1,6 @@
+﻿__pycache__/
+*.pyc
+src/sync.log
+src/.sync_state.json
+src/Chinese_Ver/SYNC_REPORT.md
+scripts/tmp/

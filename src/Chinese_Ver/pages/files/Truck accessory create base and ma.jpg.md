@@ -1,4 +1,4 @@
-# File:Truck accessory create base and ma.jpg
+# 文件:Truck accessory create base and ma.jpg
 
 ![Truck accessory create base and ma.jpg](../../../images/files/Truck%20accessory%20create%20base%20and%20ma.jpg/Truck_accessory_create_base_and_ma.jpg)
 

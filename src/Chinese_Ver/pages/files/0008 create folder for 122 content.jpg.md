@@ -1,4 +1,4 @@
-# File:0008 create folder for 122 content.jpg
+# 文件:0008 create folder for 122 content.jpg
 
 ![0008 create folder for 122 content.jpg](../../../images/files/0008%20create%20folder%20for%20122%20content.jpg/0008_create_folder_for_122_content.jpg)
 

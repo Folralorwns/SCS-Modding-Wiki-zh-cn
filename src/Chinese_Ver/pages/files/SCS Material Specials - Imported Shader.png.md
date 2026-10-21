@@ -1,4 +1,4 @@
-# File:SCS Material Specials - Imported Shader.png
+# 文件:SCS Material Specials - Imported Shader.png
 
 ![SCS Material Specials - Imported Shader.png](../../../images/files/SCS%20Material%20Specials%20-%20Imported%20Shader.png/SCS_Material_Specials_-_Imported_Shader.png)
 

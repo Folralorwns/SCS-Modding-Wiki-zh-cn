@@ -1,25 +1,25 @@
-# Documentation/Tools/Map Editor
+# 文档/工具/地图编辑器
 
-All games based on SCS game engine have map editor module. To launch it you need to open [console](../Engine/Console.md) and type `edit` [command](../Engine/Console/Commands.md).
+所有基于 SCS 游戏引擎的游戏都有地图编辑器模块。要启动它，你需要打开[控制台](../Engine/Console.md)并输入 `edit` [命令](../Engine/Console/Commands.md)。
 
-- [Editor Shortcuts](Map%20Editor/Shortcuts.md)
-- [New Editor Features info - old + 1.47](Map%20Editor/New%20Editor%20Features%20info%20-%20old%20+%201.47.md)
-- [New Editor Features 1.48](Map%20Editor/New%20Editor%20Features%201.48.md)
-- [New Editor Features 1.49](Map%20Editor/New%20Editor%20Features%201.49.md)
+- [编辑器快捷键](Map%20Editor/Shortcuts.md)
+- [编辑器新功能信息 - 旧版 + 1.47](Map%20Editor/New%20Editor%20Features%20info%20-%20old%20+%201.47.md)
+- [编辑器新功能 1.48](Map%20Editor/New%20Editor%20Features%201.48.md)
+- [编辑器新功能 1.49](Map%20Editor/New%20Editor%20Features%201.49.md)
 
-## Additional Game Infos
+## 附加游戏信息
 
-- [ATS Map Rescale](Map%20Editor/ATS%20Map%20Rescale.md)
+- [ATS 地图重缩放](Map%20Editor/ATS%20Map%20Rescale.md)
 
-## Online services
+## 在线服务
 
-- [Editor online data](Map%20Editor/Editor%20online%20data.md)
-- [Sector lock API](Map%20Editor/Sector%20lock%20API.md)
+- [编辑器在线数据](Map%20Editor/Editor%20online%20data.md)
+- [扇区锁定 API](Map%20Editor/Sector%20lock%20API.md)
 - [Note API](Map%20Editor/Note%20API.md)
 
-## See Also
+## 另见
 
-- [Batch Renaming](Map%20Editor/Batch%20Renaming.md)
-- [All Map Editor tutorials](../../Tutorials/Map%20Editor.md)
+- [批量重命名](Map%20Editor/Batch%20Renaming.md)
+- [所有地图编辑器教程](../../Tutorials/Map%20Editor.md)
 
 <!-- source: https://modding.scssoft.com/wiki/Documentation/Tools/Map_Editor | revision: 5710 | captured: 2026-10-21 23:56:14 -->

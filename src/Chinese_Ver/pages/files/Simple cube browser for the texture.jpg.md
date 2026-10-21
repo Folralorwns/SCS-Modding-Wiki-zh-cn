@@ -1,4 +1,4 @@
-# File:Simple cube browser for the texture.jpg
+# 文件:Simple cube browser for the texture.jpg
 
 ![Simple cube browser for the texture.jpg](../../../images/files/Simple%20cube%20browser%20for%20the%20texture.jpg/Simple_cube_browser_for_the_texture.jpg)
 

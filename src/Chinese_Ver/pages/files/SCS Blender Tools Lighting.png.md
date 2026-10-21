@@ -1,4 +1,4 @@
-# File:SCS Blender Tools Lighting.png
+# 文件:SCS Blender Tools Lighting.png
 
 ![SCS Blender Tools Lighting.png](../../../images/files/SCS%20Blender%20Tools%20Lighting.png/SCS_Blender_Tools_Lighting.png)
 

@@ -1,6 +1,6 @@
-# Documentation/Tools/SCS Blender Tools/Supported model types
+# 文档/工具/SCS Blender Tools/支持的模型类型
 
-As Blender Tools reached its final feature set, version 1.0 now supports full set of the model from games listed below:
+随着 Blender Tools 达到其最终功能集，1.0 版本现已支持下列游戏中的全套模型：
 
 1. [Euro Truck Simulator 2](../../../Games.md)
 2. [American Truck Simulator](../../../Games.md)

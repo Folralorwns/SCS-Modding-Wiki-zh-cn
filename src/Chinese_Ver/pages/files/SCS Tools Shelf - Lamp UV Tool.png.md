@@ -1,4 +1,4 @@
-# File:SCS Tools Shelf - Lamp UV Tool.png
+# 文件:SCS Tools Shelf - Lamp UV Tool.png
 
 ![SCS Tools Shelf - Lamp UV Tool.png](../../../images/files/SCS%20Tools%20Shelf%20-%20Lamp%20UV%20Tool.png/SCS_Tools_Shelf_-_Lamp_UV_Tool.png)
 
