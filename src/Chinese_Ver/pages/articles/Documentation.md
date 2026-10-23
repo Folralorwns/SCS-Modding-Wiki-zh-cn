@@ -5,9 +5,9 @@
 ## [工具](Documentation/Tools.md)
 
 - [游戏归档包解包器](Documentation/Tools/Game%20Archive%20Extractor.md)
-- [SCS Blender Tools](Documentation/Tools/SCS%20Blender%20Tools.md)
-- [Conversion Tools](Documentation/Tools/Conversion%20Tools.md)
-- [SCS Workshop Uploader](Documentation/Tools/SCS%20Workshop%20Uploader.md)
+- [SCS Blender 工具](Documentation/Tools/SCS%20Blender%20Tools.md)
+- [转换工具](Documentation/Tools/Conversion%20Tools.md)
+- [SCS 创意工坊上传工具](Documentation/Tools/SCS%20Workshop%20Uploader.md)
 - [地图编辑器](Documentation/Tools/Map%20Editor.md)
 - [专用服务器](Documentation/Tools/Dedicated%20Server.md)
 
@@ -29,7 +29,7 @@
 - [多显示器配置](Documentation/Engine/Multi%20monitor%20configuration.md)
 - [随机道路事件](Documentation/Engine/Random%20Road%20Events.md)
 - [声音](Documentation/Engine/Sound.md)
-- [Telemetry SDK](Documentation/Engine/SDK/Telemetry.md)
+- [遥测 SDK](Documentation/Engine/SDK/Telemetry.md)
 - [卡车内饰动画与 ID](Documentation/Engine/Truck%20Interior%20Animations%20and%20IDs.md)
 - [单元](Documentation/Engine/Units.md)
 
